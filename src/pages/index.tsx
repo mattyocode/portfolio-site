@@ -2,9 +2,10 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 // import Image from 'next/image'
 
-import { PanelBg, PanelWrapper } from '../components/background-panel';
+import { Section, PageWrapper } from '../components/sections';
 import { PageTitle } from '../components/heading';
 import { NavbarContainer } from '../containers/navbar';
+import HomeSection from '../containers/landing';
 
 const Home: NextPage = () => {
   return (
@@ -16,20 +17,18 @@ const Home: NextPage = () => {
 
       <main>
         <NavbarContainer />
-        <PanelWrapper>
-          <PanelBg id='home' style={{ backgroundColor: '#5371CB' }}>
-            {/* <PageTitle>One</PageTitle> */}
-          </PanelBg>
-          <PanelBg id='about' style={{ backgroundColor: '#69BA7A' }}>
+        <PageWrapper>
+          <HomeSection />
+          <Section id='about' color={'#69BA7A'}>
             <PageTitle>About Me</PageTitle>
-          </PanelBg>
-          <PanelBg id='projects' style={{ backgroundColor: '#373F51' }}>
+          </Section>
+          <Section id='projects' color={'#373F51'}>
             <PageTitle>Projects</PageTitle>
-          </PanelBg>
-          <PanelBg id='contact' style={{ backgroundColor: '#59A7BB' }}>
+          </Section>
+          <Section id='contact' color={'#59A7BB'}>
             <PageTitle>Contact</PageTitle>
-          </PanelBg>
-        </PanelWrapper>
+          </Section>
+        </PageWrapper>
       </main>
     </div>
   );

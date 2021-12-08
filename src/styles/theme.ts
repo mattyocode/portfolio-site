@@ -31,4 +31,19 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 3rem;
     filter: drop-shadow(3px 3px 0 #E79E3C)
   }
+
+  h2 {
+    font-family: "Source Sans Pro";
+    font-weight: 900;
+    font-size: 1.5rem;
+    filter: drop-shadow(2px 2px 0 #E79E3C)
+  }
+  h2 > span .coral {
+      filter: none;
+      filter: drop-shadow(2px 2px 0 #E79E3C)
+    }
+
+    h2 > span .black {
+      filter: drop-shadow(2px 2px 0 #000)
+    }
 `;
