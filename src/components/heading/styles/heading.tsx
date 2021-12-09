@@ -12,10 +12,10 @@ export const Landing = styled.div`
   padding: 2rem;
 
   @media screen and (min-width: 768px) {
+    bottom: 0;
     position: relative;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    margin-left: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   } ;
 `;

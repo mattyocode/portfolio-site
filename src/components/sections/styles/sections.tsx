@@ -20,11 +20,31 @@ export const SectionBackground = styled.section<SectionBackground>`
 export const ImageWrapper = styled.div`
   position: relative;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
-  @media and screen (min-width: 768px) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+export const CenteredElements = styled.div`
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row-reverse;
+    padding: 0 2rem;
+    max-width: 768px;
+  }
+`;
+
+export const ProfilePic = styled.div`
+  width: 250px;
+
+  @media screen and (min-width: 768px) {
+    position: relative;
   }
 `;

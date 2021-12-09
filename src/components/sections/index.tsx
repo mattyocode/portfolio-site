@@ -1,10 +1,11 @@
 import React from 'react';
 import {
+  CenteredElements,
+  ProfilePic,
   SectionContainer,
   SectionBackground,
   ImageWrapper,
-} from './styles/background';
-import Image, { ImageProps } from 'next/image';
+} from './styles/sections';
 
 // interface SectionProps extends React.HTMLAttributes<HTMLDivElement> {
 //   children?: React.ReactNode;
@@ -15,14 +16,11 @@ import Image, { ImageProps } from 'next/image';
 //   children?: React.ReactNode;
 // }
 
-type WrapperProps = {
+type Props = {
   children?: React.ReactNode;
 };
 
-export const PageWrapper: React.FC<WrapperProps> = ({
-  children,
-  ...restProps
-}) => {
+export const PageWrapper: React.FC<Props> = ({ children, ...restProps }) => {
   return <SectionContainer {...restProps}>{children}</SectionContainer>;
 };
 
@@ -44,23 +42,41 @@ export const Section: React.FC<SectionProps> = ({
   );
 };
 
-type SectionImageProps = {
-  src: string;
-  alt: string;
-  objectFit?: ImageProps['objectFit'];
-  children?: React.ReactNode;
+export const FullBleedWrapper: React.FC<Props> = ({
+  children,
+  ...restProps
+}) => {
+  return <ImageWrapper {...restProps}>{children}</ImageWrapper>;
 };
 
-export const SectionImage: React.FC<SectionImageProps> = ({
-  src,
-  alt,
-  objectFit,
-  children,
-}) => {
-  return (
-    <ImageWrapper>
-      <Image src={src} alt={alt} objectFit={objectFit} layout='fill' />
-      {children}
-    </ImageWrapper>
-  );
+export const Centered: React.FC<Props> = ({ children, ...restProps }) => {
+  return <CenteredElements {...restProps}>{children}</CenteredElements>;
 };
+
+export const ProfilePicWrapper: React.FC<Props> = ({
+  children,
+  ...restProps
+}) => {
+  return <ProfilePic {...restProps}>{children}</ProfilePic>;
+};
+
+// type FullBleedWrapperProps = {
+//   src: string;
+//   alt: string;
+//   objectFit?: ImageProps['objectFit'];
+//   children?: React.ReactNode;
+// };
+
+// export const FullBleedWrapper: React.FC<FullBleedWrapperProps> = ({
+//   src,
+//   alt,
+//   objectFit,
+//   children,
+// }) => {
+//   return (
+//     <ImageWrapper>
+//       <Image src={src} alt={alt} objectFit={objectFit} layout='fill' />
+//       {children}
+//     </ImageWrapper>
+//   );
+// };
