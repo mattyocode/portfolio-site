@@ -1,10 +1,10 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-// import Image from 'next/image'
 
 import { Section, PageWrapper } from '../components/sections';
 import { PageTitle } from '../components/heading';
 import { NavbarContainer } from '../containers/navbar';
+import AboutSection from '../containers/about';
 import HomeSection from '../containers/landing';
 
 const Home: NextPage = () => {
@@ -19,9 +19,7 @@ const Home: NextPage = () => {
         <NavbarContainer />
         <PageWrapper>
           <HomeSection />
-          <Section id='about' color={'#69BA7A'}>
-            <PageTitle>About Me</PageTitle>
-          </Section>
+          <AboutSection />
           <Section id='projects' color={'#373F51'}>
             <PageTitle>Projects</PageTitle>
           </Section>

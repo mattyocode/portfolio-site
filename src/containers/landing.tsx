@@ -7,7 +7,7 @@ import {
 } from '../components/sections';
 import { LandingCopy } from '../components/heading';
 
-export default function LandingSection() {
+export default function LandingSection(): JSX.Element {
   return (
     <Section id={'home'} color={'#5371CB'}>
       <FullBleedWrapper>

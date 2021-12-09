@@ -42,11 +42,21 @@ export const Section: React.FC<SectionProps> = ({
   );
 };
 
-export const FullBleedWrapper: React.FC<Props> = ({
+type FullBleedProps = {
+  centered: boolean;
+  children?: React.ReactNode;
+};
+
+export const FullBleedWrapper: React.FC<FullBleedProps> = ({
+  centered = true,
   children,
   ...restProps
 }) => {
-  return <ImageWrapper {...restProps}>{children}</ImageWrapper>;
+  return (
+    <ImageWrapper centered={centered} {...restProps}>
+      {children}
+    </ImageWrapper>
+  );
 };
 
 export const Centered: React.FC<Props> = ({ children, ...restProps }) => {

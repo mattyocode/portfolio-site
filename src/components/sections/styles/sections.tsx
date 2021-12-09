@@ -6,9 +6,9 @@ export const SectionContainer = styled.div`
   height: 100vh;
 `;
 
-type SectionBackground = { color: string };
+type SectionBackgroundProps = { color: string };
 
-export const SectionBackground = styled.section<SectionBackground>`
+export const SectionBackground = styled.section<SectionBackgroundProps>`
   height: 100vh;
   display: flex;
   // justify-content: center;
@@ -17,13 +17,15 @@ export const SectionBackground = styled.section<SectionBackground>`
   background-color: ${(props) => (props.color ? props.color : '#373F51')};
 `;
 
-export const ImageWrapper = styled.div`
+type ImageWrapperProps = { centered: boolean };
+
+export const ImageWrapper = styled.div<ImageWrapperProps>`
   position: relative;
   height: 100vh;
   width: 100vw;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: ${(props) => (props.centered ? 'center' : 'flex-start')};
+  align-items: ${(props) => (props.centered ? 'center' : 'flex-start')};
 `;
 
 export const CenteredElements = styled.div`
@@ -37,7 +39,11 @@ export const CenteredElements = styled.div`
   @media screen and (min-width: 768px) {
     flex-direction: row-reverse;
     padding: 0 2rem;
-    max-width: 768px;
+    max-width: 880px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 1000px;
   }
 `;
 

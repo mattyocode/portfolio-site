@@ -1,9 +1,19 @@
 import styled from 'styled-components';
 
 export const Title = styled.h1`
+  z-index: 10;
   position: relative;
-  left: 2rem;
+  left: 1rem;
   top: 3rem;
+
+  @media screen and (min-width: 768px) {
+    left: 2rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    top: 4rem;
+    left: 5rem;
+  }
 `;
 
 export const Landing = styled.div`
