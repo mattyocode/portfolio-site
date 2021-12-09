@@ -11,10 +11,8 @@ type SectionBackgroundProps = { color: string };
 export const SectionBackground = styled.section<SectionBackgroundProps>`
   height: 100vh;
   display: flex;
-  // justify-content: center;
-  // align-items: center;
   scroll-snap-align: start;
-  background-color: ${(props) => (props.color ? props.color : '#373F51')};
+  background: ${(props) => (props.color ? props.color : '#373F51')};
 `;
 
 type ImageWrapperProps = { centered: boolean };
