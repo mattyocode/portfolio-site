@@ -6,7 +6,7 @@ export default function AboutSection(): JSX.Element {
   return (
     <Section
       id='about'
-      color={'linear-gradient(to bottom, #5580F3, #5580F3 50%, #373F51 50%)'}
+      color={'linear-gradient(to bottom, #5371CB, #5580F3 50%, #373F51 50%)'}
     >
       <FullBleedWrapper centered={false}>
         <PageTitle>About Me</PageTitle>

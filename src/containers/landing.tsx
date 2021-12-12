@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import CanvasContainer from '../components/canvas';
 import {
   FullBleedWrapper,
   Section,
@@ -11,13 +12,7 @@ export default function LandingSection(): JSX.Element {
   return (
     <Section id={'home'} color={'#5371CB'}>
       <FullBleedWrapper>
-        <Image
-          src='/img/cloud.jpg'
-          alt='single cloud in a blue sky'
-          objectFit='cover'
-          objectPosition='center'
-          layout='fill'
-        />
+        <CanvasContainer />
         <Centered>
           <ProfilePicWrapper>
             <Image
