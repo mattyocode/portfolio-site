@@ -44,19 +44,20 @@ export default function AboutSection(): JSX.Element {
       console.log('in view!!');
       controls.start('visible');
     }
-    // if (!inView) {
-    //   console.log('not in view!!');
-    //   controls.start('hidden');
-    // }
+    if (!inView) {
+      setTimeout(() => {
+        console.log('not in view!!');
+        controls.start('hidden');
+      }, 2000);
+    }
   }, [controls, inView]);
 
   return (
     <Section
       id='about'
-      // color={
-      //   'linear-gradient(to bottom, #5371CB, #5580F3 20%, #1F45AD 35%, #122968 45%, #4A8F78 55%, #4A8F78 70%)'
-      // }
-      color={'#4A8F78'}
+      color={
+        'linear-gradient(to bottom, #5371CB, #5580F3 20%, #1F45AD 35%, #122968 45%, #4A8F78 60%, #4A8F78 70%)'
+      }
     >
       <ObjectWrapper>
         <ObjectContainer>
@@ -65,7 +66,6 @@ export default function AboutSection(): JSX.Element {
             animate={controls}
             variants={objectVariants}
             ref={ref}
-            style={{ height: '100%' }}
           >
             <FullBleedWrapper centered={true}>
               <motion.div
@@ -120,13 +120,6 @@ export default function AboutSection(): JSX.Element {
                     ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
                     sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
                     labore et dolore magna aliquyam erat, sed diam voluptua.
-                  </p>
-
-                  <p>
-                    Consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                    invidunt ut labore et dolore magna aliquyam erat, sed diam
-                    voluptua. At vero eos et accusam et justo duo dolores et ea
-                    rebum.
                   </p>
                 </LongCopy>
               </Centered>

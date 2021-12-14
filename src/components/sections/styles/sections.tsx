@@ -22,9 +22,11 @@ type ImageWrapperProps = { centered: boolean };
 export const ImageWrapper = styled.div<ImageWrapperProps>`
   position: relative;
   min-height: 100vh;
+  height: 100%;
   width: 100vw;
-  background-size: cover;
+  /* background-size: cover; */
   /* overflow: auto; */
+
   display: flex;
   justify-content: ${(props) => (props.centered ? 'center' : 'flex-end')};
   align-items: ${(props) => (props.centered ? 'center' : 'flex-end')};

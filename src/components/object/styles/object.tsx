@@ -16,15 +16,6 @@ export const Container = styled.div`
   /* height: 100%; */
   overflow: auto;
   z-index: 20;
-  background: linear-gradient(
-    to bottom,
-    #5371cb,
-    #5580f3 20%,
-    #1f45ad 35%,
-    #122968 45%,
-    #4a8f78 55%,
-    #4a8f78 70%
-  );
 
   @media screen and (min-width: 570) {
     overflow: hidden;
