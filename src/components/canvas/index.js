@@ -1,61 +1,59 @@
 import React, { useRef, useEffect, Suspense, useState } from 'react';
-import dynamic from 'next/dynamic';
 
 import { Canvas, useThree } from '@react-three/fiber';
 import { useTexture, Cloud, OrbitControls } from '@react-three/drei';
-// import { TextureLoader } from 'three/src/loaders/TextureLoader';
-import * as THREE from 'three';
 
 import { CanvasWrapper } from './styles/canvas';
 
-// function CloudParticle() {
-//   const ref = useRef();
-//   const cloudMap = useTexture('img/cloud.png');
-//   return (
-//     <mesh
-//       visible
-//       position={[Math.random() * 800 - 400, 500, Math.random() * 500 - 500]}
-//       rotation={[1.16, -0.12, Math.random() * 2 * Math.PI]}
-//     >
-//       <planeBufferGeometry args={[500, 500]} attach='geometry' />
-//       <meshLambertMaterial map={cloudMap} attach='material' transparent />
-//     </mesh>
-//   );
-// }
-
-function CloudParticle({}) {
-  const [itemPosition, setItemPosition] = useState([0, 0, 0]);
-  const cloudPositionRef = useRef();
-  const cloudMap = useTexture('img/cloud.png');
+function CloudParticle({ clickHandler }) {
+  const [itemPosition, setItemPosition] = useState([0, -1, 0]);
   const { viewport } = useThree();
-  // useEffect(() => {
-  //   if (viewport.width <= 768) {
-  //     setItemPosition([3, -3, 0]);
-  //   } else {
-  //     setItemPosition([0, 0, 0]);
-  //   }
-  // }, [viewport.width]);
+
+  useEffect(() => {
+    if (viewport.width < 25.75) {
+      setItemPosition([6, -3, 0]);
+    } else {
+      setItemPosition([0, -1, 0]);
+    }
+  }, [viewport]);
+
   return (
     <mesh scale={0.55} position={itemPosition}>
-      <Cloud speed={1} position={[-4, -2, 0]} args={[3, 2]} />
-      <Cloud speed={1} position={[-4, 2, 0]} args={[3, 2]} />
-      <Cloud speed={1} args={[3, 2]} />
-      <Cloud speed={1} position={[4, -2, 0]} args={[3, 2]} />
-      <Cloud speed={1} position={[4, 2, 0]} args={[3, 2]} />
+      <group onClick={clickHandler}>
+        <Cloud speed={1} position={[-4, -2, 0]} args={[3, 2]} />
+        <Cloud speed={1} position={[-3, 3, 0]} args={[3, 2]} />
+        <Cloud speed={1} args={[3, 2]} />
+        <Cloud speed={1} position={[4, -2, 0]} args={[3, 2]} />
+        <Cloud speed={1} position={[4, 2, 0]} args={[3, 2]} />
+      </group>
     </mesh>
   );
 }
 
 export default function CanvasContainer() {
+  const [color, setColor] = useState(0);
   const group = useRef();
+
+  const colors = [
+    '#ffffff',
+    '#91f2a3',
+    '#ff8966',
+    '#ff9fe5',
+    '#3e8989',
+    '#ffffff',
+  ];
+  const setCloudColor = () => {
+    let colorIdx = Math.floor(Math.random() * colors.length);
+    setColor(colorIdx);
+  };
   return (
     <CanvasWrapper>
       <Canvas colorManagement camera={{ position: [-5, 2, 10], fov: 100 }}>
         <Suspense fallback={null}>
           <group ref={group} dispose={null}>
-            {/* <Light brightness={10} color={'white'} /> */}
-            <ambientLight />
-            <CloudParticle />
+            <ambientLight color={colors[color]} />
+            {/* <pointLight position={[5, 5, 0]} color={'#'} /> */}
+            <CloudParticle clickHandler={setCloudColor} />
           </group>
           {/* <OrbitControls enablePan={false} zoomSpeed={0.5} /> */}
         </Suspense>

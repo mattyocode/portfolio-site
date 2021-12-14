@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 
 export const SectionContainer = styled.div`
@@ -13,29 +14,36 @@ export const SectionBackground = styled.section<SectionBackgroundProps>`
   display: flex;
   scroll-snap-align: start;
   background: ${(props) => (props.color ? props.color : '#373F51')};
+  background-repeat: ;
 `;
 
 type ImageWrapperProps = { centered: boolean };
 
 export const ImageWrapper = styled.div<ImageWrapperProps>`
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
+  background-size: cover;
+  /* overflow: auto; */
   display: flex;
-  justify-content: ${(props) => (props.centered ? 'center' : 'flex-start')};
-  align-items: ${(props) => (props.centered ? 'center' : 'flex-start')};
+  justify-content: ${(props) => (props.centered ? 'center' : 'flex-end')};
+  align-items: ${(props) => (props.centered ? 'center' : 'flex-end')};
 `;
 
-export const CenteredElements = styled.div`
+type CenteredProps = {
+  rowReverse?: boolean;
+};
+
+export const CenteredElements = styled.div<CenteredProps>`
   width: 100%;
-  height: 70vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 
   @media screen and (min-width: 768px) {
-    flex-direction: row-reverse;
+    flex-direction: ${(props) => (props.rowReverse ? 'row-reverse' : 'row')};
     padding: 0 2rem;
     max-width: 880px;
   }

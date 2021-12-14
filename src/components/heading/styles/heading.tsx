@@ -1,14 +1,11 @@
 import styled from 'styled-components';
 
 export const Title = styled.h1`
-  z-index: 10;
+  z-index: 80;
   position: relative;
-  left: 1rem;
+  left: 2rem;
   top: 3rem;
-
-  @media screen and (min-width: 768px) {
-    left: 2rem;
-  }
+  text-align: left;
 
   @media screen and (min-width: 1024px) {
     top: 4rem;
@@ -28,4 +25,9 @@ export const Landing = styled.div`
     flex-direction: column;
     justify-content: center;
   } ;
+`;
+
+export const BodyCopy = styled.div`
+  z-index: 80;
+  padding: 1rem;
 `;

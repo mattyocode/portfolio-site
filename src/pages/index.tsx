@@ -20,7 +20,15 @@ const Home: NextPage = () => {
         <PageWrapper>
           <HomeSection />
           <AboutSection />
-          <Section id='projects' color={'#373F51'}>
+          <Section
+            id='projects'
+            color={'#373F51'}
+            style={{
+              backgroundImage:
+                'radial-gradient(circle at 2px 2px, #222 1px, transparent 0)',
+              backgroundSize: '50px 50px',
+            }}
+          >
             <PageTitle>Projects</PageTitle>
           </Section>
           <Section id='contact' color={'#59A7BB'}>

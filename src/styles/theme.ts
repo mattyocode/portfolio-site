@@ -18,7 +18,7 @@ export const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: "Open Sans", sans-serif;
-    height: 100%;
+    /* height: 100%; */
   }
 
   body {
@@ -37,6 +37,18 @@ export const GlobalStyles = createGlobalStyle`
     font-weight: 900;
     font-size: 1.5rem;
 
+    @media screen and (min-width: 330px) {
+      font-size: 1.55rem;
+    }
+
+    @media screen and (min-width: 350px) {
+      font-size: 1.65rem;
+    }
+
+    @media screen and (min-width: 365px) {
+      font-size: 1.75rem;
+    }
+
     @media screen and (min-width: 425px) {
       font-size: 2rem;
     }
@@ -53,5 +65,11 @@ export const GlobalStyles = createGlobalStyle`
 
   h2 > span.black {
     filter: drop-shadow(2px 2px 0 #444)
+  }
+
+  p {
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    margin: 1rem;
   }
 `;
