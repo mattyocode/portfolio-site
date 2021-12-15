@@ -28,6 +28,7 @@ export const LinksWrapper = styled.ul`
 
 export const NavLink: StyledComponent<'li', any, {}, never> = styled.li`
   display: block;
+  cursor: pointer;
 
   a {
     /* border-right: 1px white solid; */

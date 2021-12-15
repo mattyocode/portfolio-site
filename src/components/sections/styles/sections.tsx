@@ -14,7 +14,6 @@ export const SectionBackground = styled.section<SectionBackgroundProps>`
   display: flex;
   scroll-snap-align: start;
   background: ${(props) => (props.color ? props.color : '#373F51')};
-  background-repeat: ;
 `;
 
 type ImageWrapperProps = { centered: boolean };
@@ -22,11 +21,8 @@ type ImageWrapperProps = { centered: boolean };
 export const ImageWrapper = styled.div<ImageWrapperProps>`
   position: relative;
   min-height: 100vh;
-  height: 100%;
+  height: 100vh;
   width: 100vw;
-  /* background-size: cover; */
-  /* overflow: auto; */
-
   display: flex;
   justify-content: ${(props) => (props.centered ? 'center' : 'flex-end')};
   align-items: ${(props) => (props.centered ? 'center' : 'flex-end')};
@@ -50,8 +46,16 @@ export const CenteredElements = styled.div<CenteredProps>`
     max-width: 880px;
   }
 
+  @media screen and (min-width: 1024px) {
+    max-width: 900px;
+  }
+
   @media screen and (min-width: 1200px) {
     max-width: 1000px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    max-width: 1050px;
   }
 `;
 

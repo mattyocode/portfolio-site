@@ -18,8 +18,8 @@ function CloudParticle({ clickHandler }) {
   }, [viewport]);
 
   return (
-    <mesh scale={0.55} position={itemPosition}>
-      <group onClick={clickHandler}>
+    <mesh scale={0.55} position={itemPosition} onClick={clickHandler}>
+      <group>
         <Cloud speed={1} position={[-4, -2, 0]} args={[3, 2]} />
         <Cloud speed={1} position={[-3, 3, 0]} args={[3, 2]} />
         <Cloud speed={1} args={[3, 2]} />

@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Centered, Section, FullBleedWrapper } from '../components/sections';
 import { LongCopy, PageTitle } from '../components/heading';
 import { ObjectContainer, ObjectWrapper } from '../components/object';
+import IconGrid from '../components/icon-grid';
+import { icons } from '../components/icon-grid/icon-data';
 
 const titleVariants = {
   hidden: {
@@ -23,7 +25,7 @@ const titleVariants = {
 
 const objectVariants = {
   hidden: {
-    y: 250,
+    y: 200,
   },
   visible: {
     y: 50,
@@ -37,26 +39,37 @@ const objectVariants = {
 
 export default function AboutSection(): JSX.Element {
   const controls = useAnimation();
-  const { ref, inView } = useInView({ threshold: 0.2 });
+  const { ref: titleRef, inView: titleInView } = useInView({ threshold: 0.2 });
+  const {
+    ref: sectionRef,
+    inView: sectionInView,
+    entry,
+  } = useInView({
+    threshold: 0.2,
+  });
 
   useEffect(() => {
-    if (inView) {
+    if (titleInView) {
       console.log('in view!!');
       controls.start('visible');
     }
-    if (!inView) {
-      setTimeout(() => {
-        console.log('not in view!!');
-        controls.start('hidden');
-      }, 2000);
+    if (
+      // (!sectionInView && entry && entry.boundingClientRect.top < -50) ||
+      entry &&
+      entry.intersectionRatio === 0
+    ) {
+      // setTimeout(() => {
+      console.log('not in view!!');
+      controls.start('hidden');
+      // }, 1000);
     }
-  }, [controls, inView]);
+  }, [controls, sectionInView, titleInView, entry]);
 
   return (
     <Section
       id='about'
       color={
-        'linear-gradient(to bottom, #5371CB, #5580F3 20%, #1F45AD 35%, #122968 45%, #4A8F78 60%, #4A8F78 70%)'
+        'linear-gradient(to bottom, #5371CB, #5580F3 20%, #1F45AD 35%, #122968 60%, #4A8F78 75%, #4A8F78 80%)'
       }
     >
       <ObjectWrapper>
@@ -65,14 +78,14 @@ export default function AboutSection(): JSX.Element {
             initial='hidden'
             animate={controls}
             variants={objectVariants}
-            ref={ref}
+            ref={sectionRef}
           >
             <FullBleedWrapper centered={true}>
               <motion.div
                 initial='hidden'
                 animate={controls}
                 variants={titleVariants}
-                ref={ref}
+                ref={titleRef}
               >
                 <PageTitle style={{ position: 'absolute' }}>About Me</PageTitle>
               </motion.div>
@@ -107,7 +120,8 @@ export default function AboutSection(): JSX.Element {
                     rebum.
                   </p>
                 </LongCopy>
-                <LongCopy>
+                <IconGrid icons={icons} />
+                {/* <LongCopy>
                   <p>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                     diam nonumy eirmod tempor invidunt ut labore et dolore magna
@@ -121,7 +135,7 @@ export default function AboutSection(): JSX.Element {
                     sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
                     labore et dolore magna aliquyam erat, sed diam voluptua.
                   </p>
-                </LongCopy>
+                </LongCopy> */}
               </Centered>
             </FullBleedWrapper>
           </motion.div>

@@ -30,4 +30,5 @@ export const Landing = styled.div`
 export const BodyCopy = styled.div`
   z-index: 80;
   padding: 1rem;
+  max-width: 30rem;
 `;

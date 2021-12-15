@@ -9,15 +9,16 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.div`
-  position: absolute;
+  position: relative;
+  /* position: absolute; */
   top: 0;
   left: 0;
-  width: 100%;
+  /* width: 100%; */
   /* height: 100%; */
-  overflow: auto;
+  overflow: scroll;
   z-index: 20;
 
-  @media screen and (min-width: 570) {
+  @media screen and (min-width: 570px) {
     overflow: hidden;
   }
 `;
