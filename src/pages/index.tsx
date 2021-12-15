@@ -6,6 +6,7 @@ import { PageTitle } from '../components/heading';
 import { NavbarContainer } from '../containers/navbar';
 import AboutSection from '../containers/about';
 import HomeSection from '../containers/landing';
+import ProjectsSection from '../containers/projects';
 
 const Home: NextPage = () => {
   return (
@@ -20,17 +21,8 @@ const Home: NextPage = () => {
         <PageWrapper>
           <HomeSection />
           <AboutSection />
-          <Section
-            id='projects'
-            color={'#373F51'}
-            style={{
-              backgroundImage:
-                'radial-gradient(circle at 2px 2px, #222 1px, transparent 0)',
-              backgroundSize: '50px 50px',
-            }}
-          >
-            <PageTitle>Projects</PageTitle>
-          </Section>
+          <ProjectsSection />
+
           <Section id='contact' color={'#59A7BB'}>
             <PageTitle>Contact</PageTitle>
           </Section>
