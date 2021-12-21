@@ -1,15 +1,22 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  display: flex;
+  align-items: center;
   z-index: 99;
   padding: 0 3rem;
-  max-width: 90%;
+  /* width: 100%; */
   min-height: 20rem;
   padding: 1rem;
   overflow-x: auto;
+  /* background: #4a8f78; */
+
+  @media screen and (min-width: 440px) {
+    background: transparent;
+  }
 
   @media screen and (min-width: 768px) {
-    overflow-x: hidden;
+    overflow-x: visible;
   }
 `;
 
@@ -17,10 +24,11 @@ export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 0.5rem;
+  max-width: 90%;
 
   @media screen and (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
+    grid-gap: 0.5rem;
   }
 
   @media screen and (min-width: 1024px) {
@@ -50,7 +58,7 @@ export const Icon = styled.img`
   height: 40px;
   object-fit: contain;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     width: 45px;
     height: 45px;
   }
@@ -61,7 +69,7 @@ export const IconText = styled.p`
   text-align: center;
   margin-top: 15px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     font-size: 0.7rem;
   }
 `;

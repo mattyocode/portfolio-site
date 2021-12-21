@@ -1,10 +1,11 @@
 import React from 'react';
 import {
-  CenteredElements,
+  AboutContent,
   ProfilePic,
   SectionContainer,
   SectionBackground,
   ImageWrapper,
+  LandingContent,
 } from './styles/sections';
 
 // interface SectionProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -60,21 +61,28 @@ export const FullBleedWrapper: React.FC<FullBleedProps> = ({
   );
 };
 
-type centeredProps = {
+type CenteredProps = {
   children?: React.ReactNode;
   rowReverse?: boolean;
 };
 
-export const Centered: React.FC<centeredProps> = ({
+export const Centered: React.FC<CenteredProps> = ({
   rowReverse = true,
   children,
   ...restProps
 }) => {
   return (
-    <CenteredElements rowReverse={rowReverse} {...restProps}>
+    <AboutContent rowReverse={rowReverse} {...restProps}>
       {children}
-    </CenteredElements>
+    </AboutContent>
   );
+};
+
+export const LandingCentered: React.FC<Props> = ({
+  children,
+  ...restProps
+}) => {
+  return <LandingContent {...restProps}>{children}</LandingContent>;
 };
 
 export const ProfilePicWrapper: React.FC<Props> = ({

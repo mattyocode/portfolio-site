@@ -11,7 +11,7 @@ function CloudParticle({ clickHandler }) {
 
   useEffect(() => {
     if (viewport.width < 25.75) {
-      setItemPosition([6, -3, 0]);
+      setItemPosition([5, -3, 0]);
     } else {
       setItemPosition([0, -1, 0]);
     }

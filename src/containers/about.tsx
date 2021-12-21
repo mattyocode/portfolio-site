@@ -39,55 +39,52 @@ const objectVariants = {
 
 export default function AboutSection(): JSX.Element {
   const controls = useAnimation();
-  const { ref: titleRef, inView: titleInView } = useInView({ threshold: 0.2 });
   const {
-    ref: sectionRef,
-    inView: sectionInView,
+    ref: titleRef,
+    inView: titleInView,
+    entry: titleEntry,
+  } = useInView({ threshold: 0.2 });
+  const {
+    ref: iconsRef,
+    inView: iconsInView,
     entry,
   } = useInView({
     threshold: 0.2,
   });
+
+  console.log('entry >>', titleEntry);
 
   useEffect(() => {
     if (titleInView) {
       console.log('in view!!');
       controls.start('visible');
     }
-    if (
-      // (!sectionInView && entry && entry.boundingClientRect.top < -50) ||
-      entry &&
-      entry.intersectionRatio === 0
-    ) {
-      // setTimeout(() => {
+    if (entry && entry.intersectionRatio === 0) {
       console.log('not in view!!');
       controls.start('hidden');
-      // }, 1000);
     }
-  }, [controls, sectionInView, titleInView, entry]);
+  }, [controls, titleInView, entry]);
+
+  let backgroundGradient =
+    'linear-gradient(to bottom, #5371CB, #5580F3 20%, #1F45AD 35%, #122968 60%, #4A8F78 75%, #4A8F78 80%)';
 
   return (
-    <Section
-      id='about'
-      color={
-        'linear-gradient(to bottom, #5371CB, #5580F3 20%, #1F45AD 35%, #122968 60%, #4A8F78 75%, #4A8F78 80%)'
-      }
-    >
+    <Section id='about' color={backgroundGradient}>
       <ObjectWrapper>
         <ObjectContainer>
           <motion.div
             initial='hidden'
             animate={controls}
             variants={objectVariants}
-            ref={sectionRef}
           >
-            <FullBleedWrapper centered={true}>
+            <FullBleedWrapper centered={false}>
               <motion.div
                 initial='hidden'
                 animate={controls}
                 variants={titleVariants}
                 ref={titleRef}
               >
-                <PageTitle style={{ position: 'absolute' }}>About Me</PageTitle>
+                <PageTitle relative={false}>About Me</PageTitle>
               </motion.div>
               <Image
                 src='/img/objectgn.svg'
@@ -97,7 +94,7 @@ export default function AboutSection(): JSX.Element {
                 objectFit='cover'
                 priority
               />
-              <Centered rowReverse={false}>
+              <Centered>
                 <LongCopy>
                   <p>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -121,21 +118,6 @@ export default function AboutSection(): JSX.Element {
                   </p>
                 </LongCopy>
                 <IconGrid icons={icons} />
-                {/* <LongCopy>
-                  <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                    diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                    aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                    justo duo dolores et ea rebum.
-                  </p>
-
-                  <p>
-                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-                    ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-                    sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                    labore et dolore magna aliquyam erat, sed diam voluptua.
-                  </p>
-                </LongCopy> */}
               </Centered>
             </FullBleedWrapper>
           </motion.div>

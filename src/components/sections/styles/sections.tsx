@@ -26,24 +26,66 @@ export const ImageWrapper = styled.div<ImageWrapperProps>`
   display: flex;
   justify-content: ${(props) => (props.centered ? 'center' : 'flex-end')};
   align-items: ${(props) => (props.centered ? 'center' : 'flex-end')};
+
+  @media screen and (min-width: 768px) {
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 type CenteredProps = {
   rowReverse?: boolean;
 };
 
-export const CenteredElements = styled.div<CenteredProps>`
+export const AboutContent = styled.div<CenteredProps>`
   width: 100%;
-  height: 60vh;
+  height: 75vh; // 70vh prev
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  overflow-y: auto; // added
+
+  @media screen and (min-width: 375px) {
+    height: 80vh;
+  }
 
   @media screen and (min-width: 768px) {
-    flex-direction: ${(props) => (props.rowReverse ? 'row-reverse' : 'row')};
+    flex-direction: row;
     padding: 0 2rem;
     max-width: 880px;
+    height: 70vh;
+    overflow-y: hidden;
+  }
+
+  @media screen and (min-width: 1024px) {
+    max-width: 900px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 1000px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    max-width: 1050px;
+  }
+`;
+
+export const LandingContent = styled.div<CenteredProps>`
+  width: 100%;
+  height: 70vh; // 70vh prev
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow-y: auto; // added
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    padding: 0 2rem;
+    max-width: 880px;
+    height: 60vh;
+    overflow-y: hidden;
   }
 
   @media screen and (min-width: 1024px) {
@@ -61,8 +103,9 @@ export const CenteredElements = styled.div<CenteredProps>`
 
 export const ProfilePic = styled.div`
   width: 250px;
+  top: 200px;
 
   @media screen and (min-width: 768px) {
-    position: relative;
+    /* position: relative; */
   }
 `;

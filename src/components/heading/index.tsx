@@ -5,8 +5,21 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
 }
 
-export const PageTitle: React.FC<Props> = ({ children, ...restProps }) => {
-  return <Title {...restProps}>{children}</Title>;
+type PageTitleProps = {
+  relative?: boolean;
+  children?: React.ReactNode;
+};
+
+export const PageTitle: React.FC<PageTitleProps> = ({
+  relative = true,
+  children,
+  ...restProps
+}) => {
+  return (
+    <Title relative={relative} {...restProps}>
+      {children}
+    </Title>
+  );
 };
 
 export const LandingCopy: React.FC<Props> = ({ children, ...restProps }) => {

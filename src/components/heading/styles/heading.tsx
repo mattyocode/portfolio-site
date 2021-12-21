@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 
-export const Title = styled.h1`
+type TitleProps = {
+  relative?: boolean;
+};
+
+export const Title = styled.h1<TitleProps>`
   z-index: 80;
-  position: relative;
+  position: ${(props) => (props.relative ? 'relative' : 'absolute')};
+  height: 2rem;
   left: 2rem;
   top: 3rem;
   text-align: left;
@@ -14,13 +19,14 @@ export const Title = styled.h1`
 `;
 
 export const Landing = styled.div`
-  position: absolute;
-  bottom: 15%;
+  /* position: absolute;
+  bottom: 15%; */
+  /* position: relative; */
   padding: 2rem;
 
   @media screen and (min-width: 768px) {
     bottom: 0;
-    position: relative;
+    /* position: relative; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,6 +35,6 @@ export const Landing = styled.div`
 
 export const BodyCopy = styled.div`
   z-index: 80;
-  padding: 1rem;
+  padding: 2rem 0.75rem;
   max-width: 30rem;
 `;

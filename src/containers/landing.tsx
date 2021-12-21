@@ -3,7 +3,7 @@ import CanvasContainer from '../components/canvas';
 import {
   FullBleedWrapper,
   Section,
-  Centered,
+  LandingCentered,
   ProfilePicWrapper,
 } from '../components/sections';
 import { LandingCopy } from '../components/heading';
@@ -16,7 +16,7 @@ export default function LandingSection(): JSX.Element {
     >
       <FullBleedWrapper>
         <CanvasContainer />
-        <Centered>
+        <LandingCentered>
           <ProfilePicWrapper>
             <Image
               src='/img/profilepic.png'
@@ -39,7 +39,7 @@ export default function LandingSection(): JSX.Element {
               <span className='coral'>Full Stack Developer</span>
             </h2>
           </LandingCopy>
-        </Centered>
+        </LandingCentered>
       </FullBleedWrapper>
     </Section>
   );
