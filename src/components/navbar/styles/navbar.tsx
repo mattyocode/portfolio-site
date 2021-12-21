@@ -8,6 +8,7 @@ export const Nav = styled.nav`
   left: 0;
   right: 0;
   display: flex;
+  backdrop-filter: blur(10px);
 
   @media screen and (min-width: 425px) {
     justify-content: flex-end;
@@ -28,6 +29,8 @@ export const LinksWrapper = styled.ul`
 
 export const NavLink: StyledComponent<'li', any, {}, never> = styled.li`
   display: block;
+  cursor: pointer;
+  font-weight: bold;
 
   a {
     /* border-right: 1px white solid; */

@@ -1,10 +1,11 @@
 import React from 'react';
 import {
-  CenteredElements,
+  AboutContent,
   ProfilePic,
   SectionContainer,
   SectionBackground,
   ImageWrapper,
+  LandingContent,
 } from './styles/sections';
 
 // interface SectionProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -27,6 +28,7 @@ export const PageWrapper: React.FC<Props> = ({ children, ...restProps }) => {
 type SectionProps = {
   id: string;
   color: string;
+  style?: React.CSSProperties;
   children?: React.ReactNode;
 };
 
@@ -43,7 +45,7 @@ export const Section: React.FC<SectionProps> = ({
 };
 
 type FullBleedProps = {
-  centered: boolean;
+  centered?: boolean;
   children?: React.ReactNode;
 };
 
@@ -59,8 +61,28 @@ export const FullBleedWrapper: React.FC<FullBleedProps> = ({
   );
 };
 
-export const Centered: React.FC<Props> = ({ children, ...restProps }) => {
-  return <CenteredElements {...restProps}>{children}</CenteredElements>;
+type CenteredProps = {
+  children?: React.ReactNode;
+  rowReverse?: boolean;
+};
+
+export const Centered: React.FC<CenteredProps> = ({
+  rowReverse = true,
+  children,
+  ...restProps
+}) => {
+  return (
+    <AboutContent rowReverse={rowReverse} {...restProps}>
+      {children}
+    </AboutContent>
+  );
+};
+
+export const LandingCentered: React.FC<Props> = ({
+  children,
+  ...restProps
+}) => {
+  return <LandingContent {...restProps}>{children}</LandingContent>;
 };
 
 export const ProfilePicWrapper: React.FC<Props> = ({
@@ -69,24 +91,3 @@ export const ProfilePicWrapper: React.FC<Props> = ({
 }) => {
   return <ProfilePic {...restProps}>{children}</ProfilePic>;
 };
-
-// type FullBleedWrapperProps = {
-//   src: string;
-//   alt: string;
-//   objectFit?: ImageProps['objectFit'];
-//   children?: React.ReactNode;
-// };
-
-// export const FullBleedWrapper: React.FC<FullBleedWrapperProps> = ({
-//   src,
-//   alt,
-//   objectFit,
-//   children,
-// }) => {
-//   return (
-//     <ImageWrapper>
-//       <Image src={src} alt={alt} objectFit={objectFit} layout='fill' />
-//       {children}
-//     </ImageWrapper>
-//   );
-// };
