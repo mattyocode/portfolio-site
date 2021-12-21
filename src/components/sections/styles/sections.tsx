@@ -39,7 +39,7 @@ type CenteredProps = {
 
 export const AboutContent = styled.div<CenteredProps>`
   width: 100%;
-  height: 75vh; // 70vh prev
+  height: 65vh; // 70vh prev
   display: flex;
   flex-direction: column;
   justify-content: space-between;

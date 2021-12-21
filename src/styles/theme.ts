@@ -71,5 +71,9 @@ export const GlobalStyles = createGlobalStyle`
     font-family: "Open Sans", sans-serif;
     font-weight: bold;
     margin: 1rem;
+
+    @media screen and (min-width: 1024px) {
+      font-size: 1.1rem;
+    }
   }
 `;

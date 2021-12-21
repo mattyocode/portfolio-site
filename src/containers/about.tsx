@@ -76,18 +76,18 @@ export default function AboutSection(): JSX.Element {
             initial='hidden'
             animate={controls}
             variants={objectVariants}
+            ref={titleRef}
           >
             <FullBleedWrapper centered={false}>
               <motion.div
                 initial='hidden'
                 animate={controls}
                 variants={titleVariants}
-                ref={titleRef}
               >
                 <PageTitle relative={false}>About Me</PageTitle>
               </motion.div>
               <Image
-                src='/img/objectgn.svg'
+                src='/img/objectgn2.svg'
                 alt='green angular structure'
                 layout='fill'
                 objectPosition='top right'
