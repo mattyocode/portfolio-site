@@ -72,7 +72,7 @@ export const GlobalStyles = createGlobalStyle`
     font-weight: bold;
     margin: 1rem;
 
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 1024px) and (min-height: 738px) {
       font-size: 1.1rem;
     }
   }

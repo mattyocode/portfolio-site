@@ -39,7 +39,7 @@ type CenteredProps = {
 
 export const AboutContent = styled.div<CenteredProps>`
   width: 100%;
-  height: 65vh; // 70vh prev
+  height: 80vh; // 70vh prev
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -55,6 +55,9 @@ export const AboutContent = styled.div<CenteredProps>`
     padding: 0 2rem;
     max-width: 880px;
     height: 70vh;
+  }
+
+  @media screen and (min-width: 768px) and (min-height: 738px) {
     overflow-y: hidden;
   }
 
@@ -81,7 +84,7 @@ export const LandingContent = styled.div<CenteredProps>`
   overflow-y: auto; // added
 
   @media screen and (min-width: 768px) {
-    flex-direction: row;
+    flex-direction: row-reverse;
     padding: 0 2rem;
     max-width: 880px;
     height: 60vh;

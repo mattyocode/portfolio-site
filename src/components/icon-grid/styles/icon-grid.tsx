@@ -15,8 +15,8 @@ export const Container = styled.div`
     background: transparent;
   }
 
-  @media screen and (min-width: 768px) {
-    overflow-x: visible;
+  @media screen and (min-width: 768px) and(min-height: 738px) {
+    /* overflow-x: visible; */
   }
 `;
 
@@ -26,12 +26,12 @@ export const Grid = styled.div`
   grid-gap: 0.5rem;
   max-width: 90%;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) and (min-height: 738px) {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 0.5rem;
   }
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1024px) and (min-height: 738px) {
     grid-gap: 1.5rem;
   }
 
@@ -69,7 +69,7 @@ export const IconText = styled.p`
   text-align: center;
   margin-top: 15px;
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1024px) and (min-height: 738px) {
     font-size: 0.7rem;
   }
 `;

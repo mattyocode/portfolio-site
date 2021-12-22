@@ -8,8 +8,10 @@ export const Wrapper = styled.div`
   align-items: center;
   border: 3px #ff8a65 solid;
   border-radius: 5px;
-  margin: 6rem 1rem 1rem;
-  max-width: 30rem;
+  margin: 0 1rem;
+  /* max-width: 30rem; */
+  /* width: 30rem;
+  height: 1rem; */
   background: #373f51;
   filter: drop-shadow(15px 15px 4px #333);
 `;
