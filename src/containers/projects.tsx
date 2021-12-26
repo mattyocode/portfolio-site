@@ -31,10 +31,10 @@ export default function ProjectsSection(): JSX.Element {
           position: 'relative',
           display: 'flex',
           justifyContent: 'center',
-          alignItems: 'flex-end',
+          alignItems: 'center',
           width: '100vw',
           height: '100vh',
-          marginTop: '0rem',
+          marginTop: '3rem',
         }}
       >
         <ProjectCarousel />

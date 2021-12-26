@@ -1,21 +1,22 @@
 import styled, { css } from 'styled-components';
-import { CarouselProvider, Slide, Slider } from 'pure-react-carousel';
+import { CarouselProvider, DotGroup, Slide, Slider } from 'pure-react-carousel';
 
 export const StyledSlide = styled(Slide)`
   .centered {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    /* margin-top: 3rem; */
-    /* top: 10%; */
   }
 `;
 
 export const StyledSlider = styled(Slider)`
   width: 100vw; //75vw;
+  max-width: 1200px;
 
   @media screen and (min-height: 660px) {
-    height: 70vh;
+    height: 75vh;
+    max-height: 560px;
+    max-width: 1200px;
   }
 `;
 
@@ -39,6 +40,7 @@ export const ButtonWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  margin: 15px 0;
 
   @media screen and (min-height: 660px) {
     /* margin-bottom: 5rem; */
@@ -55,5 +57,24 @@ export const ButtonWrapper = styled.div`
     filter: drop-shadow(3px 3px 0 #e79e3c);
     margin: 0 1rem;
     font-size: 1rem;
+  }
+  &:disabled {
+    border: 2px #444 solid;
+  }
+`;
+
+export const StyledDotGroup = styled(DotGroup)`
+  display: flex;
+
+  button {
+    color: white;
+    border: 2px white solid;
+    border-radius: 50%;
+    margin: auto 8px;
+    filter: drop-shadow(2px 2px 0 #e79e3c);
+  }
+  .carousel__dot--selected {
+    border: 2px lightgray solid;
+    filter: drop-shadow(2px 2px 0 purple);
   }
 `;
