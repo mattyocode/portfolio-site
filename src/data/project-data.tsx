@@ -27,4 +27,32 @@ export const projectData = [
     ],
     githubRepo: 'https://github.com/mattyocode/moviechooser-api',
   },
+  {
+    title: 'MOVIECHOOSER_2',
+    linkToSite: 'https://moviechooser.co.uk123',
+    img: '/img/mc-image.jpg',
+    description:
+      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+    icons: [
+      { filename: 'react', label: 'React' },
+      { filename: 'styled-components', label: 'Styled Components' },
+      { filename: 'jest', label: 'Jest' },
+      { filename: 'react-testing-library', label: 'React Testing Library' },
+    ],
+    githubRepo: 'https://github.com/mattyocode/react-moviechooser',
+  },
+  {
+    title: 'MOVIECHOOSER API_2',
+    linkToSite: null,
+    img: '/img/mc-image.jpg',
+    description:
+      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+    icons: [
+      { filename: 'react', label: 'React' },
+      { filename: 'styled-components', label: 'Styled Components' },
+      { filename: 'jest', label: 'Jest' },
+      { filename: 'react-testing-library', label: 'React Testing Library' },
+    ],
+    githubRepo: 'https://github.com/mattyocode/moviechooser-api',
+  },
 ];
