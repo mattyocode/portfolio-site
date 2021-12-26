@@ -10,14 +10,15 @@ export const Wrapper = styled.div`
   border-radius: 5px;
   margin: 0 1rem;
   max-width: 30rem;
-  height: 78vh;
+  height: 74vh;
   max-height: 30rem;
   background: #373f51;
   filter: drop-shadow(15px 15px 4px #333);
 
   @media screen and (min-height: 660px) {
-    padding: 1rem;
-    max-height: 34rem;
+    padding: 0.2rem;
+    height: 75vh;
+    max-height: 32rem;
   }
 `;
 
@@ -39,10 +40,11 @@ export const Title = styled.h3`
 `;
 
 export const BodyCopy = styled.p`
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   margin: 0.5rem 1rem;
 
   @media screen and (min-height: 660px) {
+    font-size: 0.8rem;
     margin: 1rem;
   }
 `;
@@ -67,7 +69,7 @@ export const Icon = styled.img`
   margin: 5px;
   object-fit: contain;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 375px) and (min-height: 660px) {
     width: 30px;
     height: 30px;
   }

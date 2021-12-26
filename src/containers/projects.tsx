@@ -34,6 +34,7 @@ export default function ProjectsSection(): JSX.Element {
           alignItems: 'flex-end',
           width: '100vw',
           height: '100vh',
+          marginTop: '0rem',
         }}
       >
         <ProjectCarousel />

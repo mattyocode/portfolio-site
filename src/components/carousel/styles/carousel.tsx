@@ -1,7 +1,25 @@
 import styled, { css } from 'styled-components';
-import { Slide, Slider } from 'pure-react-carousel';
+import { CarouselProvider, Slide, Slider } from 'pure-react-carousel';
 
 export const StyledSlide = styled(Slide)`
+  .centered {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* margin-top: 3rem; */
+    /* top: 10%; */
+  }
+`;
+
+export const StyledSlider = styled(Slider)`
+  width: 100vw; //75vw;
+
+  @media screen and (min-height: 660px) {
+    height: 70vh;
+  }
+`;
+
+export const StyledProvider = styled(CarouselProvider)`
   .centered {
     display: flex;
     justify-content: center;
@@ -9,12 +27,11 @@ export const StyledSlide = styled(Slide)`
   }
 `;
 
-export const StyledSlider = styled(Slider)`
-  width: 100vw;
-  height: 80vh;
+export const Wrapper = styled.div`
+  margin: 1rem auto;
 
   @media screen and (min-height: 660px) {
-    height: 75vh;
+    margin: 3rem auto;
   }
 `;
 
@@ -22,7 +39,10 @@ export const ButtonWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 0.5rem 0;
+
+  @media screen and (min-height: 660px) {
+    /* margin-bottom: 5rem; */
+  }
 
   button {
     background: none;
