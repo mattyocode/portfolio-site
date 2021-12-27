@@ -6,12 +6,14 @@ export const Nav = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  /* right: 0; */
+  width: 100%;
   display: flex;
   backdrop-filter: blur(10px);
 
   @media screen and (min-width: 425px) {
     justify-content: flex-end;
+    width: 98%;
   }
 `;
 

@@ -13,7 +13,7 @@ export const StyledSlider = styled(Slider)`
   width: 100vw; //75vw;
   max-width: 1200px;
 
-  @media screen and (min-height: 660px) {
+  @media screen and (min-height: 560px) {
     height: 75vh;
     max-height: 560px;
     max-width: 1200px;
@@ -54,7 +54,7 @@ export const ButtonWrapper = styled.div`
     font: inherit;
     cursor: pointer;
     outline: inherit;
-    filter: drop-shadow(3px 3px 0 #e79e3c);
+    filter: drop-shadow(2px 2px 0 #e79e3c);
     margin: 0 1rem;
     font-size: 1rem;
   }

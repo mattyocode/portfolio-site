@@ -8,6 +8,7 @@ import {
   Input,
   Message,
   SubmitButton,
+  CenterButton,
 } from './styles/form';
 
 export default function ContactForm() {
@@ -33,14 +34,14 @@ export default function ContactForm() {
             onChange={() => {}}
           />
 
-          <Label htmlFor='subject'>Subject:</Label>
+          {/* <Label htmlFor='subject'>Subject:</Label>
           <Input
             type='text'
             name='subject'
             // value={'1'}
             // placeholder='Subject'
             onChange={() => {}}
-          />
+          /> */}
 
           <Label htmlFor='message'>Message:</Label>
           <Message
@@ -49,6 +50,9 @@ export default function ContactForm() {
             // placeholder='Message'
             onChange={() => {}}
           ></Message>
+          <CenterButton>
+            <SubmitButton>Send</SubmitButton>
+          </CenterButton>
         </Fields>
       </Base>
     </Wrapper>
