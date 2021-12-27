@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import SendIcon from '../../../public/icons/send.svg';
 
 import {
   Wrapper,
@@ -32,7 +33,7 @@ export default function ContactForm() {
     email: Yup.string()
       .email('Email must be valid')
       .required('Email is required'),
-    message: Yup.string().required('Please include a message in your response'),
+    message: Yup.string().required('Please include a message'),
   });
 
   const formik = useFormik({

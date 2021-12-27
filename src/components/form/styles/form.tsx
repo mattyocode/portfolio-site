@@ -83,7 +83,8 @@ export const FieldError = styled.p`
   font-size: 0.6rem;
   font-weight: bold;
   color: gray;
-  padding: auto 5px;
+  padding: auto 2px;
+
   @media screen and (min-height: 660px) {
     font-size: 0.7rem;
   }
@@ -97,7 +98,11 @@ export const CenterButton = styled.div`
   align-items: center;
 `;
 
-export const SubmitButton = styled.button`
+type SubmitProps = {
+  disabled?: any;
+};
+
+export const SubmitButton = styled.button<SubmitProps>`
   background-color: #59a7bb;
   border: none;
   color: white;
