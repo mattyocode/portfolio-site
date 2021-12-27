@@ -3,10 +3,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 100%;
-  /* height: 100%; */
   max-width: 440px;
-  /* max-height: 560px; */
-  /* max-height: 62vh; */
   margin: 1rem;
   background-color: #eee;
   filter: drop-shadow(5px 5px 0 #ff8a66);
@@ -26,7 +23,6 @@ export const Base = styled.form`
 export const Title = styled.h2`
   margin: 1rem;
   color: #ff8a66;
-  /* filter: drop-shadow(2px 2px 0 #111); */
 `;
 
 export const Fields = styled.div`
@@ -53,14 +49,10 @@ export const Input = styled.input`
   background: transparent;
   border-bottom: 2px solid #ff8a66;
   color: #111;
-  font-size: 0.8rem;
-  /* font-weight: bold; */
+  font-size: 0.9rem;
   height: 2rem;
   line-height: 50px;
-  /* padding: 5px; */
   margin: 2px 8px 5px 8px;
-  /* align-items: baseline;
-  box-sizing: border-box; */
 
   @media screen and (min-height: 660px) {
     font-size: 1rem;
@@ -77,11 +69,23 @@ export const Message = styled.textarea`
   border-bottom: 2px solid #ff8a66;
   min-height: 5rem;
   color: #111;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   resize: none;
+  font-family: 'Open Sans', sans-serif;
 
   @media screen and (min-height: 660px) {
     font-size: 1rem;
+  }
+`;
+
+export const FieldError = styled.p`
+  display: inline;
+  font-size: 0.6rem;
+  font-weight: bold;
+  color: gray;
+  padding: auto 5px;
+  @media screen and (min-height: 660px) {
+    font-size: 0.7rem;
   }
 `;
 
@@ -106,4 +110,12 @@ export const SubmitButton = styled.button`
   font-size: 1rem;
   font-weight: bold;
   filter: drop-shadow(3px 3px 0 #ccc);
+  cursor: pointer;
+
+  &:disabled {
+    background: #444;
+    color: #aaa;
+    filter: drop-shadow(0px 0px 0 #ccc);
+    cursor: not-allowed;
+  }
 `;
