@@ -18,6 +18,7 @@ export const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: "Open Sans", sans-serif;
+    font-style: normal;
     /* height: 100%; */
   }
 
@@ -27,6 +28,7 @@ export const GlobalStyles = createGlobalStyle`
 
   h1 {
     font-family: "Source Sans Pro";
+    font-style: normal;
     font-weight: 900;
     font-size: 3rem;
     filter: drop-shadow(3px 3px 0 #E79E3C)
@@ -34,6 +36,7 @@ export const GlobalStyles = createGlobalStyle`
 
   h2 {
     font-family: "Source Sans Pro";
+    font-style: normal;
     font-weight: 900;
     font-size: 1.5rem;
 
