@@ -3,10 +3,11 @@ import Head from 'next/head';
 
 import { Section, PageWrapper } from '../components/sections';
 import { PageTitle } from '../components/heading';
-import { NavbarContainer } from '../containers/navbar';
+import NavbarContainer from '../containers/navbar';
 import AboutSection from '../containers/about';
 import HomeSection from '../containers/landing';
 import ProjectsSection from '../containers/projects';
+import ContactSection from '../containers/contact';
 
 const Home: NextPage = () => {
   return (
@@ -22,10 +23,11 @@ const Home: NextPage = () => {
           <HomeSection />
           <AboutSection />
           <ProjectsSection />
+          <ContactSection />
 
-          <Section id='contact' color={'#59A7BB'}>
+          {/* <Section id='contact' color={'#59A7BB'}>
             <PageTitle>Contact</PageTitle>
-          </Section>
+          </Section> */}
         </PageWrapper>
       </main>
     </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Links, Navbar, ScrollLink } from '../components/navbar';
 
-export function NavbarContainer() {
+export default function NavbarContainer() {
   return (
     <Navbar>
       <Links>
