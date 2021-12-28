@@ -14,7 +14,7 @@ export const Container = styled.div`
     background: transparent;
   }
 
-  @media screen and (min-width: 768px) and (min-height: 700px) {
+  @media screen and (min-width: 768px) and (min-height: 800px) {
     margin-bottom: 0;
   }
 `;
