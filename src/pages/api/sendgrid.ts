@@ -7,6 +7,7 @@ const toAddress = process.env.TO_EMAIL;
 
 async function sendEmail(req, res) {
   const htmlContent = htmlEmailContent(req);
+  console.log('toAddress >', toAddress);
   try {
     await sgMail.send({
       to: toAddress,
