@@ -52,15 +52,13 @@ export default function AboutSection(): JSX.Element {
     threshold: 0.2,
   });
 
-  console.log('entry >>', titleEntry);
+  // console.log('entry >>', titleEntry);
 
   useEffect(() => {
     if (titleInView) {
-      console.log('in view!!');
       controls.start('visible');
     }
     if (entry && entry.intersectionRatio === 0) {
-      console.log('not in view!!');
       controls.start('hidden');
     }
   }, [controls, titleInView, entry]);

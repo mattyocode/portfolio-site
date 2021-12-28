@@ -34,7 +34,7 @@ export default function ContactForm() {
 
     let data;
     try {
-      console.log('config >>', config);
+      // console.log('config >>', config);
       const response = await fetch('/api/sendgrid/', config);
       console.log('response >>', response);
       data = await response.json();
@@ -47,10 +47,6 @@ export default function ContactForm() {
     }
   };
   const { sendRequest, status, error, data } = useHttp(sendMailRequest);
-
-  console.log('status >>', status);
-  console.log('error >>', error);
-  console.log('data >>', data);
 
   const handleFocus = (e) => {
     setActiveField(e.target.name);
