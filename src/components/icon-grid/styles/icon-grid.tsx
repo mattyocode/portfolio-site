@@ -5,18 +5,17 @@ export const Container = styled.div`
   align-items: center;
   z-index: 99;
   padding: 0 3rem;
-  /* width: 100%; */
   min-height: 20rem;
   padding: 1rem;
   overflow-x: auto;
-  /* background: #4a8f78; */
+  margin-bottom: 3rem;
 
   @media screen and (min-width: 440px) {
     background: transparent;
   }
 
-  @media screen and (min-width: 768px) and(min-height: 738px) {
-    /* overflow-x: visible; */
+  @media screen and (min-width: 768px) and (min-height: 700px) {
+    margin-bottom: 0;
   }
 `;
 
@@ -26,7 +25,7 @@ export const Grid = styled.div`
   grid-gap: 0.5rem;
   max-width: 90%;
 
-  @media screen and (min-width: 768px) and (min-height: 738px) {
+  @media screen and (min-width: 768px) and (min-height: 625px) {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 0.5rem;
   }
