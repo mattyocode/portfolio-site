@@ -36,6 +36,7 @@
     "react-icons": "^4.3.1",
     "react-intersection-observer": "^8.33.0",
     "react-spring": "^9.3.2",
+    "seamless-scroll-polyfill": "^2.1.6",
     "styled-components": "^5.3.3",
     "three": "^0.135.0",
     "three-stdlib": "^2.6.1",

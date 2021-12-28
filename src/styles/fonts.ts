@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyles = createGlobalStyle`
+export const FontStyles = createGlobalStyle`
   /* source-sans-pro-regular - latin */
 @font-face {
   font-family: 'Source Sans Pro';

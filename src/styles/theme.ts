@@ -72,7 +72,7 @@ export const GlobalStyles = createGlobalStyle`
 
   p {
     font-family: "Open Sans", sans-serif;
-    font-weight: bold;
+    /* font-weight: bold; */
     margin: 1rem;
 
     @media screen and (min-width: 1024px) and (min-height: 738px) {
