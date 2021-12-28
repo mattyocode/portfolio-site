@@ -31,7 +31,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
-          <link
+          {/* <link
             rel='preload'
             href='/fonts/source-sans-pro-v18-latin-regular.woff'
             as='font'
@@ -65,7 +65,7 @@ export default class MyDocument extends Document {
             as='font'
             type='font/woff'
             crossOrigin=''
-          />
+          /> */}
         </Head>
         <body>
           <Main />

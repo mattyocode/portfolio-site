@@ -6,6 +6,7 @@ export const GlobalStyles = createGlobalStyle`
   font-family: 'Source Sans Pro';
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src: url('/fonts/source-sans-pro-v18-latin-regular.eot'); /* IE9 Compat Modes */
   src: local(''),
        url('/fonts/source-sans-pro-v18-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -19,6 +20,7 @@ export const GlobalStyles = createGlobalStyle`
   font-family: 'Source Sans Pro';
   font-style: normal;
   font-weight: 900;
+  font-display: swap;
   src: url('/fonts/source-sans-pro-v18-latin-900.eot'); /* IE9 Compat Modes */
   src: local(''),
        url('/fonts/source-sans-pro-v18-latin-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -33,6 +35,7 @@ export const GlobalStyles = createGlobalStyle`
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src: url('/fonts/open-sans-v27-latin-regular.eot'); /* IE9 Compat Modes */
   src: local(''),
        url('/fonts/open-sans-v27-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -46,6 +49,7 @@ export const GlobalStyles = createGlobalStyle`
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 800;
+  font-display: swap;
   src: url('/fonts/open-sans-v27-latin-800.eot'); /* IE9 Compat Modes */
   src: local(''),
        url('/fonts/open-sans-v27-latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -59,6 +63,7 @@ export const GlobalStyles = createGlobalStyle`
   font-family: 'Open Sans';
   font-style: italic;
   font-weight: 600;
+  font-display: swap;
   src: url('/fonts/open-sans-v27-latin-600italic.eot'); /* IE9 Compat Modes */
   src: local(''),
        url('/fonts/open-sans-v27-latin-600italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
