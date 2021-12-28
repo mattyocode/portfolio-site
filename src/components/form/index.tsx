@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import SendIcon from '../../../public/icons/send.svg';
-
+// import SendIcon from '../../../public/icons/send.svg';
+import useHttp from '../../helpers/useHttp';
 import {
   Wrapper,
   Base,
@@ -19,11 +19,42 @@ import {
 export default function ContactForm() {
   const [activeField, setActiveField] = useState(false);
 
+  const sendMailRequest = async ({ name, email, message }) => {
+    const config = {
+      method: 'POST',
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        message: message,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+
+    let data;
+    try {
+      console.log('config >>', config);
+      const response = await fetch('/api/sendgrid/', config);
+      console.log('response >>', response);
+      data = await response.json();
+      if (response.ok) {
+        return data;
+      }
+      throw new Error(response.statusText);
+    } catch (err) {
+      return Promise.reject(err.message ? err.message : data);
+    }
+  };
+  const { sendRequest, status, error, data } = useHttp(sendMailRequest);
+
+  console.log('status >>', status);
+  console.log('error >>', error);
+  console.log('data >>', data);
+
   const handleFocus = (e) => {
     setActiveField(e.target.name);
   };
-
-  const submitHandler = () => {};
 
   const contactSchema = Yup.object().shape({
     name: Yup.string()
@@ -43,7 +74,11 @@ export default function ContactForm() {
       message: '',
     },
     onSubmit: (values) => {
-      submitHandler();
+      sendRequest({
+        name: values.name,
+        email: values.email,
+        message: values.message,
+      });
     },
     validationSchema: contactSchema,
   });
