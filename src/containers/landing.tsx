@@ -11,7 +11,7 @@ import { LandingCopy } from '../components/heading';
 export default function LandingSection(): JSX.Element {
   return (
     <Section
-      id={'home'}
+      id='home'
       color={'linear-gradient(to bottom, #4E6DCA, #7E88C3 70%, #5371CB 90%)'}
     >
       <FullBleedWrapper>

@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { Element } from 'react-scroll';
+
 export const SectionContainer = styled.div`
   scroll-snap-type: y mandatory;
   overflow-y: scroll;

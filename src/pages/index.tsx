@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import { Section, PageWrapper } from '../components/sections';
+import { PageWrapper } from '../components/sections';
 import { PageTitle } from '../components/heading';
 import NavbarContainer from '../containers/navbar';
 import AboutSection from '../containers/about';
@@ -19,15 +19,11 @@ const Home: NextPage = () => {
 
       <main>
         <NavbarContainer />
-        <PageWrapper>
+        <PageWrapper id='pagewrapper'>
           <HomeSection />
           <AboutSection />
           <ProjectsSection />
           <ContactSection />
-
-          {/* <Section id='contact' color={'#59A7BB'}>
-            <PageTitle>Contact</PageTitle>
-          </Section> */}
         </PageWrapper>
       </main>
     </div>

@@ -1,5 +1,6 @@
-import React, { ComponentProps, useCallback } from 'react';
-import NextLink, { LinkProps } from 'next/link';
+import React, { ComponentProps, useEffect, useCallback } from 'react';
+import Link, { LinkProps } from 'next/link';
+import { useRouter } from 'next/router';
 import { LinksWrapper, Nav, NavLink } from './styles/navbar';
 
 interface NavProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -14,10 +15,6 @@ interface NavLinkProps extends React.ComponentPropsWithoutRef<'li'> {
   children?: React.ReactNode;
   href: string;
 }
-
-interface ScrollLinkProps
-  extends Omit<React.HTMLProps<HTMLAnchorElement>, 'href' | 'as'>,
-    LinkProps {}
 
 export const Navbar: React.FC<NavProps> = ({ children, ...restProps }) => {
   return <Nav {...restProps}>{children}</Nav>;
@@ -34,10 +31,14 @@ export const NavbarLink: React.FC<NavLinkProps> = ({
 }) => {
   return (
     <NavLink {...restProps}>
-      <NextLink href={href}>{children}</NextLink>
+      <Link href={href}>{children}</Link>
     </NavLink>
   );
 };
+
+interface ScrollLinkProps
+  extends Omit<React.HTMLProps<HTMLAnchorElement>, 'href' | 'as'>,
+    LinkProps {}
 
 export const ScrollLink: React.FC<ScrollLinkProps> = ({
   children,
@@ -52,43 +53,57 @@ export const ScrollLink: React.FC<ScrollLinkProps> = ({
   target,
   ...anchorProps
 }) => {
-  const handleClick = useCallback(
-    (e) => {
-      if ((href as string).startsWith('#')) {
-        e.preventDefault();
-        const destination = document.querySelector(href as string);
-        if (destination) {
-          destination.scrollIntoView({
-            behavior: 'smooth',
-          });
-        }
-      }
-    },
-    [href]
-  );
+  const handleClick = (e) => {
+    e.preventDefault();
+    const target = e.target.getAttribute('href').replace('/', '');
+    console.log('TARGET >', target);
+    const location = document.querySelector(target).offsetTop;
+    console.log('LOCATION > ', location);
+
+    document.body.style.scrollSnapType = 'none';
+    document.getElementById('pagewrapper').style.scrollSnapType = 'none';
+
+    document.getElementById('pagewrapper').scrollTo({
+      left: 0,
+      top: location,
+      behavior: 'smooth',
+    });
+
+    setTimeout(() => {
+      document.body.style.scrollSnapType = 'y mandatory';
+      document.getElementById('pagewrapper').style.scrollSnapType =
+        'y mandatory';
+      document.getElementById('pagewrapper').scrollTo({
+        left: 0,
+        top: location,
+        behavior: 'smooth',
+      });
+    }, 500);
+  };
+
   return (
-    <NextLink
-      href={href}
-      as={as}
-      replace={replace}
-      scroll={scroll}
-      shallow={shallow}
-      passHref={passHref}
-      prefetch={prefetch}
-      locale={locale}
-    >
-      <NavLink>
+    <NavLink>
+      <Link
+        href={href}
+        as={as}
+        replace={replace}
+        scroll={scroll}
+        shallow={shallow}
+        passHref={passHref}
+        prefetch={prefetch}
+        locale={locale}
+      >
         <a
-          tabIndex={0}
-          target={target}
-          role='link'
+          // tabIndex={0}
+          // target={target}
+          // role='link'
           onClick={handleClick}
           onKeyDown={handleClick}
           {...anchorProps}
         >
           {children}
         </a>
-      </NavLink>
-    </NextLink>
+      </Link>
+    </NavLink>
   );
 };

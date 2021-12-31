@@ -21,8 +21,21 @@ type Props = {
   children?: React.ReactNode;
 };
 
-export const PageWrapper: React.FC<Props> = ({ children, ...restProps }) => {
-  return <SectionContainer {...restProps}>{children}</SectionContainer>;
+type PageWrapperProps = {
+  id: string;
+  children?: React.ReactNode;
+};
+
+export const PageWrapper: React.FC<PageWrapperProps> = ({
+  id,
+  children,
+  ...restProps
+}) => {
+  return (
+    <SectionContainer id={id} {...restProps}>
+      {children}
+    </SectionContainer>
+  );
 };
 
 type SectionProps = {
