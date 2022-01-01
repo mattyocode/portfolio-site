@@ -5,8 +5,8 @@ export const Container = styled.div`
   align-items: center;
   z-index: 99;
   padding: 0 3rem;
-  min-height: 20rem;
-  padding: 1rem;
+  min-height: 18rem;
+  /* padding: 1rem; */
   overflow: auto;
   /* margin-bottom: 1rem; */
 

@@ -51,9 +51,6 @@ export default function ProjectCarousel(): JSX.Element {
             <FaChevronLeft />
           </ButtonBack>
           <StyledDotGroup className='styled' />
-          {/* <Dot slide={0} />
-          <Dot slide={1} />
-          <Dot slide={2} /> */}
           <ButtonNext>
             <FaChevronRight />
           </ButtonNext>

@@ -76,7 +76,7 @@ export default function AboutSection(): JSX.Element {
             variants={objectVariants}
             ref={titleRef}
           >
-            <FullBleedWrapper centered={false}>
+            <FullBleedWrapper centered={true}>
               <motion.div
                 initial='hidden'
                 animate={controls}

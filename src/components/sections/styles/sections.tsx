@@ -42,12 +42,12 @@ type CenteredProps = {
 
 export const AboutContent = styled.div<CenteredProps>`
   width: 100%;
-  height: 90%; // 70vh prev
+  height: 70%; // 70vh prev
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
-  overflow-y: auto; // added
+  overflow-y: scroll; // added
 
   /* @media screen and (min-width: 375px) {
     height: 80vh;

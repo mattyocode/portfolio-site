@@ -21,7 +21,7 @@ export default function ContactSection(): JSX.Element {
           alignItems: 'center',
           width: '100vw',
           height: '100vh',
-          marginTop: '3rem',
+          marginTop: '1rem',
         }}
       >
         <ContactForm />
