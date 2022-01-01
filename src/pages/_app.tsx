@@ -7,7 +7,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   if (typeof window !== 'undefined') {
     console.log('polyfilled');
     smoothscroll.polyfill();
-    // window.__forceSmoothScrollPolyfill__ = true;
   }
   return (
     <>

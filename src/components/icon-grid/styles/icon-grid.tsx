@@ -7,23 +7,27 @@ export const Container = styled.div`
   padding: 0 3rem;
   min-height: 20rem;
   padding: 1rem;
-  overflow-x: auto;
-  margin-bottom: 3rem;
+  overflow: auto;
+  /* margin-bottom: 1rem; */
 
   @media screen and (min-width: 440px) {
     background: transparent;
   }
 
-  @media screen and (min-width: 768px) and (min-height: 800px) {
-    margin-bottom: 0;
+  @media screen and (min-width: 768px) and (min-height: 600px) {
+    /* margin-bottom: 0; */
   }
 `;
 
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 0.5rem;
+  grid-gap: 0.1rem;
   max-width: 90%;
+
+  @media screen and (min-width: 375px) and (min-height: 625px) {
+    grid-gap: 0.3rem;
+  }
 
   @media screen and (min-width: 768px) and (min-height: 625px) {
     grid-template-columns: repeat(3, 1fr);
@@ -53,9 +57,14 @@ export const IconWrapper = styled.div`
 `;
 
 export const Icon = styled.img`
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   object-fit: contain;
+
+  @media screen and (min-width: 768px) {
+    width: 40px;
+    height: 40px;
+  }
 
   @media screen and (min-width: 1024px) {
     width: 45px;

@@ -82,13 +82,13 @@ export default function AboutSection(): JSX.Element {
                 animate={controls}
                 variants={titleVariants}
               >
-                <PageTitle relative={false}>About Me</PageTitle>
+                <PageTitle raised={true}>About Me</PageTitle>
               </motion.div>
               <Image
                 src='/img/objectgn2.svg'
                 alt='green angular structure'
                 layout='fill'
-                objectPosition='top right'
+                objectPosition='right'
                 objectFit='cover'
                 priority
               />

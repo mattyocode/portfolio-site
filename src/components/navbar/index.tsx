@@ -53,33 +53,34 @@ export const ScrollLink: React.FC<ScrollLinkProps> = ({
   target,
   ...anchorProps
 }) => {
-  const handleClick = (e) => {
-    e.preventDefault();
-    const target = e.target.getAttribute('href').replace('/', '');
-    console.log('TARGET >', target);
-    const location = document.querySelector(target).offsetTop;
-    console.log('LOCATION > ', location);
-
-    document.body.style.scrollSnapType = 'none';
-    document.getElementById('pagewrapper').style.scrollSnapType = 'none';
-
-    document.getElementById('pagewrapper').scrollTo({
-      left: 0,
-      top: location,
-      behavior: 'smooth',
-    });
-
-    setTimeout(() => {
-      document.body.style.scrollSnapType = 'y mandatory';
-      document.getElementById('pagewrapper').style.scrollSnapType =
-        'y mandatory';
-      document.getElementById('pagewrapper').scrollTo({
-        left: 0,
-        top: location,
-        behavior: 'smooth',
-      });
-    }, 500);
-  };
+  const handleClick = useCallback(
+    (e) => {
+      if ((href as string).startsWith('#')) {
+        e.preventDefault();
+        const destination = document.querySelector(href as string);
+        if (destination) {
+          document.body.style.scrollSnapType = 'none';
+          document.getElementById('pagewrapper').style.scrollSnapType = 'none';
+          destination.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+            inline: 'center',
+          });
+          setTimeout(() => {
+            document.body.style.scrollSnapType = 'y mandatory';
+            document.getElementById('pagewrapper').style.scrollSnapType =
+              'y mandatory';
+            destination.scrollIntoView({
+              behavior: 'smooth',
+              block: 'center',
+              inline: 'center',
+            });
+          }, 500);
+        }
+      }
+    },
+    [href]
+  );
 
   return (
     <NavLink>

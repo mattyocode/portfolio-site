@@ -6,17 +6,17 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 type PageTitleProps = {
-  relative?: boolean;
+  raised?: boolean;
   children?: React.ReactNode;
 };
 
 export const PageTitle: React.FC<PageTitleProps> = ({
-  relative = true,
+  raised = false,
   children,
   ...restProps
 }) => {
   return (
-    <Title relative={relative} {...restProps}>
+    <Title raised={raised} {...restProps}>
       {children}
     </Title>
   );

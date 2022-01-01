@@ -11,7 +11,7 @@ export default function ContactSection(): JSX.Element {
           position: 'relative',
         }}
       >
-        <PageTitle relative={false}>Contact</PageTitle>
+        <PageTitle>Contact</PageTitle>
       </div>
       <div
         style={{

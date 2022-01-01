@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-
-import Image from 'next/image';
-import { motion, useAnimation } from 'framer-motion';
-import { Centered, Section, FullBleedWrapper } from '../components/sections';
-import { LongCopy, PageTitle } from '../components/heading';
+// import { motion, useAnimation } from 'framer-motion';
+import { Section } from '../components/sections';
+import { PageTitle } from '../components/heading';
 import ProjectCarousel from '../components/carousel';
 
-import { projectData } from '../data/project-data';
+// import { projectData } from '../data/project-data';
 
 export default function ProjectsSection(): JSX.Element {
   return (
@@ -24,7 +22,7 @@ export default function ProjectsSection(): JSX.Element {
           position: 'relative',
         }}
       >
-        <PageTitle relative={false}>Projects</PageTitle>
+        <PageTitle>Projects</PageTitle>
       </div>
       <div
         style={{

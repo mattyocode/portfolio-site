@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Element } from 'react-scroll';
-
 export const SectionContainer = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
-  height: 100vh;
+  height: 100vh; // or 100%?
 `;
 
 type SectionBackgroundProps = { color: string };
@@ -22,7 +23,7 @@ type ImageWrapperProps = { centered: boolean };
 
 export const ImageWrapper = styled.div<ImageWrapperProps>`
   position: relative;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -41,16 +42,16 @@ type CenteredProps = {
 
 export const AboutContent = styled.div<CenteredProps>`
   width: 100%;
-  height: 80vh; // 70vh prev
+  height: 90%; // 70vh prev
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   overflow-y: auto; // added
 
-  @media screen and (min-width: 375px) {
+  /* @media screen and (min-width: 375px) {
     height: 80vh;
-  }
+  } */
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
