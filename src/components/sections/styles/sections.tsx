@@ -45,7 +45,7 @@ export const AboutContent = styled.div<CenteredProps>`
   height: 70%; // 70vh prev
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   align-items: center;
   overflow-y: scroll; // added
 
