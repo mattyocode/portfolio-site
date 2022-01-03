@@ -117,7 +117,7 @@ export const CenteredContent = styled.div`
   height: 100vh;
   margin-top: 1rem;
 
-  @media screen and (min-width: 768px) and (min-height: 700px) {
+  @media screen and (min-width: 400px) and (min-height: 667px) {
     margin-top: 2rem;
   }
 

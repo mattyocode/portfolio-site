@@ -13,6 +13,10 @@ export const Nav = styled.nav`
   @media screen and (min-width: 550px) {
     justify-content: flex-end;
   }
+
+  @media screen and (min-width: 2000px) {
+    justify-content: center;
+  }
 `;
 
 export const LinksWrapper = styled.ul`
@@ -24,6 +28,11 @@ export const LinksWrapper = styled.ul`
 
   @media screen and (min-width: 550px) {
     align-self: flex-end;
+  }
+
+  @media screen and (min-width: 2000px) {
+    max-width: 1000px;
+    justify-content: space-around;
   }
 `;
 

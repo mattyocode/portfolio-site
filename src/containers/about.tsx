@@ -92,7 +92,7 @@ export default function AboutSection(): JSX.Element {
                 src='/img/objectgn2.svg'
                 alt='green angular structure'
                 layout='fill'
-                objectPosition='right'
+                objectPosition='top right'
                 objectFit='cover'
                 priority
               />

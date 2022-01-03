@@ -10,15 +10,18 @@ export const Wrapper = styled.div`
   border-radius: 5px;
   margin: 1rem;
   max-width: 30rem;
-  /* height: 74vh; */
-  max-height: 30rem;
+  height: 100%;
+  /* max-height: 23rem; */
   background: #373f51;
   filter: drop-shadow(15px 15px 4px #333);
 
   @media screen and (min-height: 668px) {
     padding: 0.2rem;
-    /* height: 75vh; */
-    max-height: 32rem;
+    /* max-height: 32rem; */
+  }
+
+  @media screen and (min-height: 730px) {
+    /* max-height: 40rem; */
   }
 `;
 
@@ -34,8 +37,8 @@ export const ImageWrapper = styled.div`
   }
 
   @media screen and (min-height: 730px) {
-    height: 15rem;
-    width: 20rem;
+    height: 14rem;
+    width: 18rem;
   }
 `;
 

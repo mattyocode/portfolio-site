@@ -25,6 +25,11 @@ export const Title = styled.h1<TitleProps>`
     top: ${(props) => (props.raised ? '1rem' : '4rem')};
     left: 5rem;
   }
+
+  @media screen and (min-width: 2000px) {
+    top: ${(props) => (props.raised ? '1rem' : '4rem')};
+    left: 20rem;
+  }
 `;
 
 export const Landing = styled.div`
