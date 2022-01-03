@@ -23,7 +23,6 @@ type ImageWrapperProps = { centered: boolean };
 
 export const ImageWrapper = styled.div<ImageWrapperProps>`
   position: relative;
-  /* min-height: 100vh; */
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -48,10 +47,6 @@ export const AboutContent = styled.div<CenteredProps>`
   justify-content: space-between;
   align-items: center;
   overflow-y: scroll; // added
-
-  /* @media screen and (min-width: 375px) {
-    height: 80vh;
-  } */
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
@@ -110,8 +105,18 @@ export const LandingContent = styled.div<CenteredProps>`
 export const ProfilePic = styled.div`
   width: 250px;
   top: 200px;
+`;
 
-  @media screen and (min-width: 768px) {
-    /* position: relative; */
-  }
+export const CenteredContent = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin-top: 1rem;
+
+  @media screen and (min-height: 700px) {
+    /* margin-top: 2rem; */
+  } ;
 `;

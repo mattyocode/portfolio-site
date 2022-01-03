@@ -14,9 +14,21 @@ export const StyledSlider = styled(Slider)`
   max-width: 1200px;
 
   @media screen and (min-height: 560px) {
-    height: 75vh;
+    height: 70vh;
     max-height: 560px;
     max-width: 1200px;
+  }
+
+  @media screen and (min-height: 660px) {
+    height: 65vh;
+  }
+
+  @media screen and (min-height: 730px) {
+    height: 70vh;
+  }
+
+  @media screen and (min-height: 800px) {
+    height: 65vh;
   }
 `;
 
@@ -40,10 +52,10 @@ export const ButtonWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  /* margin-bottom: 15px; */
+  margin: 0.25rem 0;
 
   @media screen and (min-height: 660px) {
-    /* margin-bottom: 5rem; */
+    margin: 1rem 0;
   }
 
   button {

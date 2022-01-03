@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 // import { motion, useAnimation } from 'framer-motion';
-import { Section } from '../components/sections';
+import { Section, Centered } from '../components/layout';
 import { PageTitle } from '../components/heading';
 import ProjectCarousel from '../components/carousel';
 
@@ -24,19 +24,9 @@ export default function ProjectsSection(): JSX.Element {
       >
         <PageTitle>Projects</PageTitle>
       </div>
-      <div
-        style={{
-          position: 'relative',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          width: '100vw',
-          height: '100vh',
-          marginTop: '2rem',
-        }}
-      >
+      <Centered>
         <ProjectCarousel />
-      </div>
+      </Centered>
     </Section>
   );
 }

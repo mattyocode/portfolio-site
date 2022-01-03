@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import { PageWrapper } from '../components/sections';
+import { PageWrapper } from '../components/layout';
 import { PageTitle } from '../components/heading';
 import NavbarContainer from '../containers/navbar';
 import AboutSection from '../containers/about';

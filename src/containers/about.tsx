@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Centered, Section, FullBleedWrapper } from '../components/sections';
+import { AboutCentered, Section, FullBleedWrapper } from '../components/layout';
 import { LongCopy, PageTitle } from '../components/heading';
 import { ObjectContainer, ObjectWrapper } from '../components/object';
 import IconGrid from '../components/icon-grid';
@@ -96,7 +96,7 @@ export default function AboutSection(): JSX.Element {
                 objectFit='cover'
                 priority
               />
-              <Centered>
+              <AboutCentered>
                 <LongCopy>
                   <p>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -120,7 +120,7 @@ export default function AboutSection(): JSX.Element {
                   </p>
                 </LongCopy>
                 <IconGrid icons={icons} />
-              </Centered>
+              </AboutCentered>
             </FullBleedWrapper>
           </motion.div>
         </ObjectContainer>

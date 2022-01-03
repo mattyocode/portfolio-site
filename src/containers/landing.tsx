@@ -5,7 +5,7 @@ import {
   Section,
   LandingCentered,
   ProfilePicWrapper,
-} from '../components/sections';
+} from '../components/layout';
 import { LandingCopy } from '../components/heading';
 
 export default function LandingSection(): JSX.Element {

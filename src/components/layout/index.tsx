@@ -6,7 +6,8 @@ import {
   SectionBackground,
   ImageWrapper,
   LandingContent,
-} from './styles/sections';
+  CenteredContent,
+} from './styles/layout';
 
 // interface SectionProps extends React.HTMLAttributes<HTMLDivElement> {
 //   children?: React.ReactNode;
@@ -79,7 +80,7 @@ type CenteredProps = {
   rowReverse?: boolean;
 };
 
-export const Centered: React.FC<CenteredProps> = ({
+export const AboutCentered: React.FC<CenteredProps> = ({
   rowReverse = true,
   children,
   ...restProps
@@ -103,4 +104,8 @@ export const ProfilePicWrapper: React.FC<Props> = ({
   ...restProps
 }) => {
   return <ProfilePic {...restProps}>{children}</ProfilePic>;
+};
+
+export const Centered: React.FC<Props> = ({ children, ...restProps }) => {
+  return <CenteredContent {...restProps}>{children}</CenteredContent>;
 };

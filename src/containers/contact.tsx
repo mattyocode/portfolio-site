@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Section } from '../components/sections';
+import { Section, Centered } from '../components/layout';
 import { PageTitle } from '../components/heading';
 import ContactForm from '../components/form';
 
@@ -13,19 +13,9 @@ export default function ContactSection(): JSX.Element {
       >
         <PageTitle>Contact</PageTitle>
       </div>
-      <div
-        style={{
-          position: 'relative',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          width: '100vw',
-          height: '100vh',
-          marginTop: '1rem',
-        }}
-      >
+      <Centered>
         <ContactForm />
-      </div>
+      </Centered>
     </Section>
   );
 }
