@@ -97,7 +97,7 @@ export const ScrollLink: React.FC<ScrollLinkProps> = ({
         <a
           // tabIndex={0}
           // target={target}
-          // role='link'
+          role='link'
           onClick={handleClick}
           onKeyDown={handleClick}
           {...anchorProps}

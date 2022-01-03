@@ -42,6 +42,7 @@ export const PageWrapper: React.FC<PageWrapperProps> = ({
 type SectionProps = {
   id: string;
   color: string;
+  backgroundImage: string;
   style?: React.CSSProperties;
   children?: React.ReactNode;
 };

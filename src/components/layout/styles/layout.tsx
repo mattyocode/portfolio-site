@@ -10,13 +10,15 @@ export const SectionContainer = styled.div`
   height: 100vh; // or 100%?
 `;
 
-type SectionBackgroundProps = { color: string };
+type SectionBackgroundProps = { color: string; backgroundImage?: string };
 
 export const SectionBackground = styled.section<SectionBackgroundProps>`
   height: 100vh;
   display: flex;
   scroll-snap-align: start;
   background: ${(props) => (props.color ? props.color : '#373F51')};
+  background-image: ${(props) =>
+    props.backgroundImage ? props.backgroundImage : ''};
 `;
 
 type ImageWrapperProps = { centered: boolean };

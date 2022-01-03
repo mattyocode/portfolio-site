@@ -58,6 +58,10 @@ export const ButtonWrapper = styled.div`
   margin: 0.5rem 0;
 
   @media screen and (min-height: 660px) {
+    margin: 2rem 0;
+  }
+
+  @media screen and (min-height: 900px) {
     margin: 3rem 0;
   }
 
