@@ -78,8 +78,9 @@ export const ButtonWrapper = styled.div`
     font-size: 1rem;
   }
 
-  &:disabled {
-    border: 2px #444 solid;
+  button:disabled {
+    /* border: 2px #444 solid; */
+    filter: drop-shadow(2px 2px 0 gray);
   }
 `;
 
