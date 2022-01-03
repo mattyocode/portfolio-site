@@ -75,6 +75,7 @@ export const AboutContent = styled.div<CenteredProps>`
 export const LandingContent = styled.div<CenteredProps>`
   width: 100%;
   height: 70vh; // 70vh prev
+  max-height: 32rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -116,7 +117,11 @@ export const CenteredContent = styled.div`
   height: 100vh;
   margin-top: 1rem;
 
-  @media screen and (min-height: 700px) {
-    /* margin-top: 2rem; */
+  @media screen and (min-width: 768px) and (min-height: 700px) {
+    margin-top: 2rem;
+  }
+
+  @media screen and (min-width: 768px) and (min-height: 800px) {
+    margin-top: 3rem;
   } ;
 `;

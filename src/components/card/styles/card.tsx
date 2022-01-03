@@ -28,7 +28,7 @@ export const ImageWrapper = styled.div`
   height: 10rem;
   width: 14rem;
 
-  @media screen and (min-height: 667px) {
+  @media screen and (min-height: 668px) {
     height: 12rem;
     width: 16rem;
   }

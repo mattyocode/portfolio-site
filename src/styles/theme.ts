@@ -27,7 +27,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   h1 {
-    font-family: "Source Sans Pro";
+    font-family: "Source Sans Pro", sans-serif;
     font-style: normal;
     font-weight: 900;
     font-size: 3rem;
@@ -35,7 +35,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   h2 {
-    font-family: "Source Sans Pro";
+    font-family: "Source Sans Pro", sans-serif;
     font-style: normal;
     font-weight: 900;
     font-size: 1.5rem;

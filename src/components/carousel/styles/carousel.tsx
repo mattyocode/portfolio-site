@@ -19,12 +19,12 @@ export const StyledSlider = styled(Slider)`
     max-width: 1200px;
   }
 
-  @media screen and (min-height: 660px) {
+  /* @media screen and (min-height: 668px) {
     height: 65vh;
-  }
+  } */
 
   @media screen and (min-height: 730px) {
-    height: 70vh;
+    height: 80vh;
   }
 
   @media screen and (min-height: 800px) {
@@ -43,7 +43,7 @@ export const StyledProvider = styled(CarouselProvider)`
 export const Wrapper = styled.div`
   margin: 1rem auto;
 
-  @media screen and (min-height: 660px) {
+  @media screen and (min-height: 730px) {
     margin: 3rem auto;
   }
 `;
