@@ -41,10 +41,8 @@ export default function ProjectCard({
         <Image
           src={projectData.img}
           alt='moviechooser website image'
-          width='350'
-          height='250'
-          layout='intrinsic'
-          // objectFit='scale-down'
+          layout='fill'
+          objectFit='cover'
           priority
         />
       </ImageWrapper>

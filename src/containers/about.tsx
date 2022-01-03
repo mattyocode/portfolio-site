@@ -52,8 +52,6 @@ export default function AboutSection(): JSX.Element {
     threshold: 0.2,
   });
 
-  // console.log('entry >>', titleEntry);
-
   useEffect(() => {
     if (titleInView) {
       controls.start('visible');
@@ -63,12 +61,18 @@ export default function AboutSection(): JSX.Element {
     }
   }, [controls, titleInView, entry]);
 
-  let backgroundGradient =
+  useEffect(() => {
+    if (iconsInView) {
+      console.log('about section visible!');
+    }
+  }, [iconsInView]);
+
+  const backgroundGradient =
     'linear-gradient(to bottom, #5371CB, #5580F3 20%, #1F45AD 35%, #122968 60%, #4A8F78 75%, #4A8F78 80%)';
 
   return (
     <Section id='about' color={backgroundGradient}>
-      <ObjectWrapper>
+      <ObjectWrapper ref={iconsRef}>
         <ObjectContainer>
           <motion.div
             initial='hidden'

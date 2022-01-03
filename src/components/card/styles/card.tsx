@@ -8,16 +8,16 @@ export const Wrapper = styled.div`
   align-items: center;
   border: 3px #ff8a65 solid;
   border-radius: 5px;
-  margin: 0 1rem;
+  margin: 1rem;
   max-width: 30rem;
-  height: 74vh;
+  /* height: 74vh; */
   max-height: 30rem;
   background: #373f51;
   filter: drop-shadow(15px 15px 4px #333);
 
-  @media screen and (min-height: 660px) {
+  @media screen and (min-height: 668px) {
     padding: 0.2rem;
-    height: 75vh;
+    /* height: 75vh; */
     max-height: 32rem;
   }
 `;
@@ -25,6 +25,18 @@ export const Wrapper = styled.div`
 export const ImageWrapper = styled.div`
   position: relative;
   margin: 0.5rem;
+  height: 10rem;
+  width: 14rem;
+
+  @media screen and (min-height: 667px) {
+    height: 12rem;
+    width: 16rem;
+  }
+
+  @media screen and (min-height: 730px) {
+    height: 15rem;
+    width: 20rem;
+  }
 `;
 
 export const TextWrapper = styled.div`
@@ -34,7 +46,7 @@ export const TextWrapper = styled.div`
 
 export const Title = styled.h3`
   text-align: center;
-  @media screen and (min-height: 660px) {
+  @media screen and (min-height: 668px) {
     margin: 1rem;
   }
 `;
@@ -43,7 +55,7 @@ export const BodyCopy = styled.p`
   font-size: 0.7rem;
   margin: 0.5rem 1rem;
 
-  @media screen and (min-height: 660px) {
+  @media screen and (min-height: 668px) {
     font-size: 0.8rem;
     margin: 1rem;
   }

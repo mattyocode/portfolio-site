@@ -42,7 +42,6 @@ export default function ProjectCarousel(): JSX.Element {
             projectData.map((project, idx) => (
               <StyledSlide key={idx} index={idx} innerClassName='centered'>
                 <Card projectData={project} />
-                {/* {project.title} */}
               </StyledSlide>
             ))}
         </StyledSlider>

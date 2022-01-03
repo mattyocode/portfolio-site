@@ -32,7 +32,7 @@ export default function ProjectsSection(): JSX.Element {
           alignItems: 'center',
           width: '100vw',
           height: '100vh',
-          marginTop: '1rem',
+          marginTop: '2rem',
         }}
       >
         <ProjectCarousel />

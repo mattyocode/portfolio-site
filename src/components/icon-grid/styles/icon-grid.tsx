@@ -24,6 +24,8 @@ export const Grid = styled.div`
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 0.1rem;
   max-width: 90%;
+  /* justify-items: center;
+  align-items: center; */
 
   @media screen and (min-width: 375px) and (min-height: 625px) {
     grid-gap: 0.3rem;
@@ -51,7 +53,7 @@ export const IconWrapper = styled.div`
   max-height: 80px;
   width: 55px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
 `;
@@ -75,7 +77,9 @@ export const Icon = styled.img`
 export const IconText = styled.p`
   font-size: 0.6rem;
   text-align: center;
-  margin-top: 15px;
+  vertical-align: baseline;
+  /* margin-top: 15px; */
+  margin: 10px;
 
   @media screen and (min-width: 1024px) and (min-height: 738px) {
     font-size: 0.7rem;

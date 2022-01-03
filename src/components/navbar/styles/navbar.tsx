@@ -10,7 +10,7 @@ export const Nav = styled.nav`
   display: flex;
   backdrop-filter: blur(10px);
 
-  @media screen and (min-width: 425px) {
+  @media screen and (min-width: 550px) {
     justify-content: flex-end;
   }
 `;
@@ -20,9 +20,9 @@ export const LinksWrapper = styled.ul`
   justify-content: space-around;
   padding: 0.75rem 1rem;
   width: 100vw;
-  max-width: 425px;
+  max-width: 550px;
 
-  @media screen and (min-width: 425px) {
+  @media screen and (min-width: 550px) {
     align-self: flex-end;
   }
 `;

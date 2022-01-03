@@ -40,7 +40,7 @@ export const ButtonWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 15px 0;
+  /* margin-bottom: 15px; */
 
   @media screen and (min-height: 660px) {
     /* margin-bottom: 5rem; */
