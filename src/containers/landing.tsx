@@ -43,7 +43,7 @@ export default function LandingSection(): JSX.Element {
             </h2>
           </LandingCopy>
         </LandingCentered>
-        {/* <ContactIcons links={ContactLinks} /> */}
+        <ContactIcons links={ContactLinks} />
       </FullBleedWrapper>
     </Section>
   );

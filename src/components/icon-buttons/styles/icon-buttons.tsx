@@ -8,18 +8,18 @@ export const Wrapper = styled.div<WrapperProps>`
   position: ${(props) => (props.centered ? 'relative' : 'absolute')};
   bottom: ${(props) => (props.centered ? '' : '0')};
   display: flex;
-  width: 100%;
-  margin: 1.5rem;
+  width: 90vw;
+  margin: 1.5rem 0;
   align-items: center;
   justify-content: ${(props) => (props.centered ? 'center' : 'flex-end')};
   padding: 0 1rem;
 
   @media screen and (min-height: 660px) {
-    margin: 3rem;
+    margin: 3rem 0;
   }
 
   @media screen and (min-width: 768px) and (min-height: 660px) {
-    margin: 3rem;
+    margin: 3rem 0;
     padding: 0 3rem;
   }
 `;

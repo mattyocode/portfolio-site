@@ -82,7 +82,7 @@ export const AboutContent = styled.div<CenteredProps>`
   justify-content: space-between;
   align-items: center;
   overflow-y: scroll; // added
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
