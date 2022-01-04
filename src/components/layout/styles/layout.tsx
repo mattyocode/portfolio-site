@@ -28,7 +28,6 @@ type ImageWrapperProps = { centered: boolean };
 export const ImageWrapper = styled.div<ImageWrapperProps>`
   position: relative;
   height: 100vh;
-  height: -webkit-fill-available;
   width: 100vw;
   display: flex;
   justify-content: ${(props) => (props.centered ? 'center' : 'flex-end')};
