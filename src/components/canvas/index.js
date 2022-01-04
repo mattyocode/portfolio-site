@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, Suspense, useState } from 'react';
 
-import { Canvas, useThree } from '@react-three/fiber';
+import { Canvas, useThree, MeshProps } from '@react-three/fiber';
 import { useTexture, Cloud, OrbitControls } from '@react-three/drei';
 
 import { CanvasWrapper } from './styles/canvas';
