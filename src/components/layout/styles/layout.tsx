@@ -120,7 +120,6 @@ export const CenteredContent = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
-  height: -webkit-fill-available;
   margin-top: 1rem;
 
   @media screen and (min-width: 400px) and (min-height: 667px) {
