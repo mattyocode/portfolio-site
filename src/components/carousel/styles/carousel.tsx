@@ -29,6 +29,7 @@ export const StyledSlider = styled(Slider)`
   }
 
   @media screen and (min-height: 668px) {
+    margin-top: 5rem;
     max-height: 30rem;
   }
 `;

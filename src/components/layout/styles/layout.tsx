@@ -45,7 +45,7 @@ type CenteredProps = {
 
 export const AboutContent = styled.div<CenteredProps>`
   width: 100%;
-  height: 70%; // 70vh prev
+  height: 60%; // 70% prev
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -119,7 +119,6 @@ export const CenteredContent = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
-  height: -webkit-fill-available;
   margin-top: 1rem;
 
   @media screen and (min-width: 400px) and (min-height: 667px) {
