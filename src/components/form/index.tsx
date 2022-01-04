@@ -34,7 +34,6 @@ export default function ContactForm() {
 
     let data;
     try {
-      // console.log('config >>', config);
       const response = await fetch('/api/sendgrid/', config);
       console.log('response >>', response);
       data = await response.json();
@@ -47,6 +46,10 @@ export default function ContactForm() {
     }
   };
   const { sendRequest, status, error, data } = useHttp(sendMailRequest);
+
+  console.log('status >>', status);
+  console.log('error >>', error);
+  console.log('data >>', data);
 
   const handleFocus = (e) => {
     setActiveField(e.target.name);
@@ -84,8 +87,9 @@ export default function ContactForm() {
     !formik.touched.name ||
     formik.errors.email ||
     !formik.touched.email ||
-    formik.errors.message;
-
+    formik.errors.message ||
+    status === 'pending' ||
+    status === 'succeeded';
   return (
     <Wrapper>
       <Base onSubmit={formik.handleSubmit}>
@@ -139,7 +143,10 @@ export default function ContactForm() {
           ></Message>
           <CenterButton>
             <SubmitButton type='submit' disabled={submitBtnDisabled}>
-              Send
+              {status === 'idle' && 'Send'}
+              {status === 'pending' && 'Sending...'}
+              {status === 'error' && 'Try again'}
+              {status === 'succeeded' && 'Sent!'}
             </SubmitButton>
           </CenterButton>
         </Fields>

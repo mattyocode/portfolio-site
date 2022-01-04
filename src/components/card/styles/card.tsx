@@ -11,17 +11,12 @@ export const Wrapper = styled.div`
   margin: 1rem;
   max-width: 30rem;
   height: 100%;
-  /* max-height: 23rem; */
   background: #373f51;
   filter: drop-shadow(15px 15px 4px #333);
 
   @media screen and (min-height: 668px) {
     padding: 0.2rem;
     /* max-height: 32rem; */
-  }
-
-  @media screen and (min-height: 730px) {
-    /* max-height: 40rem; */
   }
 `;
 
@@ -42,10 +37,7 @@ export const ImageWrapper = styled.div`
   }
 `;
 
-export const TextWrapper = styled.div`
-  /* position: relative; */
-  /* height: 100px; */
-`;
+export const TextWrapper = styled.div``;
 
 export const Title = styled.h3`
   text-align: center;
@@ -72,13 +64,9 @@ export const Footer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0.25rem 0.5rem;
-  /* font-size: 2rem; */
 `;
 
 export const Icon = styled.img`
-  /* width: 25px;
-  height: 25px;
-  margin: 5px; */
   width: 20px;
   height: 20px;
   margin: 5px;

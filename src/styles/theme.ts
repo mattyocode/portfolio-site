@@ -19,7 +19,6 @@ export const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     font-family: "Open Sans", sans-serif;
     font-style: normal;
-    /* height: 100%; */
   }
 
   body {
@@ -31,7 +30,7 @@ export const GlobalStyles = createGlobalStyle`
     font-style: normal;
     font-weight: 900;
     font-size: 3rem;
-    filter: drop-shadow(3px 3px 0 #E79E3C)
+    filter: drop-shadow(3px 3px 0 #FF8A66)
   }
 
   h2 {

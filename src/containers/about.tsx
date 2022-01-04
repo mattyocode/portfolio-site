@@ -72,7 +72,7 @@ export default function AboutSection(): JSX.Element {
 
   return (
     <Section id='about' color={backgroundGradient}>
-      <ObjectWrapper ref={iconsRef}>
+      <ObjectWrapper>
         <ObjectContainer>
           <motion.div
             initial='hidden'

@@ -6,7 +6,10 @@ import {
   LandingCentered,
   ProfilePicWrapper,
 } from '../components/layout';
+import { ContactIcons } from '../components/icon-buttons';
 import { LandingCopy } from '../components/heading';
+
+import { ContactLinks } from '../data/contact-links';
 
 export default function LandingSection(): JSX.Element {
   return (
@@ -30,7 +33,7 @@ export default function LandingSection(): JSX.Element {
           </ProfilePicWrapper>
           <LandingCopy>
             <h2>
-              <span className='coral'>Hi, I'm Matt</span>
+              <span className='coral'>Hi, I&apos;m Matt</span>
             </h2>
             <h2>
               <span className='black'>Brand Strategist turned</span>
@@ -40,6 +43,7 @@ export default function LandingSection(): JSX.Element {
             </h2>
           </LandingCopy>
         </LandingCentered>
+        <ContactIcons links={ContactLinks} />
       </FullBleedWrapper>
     </Section>
   );

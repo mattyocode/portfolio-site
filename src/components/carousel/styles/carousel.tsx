@@ -19,7 +19,7 @@ export const StyledSlider = styled(Slider)`
   max-width: 1200px;
   max-height: 24rem;
 
-  margin-top: 2rem;
+  margin-top: 4rem;
 
   -ms-touch-action: pan-y;
   touch-action: pan-y;

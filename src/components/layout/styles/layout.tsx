@@ -43,39 +43,6 @@ type CenteredProps = {
   rowReverse?: boolean;
 };
 
-export const AboutContent = styled.div<CenteredProps>`
-  width: 100%;
-  height: 60%; // 70% prev
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  overflow-y: scroll; // added
-
-  @media screen and (min-width: 768px) {
-    flex-direction: row;
-    padding: 0 2rem;
-    max-width: 880px;
-    height: 70vh;
-  }
-
-  @media screen and (min-width: 768px) and (min-height: 738px) {
-    overflow-y: hidden;
-  }
-
-  @media screen and (min-width: 1024px) {
-    max-width: 900px;
-  }
-
-  @media screen and (min-width: 1200px) {
-    max-width: 1000px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    max-width: 1050px;
-  }
-`;
-
 export const LandingContent = styled.div<CenteredProps>`
   width: 100%;
   height: 70vh; // 70vh prev
@@ -107,10 +74,49 @@ export const LandingContent = styled.div<CenteredProps>`
   }
 `;
 
+export const AboutContent = styled.div<CenteredProps>`
+  width: 100%;
+  height: 65%; // 70% prev
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow-y: scroll; // added
+  margin-bottom: 4rem;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    padding: 0 2rem;
+    max-width: 880px;
+    height: 70vh;
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 768px) and (min-height: 738px) {
+    overflow-y: hidden;
+  }
+
+  @media screen and (min-width: 1024px) {
+    max-width: 900px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 1000px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    max-width: 1050px;
+  }
+`;
+
 export const ProfilePic = styled.div`
   width: 250px;
   top: 200px;
 `;
+
+// type CenteredContentProps = {
+//   flexColumn?: boolean;
+// };
 
 export const CenteredContent = styled.div`
   position: relative;
@@ -120,7 +126,7 @@ export const CenteredContent = styled.div`
   width: 100vw;
   height: 100vh;
   height: -webkit-fill-available;
-  margin-top: 1rem;
+  margin: 1rem 0;
 
   @media screen and (min-width: 400px) and (min-height: 667px) {
     margin-top: 2rem;
@@ -130,3 +136,21 @@ export const CenteredContent = styled.div`
     margin-top: 3rem;
   } ;
 `;
+
+export const VerticalWrapper = styled.div`
+  width: 80%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+`;
+
+// export const SectionFooter = styled.div`
+//   position: absolute;
+//   bottom: 0;
+//   display: flex;
+//   width: 100%;
+//   margin: 0 auto;
+//   align-items: center;
+//   /* justify-content: space-between; */
+//   padding: 0.25rem 0.5rem;
+// `;

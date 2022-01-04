@@ -7,6 +7,7 @@ import {
   ImageWrapper,
   LandingContent,
   CenteredContent,
+  VerticalWrapper,
 } from './styles/layout';
 
 // interface SectionProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -76,12 +77,12 @@ export const FullBleedWrapper: React.FC<FullBleedProps> = ({
   );
 };
 
-type CenteredProps = {
+type AboutCenteredProps = {
   children?: React.ReactNode;
   rowReverse?: boolean;
 };
 
-export const AboutCentered: React.FC<CenteredProps> = ({
+export const AboutCentered: React.FC<AboutCenteredProps> = ({
   rowReverse = true,
   children,
   ...restProps
@@ -107,6 +108,17 @@ export const ProfilePicWrapper: React.FC<Props> = ({
   return <ProfilePic {...restProps}>{children}</ProfilePic>;
 };
 
-export const Centered: React.FC<Props> = ({ children, ...restProps }) => {
+type CenteredProps = {
+  children: React.ReactNode;
+};
+
+export const Centered: React.FC<CenteredProps> = ({
+  children,
+  ...restProps
+}) => {
   return <CenteredContent {...restProps}>{children}</CenteredContent>;
+};
+
+export const VerticalWrap: React.FC<Props> = ({ children, ...restProps }) => {
+  return <VerticalWrapper {...restProps}>{children}</VerticalWrapper>;
 };
