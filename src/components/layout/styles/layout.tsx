@@ -45,13 +45,14 @@ type CenteredProps = {
 
 export const LandingContent = styled.div<CenteredProps>`
   width: 100%;
-  height: 65vh; // 70vh prev
+  height: 67vh; // 70vh prev
   max-height: 32rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   overflow-y: auto; // added
+  margin-bottom: 5rem;
 
   @media screen and (min-width: 768px) {
     height: 70vh;
@@ -60,6 +61,7 @@ export const LandingContent = styled.div<CenteredProps>`
     max-width: 880px;
     height: 60vh;
     overflow-y: hidden;
+    margin-bottom: 0;
   }
 
   @media screen and (min-width: 1024px) {
