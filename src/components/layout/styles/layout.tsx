@@ -7,13 +7,15 @@ export const SectionContainer = styled.div`
   bottom: 0;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
-  height: 100vh; // or 100%?
+  height: 100vh;
+  height: -webkit-fill-available;
 `;
 
 type SectionBackgroundProps = { color: string; backgroundImage?: string };
 
 export const SectionBackground = styled.section<SectionBackgroundProps>`
   height: 100vh;
+  height: -webkit-fill-available;
   display: flex;
   scroll-snap-align: start;
   background: ${(props) => (props.color ? props.color : '#373F51')};
@@ -26,6 +28,7 @@ type ImageWrapperProps = { centered: boolean };
 export const ImageWrapper = styled.div<ImageWrapperProps>`
   position: relative;
   height: 100vh;
+  height: -webkit-fill-available;
   width: 100vw;
   display: flex;
   justify-content: ${(props) => (props.centered ? 'center' : 'flex-end')};
@@ -117,6 +120,7 @@ export const CenteredContent = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
+  height: -webkit-fill-available;
   margin-top: 1rem;
 
   @media screen and (min-width: 400px) and (min-height: 667px) {
