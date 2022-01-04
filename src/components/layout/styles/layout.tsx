@@ -114,11 +114,11 @@ export const ProfilePic = styled.div`
   top: 200px;
 `;
 
-// type CenteredContentProps = {
-//   flexColumn?: boolean;
-// };
+type CenteredContentProps = {
+  column?: boolean;
+};
 
-export const CenteredContent = styled.div`
+export const CenteredContent = styled.div<CenteredContentProps>`
   position: relative;
   display: flex;
   justify-content: center;
@@ -127,6 +127,10 @@ export const CenteredContent = styled.div`
   height: 100vh;
   height: -webkit-fill-available;
   margin: 1rem 0;
+
+  flex-direction: ${(props) => (props.column ? 'column' : '')};
+  padding: ${(props) => (props.column ? '1rem' : '0')};
+  margin-top: ${(props) => (props.column ? '5rem' : '1rem')};
 
   @media screen and (min-width: 400px) and (min-height: 667px) {
     margin-top: 2rem;
@@ -143,14 +147,3 @@ export const VerticalWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
-// export const SectionFooter = styled.div`
-//   position: absolute;
-//   bottom: 0;
-//   display: flex;
-//   width: 100%;
-//   margin: 0 auto;
-//   align-items: center;
-//   /* justify-content: space-between; */
-//   padding: 0.25rem 0.5rem;
-// `;

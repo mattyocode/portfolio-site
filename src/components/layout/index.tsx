@@ -109,14 +109,20 @@ export const ProfilePicWrapper: React.FC<Props> = ({
 };
 
 type CenteredProps = {
+  column?: boolean;
   children: React.ReactNode;
 };
 
 export const Centered: React.FC<CenteredProps> = ({
+  column = false,
   children,
   ...restProps
 }) => {
-  return <CenteredContent {...restProps}>{children}</CenteredContent>;
+  return (
+    <CenteredContent column={column} {...restProps}>
+      {children}
+    </CenteredContent>
+  );
 };
 
 export const VerticalWrap: React.FC<Props> = ({ children, ...restProps }) => {

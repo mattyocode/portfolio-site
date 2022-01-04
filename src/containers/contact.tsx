@@ -19,9 +19,7 @@ export default function ContactSection(): JSX.Element {
       >
         <PageTitle>Contact</PageTitle>
       </div>
-      <Centered
-        style={{ flexDirection: 'column', padding: '1rem', marginTop: '5rem' }}
-      >
+      <Centered column={true}>
         <ContactForm />
         <ContactIcons
           links={ContactLinks}
