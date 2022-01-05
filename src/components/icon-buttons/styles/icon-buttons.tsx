@@ -6,7 +6,7 @@ type WrapperProps = {
 
 export const Wrapper = styled.div<WrapperProps>`
   position: ${(props) => (props.centered ? 'relative' : 'absolute')};
-  bottom: ${(props) => (props.centered ? '' : '4rem')};
+  bottom: ${(props) => (props.centered ? '' : '5rem')};
   display: flex;
   width: 90vw;
   margin: 1.5rem 0;
@@ -16,7 +16,7 @@ export const Wrapper = styled.div<WrapperProps>`
 
   @media screen and (min-height: 660px) {
     margin: 3rem 0;
-    bottom: ${(props) => (props.centered ? '' : '3rem')};
+    /* bottom: ${(props) => (props.centered ? '' : '3rem')}; */
   }
 
   @media screen and (min-width: 768px) and (min-height: 660px) {
