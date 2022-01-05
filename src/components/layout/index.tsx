@@ -7,7 +7,7 @@ import {
   ImageWrapper,
   LandingContent,
   CenteredContent,
-  VerticalWrapper,
+  RelativeWrapper,
 } from './styles/layout';
 
 type Props = {
@@ -55,27 +55,6 @@ export const Section = React.forwardRef<HTMLDivElement, SectionProps>(
 
 Section.displayName = 'Section';
 
-// type SectionProps = {
-//   id: string;
-//   color: string;
-//   // ref?: React.RefObject<any> | ((node?: Element | null) => void);
-//   backgroundImage?: string;
-//   style?: React.CSSProperties;
-//   children?: React.ReactNode;
-// };
-
-// export const Section: React.FC<SectionProps> = ({
-//   id,
-//   children,
-//   ...restProps
-// }) => {
-//   return (
-//     <SectionBackground id={id} {...restProps}>
-//       {children}
-//     </SectionBackground>
-//   );
-// };
-
 type FullBleedProps = {
   centered?: boolean;
   children?: React.ReactNode;
@@ -93,22 +72,40 @@ export const FullBleedWrapper: React.FC<FullBleedProps> = ({
   );
 };
 
-type AboutCenteredProps = {
+interface AboutCenteredProps extends React.ComponentPropsWithoutRef<'div'> {
   children?: React.ReactNode;
   rowReverse?: boolean;
-};
+}
 
-export const AboutCentered: React.FC<AboutCenteredProps> = ({
-  rowReverse = true,
-  children,
-  ...restProps
-}) => {
+export const AboutCentered = React.forwardRef<
+  HTMLDivElement,
+  AboutCenteredProps
+>(({ rowReverse = true, children, ...restProps }, ref) => {
   return (
-    <AboutContent rowReverse={rowReverse} {...restProps}>
+    <AboutContent ref={ref} rowReverse={rowReverse} {...restProps}>
       {children}
     </AboutContent>
   );
-};
+});
+
+AboutCentered.displayName = 'AboutCentered';
+
+// type AboutCenteredProps = {
+//   children?: React.ReactNode;
+//   rowReverse?: boolean;
+// };
+
+// export const AboutCentered: React.FC<AboutCenteredProps> = ({
+//   rowReverse = true,
+//   children,
+//   ...restProps
+// }) => {
+//   return (
+//     <AboutContent rowReverse={rowReverse} {...restProps}>
+//       {children}
+//     </AboutContent>
+//   );
+// };
 
 export const LandingCentered: React.FC<Props> = ({
   children,
@@ -141,6 +138,6 @@ export const Centered: React.FC<CenteredProps> = ({
   );
 };
 
-export const VerticalWrap: React.FC<Props> = ({ children, ...restProps }) => {
-  return <VerticalWrapper {...restProps}>{children}</VerticalWrapper>;
+export const Relative: React.FC<Props> = ({ children, ...restProps }) => {
+  return <RelativeWrapper {...restProps}>{children}</RelativeWrapper>;
 };

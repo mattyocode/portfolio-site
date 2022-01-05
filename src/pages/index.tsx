@@ -17,27 +17,27 @@ const Home: NextPage = () => {
     ref: landingRef,
     inView: landingInView,
     entry: landingEntry,
-  } = useInView({ threshold: 1 });
+  } = useInView({ threshold: 0.8 });
 
   const {
     ref: aboutRef,
     inView: aboutInView,
     entry: aboutEntry,
-  } = useInView({ threshold: 1 });
+  } = useInView({ threshold: 0.8 });
 
   const {
     ref: projectsRef,
     inView: projectsInView,
     entry: projectsEntry,
-  } = useInView({ threshold: 1 });
+  } = useInView({ threshold: 0.8 });
 
   const {
     ref: contactRef,
     inView: contactInView,
     entry: contactEntry,
-  } = useInView({ threshold: 1 });
+  } = useInView({ threshold: 0.8 });
 
-  console.log('pathname >', router);
+  console.log('active >', activeSection === 'about');
 
   useEffect(() => {
     if (landingInView) {
@@ -65,7 +65,10 @@ const Home: NextPage = () => {
         <NavbarContainer activeSection={activeSection} />
         <PageWrapper id='pagewrapper'>
           <HomeSection navRef={landingRef} />
-          <AboutSection navRef={aboutRef} />
+          <AboutSection
+            navRef={aboutRef}
+            isActive={activeSection === 'about'}
+          />
           <ProjectsSection navRef={projectsRef} />
           <ContactSection navRef={contactRef} />
         </PageWrapper>

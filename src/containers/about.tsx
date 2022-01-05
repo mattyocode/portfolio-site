@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -42,35 +42,35 @@ const objectVariants = {
   },
 };
 
-export default function AboutSection({ navRef }: SectionRefProps): JSX.Element {
+type Props = {
+  navRef: React.RefObject<any> | ((node?: Element | null) => void);
+  isActive: boolean;
+};
+
+export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
+  const contentRef = useRef(null);
   const controls = useAnimation();
   const {
     ref: titleRef,
     inView: titleInView,
     entry: titleEntry,
   } = useInView({ threshold: 0.2 });
-  const {
-    ref: iconsRef,
-    inView: iconsInView,
-    entry,
-  } = useInView({
-    threshold: 0.2,
-  });
 
   useEffect(() => {
     if (titleInView) {
       controls.start('visible');
     }
-    if (entry && entry.intersectionRatio === 0) {
+    if (titleEntry && titleEntry.intersectionRatio === 0) {
       controls.start('hidden');
     }
-  }, [controls, titleInView, entry]);
+  }, [controls, titleInView, titleEntry]);
 
-  // useEffect(() => {
-  //   if (iconsInView) {
-  //     console.log('about section visible!');
-  //   }
-  // }, [iconsInView]);
+  useEffect(() => {
+    if (!isActive) {
+      console.log('NOT ACTIVE');
+      contentRef.current.scrollTop = 0;
+    }
+  }, [isActive]);
 
   const backgroundGradient =
     'linear-gradient(to bottom, #5371CB, #5580F3 20%, #1F45AD 35%, #122968 60%, #4A8F78 75%, #4A8F78 80%)';
@@ -101,7 +101,7 @@ export default function AboutSection({ navRef }: SectionRefProps): JSX.Element {
                 objectFit='cover'
                 priority
               />
-              <AboutCentered>
+              <AboutCentered ref={contentRef}>
                 <LongCopy>
                   <p>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed

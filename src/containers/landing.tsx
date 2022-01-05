@@ -7,7 +7,7 @@ import {
   ProfilePicWrapper,
   SectionRefProps,
 } from '../components/layout';
-import { ContactIcons } from '../components/icon-buttons';
+import { ContactIcons } from '../components/icon-links';
 import { LandingCopy } from '../components/heading';
 
 import { ContactLinks } from '../data/contact-links';

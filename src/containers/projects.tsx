@@ -1,5 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Section, Centered, SectionRefProps } from '../components/layout';
+import {
+  Section,
+  Centered,
+  Relative,
+  SectionRefProps,
+} from '../components/layout';
 import { PageTitle } from '../components/heading';
 import ProjectCarousel from '../components/carousel';
 
@@ -17,13 +22,9 @@ export default function ProjectsSection({
         backgroundSize: '50px 50px',
       }}
     >
-      <div
-        style={{
-          position: 'relative',
-        }}
-      >
+      <Relative>
         <PageTitle>Projects</PageTitle>
-      </div>
+      </Relative>
       <Centered>
         <ProjectCarousel />
       </Centered>

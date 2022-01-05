@@ -82,19 +82,6 @@ export const Icons = styled.div`
   display: flex;
 `;
 
-export const ActionBtns = styled.div`
+export const LinkIcons = styled.div`
   display: flex;
-`;
-
-export const ActionBtn = styled.button`
-  display: inline-block;
-  border: none;
-  text-decoration: none;
-  background: transparent;
-  cursor: pointer;
-
-  /* &:hover {
-    background-color: #0f3030;
-    box-shadow: 0 0 10px 5px #0f3030;
-  } */
 `;

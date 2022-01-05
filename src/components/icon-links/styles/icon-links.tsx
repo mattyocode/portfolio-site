@@ -25,21 +25,17 @@ export const Wrapper = styled.div<WrapperProps>`
   }
 `;
 
-export const ActionBtns = styled.div`
-  display: flex;
-`;
-
-export const ActionBtn = styled.button`
+export const LinkIcon = styled.div`
   display: inline-block;
   border: none;
   text-decoration: none;
   background: transparent;
   cursor: pointer;
 
-  /* &:hover {
-    background-color: #0f3030;
-    box-shadow: 0 0 10px 5px #0f3030;
-  } */
+  &:hover {
+    filter: sepia(79%) saturate(2500%) hue-rotate(290deg) brightness(118%)
+      contrast(119%);
+  }
 `;
 
 export const LargeIcon = styled.img`

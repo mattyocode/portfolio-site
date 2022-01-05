@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  ActionBtn,
-  // ActionBtns,
-  LargeIcon,
-  Wrapper,
-} from './styles/icon-buttons';
+import { LinkIcon, LargeIcon, Wrapper } from './styles/icon-links';
 import { ContactLinksArr, ContactLinkObj } from '../../data/contact-links';
 
 type LargeIconProps = {
@@ -17,17 +12,13 @@ export const LargeIconButton = ({
   iconName,
 }: LargeIconProps): JSX.Element => {
   return (
-    <ActionBtn>
+    <LinkIcon>
       <a href={destination} target={'_blank'} rel='noreferrer'>
         <LargeIcon src={`/icons/${iconName}.svg`} />
       </a>
-    </ActionBtn>
+    </LinkIcon>
   );
 };
-
-// export const IconFooter = ({ children, ...restProps }) => {
-//   return <Wrapper {...restProps}>{children}</Wrapper>;
-// };
 
 type ContactIconProps = {
   links: ContactLinksArr;

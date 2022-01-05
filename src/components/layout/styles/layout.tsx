@@ -144,9 +144,6 @@ export const CenteredContent = styled.div<CenteredContentProps>`
   } ;
 `;
 
-export const VerticalWrapper = styled.div`
-  width: 80%;
-  height: 60%;
-  display: flex;
-  flex-direction: column;
+export const RelativeWrapper = styled.div`
+  position: relative;
 `;

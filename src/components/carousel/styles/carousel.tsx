@@ -6,10 +6,10 @@ export const StyledSlide = styled(Slide)`
     display: flex;
     justify-content: center;
     align-items: center;
-    max-height: 24rem;
+    max-height: 22rem;
 
     @media screen and (min-height: 668px) {
-      max-height: 30rem;
+      max-height: 29rem;
     }
   }
 `;

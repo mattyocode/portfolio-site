@@ -39,6 +39,7 @@ export const LinksWrapper = styled.ul`
 export const NavLink: StyledComponent<'li', any, {}, never> = styled.li`
   display: block;
   cursor: pointer;
+  border-bottom: 2px transparent solid;
 
   @media screen and (min-width: 350px) {
     font-weight: bold;
@@ -50,5 +51,11 @@ export const NavLink: StyledComponent<'li', any, {}, never> = styled.li`
 
   .active {
     border-bottom: 2px #ff8a66 solid;
+    transition: border-bottom 0.5s ease-in-out;
+  }
+
+  &:hover {
+    border-bottom: 2px #aaa solid;
+    transition: border-bottom 0.5s ease-in-out;
   }
 `;

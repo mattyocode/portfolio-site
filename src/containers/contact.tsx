@@ -1,8 +1,13 @@
 import React from 'react';
-import { Section, Centered, SectionRefProps } from '../components/layout';
+import {
+  Section,
+  Centered,
+  Relative,
+  SectionRefProps,
+} from '../components/layout';
 import { PageTitle } from '../components/heading';
 import ContactForm from '../components/form';
-import { ContactIcons } from '../components/icon-buttons';
+import { ContactIcons } from '../components/icon-links';
 
 import { ContactLinks } from '../data/contact-links';
 
@@ -19,13 +24,9 @@ export default function ContactSection({
       color={'#59A7BB'}
       backgroundImage={backgroundImage}
     >
-      <div
-        style={{
-          position: 'relative',
-        }}
-      >
+      <Relative>
         <PageTitle>Contact</PageTitle>
-      </div>
+      </Relative>
       <Centered column={true}>
         <ContactForm />
         <ContactIcons

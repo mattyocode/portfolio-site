@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import {
   Wrapper,
   ImageWrapper,
@@ -10,9 +9,9 @@ import {
   Footer,
   Icon,
   Icons,
-  ActionBtns,
-  ActionBtn,
+  LinkIcons,
 } from './styles/card';
+import { LinkIcon } from '../icon-links/styles/icon-links';
 
 type IconObject = {
   filename: string;
@@ -57,9 +56,9 @@ export default function ProjectCard({
               return <Icon key={idx} src={`/icons/${icon.filename}.svg`} />;
             })}
         </Icons>
-        <ActionBtns>
+        <LinkIcons>
           {projectData.linkToSite && (
-            <ActionBtn>
+            <LinkIcon>
               <a
                 href={projectData.linkToSite}
                 target={'_blank'}
@@ -67,10 +66,10 @@ export default function ProjectCard({
               >
                 <Icon src={'/icons/web-link.svg'} />
               </a>
-            </ActionBtn>
+            </LinkIcon>
           )}
           {projectData.githubRepo && (
-            <ActionBtn>
+            <LinkIcon>
               <a
                 href={projectData.githubRepo}
                 target={'_blank'}
@@ -78,9 +77,9 @@ export default function ProjectCard({
               >
                 <Icon src={'/icons/github.svg'} />
               </a>
-            </ActionBtn>
+            </LinkIcon>
           )}
-        </ActionBtns>
+        </LinkIcons>
       </Footer>
     </Wrapper>
   );
