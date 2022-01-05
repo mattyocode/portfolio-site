@@ -16,10 +16,9 @@ export const Wrapper = styled.div<WrapperProps>`
 
   @media screen and (min-height: 660px) {
     margin: 3rem 0;
-    /* bottom: ${(props) => (props.centered ? '' : '3rem')}; */
   }
 
-  @media screen and (min-width: 768px) and (min-height: 660px) {
+  @media screen and (min-width: 768px) {
     margin: 3rem 0;
     padding: 0 3rem;
     bottom: ${(props) => (props.centered ? '' : '2rem')};
@@ -49,7 +48,7 @@ export const LargeIcon = styled.img`
   margin: 5px;
   object-fit: contain;
 
-  @media screen and (min-width: 768px) and (min-height: 660px) {
+  @media screen and (min-width: 768px) {
     width: 3rem;
     height: 3rem;
     margin: 10px;

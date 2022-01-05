@@ -5,16 +5,20 @@ import {
   Section,
   LandingCentered,
   ProfilePicWrapper,
+  SectionRefProps,
 } from '../components/layout';
 import { ContactIcons } from '../components/icon-buttons';
 import { LandingCopy } from '../components/heading';
 
 import { ContactLinks } from '../data/contact-links';
 
-export default function LandingSection(): JSX.Element {
+export default function LandingSection({
+  navRef,
+}: SectionRefProps): JSX.Element {
   return (
     <Section
       id='home'
+      ref={navRef}
       color={'linear-gradient(to bottom, #4E6DCA, #7E88C3 70%, #5371CB 90%)'}
     >
       <FullBleedWrapper>

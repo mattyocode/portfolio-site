@@ -1,8 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
-import { motion, useAnimation, AnimatePresence } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { AboutCentered, Section, FullBleedWrapper } from '../components/layout';
+import {
+  AboutCentered,
+  Section,
+  FullBleedWrapper,
+  SectionRefProps,
+} from '../components/layout';
 import { LongCopy, PageTitle } from '../components/heading';
 import { ObjectContainer, ObjectWrapper } from '../components/object';
 import IconGrid from '../components/icon-grid';
@@ -37,7 +42,7 @@ const objectVariants = {
   },
 };
 
-export default function AboutSection(): JSX.Element {
+export default function AboutSection({ navRef }: SectionRefProps): JSX.Element {
   const controls = useAnimation();
   const {
     ref: titleRef,
@@ -61,17 +66,17 @@ export default function AboutSection(): JSX.Element {
     }
   }, [controls, titleInView, entry]);
 
-  useEffect(() => {
-    if (iconsInView) {
-      console.log('about section visible!');
-    }
-  }, [iconsInView]);
+  // useEffect(() => {
+  //   if (iconsInView) {
+  //     console.log('about section visible!');
+  //   }
+  // }, [iconsInView]);
 
   const backgroundGradient =
     'linear-gradient(to bottom, #5371CB, #5580F3 20%, #1F45AD 35%, #122968 60%, #4A8F78 75%, #4A8F78 80%)';
 
   return (
-    <Section id='about' color={backgroundGradient}>
+    <Section ref={navRef} id='about' color={backgroundGradient}>
       <ObjectWrapper>
         <ObjectContainer>
           <motion.div

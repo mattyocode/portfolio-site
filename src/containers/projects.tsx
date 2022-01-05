@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
-// import { motion, useAnimation } from 'framer-motion';
-import { Section, Centered } from '../components/layout';
+import { Section, Centered, SectionRefProps } from '../components/layout';
 import { PageTitle } from '../components/heading';
 import ProjectCarousel from '../components/carousel';
 
-// import { projectData } from '../data/project-data';
-
-export default function ProjectsSection(): JSX.Element {
+export default function ProjectsSection({
+  navRef,
+}: SectionRefProps): JSX.Element {
   return (
     <Section
       id='projects'
+      ref={navRef}
       color={'#373F51'}
       style={{
         backgroundImage:

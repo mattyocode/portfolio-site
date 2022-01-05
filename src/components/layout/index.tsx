@@ -10,15 +10,6 @@ import {
   VerticalWrapper,
 } from './styles/layout';
 
-// interface SectionProps extends React.HTMLAttributes<HTMLDivElement> {
-//   children?: React.ReactNode;
-// }
-
-// interface SectionBackgroundProps extends React.HTMLAttributes<HTMLDivElement> {
-//   color: string;
-//   children?: React.ReactNode;
-// }
-
 type Props = {
   children?: React.ReactNode;
 };
@@ -40,25 +31,50 @@ export const PageWrapper: React.FC<PageWrapperProps> = ({
   );
 };
 
-type SectionProps = {
+interface SectionProps extends React.ComponentPropsWithoutRef<'div'> {
   id: string;
   color: string;
   backgroundImage?: string;
   style?: React.CSSProperties;
   children?: React.ReactNode;
+}
+
+export type SectionRefProps = {
+  navRef: React.RefObject<any> | ((node?: Element | null) => void);
 };
 
-export const Section: React.FC<SectionProps> = ({
-  id,
-  children,
-  ...restProps
-}) => {
-  return (
-    <SectionBackground id={id} {...restProps}>
-      {children}
-    </SectionBackground>
-  );
-};
+export const Section = React.forwardRef<HTMLDivElement, SectionProps>(
+  ({ id, color, ...restProps }, ref) => {
+    return (
+      <SectionBackground ref={ref} id={id} color={color} {...restProps}>
+        {restProps.children}
+      </SectionBackground>
+    );
+  }
+);
+
+Section.displayName = 'Section';
+
+// type SectionProps = {
+//   id: string;
+//   color: string;
+//   // ref?: React.RefObject<any> | ((node?: Element | null) => void);
+//   backgroundImage?: string;
+//   style?: React.CSSProperties;
+//   children?: React.ReactNode;
+// };
+
+// export const Section: React.FC<SectionProps> = ({
+//   id,
+//   children,
+//   ...restProps
+// }) => {
+//   return (
+//     <SectionBackground id={id} {...restProps}>
+//       {children}
+//     </SectionBackground>
+//   );
+// };
 
 type FullBleedProps = {
   centered?: boolean;

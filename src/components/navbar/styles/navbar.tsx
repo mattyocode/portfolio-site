@@ -47,4 +47,8 @@ export const NavLink: StyledComponent<'li', any, {}, never> = styled.li`
   a {
     text-decoration: none;
   }
+
+  .active {
+    border-bottom: 2px #ff8a66 solid;
+  }
 `;
