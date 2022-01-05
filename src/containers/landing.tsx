@@ -22,7 +22,7 @@ export default function LandingSection(): JSX.Element {
         <LandingCentered>
           <ProfilePicWrapper>
             <Image
-              src='/img/profilepic.png'
+              src='/img/profilepicgn.png'
               alt='illustration of site author'
               width='250'
               height='250'
