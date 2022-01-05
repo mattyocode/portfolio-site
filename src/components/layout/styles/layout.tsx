@@ -84,7 +84,7 @@ export const AboutContent = styled.div<CenteredProps>`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  overflow-y: scroll; // added
+  overflow-y: auto; // added
   margin-bottom: 6rem;
 
   @media screen and (min-width: 768px) {
@@ -93,11 +93,12 @@ export const AboutContent = styled.div<CenteredProps>`
     max-width: 880px;
     height: 70vh;
     margin-bottom: 0;
-  }
-
-  @media screen and (min-width: 768px) and (min-height: 738px) {
     overflow-y: hidden;
   }
+
+  /* @media screen and (min-width: 768px) and (min-height: 738px) {
+    overflow-y: hidden;
+  } */
 
   @media screen and (min-width: 1024px) {
     max-width: 900px;
