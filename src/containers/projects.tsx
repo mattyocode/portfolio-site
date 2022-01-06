@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
-import {
-  Section,
-  Centered,
-  Relative,
-  SectionRefProps,
-} from '../components/layout';
+import { Section, Centered, Relative } from '../components/layout';
 import { PageTitle } from '../components/heading';
 import ProjectCarousel from '../components/carousel';
+import { ProjectDataObject, SectionNavRef } from '../types';
 
 export default function ProjectsSection({
+  projectData,
   navRef,
-}: SectionRefProps): JSX.Element {
+}: {
+  projectData: ProjectDataObject[];
+  navRef: React.Ref<HTMLDivElement>;
+}): JSX.Element {
   return (
     <Section
       id='projects'
@@ -26,7 +26,7 @@ export default function ProjectsSection({
         <PageTitle>Projects</PageTitle>
       </Relative>
       <Centered>
-        <ProjectCarousel />
+        <ProjectCarousel projectData={projectData} />
       </Centered>
     </Section>
   );

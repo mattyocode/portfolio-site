@@ -1,16 +1,13 @@
 import React from 'react';
 import { LinkIcon, LargeIcon, Wrapper } from './styles/icon-links';
-import { ContactLinksArr, ContactLinkObj } from '../../data/contact-links';
-
-type LargeIconProps = {
-  destination: string;
-  iconName: string;
-};
 
 export const LargeIconButton = ({
   destination,
   iconName,
-}: LargeIconProps): JSX.Element => {
+}: {
+  destination: string;
+  iconName: string;
+}): JSX.Element => {
   return (
     <LinkIcon>
       <a href={destination} target={'_blank'} rel='noreferrer'>
@@ -20,12 +17,21 @@ export const LargeIconButton = ({
   );
 };
 
-type ContactIconProps = {
-  links: ContactLinksArr;
-  centered?: boolean;
+export type ContactLinkObj = {
+  name: string;
+  destination: string;
 };
 
-export const ContactIcons = ({ links, centered = false, ...restProps }) => {
+export const ContactIcons = ({
+  links,
+  centered = false,
+  margin = null,
+  ...restProps
+}: {
+  links: ContactLinkObj[];
+  centered?: boolean;
+  margin?: number;
+}): JSX.Element => {
   return (
     <Wrapper centered={centered} {...restProps}>
       {links.map((link: ContactLinkObj, idx: number) => {

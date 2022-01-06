@@ -16,7 +16,6 @@ export const Wrapper = styled.div`
 
   @media screen and (min-height: 668px) {
     padding: 0.2rem;
-    /* max-height: 32rem; */
   }
 `;
 

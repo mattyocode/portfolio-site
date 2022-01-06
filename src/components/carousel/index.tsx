@@ -13,9 +13,13 @@ import {
 import Card from '../card';
 import useWindowDimensions from '../../helpers/useWindowDimensions';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { projectData } from '../../data/project-data';
+import { ProjectDataObject } from '../../types';
 
-export default function ProjectCarousel(): JSX.Element {
+export default function ProjectCarousel({
+  projectData,
+}: {
+  projectData: ProjectDataObject[];
+}): JSX.Element {
   const { width } = useWindowDimensions();
   const numSlidesRef: MutableRefObject<number> = useRef();
   let numSlides: number = 1;

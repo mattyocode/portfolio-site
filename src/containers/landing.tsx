@@ -5,16 +5,14 @@ import {
   Section,
   LandingCentered,
   ProfilePicWrapper,
-  SectionRefProps,
 } from '../components/layout';
 import { ContactIcons } from '../components/icon-links';
 import { LandingCopy } from '../components/heading';
 
+import { SectionNavRef } from '../types';
 import { ContactLinks } from '../data/contact-links';
 
-export default function LandingSection({
-  navRef,
-}: SectionRefProps): JSX.Element {
+export default function LandingSection({ navRef }: SectionNavRef): JSX.Element {
   return (
     <Section
       id='home'

@@ -1,3 +1,4 @@
+import { NextApiRequest, NextApiResponse } from 'next';
 import sgMail from '@sendgrid/mail';
 import { htmlEmailContent } from '../../data/html-email';
 
@@ -5,7 +6,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const toAddress = process.env.TO_EMAIL;
 
-async function sendEmail(req, res) {
+async function sendEmail(req: NextApiRequest, res: NextApiResponse) {
   const htmlContent = htmlEmailContent(req);
   try {
     await sgMail.send({

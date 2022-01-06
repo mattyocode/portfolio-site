@@ -6,16 +6,10 @@ export const Container = styled.div`
   z-index: 99;
   padding: 0 3rem;
   min-height: 18rem;
-  /* padding: 1rem; */
   overflow: auto;
-  /* margin-bottom: 1rem; */
 
   @media screen and (min-width: 440px) {
     background: transparent;
-  }
-
-  @media screen and (min-width: 768px) and (min-height: 600px) {
-    /* margin-bottom: 0; */
   }
 `;
 
@@ -24,8 +18,6 @@ export const Grid = styled.div`
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 0.1rem;
   max-width: 90%;
-  /* justify-items: center;
-  align-items: center; */
 
   @media screen and (min-width: 375px) and (min-height: 625px) {
     grid-gap: 0.3rem;
@@ -78,7 +70,6 @@ export const IconText = styled.p`
   font-size: 0.6rem;
   text-align: center;
   vertical-align: baseline;
-  /* margin-top: 15px; */
   margin: 10px;
 
   @media screen and (min-width: 1024px) and (min-height: 738px) {

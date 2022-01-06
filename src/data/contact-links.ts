@@ -8,12 +8,3 @@ export const ContactLinks = [
     destination: 'https://www.linkedin.com/in/matthew--oliver/',
   },
 ];
-
-export type ContactLinkObj = {
-  name: string;
-  destination: string;
-};
-
-export type ContactLinksArr = {
-  [key: string]: ContactLinkObj;
-};

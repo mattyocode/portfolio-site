@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, FocusEvent } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 // import SendIcon from '../../../public/icons/send.svg';
@@ -16,10 +16,18 @@ import {
   CenterButton,
 } from './styles/form';
 
-export default function ContactForm() {
-  const [activeField, setActiveField] = useState(false);
+export default function ContactForm(): JSX.Element {
+  const [activeField, setActiveField] = useState<string | null>(null);
 
-  const sendMailRequest = async ({ name, email, message }) => {
+  const sendMailRequest = async ({
+    name,
+    email,
+    message,
+  }: {
+    name: string;
+    email: string;
+    message: string;
+  }) => {
     const config = {
       method: 'POST',
       body: JSON.stringify({
@@ -32,10 +40,12 @@ export default function ContactForm() {
       },
     };
 
-    let data;
+    let data: {
+      detail: string;
+    };
+
     try {
       const response = await fetch('/api/sendgrid/', config);
-      console.log('response >>', response);
       data = await response.json();
       if (response.ok) {
         return data;
@@ -45,13 +55,12 @@ export default function ContactForm() {
       return Promise.reject(err.message ? err.message : data);
     }
   };
+
   const { sendRequest, status, error, data } = useHttp(sendMailRequest);
 
-  console.log('status >>', status);
-  console.log('error >>', error);
-  console.log('data >>', data);
-
-  const handleFocus = (e) => {
+  const handleFocus = (
+    e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setActiveField(e.target.name);
   };
 

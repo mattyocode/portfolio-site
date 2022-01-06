@@ -51,7 +51,7 @@ export const LandingContent = styled.div<CenteredProps>`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  overflow-y: auto; // added
+  overflow-y: auto;
   margin-bottom: 5rem;
 
   @media screen and (min-width: 768px) {
@@ -84,7 +84,7 @@ export const AboutContent = styled.div<CenteredProps>`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  overflow-y: auto; // added
+  overflow-y: auto;
   margin-bottom: 6rem;
 
   @media screen and (min-width: 768px) {
@@ -95,10 +95,6 @@ export const AboutContent = styled.div<CenteredProps>`
     margin-bottom: 0;
     overflow-y: hidden;
   }
-
-  /* @media screen and (min-width: 768px) and (min-height: 738px) {
-    overflow-y: hidden;
-  } */
 
   @media screen and (min-width: 1024px) {
     max-width: 900px;

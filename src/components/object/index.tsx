@@ -1,9 +1,19 @@
 import { Wrapper, Container } from './styles/object';
 
-export function ObjectWrapper({ children, ...restProps }) {
-  return <Wrapper {...restProps}>{children}</Wrapper>;
-}
+type Props = {
+  children: React.ReactNode;
+};
 
-export function ObjectContainer({ children, ...restProps }) {
+export const ObjectWrapper = ({
+  children,
+  ...restProps
+}: Props): JSX.Element => {
+  return <Wrapper {...restProps}>{children}</Wrapper>;
+};
+
+export const ObjectContainer = ({
+  children,
+  ...restProps
+}: Props): JSX.Element => {
   return <Container {...restProps}>{children}</Container>;
-}
+};

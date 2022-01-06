@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 type WrapperProps = {
   centered?: boolean;
+  margin?: number;
 };
 
 export const Wrapper = styled.div<WrapperProps>`
@@ -9,6 +10,7 @@ export const Wrapper = styled.div<WrapperProps>`
   bottom: ${(props) => (props.centered ? '' : '5rem')};
   display: flex;
   width: 90vw;
+  margin: ${(props) => (props.margin ? props.margin : '1.5rem 0')};
   margin: 1.5rem 0;
   align-items: center;
   justify-content: ${(props) => (props.centered ? 'center' : 'flex-end')};

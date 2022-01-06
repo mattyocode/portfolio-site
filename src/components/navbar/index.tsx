@@ -1,34 +1,27 @@
-import React, { ComponentProps, useEffect, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import Link, { LinkProps } from 'next/link';
-import { useRouter } from 'next/router';
 import { LinksWrapper, Nav, NavLink } from './styles/navbar';
 
-interface NavProps extends React.HTMLAttributes<HTMLDivElement> {
-  children?: React.ReactNode;
-}
+type Props = {
+  children: React.ReactNode;
+};
 
-interface LinksProps extends React.ComponentPropsWithoutRef<'ul'> {
-  children?: React.ReactNode;
-}
-
-interface NavLinkProps extends React.ComponentPropsWithoutRef<'li'> {
-  children?: React.ReactNode;
-  href: string;
-}
-
-export const Navbar: React.FC<NavProps> = ({ children, ...restProps }) => {
+export const Navbar = ({ children, ...restProps }: Props): JSX.Element => {
   return <Nav {...restProps}>{children}</Nav>;
 };
 
-export const Links: React.FC<LinksProps> = ({ children, ...restProps }) => {
+export const Links = ({ children, ...restProps }: Props): JSX.Element => {
   return <LinksWrapper {...restProps}>{children}</LinksWrapper>;
 };
 
-export const NavbarLink: React.FC<NavLinkProps> = ({
+export const NavbarLink = ({
   href,
   children,
   ...restProps
-}) => {
+}: {
+  href: string;
+  children: React.ReactNode;
+}): JSX.Element => {
   return (
     <NavLink {...restProps}>
       <Link href={href}>{children}</Link>
@@ -52,7 +45,7 @@ export const ScrollLink: React.FC<ScrollLinkProps> = ({
   locale,
   target,
   ...anchorProps
-}) => {
+}: ScrollLinkProps): JSX.Element => {
   const handleClick = useCallback(
     (e) => {
       if ((href as string).startsWith('#')) {

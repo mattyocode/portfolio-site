@@ -10,8 +10,6 @@ export const Container = styled.div`
   position: relative;
   top: 1rem;
   left: 0;
-
-  /* overflow: scroll; */
   overflow: hidden;
   z-index: 20;
 

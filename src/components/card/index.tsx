@@ -12,28 +12,13 @@ import {
   LinkIcons,
 } from './styles/card';
 import { LinkIcon } from '../icon-links/styles/icon-links';
-
-type IconObject = {
-  filename: string;
-  label: string;
-};
-
-type ProjectCardObject = {
-  title: string;
-  linkToSite: string;
-  img: string;
-  description: string;
-  icons: Array<IconObject>;
-  githubRepo: string;
-};
-
-type ProjectCardProps = {
-  projectData: ProjectCardObject;
-};
+import { ProjectDataObject } from '../../types';
 
 export default function ProjectCard({
   projectData,
-}: ProjectCardProps): JSX.Element {
+}: {
+  projectData: ProjectDataObject;
+}): JSX.Element {
   return (
     <Wrapper>
       <ImageWrapper>

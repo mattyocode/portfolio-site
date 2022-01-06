@@ -5,7 +5,6 @@ import { FontStyles } from '../styles/fonts';
 
 function MyApp({ Component, pageProps }: AppProps) {
   if (typeof window !== 'undefined') {
-    console.log('polyfilled');
     smoothscroll.polyfill();
   }
   return (

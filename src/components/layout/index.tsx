@@ -14,16 +14,14 @@ type Props = {
   children?: React.ReactNode;
 };
 
-type PageWrapperProps = {
-  id: string;
-  children?: React.ReactNode;
-};
-
-export const PageWrapper: React.FC<PageWrapperProps> = ({
+export const PageWrapper = ({
   id,
   children,
   ...restProps
-}) => {
+}: {
+  id: string;
+  children?: React.ReactNode;
+}): JSX.Element => {
   return (
     <SectionContainer id={id} {...restProps}>
       {children}
@@ -39,10 +37,6 @@ interface SectionProps extends React.ComponentPropsWithoutRef<'div'> {
   children?: React.ReactNode;
 }
 
-export type SectionRefProps = {
-  navRef: React.RefObject<any> | ((node?: Element | null) => void);
-};
-
 export const Section = React.forwardRef<HTMLDivElement, SectionProps>(
   ({ id, color, ...restProps }, ref) => {
     return (
@@ -55,16 +49,14 @@ export const Section = React.forwardRef<HTMLDivElement, SectionProps>(
 
 Section.displayName = 'Section';
 
-type FullBleedProps = {
-  centered?: boolean;
-  children?: React.ReactNode;
-};
-
-export const FullBleedWrapper: React.FC<FullBleedProps> = ({
+export const FullBleedWrapper = ({
   centered = true,
   children,
   ...restProps
-}) => {
+}: {
+  centered?: boolean;
+  children?: React.ReactNode;
+}): JSX.Element => {
   return (
     <ImageWrapper centered={centered} {...restProps}>
       {children}
@@ -90,47 +82,28 @@ export const AboutCentered = React.forwardRef<
 
 AboutCentered.displayName = 'AboutCentered';
 
-// type AboutCenteredProps = {
-//   children?: React.ReactNode;
-//   rowReverse?: boolean;
-// };
-
-// export const AboutCentered: React.FC<AboutCenteredProps> = ({
-//   rowReverse = true,
-//   children,
-//   ...restProps
-// }) => {
-//   return (
-//     <AboutContent rowReverse={rowReverse} {...restProps}>
-//       {children}
-//     </AboutContent>
-//   );
-// };
-
-export const LandingCentered: React.FC<Props> = ({
+export const LandingCentered = ({
   children,
   ...restProps
-}) => {
+}: Props): JSX.Element => {
   return <LandingContent {...restProps}>{children}</LandingContent>;
 };
 
-export const ProfilePicWrapper: React.FC<Props> = ({
+export const ProfilePicWrapper = ({
   children,
   ...restProps
-}) => {
+}: Props): JSX.Element => {
   return <ProfilePic {...restProps}>{children}</ProfilePic>;
 };
 
-type CenteredProps = {
-  column?: boolean;
-  children: React.ReactNode;
-};
-
-export const Centered: React.FC<CenteredProps> = ({
+export const Centered = ({
   column = false,
   children,
   ...restProps
-}) => {
+}: {
+  column?: boolean;
+  children: React.ReactNode;
+}): JSX.Element => {
   return (
     <CenteredContent column={column} {...restProps}>
       {children}
@@ -138,6 +111,6 @@ export const Centered: React.FC<CenteredProps> = ({
   );
 };
 
-export const Relative: React.FC<Props> = ({ children, ...restProps }) => {
+export const Relative = ({ children, ...restProps }: Props): JSX.Element => {
   return <RelativeWrapper {...restProps}>{children}</RelativeWrapper>;
 };

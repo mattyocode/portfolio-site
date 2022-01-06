@@ -2,16 +2,12 @@ import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import {
-  AboutCentered,
-  Section,
-  FullBleedWrapper,
-  SectionRefProps,
-} from '../components/layout';
+import useWindowDimensions from '../helpers/useWindowDimensions';
+import { AboutCentered, Section, FullBleedWrapper } from '../components/layout';
 import { LongCopy, PageTitle } from '../components/heading';
 import { ObjectContainer, ObjectWrapper } from '../components/object';
 import IconGrid from '../components/icon-grid';
-import { icons } from '../components/icon-grid/icon-data';
+import { icons } from '../data/icons';
 
 const titleVariants = {
   hidden: {
@@ -55,6 +51,7 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
     inView: titleInView,
     entry: titleEntry,
   } = useInView({ threshold: 0.2 });
+  const { width } = useWindowDimensions();
 
   useEffect(() => {
     if (titleInView) {
@@ -66,11 +63,10 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
   }, [controls, titleInView, titleEntry]);
 
   useEffect(() => {
-    if (!isActive) {
-      console.log('NOT ACTIVE');
+    if (!isActive && width < 768) {
       contentRef.current.scrollTop = 0;
     }
-  }, [isActive]);
+  }, [isActive, width]);
 
   const backgroundGradient =
     'linear-gradient(to bottom, #5371CB, #5580F3 20%, #1F45AD 35%, #122968 60%, #4A8F78 75%, #4A8F78 80%)';

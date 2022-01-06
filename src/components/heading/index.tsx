@@ -1,20 +1,16 @@
 import React from 'react';
 import { Title, Landing, BodyCopy } from './styles/heading';
 
-interface Props extends React.HTMLAttributes<HTMLDivElement> {
-  children: React.ReactNode;
-}
-
 type PageTitleProps = {
   raised?: boolean;
   children?: React.ReactNode;
 };
 
-export const PageTitle: React.FC<PageTitleProps> = ({
+export const PageTitle = ({
   raised = false,
   children,
   ...restProps
-}) => {
+}: PageTitleProps): JSX.Element => {
   return (
     <Title raised={raised} {...restProps}>
       {children}
@@ -22,10 +18,10 @@ export const PageTitle: React.FC<PageTitleProps> = ({
   );
 };
 
-export const LandingCopy: React.FC<Props> = ({ children, ...restProps }) => {
+export const LandingCopy = ({ children, ...restProps }): JSX.Element => {
   return <Landing {...restProps}>{children}</Landing>;
 };
 
-export const LongCopy: React.FC<Props> = ({ children, ...restProps }) => {
+export const LongCopy = ({ children, ...restProps }): JSX.Element => {
   return <BodyCopy {...restProps}>{children}</BodyCopy>;
 };
