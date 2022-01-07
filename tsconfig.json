@@ -16,13 +16,14 @@
     "incremental": true,
     "rootDir": "src",
     "outDir": "build",
-    "types": ["node"]
+    "types": ["node", "jest"]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/components/canvas/index.js"
+    "src/components/canvas/index.js",
+    "__tests__/**/*.tsx"
   ],
   "exclude": ["node_modules"]
 }

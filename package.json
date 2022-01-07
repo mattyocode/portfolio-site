@@ -13,7 +13,9 @@
     "eslint": "next lint --fix --dir src",
     "prettier": "prettier --list-different \"./src/**/*.{ts,tsx,md}\"",
     "export": "EXPORT=true next build && EXPORT=true next export",
-    "analyze": "ANALYZE=true next build"
+    "analyze": "ANALYZE=true next build",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "@babel/core": "^7.16.0",
@@ -45,6 +47,9 @@
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^12.0.7",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.4.0",
     "@types/node": "^16.11.12",
     "@types/react": "17.0.37",
     "@types/styled-components": "^5.1.17",
@@ -52,10 +57,13 @@
     "eslint-config-next": "12.0.7",
     "eslint-config-prettier": "^8.3.0",
     "file-loader": "^6.2.0",
+    "jest": "^27.4.7",
     "next-compose-plugins": "^2.2.1",
     "next-offline": "^5.0.5",
     "next-transpile-modules": "^9.0.0",
     "prettier": "^2.5.1",
+    "ts-jest": "^27.1.2",
+    "ts-node": "^10.4.0",
     "typescript": "4.5.2",
     "typescript-plugin-styled-components": "^2.0.0",
     "url-loader": "^4.1.1",
