@@ -27,7 +27,9 @@ export default function ContactForm(): JSX.Element {
     name: string;
     email: string;
     message: string;
-  }) => {
+  }): Promise<{
+    detail: string;
+  }> => {
     const config = {
       method: 'POST',
       body: JSON.stringify({

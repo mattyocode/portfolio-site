@@ -28,7 +28,7 @@ export const Grid = styled.div`
     grid-gap: 0.5rem;
   }
 
-  @media screen and (min-width: 1024px) and (min-height: 738px) {
+  @media screen and (min-width: 1024px) and (min-height: 700px) {
     grid-gap: 1.5rem;
   }
 

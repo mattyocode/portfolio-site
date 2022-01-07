@@ -38,7 +38,7 @@ export default function ProjectCard({
         <Icons>
           {projectData.icons.length > 0 &&
             projectData.icons.map((icon, idx) => {
-              return <Icon key={idx} src={`/icons/${icon.filename}.svg`} />;
+              return <Icon key={idx} src={`/icons/${icon.src}.svg`} />;
             })}
         </Icons>
         <LinkIcons>

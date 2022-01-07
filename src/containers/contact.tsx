@@ -23,7 +23,7 @@ export default function ContactSection({ navRef }: SectionNavRef): JSX.Element {
       </Relative>
       <Centered column={true}>
         <ContactForm />
-        <ContactIcons links={ContactLinks} centered={true} margin={0} />
+        <ContactIcons links={ContactLinks} centered={true} margin={false} />
       </Centered>
     </Section>
   );

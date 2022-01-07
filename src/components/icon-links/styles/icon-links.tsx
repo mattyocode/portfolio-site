@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 type WrapperProps = {
   centered?: boolean;
-  margin?: number;
+  margin?: boolean;
 };
 
 export const Wrapper = styled.div<WrapperProps>`
@@ -10,18 +10,17 @@ export const Wrapper = styled.div<WrapperProps>`
   bottom: ${(props) => (props.centered ? '' : '5rem')};
   display: flex;
   width: 90vw;
-  margin: ${(props) => (props.margin ? props.margin : '1.5rem 0')};
-  margin: 1.5rem 0;
+  margin: ${(props) => (props.margin ? '1.5rem 0' : '0')};
+  /* margin: 1.5rem 0; */
   align-items: center;
   justify-content: ${(props) => (props.centered ? 'center' : 'flex-end')};
   padding: 0 1rem;
 
   @media screen and (min-height: 660px) {
-    margin: 3rem 0;
+    margin: ${(props) => (props.margin ? '3rem 0' : '0')};
   }
 
   @media screen and (min-width: 768px) {
-    margin: 3rem 0;
     padding: 0 3rem;
     bottom: ${(props) => (props.centered ? '' : '2rem')};
   }

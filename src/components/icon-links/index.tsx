@@ -25,15 +25,15 @@ export type ContactLinkObj = {
 export const ContactIcons = ({
   links,
   centered = false,
-  margin = null,
+  margin = true,
   ...restProps
 }: {
   links: ContactLinkObj[];
   centered?: boolean;
-  margin?: number;
+  margin?: boolean;
 }): JSX.Element => {
   return (
-    <Wrapper centered={centered} {...restProps}>
+    <Wrapper centered={centered} margin={margin} {...restProps}>
       {links.map((link: ContactLinkObj, idx: number) => {
         return (
           <LargeIconButton

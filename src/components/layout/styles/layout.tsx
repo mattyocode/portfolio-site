@@ -136,7 +136,7 @@ export const CenteredContent = styled.div<CenteredContentProps>`
     margin-top: 2rem;
   }
 
-  @media screen and (min-width: 768px) and (min-height: 800px) {
+  @media screen and (min-width: 768px) and (min-height: 700px) {
     margin-top: 3rem;
   } ;
 `;
