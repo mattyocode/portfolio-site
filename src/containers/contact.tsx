@@ -3,7 +3,7 @@ import { Section, Centered, Relative } from '../components/layout';
 import { PageTitle } from '../components/heading';
 import ContactForm from '../components/form';
 import { ContactIcons } from '../components/icon-links';
-
+import sendContactRequest from '../helpers/sendContactRequest';
 import { SectionNavRef } from '../types';
 import { ContactLinks } from '../data/contact-links';
 
@@ -22,7 +22,7 @@ export default function ContactSection({ navRef }: SectionNavRef): JSX.Element {
         <PageTitle>Contact</PageTitle>
       </Relative>
       <Centered column={true}>
-        <ContactForm />
+        <ContactForm submitFn={sendContactRequest} />
         <ContactIcons links={ContactLinks} centered={true} margin={false} />
       </Centered>
     </Section>

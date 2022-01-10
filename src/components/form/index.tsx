@@ -1,8 +1,8 @@
 import React, { useState, FocusEvent } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-// import SendIcon from '../../../public/icons/send.svg';
 import useHttp from '../../helpers/useHttp';
+
 import {
   Wrapper,
   Base,
@@ -16,59 +16,20 @@ import {
   CenterButton,
 } from './styles/form';
 
-export default function ContactForm(): JSX.Element {
+export default function ContactForm({
+  submitFn,
+}: {
+  submitFn: (arg0: any) => Promise<any>;
+}): JSX.Element {
   const [activeField, setActiveField] = useState<string | null>(null);
-
-  const sendMailRequest = async ({
-    name,
-    email,
-    message,
-  }: {
-    name: string;
-    email: string;
-    message: string;
-  }): Promise<{
-    detail: string;
-  }> => {
-    const config = {
-      method: 'POST',
-      body: JSON.stringify({
-        name: name,
-        email: email,
-        message: message,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    };
-
-    let data: {
-      detail: string;
-    };
-
-    try {
-      const response = await fetch('/api/sendgrid/', config);
-      data = await response.json();
-      if (response.ok) {
-        return data;
-      }
-      throw new Error(response.statusText);
-    } catch (err: unknown) {
-      if (err instanceof Error) {
-        return Promise.reject(err.message);
-      } else {
-        return Promise.reject('something went wrong');
-      }
-    }
-  };
-
-  const { sendRequest, status, error, data } = useHttp(sendMailRequest);
 
   const handleFocus = (
     e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setActiveField(e.target.name);
   };
+
+  const { sendRequest, status, error, data } = useHttp(submitFn);
 
   const contactSchema = Yup.object().shape({
     name: Yup.string()
@@ -105,6 +66,7 @@ export default function ContactForm(): JSX.Element {
     formik.errors.message ||
     status === 'pending' ||
     status === 'succeeded';
+
   return (
     <Wrapper>
       <Base onSubmit={formik.handleSubmit} data-testid='contact-form'>
@@ -135,6 +97,7 @@ export default function ContactForm(): JSX.Element {
           </Label>
           <Input
             type='email'
+            id='email'
             name='email'
             autoComplete='email'
             value={formik.values.email}
@@ -151,13 +114,18 @@ export default function ContactForm(): JSX.Element {
           </Label>
           <Message
             name='message'
+            id='message'
             value={formik.values.message}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             onFocus={handleFocus}
           ></Message>
           <CenterButton>
-            <SubmitButton type='submit' disabled={submitBtnDisabled}>
+            <SubmitButton
+              type='submit'
+              role='button'
+              disabled={submitBtnDisabled}
+            >
               {status === 'idle' && 'Send'}
               {status === 'pending' && 'Sending...'}
               {status === 'error' && 'Try again'}
