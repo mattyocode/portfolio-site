@@ -38,7 +38,13 @@ export default function ProjectCard({
         <Icons>
           {projectData.icons.length > 0 &&
             projectData.icons.map((icon, idx) => {
-              return <Icon key={idx} src={`/icons/${icon.src}.svg`} />;
+              return (
+                <Icon
+                  key={idx}
+                  src={`/icons/${icon.src}.svg`}
+                  alt={`${icon.label}`}
+                />
+              );
             })}
         </Icons>
         <LinkIcons>
@@ -49,7 +55,10 @@ export default function ProjectCard({
                 target={'_blank'}
                 rel='noreferrer'
               >
-                <Icon src={'/icons/web-link.svg'} />
+                <Icon
+                  src={'/icons/web-link.svg'}
+                  alt={`link to ${projectData.title} site`}
+                />
               </a>
             </LinkIcon>
           )}
@@ -60,7 +69,10 @@ export default function ProjectCard({
                 target={'_blank'}
                 rel='noreferrer'
               >
-                <Icon src={'/icons/github.svg'} />
+                <Icon
+                  src={'/icons/github.svg'}
+                  alt={`link to ${projectData.title} github repo`}
+                />
               </a>
             </LinkIcon>
           )}

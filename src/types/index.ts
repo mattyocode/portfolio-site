@@ -5,7 +5,7 @@ export type IconObject = {
 
 export type ProjectDataObject = {
   title: string;
-  linkToSite: string;
+  linkToSite: string | null;
   img: string;
   description: string;
   icons: IconObject[];

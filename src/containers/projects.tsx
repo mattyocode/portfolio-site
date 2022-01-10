@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Section, Centered, Relative } from '../components/layout';
 import { PageTitle } from '../components/heading';
 import ProjectCarousel from '../components/carousel';
-import { ProjectDataObject, SectionNavRef } from '../types';
+import { ProjectDataObject } from '../types';
 
 export default function ProjectsSection({
   projectData,

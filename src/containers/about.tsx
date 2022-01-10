@@ -44,7 +44,7 @@ type Props = {
 };
 
 export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
-  const contentRef = useRef(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
   const {
     ref: titleRef,
@@ -63,7 +63,7 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
   }, [controls, titleInView, titleEntry]);
 
   useEffect(() => {
-    if (!isActive && width < 768) {
+    if (!isActive && width < 768 && contentRef.current) {
       contentRef.current.scrollTop = 0;
     }
   }, [isActive, width]);
@@ -98,7 +98,7 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
                 priority
               />
               <AboutCentered ref={contentRef}>
-                <LongCopy>
+                <LongCopy data-testid='about-copy'>
                   <p>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                     diam nonumy eirmod tempor invidunt ut labore et dolore magna

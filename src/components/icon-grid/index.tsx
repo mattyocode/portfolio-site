@@ -14,12 +14,12 @@ export default function IconGrid({
   icons: IconObject[];
 }): JSX.Element {
   return (
-    <Container>
+    <Container data-testid='skills-icons'>
       <Grid>
         {icons.map((icon, idx) => {
           return (
             <IconWrapper key={idx}>
-              <Icon src={icon.src} />
+              <Icon src={icon.src} alt={`${icon.label} link`} />
               <IconText>{icon.label}</IconText>
             </IconWrapper>
           );

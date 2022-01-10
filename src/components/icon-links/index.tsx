@@ -11,7 +11,7 @@ export const LargeIconButton = ({
   return (
     <LinkIcon>
       <a href={destination} target={'_blank'} rel='noreferrer'>
-        <LargeIcon src={`/icons/${iconName}.svg`} />
+        <LargeIcon src={`/icons/${iconName}.svg`} alt={`${iconName} link`} />
       </a>
     </LinkIcon>
   );

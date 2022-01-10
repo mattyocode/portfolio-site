@@ -53,8 +53,12 @@ export default function ContactForm(): JSX.Element {
         return data;
       }
       throw new Error(response.statusText);
-    } catch (err) {
-      return Promise.reject(err.message ? err.message : data);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        return Promise.reject(err.message);
+      } else {
+        return Promise.reject('something went wrong');
+      }
     }
   };
 
@@ -103,7 +107,7 @@ export default function ContactForm(): JSX.Element {
     status === 'succeeded';
   return (
     <Wrapper>
-      <Base onSubmit={formik.handleSubmit}>
+      <Base onSubmit={formik.handleSubmit} data-testid='contact-form'>
         <Title>Get in touch.</Title>
         <Fields>
           <Label htmlFor='name'>

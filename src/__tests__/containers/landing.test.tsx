@@ -20,5 +20,7 @@ describe('<LandingSection />', () => {
   test('renders <LandingSection/>', () => {
     render(<LandingSection navRef={mockRef} />);
     expect(screen.getByText(/full stack developer/i)).toBeInTheDocument();
+    expect(screen.getByAltText(/linkedin link/i)).toBeInTheDocument();
+    expect(screen.getByAltText(/github link/i)).toBeInTheDocument();
   });
 });
