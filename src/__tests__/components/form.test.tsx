@@ -108,4 +108,30 @@ describe('<ContactForm /> tests', () => {
       expect(screen.getByText(/please include a message/i)).toBeInTheDocument();
     });
   });
+
+  test('shows error message on blur if name is shorter than 2 characters', async () => {
+    const utils = setup();
+
+    act(() => {
+      utils.changeNameInput('a');
+    });
+    screen.getByLabelText(/email/i).focus();
+
+    await waitFor(() => {
+      expect(screen.getByText(/at least 2 characters/i)).toBeInTheDocument();
+    });
+  });
+
+  test('shows error message on blur if email is invalid', async () => {
+    const utils = setup();
+
+    act(() => {
+      utils.changeEmailInput('blahblah!');
+    });
+    screen.getByLabelText(/message/i).focus();
+
+    await waitFor(() => {
+      expect(screen.getByText(/email must be valid/i)).toBeInTheDocument();
+    });
+  });
 });
