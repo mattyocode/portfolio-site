@@ -11,7 +11,7 @@ export const icons = [
   { src: '/icons/postgresql.svg', label: 'PostgreSQL' },
   { src: '/icons/pytest.svg', label: 'Pytest' },
   { src: '/icons/jest.svg', label: 'Jest' },
-  { src: '/icons/react-testing-library.svg', label: 'RTL' },
+  { src: '/icons/react-testing-library.svg', label: 'Testing Library' },
   { src: '/icons/html5.svg', label: 'HTML' },
   { src: '/icons/css3.svg', label: 'CSS' },
 ];

@@ -46,11 +46,13 @@ function httpReducer(state: State, action: ACTIONTYPE): State {
   }
 }
 
-export default function useHttp(requestFunction: (arg0: any) => Promise<any>): {
+export default function useHttp(
+  requestFunction: (arg: { [key: string]: string }) => Promise<{}>
+): {
   data?: ResponseData | null;
   error?: ErrorMessage | null;
   status: string;
-  sendRequest: (requestData: any) => Promise<any>;
+  sendRequest: (requestData: { [key: string]: string }) => Promise<void>;
 } {
   const [httpState, dispatch] = useReducer<Reducer<State, ACTIONTYPE>>(
     httpReducer,
@@ -58,7 +60,7 @@ export default function useHttp(requestFunction: (arg0: any) => Promise<any>): {
   );
 
   const sendRequest = useCallback(
-    async function (requestData) {
+    async function (requestData: { [key: string]: string }): Promise<void> {
       dispatch({ type: 'SEND' });
       try {
         const responseData = await requestFunction(requestData);

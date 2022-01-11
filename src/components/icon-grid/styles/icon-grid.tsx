@@ -11,6 +11,10 @@ export const Container = styled.div`
   @media screen and (min-width: 440px) {
     background: transparent;
   }
+
+  @media screen and (min-height: 660px) {
+    overflow: visible;
+  }
 `;
 
 export const Grid = styled.div`
@@ -23,13 +27,13 @@ export const Grid = styled.div`
     grid-gap: 0.3rem;
   }
 
-  @media screen and (min-width: 768px) and (min-height: 625px) {
+  @media screen and (min-width: 768px) and (min-height: 550px) {
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 0.5rem;
+    grid-gap: 1rem;
   }
 
   @media screen and (min-width: 1024px) and (min-height: 700px) {
-    grid-gap: 1.5rem;
+    grid-gap: 1.25rem;
   }
 
   @media screen and (min-width: 1200px) {
