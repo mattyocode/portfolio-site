@@ -7,7 +7,7 @@ import { AboutCentered, Section, FullBleedWrapper } from '../components/layout';
 import { LongCopy, PageTitle } from '../components/heading';
 import { ObjectContainer, ObjectWrapper } from '../components/object';
 import IconGrid from '../components/icon-grid';
-import { icons } from '../data/icons';
+import { aboutIcons } from '../data/about-icons';
 
 const titleVariants = {
   hidden: {
@@ -18,6 +18,7 @@ const titleVariants = {
     scale: 1,
     opacity: 1,
     transition: {
+      delay: 0.2,
       duration: 1,
       ease: 'easeInOut',
     },
@@ -64,7 +65,11 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
 
   useEffect(() => {
     if (!isActive && width < 768 && contentRef.current) {
-      contentRef.current.scrollTop = 0;
+      setTimeout(() => {
+        if (contentRef.current) {
+          contentRef.current.scrollTop = 0;
+        }
+      }, 1000);
     }
   }, [isActive, width]);
 
@@ -120,7 +125,7 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
                     rebum.
                   </p>
                 </LongCopy>
-                <IconGrid icons={icons} />
+                <IconGrid icons={aboutIcons} />
               </AboutCentered>
             </FullBleedWrapper>
           </motion.div>

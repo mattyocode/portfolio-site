@@ -1,4 +1,4 @@
-export const icons = [
+export const aboutIcons = [
   { src: '/icons/javascript.svg', label: 'JavaScript' },
   { src: '/icons/react.svg', label: 'React' },
   { src: '/icons/python.svg', label: 'Python' },
@@ -9,9 +9,9 @@ export const icons = [
   { src: '/icons/aws.svg', label: 'AWS' },
   { src: '/icons/docker.svg', label: 'Docker' },
   { src: '/icons/postgresql.svg', label: 'PostgreSQL' },
-  { src: '/icons/pytest.svg', label: 'Pytest' },
+  { src: '/icons/testing-library.svg', label: 'Testing Library' },
   { src: '/icons/jest.svg', label: 'Jest' },
-  { src: '/icons/react-testing-library.svg', label: 'Testing Library' },
+  { src: '/icons/pytest.svg', label: 'Pytest' },
   { src: '/icons/html5.svg', label: 'HTML' },
   { src: '/icons/css3.svg', label: 'CSS' },
 ];
