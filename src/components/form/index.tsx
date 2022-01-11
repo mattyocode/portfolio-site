@@ -34,7 +34,7 @@ export default function ContactForm({
   const contactSchema = Yup.object().shape({
     name: Yup.string()
       .min(2, 'Name must be at least 2 characters')
-      .max(96, "That's a little too long - sorry!")
+      .max(55, "That's a little too long - sorry!")
       .required('Name is required'),
     email: Yup.string()
       .email('Email must be valid')
