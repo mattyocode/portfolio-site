@@ -2,7 +2,14 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import sgMail from '@sendgrid/mail';
 import { htmlEmailContent } from '../../data/html-email';
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+let sendGridAPIKey: string;
+if (process.env.SENDGRID_API_KEY) {
+  sendGridAPIKey = process.env.SENDGRID_API_KEY;
+} else {
+  throw new Error('SENDGRID_API_KEY env variable is not set');
+}
+
+sgMail.setApiKey(sendGridAPIKey);
 
 const toAddress = process.env.TO_EMAIL;
 
@@ -15,7 +22,7 @@ async function sendEmail(req: NextApiRequest, res: NextApiResponse) {
       subject: `[Message from website] : ${req.body.name}`,
       html: htmlContent,
     });
-  } catch (error) {
+  } catch (error: any) {
     return res.status(error.statusCode || 500).json({ error: error.message });
   }
 

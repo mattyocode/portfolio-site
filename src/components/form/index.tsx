@@ -128,7 +128,7 @@ export default function ContactForm({
             >
               {status === 'idle' && 'Send'}
               {status === 'pending' && 'Sending...'}
-              {status === 'error' && 'Try again'}
+              {status === 'rejected' && 'Try again'}
               {status === 'succeeded' && 'Sent!'}
             </SubmitButton>
           </CenterButton>
