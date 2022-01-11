@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/components/canvas/index.js",
+    "src/components/canvas/index.tsx",
     "__tests__/**/*.tsx"
   ],
   "exclude": ["node_modules"]

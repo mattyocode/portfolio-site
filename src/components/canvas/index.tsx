@@ -1,12 +1,16 @@
 import React, { useRef, useEffect, Suspense, useState } from 'react';
 
-import { Canvas, useThree, MeshProps } from '@react-three/fiber';
-import { useTexture, Cloud, OrbitControls } from '@react-three/drei';
+import { Canvas, useThree, Vector3, ThreeEvent } from '@react-three/fiber';
+import { Cloud } from '@react-three/drei';
 
 import { CanvasWrapper } from './styles/canvas';
 
-function CloudParticle({ clickHandler }) {
-  const [itemPosition, setItemPosition] = useState([0, -1, 0]);
+function CloudParticle({
+  clickHandler,
+}: {
+  clickHandler: (e: ThreeEvent<MouseEvent>) => void;
+}) {
+  const [itemPosition, setItemPosition] = useState<Vector3>([0, -1, 0]);
   const { viewport } = useThree();
 
   useEffect(() => {
@@ -31,7 +35,7 @@ function CloudParticle({ clickHandler }) {
 }
 
 export default function CanvasContainer() {
-  const [color, setColor] = useState(0);
+  const [color, setColor] = useState<number>(0);
   const group = useRef();
 
   const colors = [
@@ -42,20 +46,18 @@ export default function CanvasContainer() {
     '#3e8989',
     '#ffffff',
   ];
-  const setCloudColor = () => {
+  const setCloudColor = (e: ThreeEvent<MouseEvent>): void => {
     let colorIdx = Math.floor(Math.random() * colors.length);
     setColor(colorIdx);
   };
   return (
     <CanvasWrapper>
-      <Canvas colorManagement camera={{ position: [-5, 2, 10], fov: 100 }}>
+      <Canvas camera={{ position: [-5, 2, 10], fov: 100 }}>
         <Suspense fallback={null}>
           <group ref={group} dispose={null}>
             <ambientLight color={colors[color]} />
-            {/* <pointLight position={[5, 5, 0]} color={'#'} /> */}
             <CloudParticle clickHandler={setCloudColor} />
           </group>
-          {/* <OrbitControls enablePan={false} zoomSpeed={0.5} /> */}
         </Suspense>
       </Canvas>
     </CanvasWrapper>
