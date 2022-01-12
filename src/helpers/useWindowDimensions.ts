@@ -12,13 +12,11 @@ const getWindowDimensions = () => {
   };
 };
 
-const useWindowDimensions = (): {
-  width: number;
-  height: number;
-} => {
-  const [windowDimensions, setWindowDimensions] = useState(
-    getWindowDimensions()
-  );
+const useWindowDimensions = () => {
+  const [windowDimensions, setWindowDimensions] = useState<{
+    width: number;
+    height: number;
+  }>(getWindowDimensions());
 
   useEffect(() => {
     const handleResize = (): void => {

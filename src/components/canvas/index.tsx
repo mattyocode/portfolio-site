@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, Suspense, useState } from 'react';
-
-import { Canvas, useThree, Vector3, ThreeEvent } from '@react-three/fiber';
+import { Canvas, Vector3, ThreeEvent } from '@react-three/fiber';
 import { Cloud } from '@react-three/drei';
 
+import useWindowDimensions from '../../helpers/useWindowDimensions';
 import { CanvasWrapper } from './styles/canvas';
 
 function CloudParticle({
@@ -11,15 +11,15 @@ function CloudParticle({
   clickHandler: (e: ThreeEvent<MouseEvent>) => void;
 }) {
   const [itemPosition, setItemPosition] = useState<Vector3>([0, -1, 0]);
-  const { viewport } = useThree();
+  const { width } = useWindowDimensions();
 
   useEffect(() => {
-    if (viewport.width < 25.75) {
+    if (width <= 768) {
       setItemPosition([5, -3, 0]);
     } else {
       setItemPosition([0, -1, 0]);
     }
-  }, [viewport]);
+  }, [width]);
 
   return (
     <mesh scale={0.55} position={itemPosition} onClick={clickHandler}>
