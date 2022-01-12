@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 
-const getWindowDimensions = () => {
-  let width: number, height: number;
+const getWindowDimensions = (): {
+  width: number | undefined;
+  height: number | undefined;
+} => {
+  let width, height;
   if (typeof window !== 'undefined') {
     width = window.innerWidth;
     height = window.innerHeight;
@@ -14,8 +17,8 @@ const getWindowDimensions = () => {
 
 const useWindowDimensions = () => {
   const [windowDimensions, setWindowDimensions] = useState<{
-    width: number;
-    height: number;
+    width: number | undefined;
+    height: number | undefined;
   }>(getWindowDimensions());
 
   useEffect(() => {

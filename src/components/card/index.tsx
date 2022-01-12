@@ -24,7 +24,7 @@ export default function ProjectCard({
       <ImageWrapper>
         <Image
           src={projectData.img}
-          alt='moviechooser website image'
+          alt={`${projectData.title} image`}
           layout='fill'
           objectFit='cover'
           priority
