@@ -6,7 +6,7 @@ import {
   LandingCentered,
   ProfilePicWrapper,
 } from '../components/layout';
-import { ContactIcons } from '../components/icon-links';
+import ContactIcons from '../components/icon-links';
 import { LandingCopy } from '../components/heading';
 
 import { SectionNavRef } from '../types';

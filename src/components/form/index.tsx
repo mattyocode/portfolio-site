@@ -19,7 +19,11 @@ import {
 export default function ContactForm({
   submitFn,
 }: {
-  submitFn: (arg: {}) => Promise<{}>;
+  submitFn: (arg: {
+    name: string;
+    email: string;
+    message: string;
+  }) => Promise<{ detail: string } | { error: string }>;
 }): JSX.Element {
   const [activeField, setActiveField] = useState<string | null>(null);
 

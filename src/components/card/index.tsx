@@ -43,6 +43,7 @@ export default function ProjectCard({
                   key={idx}
                   src={`/icons/${icon.src}.svg`}
                   alt={`${icon.label}`}
+                  title={`${icon.label}`}
                 />
               );
             })}

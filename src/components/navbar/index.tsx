@@ -53,7 +53,7 @@ export const ScrollLink: React.FC<ScrollLinkProps> = ({
         const destination = document.querySelector(href as string);
         if (destination) {
           document.body.style.scrollSnapType = 'none';
-          document.getElementById('pagewrapper').style.scrollSnapType = 'none';
+          document.getElementById('pagewrapper')!.style.scrollSnapType = 'none';
           destination.scrollIntoView({
             behavior: 'smooth',
             block: 'center',
@@ -61,7 +61,7 @@ export const ScrollLink: React.FC<ScrollLinkProps> = ({
           });
           setTimeout(() => {
             document.body.style.scrollSnapType = 'y mandatory';
-            document.getElementById('pagewrapper').style.scrollSnapType =
+            document.getElementById('pagewrapper')!.style.scrollSnapType =
               'y mandatory';
             destination.scrollIntoView({
               behavior: 'smooth',

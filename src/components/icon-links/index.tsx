@@ -22,7 +22,7 @@ export type ContactLinkObj = {
   destination: string;
 };
 
-export const ContactIcons = ({
+export default function ContactIcons({
   links,
   centered = false,
   margin = true,
@@ -31,7 +31,7 @@ export const ContactIcons = ({
   links: ContactLinkObj[];
   centered?: boolean;
   margin?: boolean;
-}): JSX.Element => {
+}): JSX.Element {
   return (
     <Wrapper centered={centered} margin={margin} {...restProps}>
       {links.map((link: ContactLinkObj, idx: number) => {
@@ -45,4 +45,4 @@ export const ContactIcons = ({
       })}
     </Wrapper>
   );
-};
+}

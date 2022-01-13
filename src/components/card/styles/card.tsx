@@ -40,8 +40,13 @@ export const TextWrapper = styled.div``;
 
 export const Title = styled.h3`
   text-align: center;
+
   @media screen and (min-height: 668px) {
-    margin: 1rem;
+    margin: 0.5rem;
+  }
+
+  @media screen and (min-height: 668px) and (min-width: 450px) {
+    font-size: 1.2rem;
   }
 `;
 
@@ -51,6 +56,11 @@ export const BodyCopy = styled.p`
 
   @media screen and (min-height: 668px) {
     font-size: 0.8rem;
+    margin: 0.5rem;
+  }
+
+  @media screen and (min-height: 668px) and (min-width: 450px) {
+    font-size: 1rem;
     margin: 1rem;
   }
 `;

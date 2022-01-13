@@ -64,7 +64,7 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
   }, [controls, titleInView, titleEntry]);
 
   useEffect(() => {
-    if (!isActive && width < 768 && contentRef.current) {
+    if (!isActive && width && width < 768 && contentRef.current) {
       setTimeout(() => {
         if (contentRef.current) {
           contentRef.current.scrollTop = 0;
@@ -95,7 +95,7 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
                 <PageTitle raised={true}>About Me</PageTitle>
               </motion.div>
               <Image
-                src='/img/objectgn2.svg'
+                src='/img/objectgn3.svg'
                 alt='green angular structure'
                 layout='fill'
                 objectPosition='top right'
@@ -105,24 +105,33 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
               <AboutCentered ref={contentRef}>
                 <LongCopy data-testid='about-copy'>
                   <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                    diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                    aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                    justo duo dolores et ea rebum.
+                    For almost seven years, I&apos;ve worked as a consultant
+                    using cultural analytics to help global brands create comms,
+                    experiences, and innovations that resonate with their users.
+                    I specialised in technology, working with clients including
+                    Microsoft, Twitch, Dashlane, Candy Crush, and a number of
+                    FAANG companies.
                   </p>
 
                   <p>
-                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-                    ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-                    sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                    labore et dolore magna aliquyam erat, sed diam voluptua.
+                    I wanted to dive deeper into tech, so began learning Python,
+                    eventually applying it to day-to-day research, such as
+                    scraping web data, calling APIs, and analysing things like
+                    sentiment and keyword frequencies. Very quickly, I was
+                    hooked and my focus shifted to becoming the best developer I
+                    can be.
                   </p>
 
                   <p>
-                    Consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                    invidunt ut labore et dolore magna aliquyam erat, sed diam
-                    voluptua. At vero eos et accusam et justo duo dolores et ea
-                    rebum.
+                    Having enjoyed using HTML and CSS in various roles since
+                    taking a Creative Media M.A., I then threw myself into
+                    front-end development, learning to create intuitive,
+                    pleasing user experiences.
+                  </p>
+
+                  <p>
+                    I&apos;m now looking for a junior developer position where I
+                    can continue to learn and grow as part of a team.
                   </p>
                 </LongCopy>
                 <IconGrid icons={aboutIcons} />

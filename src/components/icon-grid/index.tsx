@@ -19,7 +19,7 @@ export default function IconGrid({
         {icons.map((icon, idx) => {
           return (
             <IconWrapper key={idx}>
-              <Icon src={icon.src} alt={`${icon.label} link`} />
+              <Icon src={icon.src} alt={icon.label} />
               <IconText>{icon.label}</IconText>
             </IconWrapper>
           );

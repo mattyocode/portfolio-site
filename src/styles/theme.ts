@@ -55,7 +55,7 @@ export const GlobalStyles = createGlobalStyle`
       font-size: 2rem;
     }
 
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 768px) {
       font-size: 2.5rem;
     }
   }

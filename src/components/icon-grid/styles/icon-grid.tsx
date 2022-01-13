@@ -75,6 +75,7 @@ export const IconText = styled.p`
   text-align: center;
   vertical-align: baseline;
   margin: 10px;
+  font-weight: bold;
 
   @media screen and (min-width: 1024px) and (min-height: 738px) {
     font-size: 0.7rem;

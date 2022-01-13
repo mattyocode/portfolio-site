@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 export const SectionContainer = styled.div`
@@ -109,7 +110,7 @@ export const AboutContent = styled.div<CenteredProps>`
   }
 `;
 
-export const ProfilePic = styled.div`
+export const ProfilePic = styled(motion.div)`
   width: 250px;
   top: 200px;
 `;

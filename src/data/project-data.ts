@@ -16,7 +16,7 @@ export const projectData = [
   {
     title: 'MOVIECHOOSER API',
     linkToSite: null,
-    img: '/img/mc-image.jpg',
+    img: '/img/moviechooser-api.jpg',
     description:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
     icons: [
@@ -28,30 +28,31 @@ export const projectData = [
     githubRepo: 'https://github.com/mattyocode/moviechooser-api',
   },
   {
-    title: 'MOVIECHOOSER_2',
-    linkToSite: 'https://moviechooser.co.uk123',
+    title: 'NGRAM GENERATOR',
+    linkToSite: 'https://pypi.org/project/excel-ngrams/',
     img: '/img/mc-image.jpg',
     description:
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+      'A command-line app to analyse a column of text in an Excel document and return a CSV file with the most common ngrams from that text. You can choose the maximum n-gram length, and maximum number of results (rows) returned. Words are tokenised with Spacy and ngrams are generated with NLTK.',
     icons: [
-      { src: 'react', label: 'React' },
-      { src: 'styled-components', label: 'Styled Components' },
-      { src: 'jest', label: 'Jest' },
-      { src: 'react-testing-library', label: 'React Testing Library' },
+      { src: 'white/python-white', label: 'Python' },
+      // { src: 'styled-components', label: 'Styled Components' },
+      // { src: 'jest', label: 'Jest' },
+      // { src: 'react-testing-library', label: 'React Testing Library' },
     ],
-    githubRepo: 'https://github.com/mattyocode/react-moviechooser',
+    githubRepo: 'https://github.com/mattyocode/excel-ngrams',
   },
   {
-    title: 'MOVIECHOOSER API_2',
+    title: 'PORTFOLIO & BLOG',
     linkToSite: null,
     img: '/img/mc-image.jpg',
     description:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
     icons: [
-      { src: 'react', label: 'React' },
-      { src: 'styled-components', label: 'Styled Components' },
-      { src: 'jest', label: 'Jest' },
-      { src: 'react-testing-library', label: 'React Testing Library' },
+      { src: 'white/next-js-white', label: 'Next JS' },
+      { src: 'white/typescript-white', label: 'Typescript' },
+      { src: 'white/styled-components-white', label: 'Styled Components' },
+      { src: 'white/jest-white', label: 'Jest' },
+      // { src: 'react-testing-library', label: 'React Testing Library' },
     ],
     githubRepo: 'https://github.com/mattyocode/moviechooser-api',
   },

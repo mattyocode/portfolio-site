@@ -89,11 +89,32 @@ export const LandingCentered = ({
   return <LandingContent {...restProps}>{children}</LandingContent>;
 };
 
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.7,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { type: 'spring', stiffness: 100, delay: 0.5, duration: 0.5 },
+  },
+};
+
 export const ProfilePicWrapper = ({
   children,
   ...restProps
 }: Props): JSX.Element => {
-  return <ProfilePic {...restProps}>{children}</ProfilePic>;
+  return (
+    <ProfilePic
+      variants={containerVariants}
+      initial='hidden'
+      animate='visible'
+      {...restProps}
+    >
+      {children}
+    </ProfilePic>
+  );
 };
 
 export const Centered = ({

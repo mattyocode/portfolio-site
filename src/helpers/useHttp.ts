@@ -46,9 +46,7 @@ function httpReducer(state: State, action: ACTIONTYPE): State {
   }
 }
 
-export default function useHttp(
-  requestFunction: (arg: { [key: string]: string }) => Promise<{}>
-): {
+export default function useHttp(requestFunction: (arg: any) => Promise<any>): {
   data?: ResponseData | null;
   error?: ErrorMessage | null;
   status: string;

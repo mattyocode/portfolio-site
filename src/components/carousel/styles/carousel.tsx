@@ -11,6 +11,10 @@ export const StyledSlide = styled(Slide)`
     @media screen and (min-height: 668px) {
       max-height: 29rem;
     }
+
+    @media screen and (min-height: 668px) and (min-width: 450px) {
+      max-height: 32rem;
+    }
   }
 `;
 
@@ -30,7 +34,11 @@ export const StyledSlider = styled(Slider)`
 
   @media screen and (min-height: 668px) {
     margin-top: 5rem;
-    max-height: 30rem;
+    max-height: 29rem;
+  }
+
+  @media screen and (min-height: 668px) and (min-width: 450px) {
+    max-height: 32rem;
   }
 `;
 

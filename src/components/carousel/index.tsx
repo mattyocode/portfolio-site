@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, MutableRefObject } from 'react';
-import Image from 'next/image';
-import { ButtonBack, ButtonNext, Dot } from 'pure-react-carousel';
+import { ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import {
   StyledDotGroup,
@@ -21,11 +20,11 @@ export default function ProjectCarousel({
   projectData: ProjectDataObject[];
 }): JSX.Element {
   const { width } = useWindowDimensions();
-  const numSlidesRef: MutableRefObject<number> = useRef();
+  const numSlidesRef: MutableRefObject<number | undefined> = useRef();
   let numSlides: number = 1;
 
   useEffect(() => {
-    if (width >= 768) {
+    if (width && width >= 768) {
       numSlidesRef.current = 2;
     } else {
       numSlidesRef.current = 1;

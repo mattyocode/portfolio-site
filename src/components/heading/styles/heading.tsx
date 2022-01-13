@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 type TitleProps = {
   raised?: boolean;
@@ -32,7 +33,7 @@ export const Title = styled.h1<TitleProps>`
   }
 `;
 
-export const Landing = styled.div`
+export const Landing = styled(motion.div)`
   padding: 2rem;
 
   @media screen and (min-width: 768px) {
@@ -47,6 +48,7 @@ export const BodyCopy = styled.div`
   z-index: 80;
   padding: 0rem 0.75rem;
   max-width: 30rem;
+  font-weight: 500;
 
   @media screen and (min-width: 768px) and (min-height: 660px) {
     padding: 2rem 0.75rem;
