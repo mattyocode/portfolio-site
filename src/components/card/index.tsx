@@ -33,7 +33,7 @@ export default function ProjectCard({
           />
         )}
         {projectData.video && (
-          <Video autoPlay loop muted>
+          <Video autoPlay loop muted playsInline>
             <source src={projectData.video} />
           </Video>
         )}
