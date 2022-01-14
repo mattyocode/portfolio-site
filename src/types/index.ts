@@ -6,7 +6,8 @@ export type IconObject = {
 export type ProjectDataObject = {
   title: string;
   linkToSite: string | null;
-  img: string;
+  img: string | null;
+  video: string | null;
   description: string;
   icons: IconObject[];
   githubRepo: string;

@@ -112,6 +112,7 @@ export const AboutContent = styled.div<CenteredProps>`
 
 export const ProfilePic = styled(motion.div)`
   width: 250px;
+  height: 250px;
   top: 200px;
 `;
 

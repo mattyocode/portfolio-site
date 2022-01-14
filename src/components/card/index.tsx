@@ -3,6 +3,7 @@ import Image from 'next/image';
 import {
   Wrapper,
   ImageWrapper,
+  Video,
   TextWrapper,
   Title,
   BodyCopy,
@@ -22,13 +23,20 @@ export default function ProjectCard({
   return (
     <Wrapper>
       <ImageWrapper>
-        <Image
-          src={projectData.img}
-          alt={`${projectData.title} image`}
-          layout='fill'
-          objectFit='cover'
-          priority
-        />
+        {projectData.img && (
+          <Image
+            src={projectData.img}
+            alt={`${projectData.title} image`}
+            layout='fill'
+            objectFit='cover'
+            priority
+          />
+        )}
+        {projectData.video && (
+          <Video autoPlay loop muted>
+            <source src={projectData.video} />
+          </Video>
+        )}
       </ImageWrapper>
       <TextWrapper>
         <Title>{projectData.title}</Title>

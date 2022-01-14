@@ -36,6 +36,22 @@ export const ImageWrapper = styled.div`
   }
 `;
 
+export const Video = styled.video`
+  margin: 0.5rem;
+  height: 10rem;
+  width: 14rem;
+
+  @media screen and (min-height: 668px) {
+    height: 12rem;
+    width: 16rem;
+  }
+
+  @media screen and (min-height: 730px) {
+    height: 14rem;
+    width: 18rem;
+  }
+`;
+
 export const TextWrapper = styled.div``;
 
 export const Title = styled.h3`
