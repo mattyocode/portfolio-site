@@ -39,8 +39,6 @@ export const projectData = [
     icons: [
       { src: 'white/python-white', label: 'Python' },
       { src: 'white/pytest-white', label: 'Pytest' },
-      // { src: 'jest', label: 'Jest' },
-      // { src: 'react-testing-library', label: 'React Testing Library' },
     ],
     githubRepo: 'https://github.com/mattyocode/excel-ngrams',
   },
