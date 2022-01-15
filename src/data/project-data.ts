@@ -35,7 +35,7 @@ export const projectData = [
     img: '/img/ngrams-img.png',
     video: '/video/ngrams-generator.mp4',
     description:
-      'A language analysis command-line app avilable on PyPI that takes in text data and outputs the most common ngrams it contains. Data is returned as CSV, from bigrams up to a chosen phrase length. Words are tokenised with Spacy and ngrams are generated with NLTK.',
+      'A language analysis command-line app available on PyPI that takes in text data and outputs the most common ngrams it contains. Data is returned as CSV, from bigrams up to a chosen phrase length. Words are tokenised with Spacy and ngrams are generated with NLTK.',
     icons: [
       { src: 'white/python-white', label: 'Python' },
       { src: 'white/pytest-white', label: 'Pytest' },
@@ -43,12 +43,12 @@ export const projectData = [
     githubRepo: 'https://github.com/mattyocode/excel-ngrams',
   },
   {
-    title: 'PORTFOLIO & BLOG',
+    title: 'OH, THIS SITE?',
     linkToSite: null,
-    img: '/img/mc-image.jpg',
+    img: '/img/portfolio.png',
     video: null,
     description:
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+      'My portfolio site is made with Next JS, Typescript and Styled Components. The landing section cloud object has been created with Three JS (via React Three Fiber), giving the page some visual dynamism and a touch of randomness in cloud formation.',
     icons: [
       { src: 'white/next-js-white', label: 'Next JS' },
       { src: 'white/typescript-white', label: 'Typescript' },
@@ -56,6 +56,6 @@ export const projectData = [
       { src: 'white/jest-white', label: 'Jest' },
       { src: 'white/three-js-white', label: 'Three JS' },
     ],
-    githubRepo: 'https://github.com/mattyocode/moviechooser-api',
+    githubRepo: 'https://github.com/mattyocode/portfolio-site',
   },
 ];
