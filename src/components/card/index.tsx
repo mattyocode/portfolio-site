@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { useInView } from 'react-intersection-observer';
 import {
   Wrapper,
   ImageWrapper,
@@ -20,22 +21,39 @@ export default function ProjectCard({
 }: {
   projectData: ProjectDataObject;
 }): JSX.Element {
+  const playRef = useRef<HTMLVideoElement | null>(null);
+  const { ref: videoRef, inView: videoInView } = useInView();
+
+  useEffect(() => {
+    if (videoInView && playRef.current) {
+      playRef.current.play();
+    }
+    if (!videoInView && playRef.current) {
+      playRef.current.pause();
+    }
+  }, [videoInView, playRef]);
+
   return (
-    <Wrapper>
+    <Wrapper ref={videoRef}>
       <ImageWrapper>
-        {projectData.img && (
+        {projectData.video ? (
+          <Video ref={playRef} autoPlay loop muted playsInline>
+            <source src={projectData.video} />
+            <Image
+              src={`${projectData.img}`}
+              alt={`${projectData.title} image`}
+              layout='fill'
+              objectFit='cover'
+            />
+          </Video>
+        ) : (
           <Image
-            src={projectData.img}
+            src={`${projectData.img}`}
             alt={`${projectData.title} image`}
             layout='fill'
             objectFit='cover'
             priority
           />
-        )}
-        {projectData.video && (
-          <Video autoPlay loop muted playsInline>
-            <source src={projectData.video} />
-          </Video>
         )}
       </ImageWrapper>
       <TextWrapper>

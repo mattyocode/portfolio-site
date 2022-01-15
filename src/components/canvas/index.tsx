@@ -15,7 +15,7 @@ function CloudParticle({
 
   useEffect(() => {
     if (width && width <= 768) {
-      setItemPosition([5, -3, 0]);
+      setItemPosition([4, -3, 0]);
     } else {
       setItemPosition([0, -1, 0]);
     }
@@ -24,11 +24,11 @@ function CloudParticle({
   return (
     <mesh scale={0.55} position={itemPosition} onClick={clickHandler}>
       <group>
-        <Cloud speed={1} position={[-4, -2, 0]} args={[3, 2]} />
-        <Cloud speed={1} position={[-3, 3, 0]} args={[3, 2]} />
+        <Cloud speed={1} position={[-6, 0, 0]} args={[3, 2]} />
+        <Cloud speed={1} position={[-3, 6, 0]} args={[3, 2]} />
         <Cloud speed={1} args={[3, 2]} />
-        <Cloud speed={1} position={[4, -2, 0]} args={[3, 2]} />
-        <Cloud speed={1} position={[4, 2, 0]} args={[3, 2]} />
+        <Cloud speed={1} position={[4, 3, 0]} args={[3, 2]} />
+        <Cloud speed={1} position={[5, 2, 0]} args={[3, 2]} />
       </group>
     </mesh>
   );
