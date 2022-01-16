@@ -48,9 +48,10 @@ export const BodyCopy = styled.div`
   z-index: 80;
   padding: 0rem 0.75rem;
   max-width: 30rem;
-  font-weight: 500;
+  font-weight: 600;
 
   @media screen and (min-width: 768px) and (min-height: 660px) {
     padding: 2rem 0.75rem;
+    max-width: 35rem;
   }
 `;

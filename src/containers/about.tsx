@@ -95,7 +95,7 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
                 <PageTitle raised={true}>About Me</PageTitle>
               </motion.div>
               <Image
-                src='/img/objectgn3.svg'
+                src='/img/objectgn4.svg'
                 alt='green angular structure'
                 layout='fill'
                 objectPosition='top right'

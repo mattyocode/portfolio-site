@@ -98,15 +98,15 @@ export const AboutContent = styled.div<CenteredProps>`
   }
 
   @media screen and (min-width: 1024px) {
-    max-width: 900px;
-  }
-
-  @media screen and (min-width: 1200px) {
     max-width: 1000px;
   }
 
+  @media screen and (min-width: 1200px) {
+    max-width: 1100px;
+  }
+
   @media screen and (min-width: 1440px) {
-    max-width: 1050px;
+    max-width: 1250px;
   }
 `;
 

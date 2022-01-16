@@ -37,7 +37,7 @@ export const ImageWrapper = styled.div`
 `;
 
 export const Video = styled.video`
-  /* margin: 0.5rem; */
+  padding: 0.5rem;
   position: relative;
   height: 10rem;
   width: 14rem;
