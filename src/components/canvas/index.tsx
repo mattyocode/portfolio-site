@@ -25,9 +25,9 @@ function CloudParticle({
     <mesh scale={0.55} position={itemPosition} onClick={clickHandler}>
       <group>
         <Cloud speed={1} position={[-6, 0, 0]} args={[3, 2]} />
-        <Cloud speed={1} position={[-3, 6, 0]} args={[3, 2]} />
-        <Cloud speed={1} args={[3, 2]} />
-        <Cloud speed={1} position={[4, 3, 0]} args={[3, 2]} />
+        <Cloud speed={0.8} position={[-3, 3, 0]} args={[3, 2]} />
+        <Cloud speed={0.7} args={[3, 2]} />
+        <Cloud speed={0.8} position={[4, 3, 0]} args={[3, 2]} />
         <Cloud speed={1} position={[5, 2, 0]} args={[3, 2]} />
       </group>
     </mesh>
