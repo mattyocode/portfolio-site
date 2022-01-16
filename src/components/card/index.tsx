@@ -21,7 +21,7 @@ export default function ProjectCard({
 }: {
   projectData: ProjectDataObject;
 }): JSX.Element {
-  const [videoSrc, setVideoSrc] = useState<string | undefined>('');
+  const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
   const playRef = useRef<HTMLVideoElement | null>(null);
   const sourceRef = useRef<HTMLSourceElement | null>(null);
   const { ref: videoRef, inView: videoInView } = useInView();
@@ -42,7 +42,7 @@ export default function ProjectCard({
       <ImageWrapper>
         {projectData.video ? (
           <Video ref={playRef} autoPlay loop muted playsInline>
-            <source ref={sourceRef} src={videoSrc} />
+            {videoSrc && <source ref={sourceRef} src={videoSrc} />}
             <Image
               src={`${projectData.img}`}
               alt={`${projectData.title} image`}
