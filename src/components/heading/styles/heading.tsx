@@ -12,7 +12,7 @@ export const Title = styled.h1<TitleProps>`
   top: ${(props) => (props.raised ? '0rem' : '2.5rem')};
   text-align: left;
 
-  @media screen and (max-height: 567px) {
+  @media screen and (max-height: 568px) {
     display: none;
   }
 

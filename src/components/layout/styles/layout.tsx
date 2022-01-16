@@ -6,7 +6,8 @@ export const SectionContainer = styled.div`
   position: absolute;
   top: 0;
   bottom: 0;
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory; */
+  scroll-snap-type: y proximity;
   overflow-y: scroll;
   height: 100vh;
   height: -webkit-fill-available;

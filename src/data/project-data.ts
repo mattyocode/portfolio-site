@@ -20,7 +20,7 @@ export const projectData = [
     img: '/img/moviechooser-api.jpg',
     video: undefined,
     description:
-      'An API built with Django REST Framework that handles requests for movie data, authentication, and CRUD functionality for movie lists. The app is Dockerised, served by Gunicorn, uses Nginx as a reverse proxy, and is hosted on an AWS instance. CI/CD pipeline uses Github Actions.',
+      'API built with Django REST Framework with endpoints for movie data, authentication, and CRUD functionality for movie lists. The app is Dockerised, served by Gunicorn, uses Nginx as a reverse proxy, and is hosted on an AWS instance. CI/CD pipeline uses Github Actions.',
     icons: [
       { src: 'white/django-white', label: 'Django REST Framework' },
       { src: 'white/pytest-white', label: 'Pytest' },

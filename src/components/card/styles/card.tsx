@@ -8,14 +8,24 @@ export const Wrapper = styled.div`
   align-items: center;
   border: 3px #ff8a65 solid;
   border-radius: 5px;
-  margin: 1rem;
+  /* padding: 0 0.5rem; */
   max-width: 30rem;
-  height: 100%;
   background: #373f51;
   filter: drop-shadow(15px 15px 4px #333);
 
   @media screen and (min-height: 668px) {
     padding: 0.2rem;
+    max-height: 30rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin: 0 0.5rem;
+    max-height: 35rem;
+  }
+
+  @media screen and (min-height: 1000px) {
+    padding: 0.2rem;
+    height: 36rem;
   }
 `;
 
@@ -68,11 +78,11 @@ export const Title = styled.h3`
 `;
 
 export const BodyCopy = styled.p`
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   margin: 0.5rem 1rem;
 
   @media screen and (min-height: 668px) {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin: 0.5rem;
   }
 
