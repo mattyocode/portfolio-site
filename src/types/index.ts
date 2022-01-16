@@ -7,7 +7,7 @@ export type ProjectDataObject = {
   title: string;
   linkToSite: string | null;
   img: string | null;
-  video: string | null;
+  video: string | undefined;
   description: string;
   icons: IconObject[];
   githubRepo: string;

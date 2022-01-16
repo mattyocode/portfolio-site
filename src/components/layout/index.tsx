@@ -95,6 +95,7 @@ const containerVariants = {
     scale: 0.7,
   },
   visible: {
+    delay: 0.3,
     opacity: 1,
     scale: 1,
     transition: { type: 'spring', stiffness: 100, delay: 0.5, duration: 0.5 },

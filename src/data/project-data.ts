@@ -18,7 +18,7 @@ export const projectData = [
     title: 'MOVIECHOOSER API',
     linkToSite: null,
     img: '/img/moviechooser-api.jpg',
-    video: null,
+    video: undefined,
     description:
       'An API built with Django REST Framework that handles requests for movie data, authentication, and CRUD functionality for movie lists. The app is Dockerised, served by Gunicorn, uses Nginx as a reverse proxy, and is hosted on an AWS instance. CI/CD pipeline uses Github Actions.',
     icons: [
@@ -46,7 +46,7 @@ export const projectData = [
     title: 'OH, THIS SITE?',
     linkToSite: null,
     img: '/img/portfolio.png',
-    video: null,
+    video: undefined,
     description:
       'My portfolio site is made with Next JS, Typescript and Styled Components. The landing section cloud object has been created with Three JS (via React Three Fiber), giving the page some visual dynamism and a touch of randomness in cloud formation.',
     icons: [
