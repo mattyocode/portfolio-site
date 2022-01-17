@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 
-export default function () {
+export default function BlogPost() {
   const router = useRouter();
   console.log('router >', router.query.slug);
   return (
