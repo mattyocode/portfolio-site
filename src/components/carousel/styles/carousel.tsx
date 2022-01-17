@@ -85,14 +85,14 @@ export const StyledDotGroup = styled(DotGroup)`
 
   button {
     color: white;
-    border: 2px white solid;
+    border: 5px white solid;
     border-radius: 50%;
-    margin: auto 8px;
+    margin: auto 10px;
     filter: drop-shadow(2px 2px 0 #e79e3c);
   }
 
   .carousel__dot--selected {
-    border: 2px lightgray solid;
+    border: 5px lightgray solid;
     filter: drop-shadow(2px 2px 0 purple);
   }
 `;

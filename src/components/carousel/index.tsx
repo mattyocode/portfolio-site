@@ -54,8 +54,8 @@ export default function ProjectCarousel({
             <Image
               src='/icons/chevron-left.svg'
               alt='previous'
-              height={15}
-              width={15}
+              height={20}
+              width={20}
             />
           </ButtonBack>
           <StyledDotGroup className='styled' />
@@ -63,8 +63,8 @@ export default function ProjectCarousel({
             <Image
               src='/icons/chevron-right.svg'
               alt='next'
-              height={15}
-              width={15}
+              height={20}
+              width={20}
             />
           </ButtonNext>
         </ButtonWrapper>

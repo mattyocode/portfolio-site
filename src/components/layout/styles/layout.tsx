@@ -132,14 +132,14 @@ export const CenteredContent = styled.div<CenteredContentProps>`
 
   flex-direction: ${(props) => (props.column ? 'column' : '')};
   padding: ${(props) => (props.column ? '1rem' : '0')};
-  margin-top: ${(props) => (props.column ? '5rem' : '1rem')};
+  margin-top: ${(props) => (props.column ? '3rem' : '1rem')};
 
   @media screen and (min-width: 400px) and (min-height: 667px) {
     margin-top: 2rem;
   }
 
   @media screen and (min-width: 768px) and (min-height: 700px) {
-    margin-top: 3rem;
+    margin-top: 5rem;
   } ;
 `;
 

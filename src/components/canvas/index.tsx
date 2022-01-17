@@ -15,8 +15,8 @@ function CloudParticle({
   const { width } = useWindowDimensions();
 
   useEffect(() => {
-    if (width && width <= 768) {
-      setItemPosition([4, -3, 0]);
+    if (width && width < 768) {
+      setItemPosition([4, -1, 0]);
     } else {
       setItemPosition([0, -1, 0]);
     }

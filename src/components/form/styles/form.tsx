@@ -33,6 +33,7 @@ export const Fields = styled.div`
 
 export const Label = styled.label`
   font-size: 0.8rem;
+  font-weight: bold;
   color: #ff8a66;
   padding: 2px 7px;
 
@@ -49,7 +50,7 @@ export const Input = styled.input`
   border-bottom: 2px solid #ff8a66;
   color: #111;
   font-size: 16px;
-  height: 2rem;
+  height: 2.5rem;
   line-height: 50px;
   margin: 2px 8px 5px 8px;
 
@@ -79,13 +80,14 @@ export const Message = styled.textarea`
 
 export const FieldError = styled.p`
   display: inline;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   font-weight: bold;
-  color: gray;
+  /* color: gray; */
+  color: red;
   padding: auto 2px;
 
   @media screen and (min-height: 660px) {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
   }
 `;
 

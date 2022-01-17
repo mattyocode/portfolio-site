@@ -74,7 +74,7 @@ export default function ContactForm({
   return (
     <Wrapper>
       <Base onSubmit={formik.handleSubmit} data-testid='contact-form'>
-        <Title>Get in touch.</Title>
+        <Title>Get in touch</Title>
         <Fields>
           <Label htmlFor='name'>
             Name:
