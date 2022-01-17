@@ -40,22 +40,14 @@ export default function ProjectCard({
   return (
     <Wrapper ref={cardRef}>
       <ImageWrapper>
-        {projectData.video ? (
-          <Video
-            ref={videoRef}
-            autoPlay
-            loop
-            muted
-            playsInline
-            poster={`${projectData.img}`}
-          >
+        {projectData.video && cardInView ? (
+          <Video ref={videoRef} autoPlay loop muted playsInline>
             <source ref={sourceRef} src={videoSrc} />
             {/* <Image
               src={`${projectData.img}`}
               alt={`${projectData.title} image`}
               layout='fill'
               objectFit='cover'
-              priority
             /> */}
           </Video>
         ) : (
