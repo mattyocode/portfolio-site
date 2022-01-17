@@ -29,7 +29,7 @@ export default function ProjectCard({
   useEffect(() => {
     if (cardInView && Ref.current) {
       setVideoSrc(projectData.video);
-      Ref.current.load();
+      // Ref.current.load();
       Ref.current.play();
     }
   }, [cardInView, Ref, projectData]);
@@ -46,7 +46,7 @@ export default function ProjectCard({
             playsInline
             poster={`${projectData.img}`}
           >
-            <source ref={sourceRef} src={videoSrc} />
+            {videoSrc && <source ref={sourceRef} src={videoSrc} />}
           </Video>
         ) : (
           <Image
