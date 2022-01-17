@@ -45,34 +45,42 @@ export default function ProjectCard({
   projectData: ProjectDataObject;
 }): JSX.Element {
   const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const Ref = useRef<HTMLVideoElement | null>(null);
   const sourceRef = useRef<HTMLSourceElement | null>(null);
   const { ref: cardRef, inView: cardInView } = useInView();
 
   useEffect(() => {
-    if (cardInView && videoRef.current) {
+    if (cardInView && Ref.current) {
       setVideoSrc(projectData.video);
-      videoRef.current.load();
-      videoRef.current.play();
+      Ref.current.load();
+      Ref.current.play();
     }
-    if (!cardInView && videoRef.current) {
-      videoRef.current.pause();
-    }
-  }, [cardInView, videoRef, projectData]);
+  }, [cardInView, Ref, projectData]);
 
   return (
     <CardWrapper ref={cardRef}>
-      <VideoWrapper>
-          <Video ref={videoRef} autoPlay loop muted playsInline>
-            {videoSrc && <source ref={sourceRef} src={videoSrc} />}
-            <Image
-              src={`${projectData.img}`}
-              alt={`${projectData.title} image`}
-              layout='fill'
-              objectFit='cover'
-            />
+      <ContentWrapper>
+         {projectData.video && cardInView ? (
+          <Video
+            ref={Ref}
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster={`${projectData.img}`}
+          >
+            <source ref={sourceRef} src={videoSrc} />
           </Video>
-      </VideoWrapper>
+        ) : (
+          <Image
+            src={`${projectData.img}`}
+            alt={`${projectData.title} image`}
+            layout='fill'
+            objectFit='cover'
+            priority
+          />
+        )}
+      </ContentWrapper>
       [...]
     </CardWrapper>
   );
