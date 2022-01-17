@@ -42,12 +42,13 @@ export default function ProjectCard({
       <ImageWrapper>
         {projectData.video ? (
           <Video ref={videoRef} autoPlay loop muted playsInline>
-            {videoSrc && <source ref={sourceRef} src={videoSrc} />}
+            <source ref={sourceRef} src={videoSrc} />
             <Image
               src={`${projectData.img}`}
               alt={`${projectData.title} image`}
               layout='fill'
               objectFit='cover'
+              priority
             />
           </Video>
         ) : (

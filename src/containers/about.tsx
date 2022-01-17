@@ -98,9 +98,7 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
                 src='/img/objectgn4.svg'
                 alt='green angular structure'
                 layout='fill'
-                objectPosition={`top ${
-                  width && width < 768 ? 'left' : 'right'
-                }`}
+                objectPosition='top'
                 objectFit='cover'
               />
               <AboutCentered ref={contentRef}>
