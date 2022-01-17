@@ -73,7 +73,6 @@ export const Title = styled.h3`
   }
 
   @media screen and (min-height: 668px) and (min-width: 450px) {
-    margin: 0.25rem;
     font-size: 1.2rem;
   }
 `;

@@ -48,7 +48,6 @@ export default function ProjectCard({
               alt={`${projectData.title} image`}
               layout='fill'
               objectFit='cover'
-              priority
             />
           </Video>
         ) : (
