@@ -24,7 +24,7 @@ export default function LandingSection({ navRef }: SectionNavRef): JSX.Element {
         <LandingCentered>
           <ProfilePicWrapper>
             <Image
-              src='/img/profilepicgn.png'
+              src='/img/profilepic.svg'
               alt='illustration of site author'
               width='250'
               height='250'

@@ -82,7 +82,7 @@ module.exports = plugins(
   nextConfig
 );
 
-module.exports = {
+module.exports = withBundleAnalyzer({
   webpack5: true,
   webpack: (config, { isServer }) => {
     if (!isServer) {
@@ -90,7 +90,7 @@ module.exports = {
     }
     return config;
   },
-};
+});
 
 // module.exports = {
 //   reactStrictMode: true,

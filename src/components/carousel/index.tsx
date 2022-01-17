@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, MutableRefObject } from 'react';
+import Image from 'next/image';
 import { ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import {
@@ -11,7 +12,6 @@ import {
 } from './styles/carousel';
 import Card from '../card';
 import useWindowDimensions from '../../helpers/useWindowDimensions';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { ProjectDataObject } from '../../types';
 
 export default function ProjectCarousel({
@@ -51,11 +51,21 @@ export default function ProjectCarousel({
         </StyledSlider>
         <ButtonWrapper>
           <ButtonBack>
-            <FaChevronLeft />
+            <Image
+              src='/icons/chevron-left.svg'
+              alt='previous'
+              height={15}
+              width={15}
+            />
           </ButtonBack>
           <StyledDotGroup className='styled' />
           <ButtonNext>
-            <FaChevronRight />
+            <Image
+              src='/icons/chevron-right.svg'
+              alt='next'
+              height={15}
+              width={15}
+            />
           </ButtonNext>
         </ButtonWrapper>
       </Wrapper>

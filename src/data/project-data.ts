@@ -5,7 +5,7 @@ export const projectData = [
     img: '/img/mc-image.jpg',
     video: '/video/moviechooser.mp4',
     description:
-      'React app with Redux that allows users to specify genre, runtime, and release decade, and returns matches with links to streaming services and the ability to share movie summary on social platforms. Users can login (authenticating via JWT) and add movies to list.',
+      'React app with Redux that allows users to specify genre, runtime, and release decade, and receive matching movies with links to streaming services and social media share buttons. Users can login (authenticating via JWT) and add movies to a list.',
     icons: [
       { src: 'white/react-white', label: 'React' },
       { src: 'white/styled-components-white', label: 'Styled Components' },
