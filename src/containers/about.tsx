@@ -100,6 +100,7 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
                 layout='fill'
                 objectPosition='top'
                 objectFit='cover'
+                priority
               />
               <AboutCentered ref={contentRef}>
                 <LongCopy data-testid='about-copy'>
