@@ -21,7 +21,7 @@ export default function ProjectCarousel({
 }): JSX.Element {
   const { width } = useWindowDimensions();
   const numSlidesRef: MutableRefObject<number | undefined> = useRef();
-  let numSlides: number = 1;
+  // let numSlides: number = 1;
 
   useEffect(() => {
     if (width && width >= 768) {

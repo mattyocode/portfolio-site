@@ -5,7 +5,7 @@ export const projectData = [
     img: '/img/mc-image.jpg',
     video: '/video/moviechooser.mp4',
     description:
-      'React app with Redux that allows users to specify genre, runtime, and release decade, and returns matching movies with links to streaming services and the ability to share links to movies on social platforms. Users can login (authenticating via JWT) and add movies to a list.',
+      'React app with Redux that allows users to specify genre, runtime, and release decade, and returns matches with links to streaming services and the ability to share movie summary on social platforms. Users can login (authenticating via JWT) and add movies to list.',
     icons: [
       { src: 'white/react-white', label: 'React' },
       { src: 'white/styled-components-white', label: 'Styled Components' },
@@ -35,7 +35,7 @@ export const projectData = [
     img: '/img/ngrams-img.png',
     video: '/video/ngrams-generator.mp4',
     description:
-      'A language analysis command-line app available on PyPI that takes in text data and outputs the most common ngrams it contains. Data is returned as CSV, from bigrams up to a chosen phrase length. Words are tokenised with Spacy and ngrams are generated with NLTK.',
+      'A language analysis command-line app available on PyPI that takes in text data and outputs the most common ngrams it contains. Data is returned as CSV, from bigrams up to a chosen phrase length. Words are tokenised with Spacy, ngrams are generated with NLTK.',
     icons: [
       { src: 'white/python-white', label: 'Python' },
       { src: 'white/pytest-white', label: 'Pytest' },

@@ -1,91 +1,66 @@
 import styled from 'styled-components';
 import { CarouselProvider, DotGroup, Slide, Slider } from 'pure-react-carousel';
 
-export const StyledSlide = styled(Slide)`
-  /* .centered {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 27rem;
+export const Wrapper = styled.div``;
 
-    @media screen and (min-width: 321px) {
+export const StyledSlide = styled(Slide)`
+  .centered {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    max-height: 28rem;
+
+    @media screen and (min-height: 600px) {
+      max-height: 28rem;
+    }
+
+    @media screen and (min-height: 700px) {
       max-height: 30rem;
     }
 
-    @media screen and (min-height: 668px) {
-      max-height: 32rem;
+    @media screen and (min-height: 800px) {
+      max-height: 31rem;
+      padding-top: 0;
     }
 
-    @media screen and (min-height: 668px) and (min-width: 450px) {
-      max-height: 34rem;
+    @media screen and (min-height: 900px) {
+      max-height: 32rem;
     }
-  } */
+  }
 `;
 
 export const StyledSlider = styled(Slider)`
-  width: 95vw;
+  width: 100vw;
   max-width: 1200px;
-  /* max-height: 26rem; */
+  max-height: 28rem;
+  margin-top: 3rem;
 
   -ms-touch-action: pan-y;
   touch-action: pan-y;
 
-  /* @media screen and (min-height: 568px) {
-    padding-top: 3rem;
-    max-width: 1200px;
+
+  @media screen and (min-height: 600px) {
+    margin-top: 4rem;
+    max-height: 30rem;
   }
 
-  @media screen and (min-width: 375px) and (min-height: 667px) {
-    padding-top: 4rem;
-    /* max-height: 32rem; */
-  /* } */
-
-  @media screen and (min-height: 668px) and (min-width: 450px) {
-    /* max-height: 32rem; */
+  @media screen and (min-height: 700px) {
+    margin-top: 2rem;
+    max-height: 34rem;
   }
 
-  @media screen and (min-height: 820px) and (min-width: 768px) {
-    height: 40rem;
+  @media screen and (min-height: 900px) {\
+    margin-top: 1rem;
+    max-height: 36rem;
   }
+
 `;
 
-export const StyledProvider = styled(CarouselProvider)`
-  .centered {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    @media screen and (min-width: 768px) and (min-height: 1000px) {
-      padding-top: 7rem;
-    }
-    @media screen and (min-width: 1000px) and (min-height: 1000px) {
-      padding-top: 0rem;
-    }
-    /* padding-bottom: 18px; */
-  }
-`;
-
-export const Wrapper = styled.div`
-  margin: 1rem auto;
-
-  @media screen and (min-height: 730px) {
-    margin: 4rem 0 2rem 0;
-  }
-`;
+export const StyledProvider = styled(CarouselProvider)``;
 
 export const ButtonWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 0.5rem 0;
-
-  @media screen and (min-height: 660px) {
-    margin: 2rem 0;
-  }
-
-  @media screen and (min-height: 900px) {
-    margin: 3rem 0;
-  }
 
   button {
     background: none;
@@ -101,7 +76,6 @@ export const ButtonWrapper = styled.div`
   }
 
   button:disabled {
-    /* border: 2px #444 solid; */
     filter: drop-shadow(2px 2px 0 gray);
   }
 `;

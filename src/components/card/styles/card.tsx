@@ -8,58 +8,58 @@ export const Wrapper = styled.div`
   align-items: center;
   border: 3px #ff8a65 solid;
   border-radius: 5px;
-  /* padding: 0 0.5rem; */
-  max-width: 30rem;
+  margin: auto;
+  /* height: 25rem; */
+  height: 100%;
+  max-width: 90vw;
   background: #373f51;
   filter: drop-shadow(15px 15px 4px #333);
 
-  @media screen and (min-height: 668px) {
-    padding: 0.2rem;
-    max-height: 30rem;
+  @media screen and (min-width: 410px) {
+    max-width: 22rem;
   }
 
-  @media screen and (min-width: 768px) {
-    margin: 0 0.5rem;
-    max-height: 35rem;
+  @media screen and (min-width: 850px) {
+    max-width: 26rem;
   }
 
-  @media screen and (min-height: 1000px) {
-    padding: 0.2rem;
-    height: 36rem;
+  @media screen and (min-width: 1000px) {
+    max-width: 28rem;
   }
 `;
 
 export const ImageWrapper = styled.div`
   position: relative;
   margin: 0.5rem;
-  height: 10rem;
   width: 14rem;
+  height: 10rem;
 
-  @media screen and (min-height: 668px) {
+  @media screen and (min-height: 700px) {
+    width: 15rem;
     height: 12rem;
-    width: 16rem;
   }
 
-  @media screen and (min-height: 730px) {
+  @media screen and (min-height: 800px) {
     height: 14rem;
-    width: 18rem;
+    width: 16rem;
   }
 `;
 
 export const Video = styled.video`
-  padding: 0.5rem;
   position: relative;
-  height: 10rem;
+  /* height: 100%;
+  width: 100%; */
   width: 14rem;
+  height: 10rem;
 
-  @media screen and (min-height: 668px) {
+  @media screen and (min-height: 700px) {
+    width: 15rem;
     height: 12rem;
-    width: 16rem;
   }
 
-  @media screen and (min-height: 730px) {
+  @media screen and (min-height: 800px) {
     height: 14rem;
-    width: 18rem;
+    width: 16rem;
   }
 `;
 
@@ -73,6 +73,7 @@ export const Title = styled.h3`
   }
 
   @media screen and (min-height: 668px) and (min-width: 450px) {
+    margin: 0.25rem;
     font-size: 1.2rem;
   }
 `;
@@ -88,7 +89,7 @@ export const BodyCopy = styled.p`
 
   @media screen and (min-height: 668px) and (min-width: 450px) {
     font-size: 1rem;
-    margin: 1rem;
+    margin: 0.7rem;
   }
 `;
 
