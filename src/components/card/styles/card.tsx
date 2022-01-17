@@ -31,28 +31,28 @@ export const Wrapper = styled.div`
 export const ImageWrapper = styled.div`
   position: relative;
   margin: 0.5rem;
-  width: 14rem;
   height: 10rem;
+  width: 14rem;
 
   @media screen and (min-height: 700px) {
-    width: 15rem;
     height: 12rem;
+    width: 16rem;
   }
 
   @media screen and (min-height: 800px) {
     height: 14rem;
-    width: 16rem;
+    width: 20rem;
   }
 `;
 
 export const Video = styled.video`
   position: relative;
-  /* height: 100%;
-  width: 100%; */
-  width: 14rem;
-  height: 10rem;
+  height: 100%;
+  width: 100%;
+  /* width: 14rem;
+  height: 10rem; */
 
-  @media screen and (min-height: 700px) {
+  /* @media screen and (min-height: 700px) {
     width: 15rem;
     height: 12rem;
   }
@@ -60,7 +60,7 @@ export const Video = styled.video`
   @media screen and (min-height: 800px) {
     height: 14rem;
     width: 16rem;
-  }
+  } */
 `;
 
 export const TextWrapper = styled.div``;

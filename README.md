@@ -1,34 +1,84 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Full Stack Developer Portfolio
 
-## Getting Started
+This website is designed to provide an overview of personal projects and a way to get in touch with the author. The blog portion is currently in development.
 
-First, run the development server:
+## Tech stack
 
-```bash
-npm run dev
-# or
-yarn dev
+- Typescript
+- Next JS
+- Styled Components
+- React Three Fiber / Drei
+- Framer Motion
+- Send Grid
+- Formik
+- Jest
+- React Testing Library
+
+## Deployment
+
+Website is hosted on Vercel, and is available at [mattoliver.dev](https://mattoliver.dev)
+
+## Key site features
+
+### Landing section
+
+![Screenshot 2022-01-17 at 16.29.26.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/04d0008b-ed0b-4f51-82c7-9cc33a542082/Screenshot_2022-01-17_at_16.29.26.png)
+
+Landing section features particle-based cloud from the Drei library that changes colour (randomly selected) on click. It adds some interactivity and visual dynamism to as users first hit the site.
+
+### Projects carousel
+
+![Screenshot 2022-01-17 at 16.40.37.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b7b95380-c0c3-4478-9e50-258014f7b9ad/Screenshot_2022-01-17_at_16.40.37.png)
+
+The projects carousel is built on pure-react-carousel and includes autoplay videos for front-end projects.
+
+Below is a code snippet illustrating the dynamic addition of video source that keeps the initial page load lean, only loading video content once the a card including video is visible in the viewport:
+
+```tsx
+import { useInView } from 'react-intersection-observer';
+
+[...]
+
+export default function ProjectCard({
+  projectData,
+}: {
+  projectData: ProjectDataObject;
+}): JSX.Element {
+  const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const sourceRef = useRef<HTMLSourceElement | null>(null);
+  const { ref: cardRef, inView: cardInView } = useInView();
+
+  useEffect(() => {
+    if (cardInView && videoRef.current) {
+      setVideoSrc(projectData.video);
+      videoRef.current.load();
+      videoRef.current.play();
+    }
+    if (!cardInView && videoRef.current) {
+      videoRef.current.pause();
+    }
+  }, [cardInView, videoRef, projectData]);
+
+  return (
+    <CardWrapper ref={cardRef}>
+      <VideoWrapper>
+          <Video ref={videoRef} autoPlay loop muted playsInline>
+            {videoSrc && <source ref={sourceRef} src={videoSrc} />}
+            <Image
+              src={`${projectData.img}`}
+              alt={`${projectData.title} image`}
+              layout='fill'
+              objectFit='cover'
+            />
+          </Video>
+      </VideoWrapper>
+      [...]
+    </CardWrapper>
+  );
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Challenges and Improvements
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Working with a third-party carousel library was a consideration for efficiently building the site, but provided some constraints around styling (with some nested elements providing difficult to reach and style intuitively), and functionality (for example, fine-tuning of touch gesture interaction). Given more time, I intend to build a responsive carousel from scratch to fully get under the hood of this commonly used component.
