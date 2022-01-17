@@ -22,13 +22,13 @@ Website is hosted on Vercel, and is available at [mattoliver.dev](https://mattol
 
 ### Landing section
 
-![Landing section screengrab](https://github.com/mattyocode/portfolio-site/blob/images/landing.png)
+![Landing section screengrab](https://github.com/mattyocode/images/blob/main/landing.png)
 
 Landing section features particle-based cloud from the Drei library that changes colour (randomly selected) on click. It adds some interactivity and visual dynamism to as users first hit the site.
 
 ### Projects carousel
 
-![Projects section screengrab](https://github.com/mattyocode/portfolio-site/blob/images/projects.png)
+![Projects section screengrab](https://github.com/mattyocode/images/blob/main/projects.png)
 
 The projects carousel is built on pure-react-carousel and includes autoplay videos for front-end projects.
 
