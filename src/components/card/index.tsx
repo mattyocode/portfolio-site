@@ -35,6 +35,9 @@ export default function ProjectCard({
     if (!cardInView && videoRef.current) {
       videoRef.current.pause();
     }
+    return () => {
+      setVideoSrc(undefined);
+    };
   }, [cardInView, videoRef, projectData]);
 
   return (
