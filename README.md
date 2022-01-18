@@ -32,7 +32,7 @@ Landing section features particle-based cloud from the Drei library that changes
 
 The projects carousel is built on pure-react-carousel and includes autoplay videos for front-end projects.
 
-Below is a code snippet illustrating the dynamic addition of video source that keeps the initial page load lean, only loading video content once the a card including video is visible in the viewport:
+Below is a code snippet illustrating the logic that applies the video path to <source> element src attribute when the card containing the video is visible in the viewport. It also includes a small hack where the <source> element is conditionally rendered to the DOM while also being there statically (albeit without the src path). This delivers the desired autoplay functionality across Chrome and Safari.
 
 ```tsx
 import { useInView } from 'react-intersection-observer';
@@ -48,10 +48,13 @@ export default function ProjectCard({
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const { ref: cardRef, inView: cardInView } = useInView();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (cardInView && projectData.video && videoRef.current) {
       setVideoSrc(projectData.video);
       videoRef.current.play();
+    }
+    if (!cardInView && videoRef.current) {
+      videoRef.current.currentTime = 0;
     }
   }, [cardInView, videoRef, projectData]);
 
@@ -61,12 +64,14 @@ export default function ProjectCard({
         {projectData.video && (
           <Video
             ref={videoRef}
+            autoPlay
             loop
             muted
             playsInline
             poster={`${projectData.img}`}
           >
             {videoSrc && <source src={videoSrc} />}
+            <source src={videoSrc} />
           </Video>
         )}
         <ImageOpacity opacity={videoSrc ? '0' : '1'}>
@@ -88,3 +93,5 @@ export default function ProjectCard({
 ## Challenges and Improvements
 
 Working with a third-party carousel library was a consideration for efficiently building the site, but provided some constraints around styling (with some nested elements providing difficult to reach and style intuitively), and functionality (for example, fine-tuning of touch gesture interaction). Given more time, I intend to build a responsive carousel from scratch to fully get under the hood of this commonly used component.
+
+Tree-shaking with Three JS has also proved tricky, and I plan to continue looking for ways to reduce the bundle size.
