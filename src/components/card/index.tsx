@@ -39,7 +39,7 @@ export default function ProjectCard({
         {projectData.video && (
           <Video
             ref={videoRef}
-            // autoPlay
+            autoPlay
             loop
             muted
             playsInline

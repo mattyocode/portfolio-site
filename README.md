@@ -45,33 +45,31 @@ export default function ProjectCard({
   projectData: ProjectDataObject;
 }): JSX.Element {
   const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
-  const Ref = useRef<HTMLVideoElement | null>(null);
-  const sourceRef = useRef<HTMLSourceElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const { ref: cardRef, inView: cardInView } = useInView();
 
   useEffect(() => {
-    if (cardInView && Ref.current) {
+    if (cardInView && projectData.video && videoRef.current) {
       setVideoSrc(projectData.video);
-      Ref.current.load();
-      Ref.current.play();
+      videoRef.current.play();
     }
-  }, [cardInView, Ref, projectData]);
+  }, [cardInView, videoRef, projectData]);
 
   return (
-    <CardWrapper ref={cardRef}>
+    <Wrapper ref={cardRef}>
       <ContentWrapper>
-         {projectData.video && cardInView ? (
+        {projectData.video && (
           <Video
-            ref={Ref}
-            autoPlay
+            ref={videoRef}
             loop
             muted
             playsInline
             poster={`${projectData.img}`}
           >
-            <source ref={sourceRef} src={videoSrc} />
+            {videoSrc && <source src={videoSrc} />}
           </Video>
-        ) : (
+        )}
+        <ImageOpacity opacity={videoSrc ? '0' : '1'}>
           <Image
             src={`${projectData.img}`}
             alt={`${projectData.title} image`}
@@ -79,7 +77,7 @@ export default function ProjectCard({
             objectFit='cover'
             priority
           />
-        )}
+        </ImageOpacity>
       </ContentWrapper>
       [...]
     </CardWrapper>

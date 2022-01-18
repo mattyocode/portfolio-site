@@ -154,4 +154,5 @@ export const SCenterIcon = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 6rem;
+  min-height: 20px;
 `;
