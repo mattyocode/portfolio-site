@@ -45,10 +45,22 @@ export const ImageWrapper = styled.div`
   }
 `;
 
+type ImageOpacityProps = {
+  opacity: string;
+};
+
+export const ImageOpacity = styled.div<ImageOpacityProps>`
+  opacity: ${(props) => props.opacity || '1'};
+  position: relative;
+  width: 100%;
+  height: 100%;
+`;
+
 export const Video = styled.video`
   position: relative;
   height: 100%;
   width: 100%;
+  z-index: 10;
   /* width: 14rem;
   height: 10rem; */
 
