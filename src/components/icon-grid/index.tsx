@@ -6,6 +6,7 @@ import {
   IconWrapper,
   Icon,
   IconText,
+  SmallIcon,
 } from './styles/icon-grid';
 
 export default function IconGrid({
@@ -28,3 +29,13 @@ export default function IconGrid({
     </Container>
   );
 }
+
+export const SingleSmallIcon = ({
+  src,
+  label,
+}: {
+  src: string;
+  label: string;
+}) => {
+  return <SmallIcon src={src} alt={label} />;
+};

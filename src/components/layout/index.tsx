@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children } from 'react';
 import {
   AboutContent,
   ProfilePic,
@@ -8,6 +8,7 @@ import {
   LandingContent,
   CenteredContent,
   RelativeWrapper,
+  SCenterIcon,
 } from './styles/layout';
 
 type Props = {
@@ -51,14 +52,16 @@ Section.displayName = 'Section';
 
 export const FullBleedWrapper = ({
   centered = true,
+  flexRow = true,
   children,
   ...restProps
 }: {
   centered?: boolean;
+  flexRow?: boolean;
   children?: React.ReactNode;
 }): JSX.Element => {
   return (
-    <ImageWrapper centered={centered} {...restProps}>
+    <ImageWrapper centered={centered} flexRow={flexRow} {...restProps}>
       {children}
     </ImageWrapper>
   );
@@ -135,4 +138,8 @@ export const Centered = ({
 
 export const Relative = ({ children, ...restProps }: Props): JSX.Element => {
   return <RelativeWrapper {...restProps}>{children}</RelativeWrapper>;
+};
+
+export const CenterIcon = ({ children, ...restProps }: Props): JSX.Element => {
+  return <SCenterIcon {...restProps}>{children}</SCenterIcon>;
 };

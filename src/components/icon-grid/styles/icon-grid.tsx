@@ -70,6 +70,12 @@ export const Icon = styled.img`
   }
 `;
 
+export const SmallIcon = styled.img`
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+`;
+
 export const IconText = styled.p`
   font-size: 0.6rem;
   text-align: center;

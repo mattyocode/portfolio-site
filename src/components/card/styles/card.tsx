@@ -57,22 +57,11 @@ export const ImageOpacity = styled.div<ImageOpacityProps>`
 `;
 
 export const Video = styled.video`
-  position: relative;
+  position: absolute;
+  top: 0;
   height: 100%;
   width: 100%;
   z-index: 10;
-  /* width: 14rem;
-  height: 10rem; */
-
-  /* @media screen and (min-height: 700px) {
-    width: 15rem;
-    height: 12rem;
-  }
-
-  @media screen and (min-height: 800px) {
-    height: 14rem;
-    width: 16rem;
-  } */
 `;
 
 export const TextWrapper = styled.div``;

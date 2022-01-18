@@ -1,12 +1,17 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import useWindowDimensions from '../helpers/useWindowDimensions';
-import { AboutCentered, Section, FullBleedWrapper } from '../components/layout';
+import {
+  AboutCentered,
+  CenterIcon,
+  Section,
+  FullBleedWrapper,
+} from '../components/layout';
 import { LongCopy, PageTitle } from '../components/heading';
 import { ObjectContainer, ObjectWrapper } from '../components/object';
-import IconGrid from '../components/icon-grid';
+import IconGrid, { SingleSmallIcon } from '../components/icon-grid';
 import { aboutIcons } from '../data/about-icons';
 
 const titleVariants = {
@@ -18,7 +23,6 @@ const titleVariants = {
     scale: 1,
     opacity: 1,
     transition: {
-      // delay: 0.2,
       duration: 0.6,
       ease: 'easeInOut',
     },
@@ -45,6 +49,7 @@ type Props = {
 };
 
 export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
+  const [showMoreIcon, setShowMoreIcon] = useState<boolean>(true);
   const contentRef = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
   const {
@@ -53,6 +58,17 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
     entry: titleEntry,
   } = useInView({ threshold: 0.2 });
   const { width } = useWindowDimensions();
+
+  const handleScroll = (e: React.UIEvent<HTMLElement>) => {
+    const atBottom =
+      e.currentTarget.scrollHeight - e.currentTarget.scrollTop ===
+      e.currentTarget.clientHeight;
+    if (atBottom) {
+      setShowMoreIcon(!atBottom);
+    } else {
+      setShowMoreIcon(true);
+    }
+  };
 
   useEffect(() => {
     if (titleInView) {
@@ -86,7 +102,7 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
             variants={objectVariants}
             ref={titleRef}
           >
-            <FullBleedWrapper centered={true}>
+            <FullBleedWrapper centered={true} flexRow={false}>
               <motion.div
                 initial='hidden'
                 animate={controls}
@@ -102,7 +118,7 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
                 objectFit='cover'
                 priority
               />
-              <AboutCentered ref={contentRef}>
+              <AboutCentered ref={contentRef} onScroll={handleScroll}>
                 <LongCopy data-testid='about-copy'>
                   <p>
                     For almost seven years, I&apos;ve worked as a consultant
@@ -136,6 +152,11 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
                 </LongCopy>
                 <IconGrid icons={aboutIcons} />
               </AboutCentered>
+              <CenterIcon>
+                {width && width < 768 && showMoreIcon && (
+                  <SingleSmallIcon src='/icons/chevron-down.svg' label='more' />
+                )}
+              </CenterIcon>
             </FullBleedWrapper>
           </motion.div>
         </ObjectContainer>

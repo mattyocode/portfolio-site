@@ -24,7 +24,7 @@ export const SectionBackground = styled.section<SectionBackgroundProps>`
     props.backgroundImage ? props.backgroundImage : ''};
 `;
 
-type ImageWrapperProps = { centered: boolean };
+type ImageWrapperProps = { centered: boolean; flexRow: boolean };
 
 export const ImageWrapper = styled.div<ImageWrapperProps>`
   position: relative;
@@ -33,6 +33,7 @@ export const ImageWrapper = styled.div<ImageWrapperProps>`
   display: flex;
   justify-content: ${(props) => (props.centered ? 'center' : 'flex-end')};
   align-items: ${(props) => (props.centered ? 'center' : 'flex-end')};
+  flex-direction: ${(props) => (props.flexRow ? 'row' : 'column')};
 
   @media screen and (min-width: 768px) {
     justify-content: center;
@@ -85,8 +86,8 @@ export const AboutContent = styled.div<CenteredProps>`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  overflow-y: auto;
-  margin-bottom: 6rem;
+  overflow-y: scroll;
+  margin-bottom: 1rem;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
@@ -145,4 +146,12 @@ export const CenteredContent = styled.div<CenteredContentProps>`
 
 export const RelativeWrapper = styled.div`
   position: relative;
+`;
+
+export const SCenterIcon = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4rem;
 `;
