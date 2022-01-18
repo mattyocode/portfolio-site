@@ -52,7 +52,8 @@ export default function ProjectCard({
             {videoSrc && <source ref={sourceRef} src={videoSrc} />}
           </Video>
         )}
-        <ImageOpacity opacity={videoSrc ? '0' : '1'}>
+        {/* <ImageOpacity opacity={videoSrc ? '0' : '1'}> */}
+        {!videoSrc && (
           <Image
             src={`${projectData.img}`}
             alt={`${projectData.title} image`}
@@ -60,7 +61,8 @@ export default function ProjectCard({
             objectFit='cover'
             priority
           />
-        </ImageOpacity>
+        )}
+        {/* </ImageOpacity> */}
       </ImageWrapper>
       <TextWrapper>
         <Title>{projectData.title}</Title>
