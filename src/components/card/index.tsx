@@ -47,7 +47,7 @@ export default function ProjectCard({
             loop
             muted
             playsInline
-            // poster={`${projectData.img}`}
+            poster={`${projectData.img}`}
           >
             {videoSrc && <source src={videoSrc} />}
           </Video>
