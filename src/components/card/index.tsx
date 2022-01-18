@@ -4,7 +4,6 @@ import { useInView } from 'react-intersection-observer';
 import {
   Wrapper,
   ImageWrapper,
-  ImageOpacity,
   Video,
   TextWrapper,
   Title,
@@ -40,7 +39,7 @@ export default function ProjectCard({
         {projectData.video && (
           <Video
             ref={videoRef}
-            autoPlay
+            // autoPlay
             loop
             muted
             playsInline
