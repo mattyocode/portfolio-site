@@ -2,7 +2,7 @@ export const projectData = [
   {
     title: 'MOVIECHOOSER',
     linkToSite: 'https://moviechooser.co.uk',
-    img: '/img/mc-image.jpg',
+    img: '/img/mc-image.png',
     video: '/video/moviechooser.mp4',
     description:
       'React app with Redux that allows users to specify genre, runtime, and release decade, and receive matching movies with links to streaming services and social media share buttons. Users can login (authenticating via JWT) and add movies to a list.',

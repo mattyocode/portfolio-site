@@ -76,6 +76,7 @@ export const IconText = styled.p`
   vertical-align: baseline;
   margin: 10px;
   font-weight: bold;
+  filter: drop-shadow(1px 1px 0 #444);
 
   @media screen and (min-width: 1024px) and (min-height: 738px) {
     font-size: 0.7rem;
