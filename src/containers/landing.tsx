@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import CanvasContainer from '../components/canvas';
+import dynamic from 'next/dynamic';
+// import CanvasContainer from '../components/canvas';
 import {
   FullBleedWrapper,
   Section,
@@ -11,6 +12,8 @@ import { LandingCopy } from '../components/heading';
 
 import { SectionNavRef } from '../types';
 import { ContactLinks } from '../data/contact-links';
+
+const CanvasContainer = dynamic(() => import('../components/canvas'));
 
 export default function LandingSection({ navRef }: SectionNavRef): JSX.Element {
   return (

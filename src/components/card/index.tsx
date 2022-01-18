@@ -22,24 +22,24 @@ export default function ProjectCard({
   projectData: ProjectDataObject;
 }): JSX.Element {
   const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
-  const Ref = useRef<HTMLVideoElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const sourceRef = useRef<HTMLSourceElement | null>(null);
   const { ref: cardRef, inView: cardInView } = useInView();
 
   useEffect(() => {
-    if (cardInView && Ref.current) {
+    if (cardInView && videoRef.current) {
       setVideoSrc(projectData.video);
-      Ref.current.load();
-      Ref.current.play();
+      // videoRef.current.load();
+      videoRef.current.play();
     }
-  }, [cardInView, Ref, projectData]);
+  }, [cardInView, videoRef, projectData]);
 
   return (
     <Wrapper ref={cardRef}>
       <ImageWrapper>
         {projectData.video ? (
           <Video
-            ref={Ref}
+            ref={videoRef}
             autoPlay
             loop
             muted
