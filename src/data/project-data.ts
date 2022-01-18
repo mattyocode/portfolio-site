@@ -17,7 +17,7 @@ export const projectData = [
   {
     title: 'MOVIECHOOSER API',
     linkToSite: null,
-    img: '/img/moviechooser-api-sm.png',
+    img: '/img/moviechooser-api.png',
     video: undefined,
     description:
       'API built with Django REST Framework with endpoints for movie data, authentication, and CRUD functionality for movie lists. App is Dockerised, served by Gunicorn, uses Nginx as a reverse proxy, and is hosted on an AWS instance. CI/CD pipeline uses Github Actions.',

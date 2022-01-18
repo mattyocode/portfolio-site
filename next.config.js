@@ -33,9 +33,9 @@ const nextConfig = {
       use: ['raw-loader', 'glslify-loader'],
     });
 
-    config.resolve.alias['three$'] = path.resolve('./src/utils/three.js');
-    config.resolve.alias['./node_modules/three/build/three.module.js'] =
-      path.resolve('./src/utils/three.js');
+    // config.resolve.alias['three$'] = path.resolve('./src/utils/three.js');
+    // config.resolve.alias['./node_modules/three/build/three.module.js'] =
+    //   path.resolve('./src/utils/three.js');
 
     return config;
   },

@@ -39,14 +39,7 @@ export default function CanvasContainer() {
   const [color, setColor] = useState<number>(0);
   const group = useRef();
 
-  const colors = [
-    '#ffffff',
-    '#91f2a3',
-    '#ff8966',
-    '#ff9fe5',
-    '#3e8989',
-    '#ffffff',
-  ];
+  const colors = ['#ffffff', '#91f2a3', '#ff8966', '#ff9fe5', '#3e8989'];
   const setCloudColor = (e: ThreeEvent<MouseEvent>): void => {
     let colorIdx = Math.floor(Math.random() * colors.length);
     setColor(colorIdx);

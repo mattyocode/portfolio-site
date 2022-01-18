@@ -42,8 +42,6 @@
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/plugin-transform-runtime": "^7.16.4",
-    "babel-plugin-glsl": "^1.0.0",
-    "babel-plugin-styled-components": "^2.0.2",
     "@next/bundle-analyzer": "^12.0.7",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
@@ -53,6 +51,8 @@
     "@types/react": "17.0.37",
     "@types/smoothscroll-polyfill": "^0.3.1",
     "@types/styled-components": "^5.1.17",
+    "babel-plugin-glsl": "^1.0.0",
+    "babel-plugin-styled-components": "^2.0.2",
     "customize-cra-react-refresh": "^1.1.0",
     "eslint": "8.4.1",
     "eslint-config-next": "12.0.7",
