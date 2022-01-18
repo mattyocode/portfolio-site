@@ -81,7 +81,7 @@ export const LandingContent = styled.div<CenteredProps>`
 
 export const AboutContent = styled.div<CenteredProps>`
   width: 100%;
-  height: 65%; // 70% prev
+  height: 60%; // 70% prev
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -153,5 +153,5 @@ export const SCenterIcon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
 `;
