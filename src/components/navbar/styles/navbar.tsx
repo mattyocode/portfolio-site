@@ -39,7 +39,7 @@ export const LinksWrapper = styled.ul`
 export const NavLink: StyledComponent<'li', any, {}, never> = styled.li`
   display: block;
   cursor: pointer;
-  border-bottom: 2px transparent solid;
+  border-bottom: none;
 
   @media screen and (min-width: 350px) {
     font-weight: bold;

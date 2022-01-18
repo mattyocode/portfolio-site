@@ -30,7 +30,7 @@ export default function ProjectCard({
   useEffect(() => {
     if (cardInView && videoRef.current) {
       setVideoSrc(projectData.video);
-      // videoRef.current.load();
+      videoRef.current.load();
       videoRef.current.play();
     }
   }, [cardInView, videoRef, projectData]);
