@@ -18,15 +18,11 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/plugin-transform-runtime": "^7.16.4",
     "@react-spring/three": "^9.3.1",
     "@react-three/drei": "^8.0.0",
     "@react-three/fiber": "^7.0.21",
     "@sendgrid/mail": "^7.6.0",
     "@types/three": "^0.135.0",
-    "babel-plugin-glsl": "^1.0.0",
-    "babel-plugin-styled-components": "^2.0.2",
     "drei": "^2.2.21",
     "formik": "^2.2.9",
     "framer-motion": "^5.4.5",
@@ -44,6 +40,10 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "babel-plugin-glsl": "^1.0.0",
+    "babel-plugin-styled-components": "^2.0.2",
     "@next/bundle-analyzer": "^12.0.7",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
@@ -53,6 +53,7 @@
     "@types/react": "17.0.37",
     "@types/smoothscroll-polyfill": "^0.3.1",
     "@types/styled-components": "^5.1.17",
+    "customize-cra-react-refresh": "^1.1.0",
     "eslint": "8.4.1",
     "eslint-config-next": "12.0.7",
     "eslint-config-prettier": "^8.3.0",

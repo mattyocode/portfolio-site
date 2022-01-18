@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, Suspense, useState } from 'react';
 import { Canvas, Vector3, ThreeEvent } from '@react-three/fiber';
 
-import { Cloud } from '@react-three/drei';
+import { Cloud } from '@react-three/drei/core/Cloud.cjs';
 
 import useWindowDimensions from '../../helpers/useWindowDimensions';
 import { CanvasWrapper } from './styles/canvas';

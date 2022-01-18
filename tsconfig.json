@@ -25,5 +25,8 @@
     "src/components/canvas/index.tsx",
     "__tests__/**/*.tsx"
   ],
+  "paths": {
+    "three": ["src/utils/three.js"]
+  },
   "exclude": ["node_modules"]
 }

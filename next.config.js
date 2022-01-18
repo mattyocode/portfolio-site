@@ -3,7 +3,7 @@ const plugins = require('next-compose-plugins');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
-
+const path = require('path');
 const withOffline = require('next-offline');
 
 const nextConfig = {
@@ -32,6 +32,10 @@ const nextConfig = {
       exclude: /node_modules/,
       use: ['raw-loader', 'glslify-loader'],
     });
+
+    config.resolve.alias['three$'] = path.resolve('./src/utils/three.js');
+    config.resolve.alias['./node_modules/three/build/three.module.js'] =
+      path.resolve('./src/utils/three.js');
 
     return config;
   },
@@ -83,6 +87,10 @@ module.exports = plugins(
 );
 
 module.exports = withBundleAnalyzer({
+  mode: 'production',
+  optimization: {
+    usedExports: true,
+  },
   webpack5: true,
   webpack: (config, { isServer }) => {
     if (!isServer) {
