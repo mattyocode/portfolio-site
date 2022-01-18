@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import {
   Wrapper,
   ImageWrapper,
+  ImageOpacity,
   Video,
   TextWrapper,
   Title,
@@ -26,9 +27,9 @@ export default function ProjectCard({
   const { ref: cardRef, inView: cardInView } = useInView();
 
   useEffect(() => {
-    if (cardInView && videoRef.current) {
+    if (cardInView && projectData.video && videoRef.current) {
       setVideoSrc(projectData.video);
-      videoRef.current.load();
+      // videoRef.current.load();
       videoRef.current.play();
     }
   }, [cardInView, videoRef, projectData]);
@@ -50,7 +51,6 @@ export default function ProjectCard({
             {videoSrc && <source src={videoSrc} />}
           </Video>
         )}
-
         {!videoSrc && (
           <Image
             src={`${projectData.img}`}
