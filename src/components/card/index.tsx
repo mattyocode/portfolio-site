@@ -37,7 +37,7 @@ export default function ProjectCard({
   return (
     <Wrapper ref={cardRef}>
       <ImageWrapper>
-        {projectData.video && cardInView ? (
+        {projectData.video ? (
           <Video
             ref={Ref}
             autoPlay
