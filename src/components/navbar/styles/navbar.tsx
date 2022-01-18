@@ -43,11 +43,11 @@ export const NavLink: StyledComponent<'li', any, {}, never> = styled.li`
 
   @media screen and (min-width: 350px) {
     font-weight: bold;
-    filter: drop-shadow(2px 2px 0 #444);
   }
 
   a {
     text-decoration: none;
+    filter: drop-shadow(2px 2px 0 #444);
   }
 
   .active {

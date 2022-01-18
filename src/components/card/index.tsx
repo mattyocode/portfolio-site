@@ -30,15 +30,16 @@ export default function ProjectCard({
   useEffect(() => {
     if (cardInView && videoRef.current) {
       setVideoSrc(projectData.video);
-      videoRef.current.load();
+      // videoRef.current.load();
       videoRef.current.play();
     }
   }, [cardInView, videoRef, projectData]);
 
+  console.log('videoSrc', videoSrc);
+
   return (
     <Wrapper ref={cardRef}>
       <ImageWrapper>
-        {/* {projectData.video ? ( */}
         {projectData.video && (
           <Video
             ref={videoRef}
@@ -51,7 +52,6 @@ export default function ProjectCard({
             {videoSrc && <source ref={sourceRef} src={videoSrc} />}
           </Video>
         )}
-        {/* ) : ( */}
         <ImageOpacity opacity={videoSrc ? '0' : '1'}>
           <Image
             src={`${projectData.img}`}
@@ -61,7 +61,6 @@ export default function ProjectCard({
             priority
           />
         </ImageOpacity>
-        {/* )} */}
       </ImageWrapper>
       <TextWrapper>
         <Title>{projectData.title}</Title>
