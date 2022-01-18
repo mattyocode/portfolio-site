@@ -49,7 +49,7 @@ export default function ProjectCard({
             playsInline
             poster={`${projectData.img}`}
           >
-            {videoSrc && <source src={videoSrc} />}
+            {videoSrc !== undefined && <source src={videoSrc} />}
           </Video>
         )}
         {/* <ImageOpacity opacity={videoSrc ? '0' : '1'}> */}
