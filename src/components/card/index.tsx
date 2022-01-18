@@ -24,7 +24,7 @@ export default function ProjectCard({
 }): JSX.Element {
   const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const sourceRef = useRef<HTMLSourceElement | null>(null);
+  // const sourceRef = useRef<HTMLSourceElement | null>(null);
   const { ref: cardRef, inView: cardInView } = useInView();
 
   useEffect(() => {
@@ -47,9 +47,9 @@ export default function ProjectCard({
             loop
             muted
             playsInline
-            poster={`${projectData.img}`}
+            // poster={`${projectData.img}`}
           >
-            {videoSrc && <source ref={sourceRef} src={videoSrc} />}
+            {videoSrc && <source src={videoSrc} />}
           </Video>
         )}
         {/* <ImageOpacity opacity={videoSrc ? '0' : '1'}> */}
