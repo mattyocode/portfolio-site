@@ -31,16 +31,16 @@ export const Wrapper = styled.div`
 export const ImageWrapper = styled.div`
   position: relative;
   margin: 0.5rem;
-  height: 11rem;
+  height: 10rem;
   width: 13rem;
 
   @media screen and (min-height: 350px) and (min-height: 700px) {
-    height: 12rem;
+    height: 11rem;
     width: 15rem;
   }
 
   @media screen and (min-height: 350px) and (min-height: 800px) {
-    height: 13rem;
+    height: 12rem;
     width: 17rem;
   }
 `;
@@ -63,16 +63,16 @@ export const Video = styled.video`
   width: 100%;
   z-index: 10;
 
-  max-height: 11rem;
+  max-height: 10rem;
   max-width: 14rem;
 
   @media screen and (min-height: 700px) {
-    max-height: 12rem;
+    max-height: 11rem;
     max-width: 16rem;
   }
 
   @media screen and (min-height: 800px) {
-    max-height: 13rem;
+    max-height: 12rem;
     max-width: 18rem;
   }
 `;
