@@ -59,7 +59,6 @@ export const ImageOpacity = styled.div<ImageOpacityProps>`
 
 export const Video = styled.video`
   position: absolute;
-  top: 0;
   height: 100%;
   width: 100%;
   z-index: 10;
