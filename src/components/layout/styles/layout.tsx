@@ -81,7 +81,7 @@ export const LandingContent = styled.div<CenteredProps>`
 
 export const AboutContent = styled.div<CenteredProps>`
   width: 100%;
-  height: 60%; // 70% prev
+  height: 60%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

@@ -5,7 +5,7 @@ export const projectData = [
     img: '/img/mc-image.png',
     video: '/video/moviechooser.mp4',
     description:
-      'React app with Redux that allows users to specify genre, runtime, and release decade, and receive matching movies with links to streaming services and social media share buttons. Users can login (authenticating via JWT) and add movies to a list.',
+      'A React app with Redux that allows users to specify genre, runtime, and release decade, and receive matching movies with links to streaming services and social media share buttons. Users can login (authenticating via JWT) and add movies to a list.',
     icons: [
       { src: 'white/react-white', label: 'React' },
       { src: 'white/styled-components-white', label: 'Styled Components' },
@@ -48,7 +48,7 @@ export const projectData = [
     img: '/img/portfolio.png',
     video: undefined,
     description:
-      'My portfolio site is made with Next JS, Typescript and Styled Components. The landing section cloud object has been created with Three JS (via React Three Fiber), giving the page some visual dynamism and a touch of randomness in cloud formation.',
+      'My portfolio site is made with Next JS, Typescript and Styled Components. The landing section cloud object is rendered with Three JS (via React Three Fiber), giving the page some visual dynamism and a touch of randomness in cloud formation.',
     icons: [
       { src: 'white/next-js-white', label: 'Next JS' },
       { src: 'white/typescript-white', label: 'Typescript' },

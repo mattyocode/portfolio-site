@@ -31,17 +31,17 @@ export const Wrapper = styled.div`
 export const ImageWrapper = styled.div`
   position: relative;
   margin: 0.5rem;
+  width: 13rem;
   height: 11rem;
-  width: 14rem;
 
-  @media screen and (min-height: 700px) {
-    height: 12rem;
-    width: 16rem;
+  @media screen and (min-height: 350px) and (min-height: 600px) {
+    height: 11rem;
+    width: 15rem;
   }
 
-  @media screen and (min-height: 800px) {
-    height: 14rem;
-    width: 18rem;
+  @media screen and (min-height: 350px) and (min-height: 700px) {
+    height: 13rem;
+    width: 17rem;
   }
 `;
 
@@ -64,7 +64,7 @@ export const Video = styled.video`
   width: 100%;
   z-index: 10;
 
-  max-height: 11rem;
+  /* max-height: 11rem;
   max-width: 14rem;
 
   @media screen and (min-height: 700px) {
@@ -73,9 +73,9 @@ export const Video = styled.video`
   }
 
   @media screen and (min-height: 800px) {
-    max-height: 14rem;
+    max-height: 13rem;
     max-width: 18rem;
-  }
+  } */
 `;
 
 export const TextWrapper = styled.div``;
