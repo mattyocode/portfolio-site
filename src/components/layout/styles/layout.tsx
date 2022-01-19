@@ -94,6 +94,7 @@ export const AboutContent = styled.div<CenteredProps>`
     padding: 0 2rem;
     max-width: 880px;
     height: 70vh;
+    margin-top: 3rem;
     margin-bottom: 0;
     overflow-y: hidden;
   }
