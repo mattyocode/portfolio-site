@@ -48,7 +48,7 @@ export const projectData = [
     img: '/img/portfolio.png',
     video: undefined,
     description:
-      'My portfolio site is made with Next JS, Typescript and Styled Components. The landing section cloud object is rendered with Three JS (via React Three Fiber), giving the page some visual dynamism and a touch of randomness in cloud formation.',
+      'My portfolio site is made with Next JS, Typescript and Styled Components. The landing section cloud object is rendered with Three JS (via React Three Fiber), giving the page some visual dynamism and a (clickable) touch of randomness in cloud formation.',
     icons: [
       { src: 'white/next-js-white', label: 'Next JS' },
       { src: 'white/typescript-white', label: 'Typescript' },
