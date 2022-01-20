@@ -40,7 +40,7 @@ export const ImageWrapper = styled.div`
   }
 
   @media screen and (min-height: 350px) and (min-height: 800px) {
-    height: 12rem;
+    height: 13rem;
     width: 17rem;
   }
 `;
@@ -63,18 +63,18 @@ export const Video = styled.video`
   width: 100%;
   z-index: 10;
 
-  max-height: 10rem;
+  /* max-height: 10rem;
   max-width: 14rem;
 
   @media screen and (min-height: 700px) {
     max-height: 11rem;
-    max-width: 16rem;
+    max-width: 15rem;
   }
 
   @media screen and (min-height: 800px) {
-    max-height: 12rem;
-    max-width: 18rem;
-  }
+    max-height: 13rem;
+    max-width: 17rem;
+  } */
 `;
 
 export const TextWrapper = styled.div``;
