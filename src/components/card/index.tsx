@@ -26,7 +26,7 @@ export default function ProjectCard({
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const { ref: cardRef, inView: cardInView } = useInView();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (cardInView && projectData.video && videoRef.current) {
       setVideoSrc(projectData.video);
       videoRef.current.play();
@@ -35,9 +35,6 @@ export default function ProjectCard({
       videoRef.current.currentTime = 0;
     }
   }, [cardInView, videoRef, projectData]);
-
-  console.log('projectDatavideo', projectData.video);
-  console.log('cardinview', cardInView);
 
   return (
     <Wrapper ref={cardRef}>

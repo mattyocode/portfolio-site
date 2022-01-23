@@ -50,7 +50,7 @@ export const BodyCopy = styled.div`
   max-width: 30rem;
   font-weight: 600;
 
-  @media screen and (min-width: 768px) and (min-height: 660px) {
+  @media screen and (min-width: 768px) {
     padding: 2rem 0.75rem;
     max-width: 35rem;
   }
