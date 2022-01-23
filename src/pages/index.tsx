@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { PageWrapper } from '../components/layout';
@@ -19,7 +19,6 @@ const AboutSection = dynamic(() => import('../containers/about'));
 
 const Home: NextPage = () => {
   const [activeSection, setActiveSection] = useState('home');
-  const router = useRouter();
   const {
     ref: landingRef,
     inView: landingInView,
@@ -45,19 +44,18 @@ const Home: NextPage = () => {
   } = useInView({ threshold: 0.8 });
 
   useEffect(() => {
-    if (landingInView) {
-      setActiveSection('home');
-    }
-    if (aboutInView) {
-      setActiveSection('about');
-    }
-    if (projectsInView) {
-      setActiveSection('projects');
-    }
-    if (contactInView) {
-      setActiveSection('contact');
-    }
-  }, [router, landingInView, aboutInView, projectsInView, contactInView]);
+    setTimeout(() => {
+      if (landingInView) {
+        setActiveSection('home');
+      } else if (aboutInView) {
+        setActiveSection('about');
+      } else if (projectsInView) {
+        setActiveSection('projects');
+      } else if (contactInView) {
+        setActiveSection('contact');
+      }
+    }, 500);
+  }, [landingInView, aboutInView, projectsInView, contactInView]);
 
   return (
     <div>
