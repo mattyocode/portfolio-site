@@ -93,10 +93,14 @@ export const AboutContent = styled.div<CenteredProps>`
     flex-direction: row;
     padding: 0 2rem;
     max-width: 880px;
-    /* height: 30rem; */
-    /* margin-top: 3rem; */
+    height: 30rem;
     margin-bottom: 0;
     overflow-y: auto;
+  }
+
+  @media screen and (min-width: 768px) and (min-height: 780px) {
+    margin-top: 3rem;
+    overflow-y: hidden;
   }
 
   @media screen and (min-width: 1024px) {
