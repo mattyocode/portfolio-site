@@ -96,7 +96,7 @@ export const AboutContent = styled.div<CenteredProps>`
     /* height: 30rem; */
     /* margin-top: 3rem; */
     margin-bottom: 0;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   @media screen and (min-width: 1024px) {

@@ -23,6 +23,7 @@ const titleVariants = {
     scale: 1,
     opacity: 1,
     transition: {
+      delay: 0.2,
       duration: 0.6,
       ease: 'easeInOut',
     },
@@ -56,7 +57,7 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
     ref: titleRef,
     inView: titleInView,
     entry: titleEntry,
-  } = useInView({ threshold: 0.2 });
+  } = useInView({ threshold: 0.5 });
   const { width } = useWindowDimensions();
 
   const handleScroll = (e: React.UIEvent<HTMLElement>) => {
@@ -89,6 +90,11 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
     }
   }, [isActive, width]);
 
+  let objectPosition: string = 'top right';
+  if (width && width < 768) {
+    objectPosition = 'top';
+  }
+
   const backgroundGradient =
     'linear-gradient(to bottom, #5371CB, #5580F3 20%, #1F45AD 35%, #122968 60%, #4A8F78 75%, #4A8F78 80%)';
 
@@ -114,7 +120,7 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
                 src='/img/objectgn4.svg'
                 alt='green angular structure'
                 layout='fill'
-                objectPosition='top'
+                objectPosition={objectPosition}
                 objectFit='cover'
                 priority
               />
