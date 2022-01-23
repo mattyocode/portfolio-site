@@ -90,9 +90,9 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
     }
   }, [isActive, width]);
 
-  let objectPosition: string = 'top right';
-  if (width && width < 768) {
-    objectPosition = 'top';
+  let objectPosition: string = 'top';
+  if (width && width >= 768) {
+    objectPosition = 'top right';
   }
 
   const backgroundGradient =
