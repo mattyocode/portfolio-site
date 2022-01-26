@@ -14,17 +14,14 @@ export const Wrapper = styled.div`
   max-width: 90vw;
   background: #373f51;
   filter: drop-shadow(15px 15px 4px #333);
-
   @media screen and (min-width: 410px) {
-    width: 22rem;
+    max-width: 22rem;
   }
-
   @media screen and (min-width: 850px) {
-    width: 26rem;
+    max-width: 26rem;
   }
-
   @media screen and (min-width: 1000px) {
-    width: 28rem;
+    max-width: 28rem;
   }
 `;
 
@@ -38,7 +35,6 @@ export const ContentWrapper = styled.div`
     height: 13rem;
     width: 17rem;
   }
-
   @media screen and (min-width: 350px) and (min-height: 800px) {
     height: 14rem;
     width: 19rem;
@@ -48,6 +44,7 @@ export const ContentWrapper = styled.div`
     height: 17rem;
     width: 20rem;
   }
+
 `;
 
 type ImageOpacityProps = {
