@@ -7,23 +7,23 @@ export const StyledSlide = styled(Slide)`
   .centered {
     padding-top: 1rem;
     padding-bottom: 2rem;
-    max-height: 28rem;
+    max-height: 29rem;
 
     @media screen and (min-height: 600px) {
-      max-height: 30rem;
-    }
-
-    @media screen and (min-height: 700px) {
       max-height: 31rem;
     }
 
-    @media screen and (min-height: 800px) {
+    @media screen and (min-height: 700px) {
       max-height: 32rem;
+    }
+
+    @media screen and (min-height: 800px) {
+      max-height: 33rem;
       padding-top: 0;
     }
 
     @media screen and (min-height: 900px) {
-      max-height: 33rem;
+      max-height: 34rem;
     }
   }
 `;
@@ -31,7 +31,7 @@ export const StyledSlide = styled(Slide)`
 export const StyledSlider = styled(Slider)`
   width: 100vw;
   max-width: 1200px;
-  max-height: 28rem;
+  max-height: 29rem;
   margin-top: 3rem;
 
   -ms-touch-action: pan-y;
@@ -85,7 +85,7 @@ export const StyledDotGroup = styled(DotGroup)`
     color: white;
     border: 5px white solid;
     border-radius: 50%;
-    margin: auto 10px;
+    margin: 18px 10px;
     filter: drop-shadow(2px 2px 0 #e79e3c);
   }
 
