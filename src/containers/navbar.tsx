@@ -12,22 +12,27 @@ export default function NavbarContainer({
   return (
     <Navbar>
       <Links>
-        {/* <ScrollLink href='#home'>Home</ScrollLink> */}
+        <ScrollLink href='#home' scroll={false}>
+          Home
+        </ScrollLink>
         <ScrollLink
           href='#about'
           className={activeSection === 'about' ? 'active' : ''}
+          scroll={false}
         >
           About
         </ScrollLink>
         <ScrollLink
           href='#projects'
           className={activeSection === 'projects' ? 'active' : ''}
+          scroll={false}
         >
           Projects
         </ScrollLink>
         <ScrollLink
           href='#contact'
           className={activeSection === 'contact' ? 'active' : ''}
+          scroll={false}
         >
           Contact
         </ScrollLink>

@@ -72,9 +72,13 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
     }
   };
 
-  const moreIcon = (
-    <SingleSmallIcon src='/icons/chevron-down.svg' label='more' />
-  );
+  let moreIcon;
+
+  useEffect(() => {
+    if (width && width >= 768) {
+      setShowMoreIcon(false);
+    }
+  }, [width]);
 
   useEffect(() => {
     if (titleInView) {
@@ -167,7 +171,9 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
                 <IconGrid icons={aboutIcons} />
               </AboutContent>
               <CenterIcon>
-                {width && width < 768 && showMoreIcon && moreIcon}
+                {showMoreIcon && (
+                  <SingleSmallIcon src='/icons/chevron-down.svg' label='more' />
+                )}
               </CenterIcon>
             </FullBleedWrapper>
           </motion.div>

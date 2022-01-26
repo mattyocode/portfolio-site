@@ -54,7 +54,7 @@ const Home: NextPage = () => {
       } else if (contactInView) {
         setActiveSection('contact');
       }
-    }, 500);
+    }, 1500);
   }, [landingInView, aboutInView, projectsInView, contactInView]);
 
   return (
