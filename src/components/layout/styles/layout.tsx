@@ -92,7 +92,7 @@ export const SAboutContent = styled.div<CenteredProps>`
     flex-direction: row;
     padding: 0 2rem;
     max-width: 880px;
-    height: 30rem;
+    height: 36rem;
     margin-bottom: 0;
     overflow-y: auto;
   }
@@ -103,6 +103,7 @@ export const SAboutContent = styled.div<CenteredProps>`
   }
 
   @media screen and (min-width: 1024px) {
+    margin-top: 3rem;
     max-width: 1000px;
   }
 
