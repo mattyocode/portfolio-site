@@ -8,20 +8,16 @@ export const StyledSlide = styled(Slide)`
     padding-top: 1rem;
     padding-bottom: 2rem;
     max-height: 28rem;
-
     @media screen and (min-height: 600px) {
       max-height: 28rem;
     }
-
     @media screen and (min-height: 700px) {
       max-height: 30rem;
     }
-
     @media screen and (min-height: 800px) {
       max-height: 31rem;
       padding-top: 0;
     }
-
     @media screen and (min-height: 900px) {
       max-height: 32rem;
     }
@@ -33,26 +29,20 @@ export const StyledSlider = styled(Slider)`
   max-width: 1200px;
   max-height: 28rem;
   margin-top: 3rem;
-
   -ms-touch-action: pan-y;
   touch-action: pan-y;
-
-
   @media screen and (min-height: 600px) {
     margin-top: 4rem;
     max-height: 30rem;
   }
-
   @media screen and (min-height: 700px) {
     margin-top: 2rem;
     max-height: 34rem;
   }
-
   @media screen and (min-height: 900px) {\
     margin-top: 1rem;
     max-height: 36rem;
   }
-
 `;
 
 export const StyledProvider = styled(CarouselProvider)``;
