@@ -29,6 +29,11 @@ export const Grid = styled.div`
 
   @media screen and (min-width: 768px) and (min-height: 550px) {
     grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.5rem;
+  }
+
+  @media screen and (min-width: 768px) and (min-height: 601px) {
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 1rem;
   }
 

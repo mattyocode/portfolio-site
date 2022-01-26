@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   border: 3px #ff8a65 solid;
   border-radius: 5px;
   margin: auto;
-  padding: 0.25rem;
+  padding: 0.1rem;
   height: 100%;
   max-width: 90vw;
   background: #373f51;
@@ -31,6 +31,11 @@ export const ContentWrapper = styled.div`
   height: 12rem;
   width: 16rem;
 
+  @media screen and (max-width: 280px) {
+    height: 10rem;
+    width: 10rem;
+  }
+
   @media screen and (min-width: 350px) and (min-height: 700px) {
     height: 13rem;
     width: 17rem;
@@ -42,9 +47,8 @@ export const ContentWrapper = styled.div`
 
   @media screen and (min-width: 1000px) and (min-height: 900px) {
     height: 17rem;
-    width: 20rem;
+    width: 23rem;
   }
-
 `;
 
 type ImageOpacityProps = {
@@ -82,6 +86,11 @@ export const Title = styled.h3`
 export const BodyCopy = styled.p`
   font-size: 0.8rem;
   margin: 0.5rem 1rem;
+
+  @media screen and (max-width: 280px) {
+    font-size: 0.7rem;
+    margin: 0.5rem;
+  }
 
   @media screen and (min-height: 668px) {
     font-size: 0.9rem;
