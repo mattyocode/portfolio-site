@@ -10,20 +10,20 @@ export const StyledSlide = styled(Slide)`
     max-height: 28rem;
 
     @media screen and (min-height: 600px) {
-      max-height: 28rem;
-    }
-
-    @media screen and (min-height: 700px) {
       max-height: 30rem;
     }
 
-    @media screen and (min-height: 800px) {
+    @media screen and (min-height: 700px) {
       max-height: 31rem;
+    }
+
+    @media screen and (min-height: 800px) {
+      max-height: 32rem;
       padding-top: 0;
     }
 
     @media screen and (min-height: 900px) {
-      max-height: 32rem;
+      max-height: 33rem;
     }
   }
 `;
@@ -37,7 +37,6 @@ export const StyledSlider = styled(Slider)`
   -ms-touch-action: pan-y;
   touch-action: pan-y;
 
-
   @media screen and (min-height: 600px) {
     margin-top: 4rem;
     max-height: 30rem;
@@ -48,11 +47,10 @@ export const StyledSlider = styled(Slider)`
     max-height: 34rem;
   }
 
-  @media screen and (min-height: 900px) {\
+  @media screen and (min-height: 900px) {
     margin-top: 1rem;
     max-height: 36rem;
   }
-
 `;
 
 export const StyledProvider = styled(CarouselProvider)``;
