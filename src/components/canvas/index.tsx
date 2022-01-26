@@ -25,10 +25,10 @@ function CloudParticle({
   return (
     <mesh scale={0.55} position={itemPosition} onClick={clickHandler}>
       <group>
-        <Cloud speed={1} position={[-6, 0, 0]} args={[3, 2]} />
-        <Cloud speed={0.8} position={[-3, 3, 0]} args={[3, 2]} />
+        <Cloud speed={1} position={[-6, 3, 0]} args={[3, 2]} />
+        <Cloud speed={0.8} position={[-4, 3, 0]} args={[3, 2]} />
         <Cloud speed={0.7} args={[3, 2]} />
-        <Cloud speed={0.8} position={[4, 3, 0]} args={[3, 2]} />
+        <Cloud speed={0.8} position={[2, 3, 0]} args={[3, 2]} />
         <Cloud speed={1} position={[5, 2, 0]} args={[3, 2]} />
       </group>
     </mesh>
@@ -39,9 +39,19 @@ export default function CanvasContainer() {
   const [color, setColor] = useState<number>(0);
   const group = useRef();
 
-  const colors = ['#ffffff', '#91f2a3', '#ff8966', '#ff9fe5', '#3e8989'];
+  const colors = [
+    '#ffffff',
+    '#91f2a3',
+    '#ff8966',
+    '#ff9fe5',
+    '#3e8989',
+    '#59A7BB',
+  ];
   const setCloudColor = (e: ThreeEvent<MouseEvent>): void => {
     let colorIdx = Math.floor(Math.random() * colors.length);
+    if (colorIdx === color) {
+      colorIdx = (colorIdx + 1) % colors.length;
+    }
     setColor(colorIdx);
   };
   return (

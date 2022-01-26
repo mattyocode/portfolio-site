@@ -32,14 +32,14 @@ export const ImageWrapper = styled.div`
   position: relative;
   margin: 0.5rem;
   height: 10rem;
-  width: 13rem;
+  width: 15rem;
 
-  @media screen and (min-height: 350px) and (min-height: 700px) {
+  @media screen and (min-width: 350px) and (min-height: 700px) {
     height: 11rem;
     width: 15rem;
   }
 
-  @media screen and (min-height: 350px) and (min-height: 800px) {
+  @media screen and (min-width: 350px) and (min-height: 800px) {
     height: 13rem;
     width: 17rem;
   }
@@ -54,7 +54,6 @@ export const ImageOpacity = styled.div<ImageOpacityProps>`
   position: relative;
   width: 100%;
   height: 100%;
-  /* transition: opacity 1s ease-in-out; */
 `;
 
 export const Video = styled.video`
@@ -62,19 +61,6 @@ export const Video = styled.video`
   height: 100%;
   width: 100%;
   z-index: 10;
-
-  /* max-height: 10rem;
-  max-width: 14rem;
-
-  @media screen and (min-height: 700px) {
-    max-height: 11rem;
-    max-width: 15rem;
-  }
-
-  @media screen and (min-height: 800px) {
-    max-height: 13rem;
-    max-width: 17rem;
-  } */
 `;
 
 export const TextWrapper = styled.div``;
