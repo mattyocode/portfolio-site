@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   border: 3px #ff8a65 solid;
   border-radius: 5px;
   margin: auto;
-  /* height: 25rem; */
+  padding: 0.25rem;
   height: 100%;
   max-width: 90vw;
   background: #373f51;
@@ -31,22 +31,22 @@ export const Wrapper = styled.div`
 export const ContentWrapper = styled.div`
   position: relative;
   margin: 0.5rem;
-  height: 11rem;
-  width: 14rem;
+  height: 12rem;
+  width: 15rem;
 
   @media screen and (min-width: 350px) and (min-height: 700px) {
     height: 13rem;
-    width: 15rem;
-  }
-
-  @media screen and (min-width: 350px) and (min-height: 800px) {
-    height: 15rem;
     width: 17rem;
   }
 
-  @media screen and (min-width: 1200px) and (min-height: 900px) {
-    height: 17rem;
+  @media screen and (min-width: 350px) and (min-height: 800px) {
+    height: 14rem;
     width: 19rem;
+  }
+
+  @media screen and (min-width: 1000px) and (min-height: 900px) {
+    height: 17rem;
+    width: 20rem;
   }
 `;
 
