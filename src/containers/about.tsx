@@ -23,7 +23,7 @@ const titleVariants = {
     scale: 1,
     opacity: 1,
     transition: {
-      delay: 0.2,
+      delay: 0.3,
       duration: 0.6,
       ease: 'easeInOut',
     },
