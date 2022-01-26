@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
   border-radius: 5px;
   margin: auto;
   /* height: 25rem; */
+  padding: 0.25rem;
   height: 100%;
   max-width: 90vw;
   background: #373f51;
