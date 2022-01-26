@@ -79,11 +79,6 @@ export const ScrollLink: React.FC<ScrollLinkProps> = ({
             document.body.style.scrollSnapType = 'y proximity';
             document.getElementById('pagewrapper')!.style.scrollSnapType =
               'y proximity';
-            destination.scrollIntoView({
-              behavior: 'smooth',
-              block: 'center',
-              inline: 'center',
-            });
           }, 1500);
         }
       }
