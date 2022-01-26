@@ -12,7 +12,7 @@ export default function NavbarContainer({
   return (
     <Navbar>
       <Links>
-        <ScrollLink href='#home'>Home</ScrollLink>
+        {/* <ScrollLink href='#home'>Home</ScrollLink> */}
         <ScrollLink
           href='#about'
           className={activeSection === 'about' ? 'active' : ''}

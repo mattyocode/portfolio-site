@@ -85,15 +85,15 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
     }
   }, [controls, titleInView, titleEntry]);
 
-  // useEffect(() => {
-  //   if (!isActive && width && width < 768 && contentRef.current) {
-  //     setTimeout(() => {
-  //       if (contentRef.current) {
-  //         contentRef.current.scrollTop = 0;
-  //       }
-  //     }, 3000);
-  //   }
-  // }, [isActive, width]);
+  useEffect(() => {
+    if (!isActive && width && width < 768 && contentRef.current) {
+      setTimeout(() => {
+        if (contentRef.current) {
+          contentRef.current.scrollTop = 0;
+        }
+      }, 3000);
+    }
+  }, [isActive, width]);
 
   useEffect(() => {
     if (width && width >= 768) {
