@@ -51,6 +51,7 @@ type Props = {
 
 export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
   const [showMoreIcon, setShowMoreIcon] = useState<boolean>(true);
+  const [wideScreen, setWideScreen] = useState<boolean>(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
   const {
@@ -90,10 +91,13 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
     }
   }, [isActive, width]);
 
-  let objectPosition: string = 'top';
-  if (width && width >= 768) {
-    objectPosition = 'top right';
-  }
+  useEffect(() => {
+    if (width && width >= 768) {
+      setWideScreen(true);
+    } else {
+      setWideScreen(false);
+    }
+  }, [width]);
 
   const backgroundGradient =
     'linear-gradient(to bottom, #5371CB, #5580F3 20%, #1F45AD 35%, #122968 60%, #4A8F78 75%, #4A8F78 80%)';
@@ -120,7 +124,7 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
                 src='/img/objectgn4.svg'
                 alt='green angular structure'
                 layout='fill'
-                objectPosition={objectPosition}
+                objectPosition={wideScreen ? 'top right' : 'top'}
                 objectFit='cover'
                 priority
               />
