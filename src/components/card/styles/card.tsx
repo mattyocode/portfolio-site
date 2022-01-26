@@ -16,32 +16,37 @@ export const Wrapper = styled.div`
   filter: drop-shadow(15px 15px 4px #333);
 
   @media screen and (min-width: 410px) {
-    max-width: 22rem;
+    width: 22rem;
   }
 
   @media screen and (min-width: 850px) {
-    max-width: 26rem;
+    width: 26rem;
   }
 
   @media screen and (min-width: 1000px) {
-    max-width: 28rem;
+    width: 28rem;
   }
 `;
 
-export const SFullBleedWrapper = styled.div`
+export const ContentWrapper = styled.div`
   position: relative;
   margin: 0.5rem;
-  height: 10rem;
-  width: 15rem;
+  height: 11rem;
+  width: 16rem;
 
   @media screen and (min-width: 350px) and (min-height: 700px) {
-    height: 11rem;
-    width: 15rem;
+    height: 13rem;
+    width: 17rem;
   }
 
   @media screen and (min-width: 350px) and (min-height: 800px) {
-    height: 13rem;
-    width: 17rem;
+    height: 15rem;
+    width: 19rem;
+  }
+
+  @media screen and (min-width: 1200px) and (min-height: 900px) {
+    height: 17rem;
+    width: 22rem;
   }
 `;
 
@@ -72,7 +77,7 @@ export const Title = styled.h3`
     margin: 0.5rem;
   }
 
-  @media screen and (min-height: 668px) and (min-width: 450px) {
+  @media screen and (min-width: 450px) and (min-height: 668px) {
     font-size: 1.2rem;
   }
 `;
@@ -86,7 +91,8 @@ export const BodyCopy = styled.p`
     margin: 0.5rem;
   }
 
-  @media screen and (min-height: 668px) and (min-width: 450px) {
+  /* @media screen and (min-width: 450px) and (min-height: 668px) { */
+  @media screen and (min-width: 450px) and (min-height: 730px) {
     font-size: 1rem;
     margin: 0.7rem;
   }

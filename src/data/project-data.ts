@@ -35,7 +35,7 @@ export const projectData = [
     img: '/img/ngrams-img.png',
     video: '/video/ngrams-generator.mp4',
     description:
-      'A language analysis command-line app available on PyPI that takes in text data and outputs the most common ngrams it contains. Data is returned as CSV, from bigrams up to a chosen phrase length. Words are tokenised with Spacy, ngrams are generated with NLTK.',
+      'Language analysis command-line app available on PyPI that takes in text data and outputs the most common phrases it contains. Data is returned as CSV, up to a chosen ngram length. Word tokenization uses Spacy, ngrams are generated with NLTK.',
     icons: [
       { src: 'white/python-white', label: 'Python' },
       { src: 'white/pytest-white', label: 'Pytest' },

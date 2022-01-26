@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import {
   Wrapper,
-  SFullBleedWrapper,
+  ContentWrapper,
   ImageOpacity,
   Video,
   TextWrapper,
@@ -38,7 +38,7 @@ export default function ProjectCard({
 
   return (
     <Wrapper ref={cardRef}>
-      <SFullBleedWrapper>
+      <ContentWrapper>
         {projectData.video && (
           <Video
             ref={videoRef}
@@ -61,7 +61,7 @@ export default function ProjectCard({
             priority
           />
         </ImageOpacity>
-      </SFullBleedWrapper>
+      </ContentWrapper>
       <TextWrapper>
         <Title>{projectData.title}</Title>
         <BodyCopy>{projectData.description}</BodyCopy>
