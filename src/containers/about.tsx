@@ -4,7 +4,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import useWindowDimensions from '../helpers/useWindowDimensions';
 import {
-  AboutCentered,
+  AboutContent,
   CenterIcon,
   Section,
   FullBleedWrapper,
@@ -128,7 +128,7 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
                 objectFit='cover'
                 priority
               />
-              <AboutCentered ref={contentRef} onScroll={handleScroll}>
+              <AboutContent ref={contentRef} onScroll={handleScroll}>
                 <LongCopy data-testid='about-copy'>
                   <p>
                     For almost seven years, I&apos;ve worked as a consultant
@@ -161,7 +161,7 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
                   </p>
                 </LongCopy>
                 <IconGrid icons={aboutIcons} />
-              </AboutCentered>
+              </AboutContent>
               <CenterIcon>
                 {width && width < 768 && showMoreIcon && (
                   <SingleSmallIcon src='/icons/chevron-down.svg' label='more' />

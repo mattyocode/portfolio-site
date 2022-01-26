@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import {
   FullBleedWrapper,
   Section,
-  LandingCentered,
+  LandingContent,
   ProfilePicWrapper,
 } from '../components/layout';
 import ContactIcons from '../components/icon-links';
@@ -24,7 +24,7 @@ export default function LandingSection({ navRef }: SectionNavRef): JSX.Element {
     >
       <FullBleedWrapper>
         <CanvasContainer />
-        <LandingCentered>
+        <LandingContent>
           <ProfilePicWrapper>
             <Image
               src='/img/profilepic.svg'
@@ -47,7 +47,7 @@ export default function LandingSection({ navRef }: SectionNavRef): JSX.Element {
               <span className='coral'>Full Stack Developer</span>
             </h2>
           </LandingCopy>
-        </LandingCentered>
+        </LandingContent>
         <ContactIcons links={ContactLinks} />
       </FullBleedWrapper>
     </Section>

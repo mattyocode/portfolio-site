@@ -28,7 +28,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const ImageWrapper = styled.div`
+export const SFullBleedWrapper = styled.div`
   position: relative;
   margin: 0.5rem;
   height: 10rem;

@@ -1,11 +1,11 @@
 import React from 'react';
 import {
-  AboutContent,
-  ProfilePic,
-  SectionContainer,
-  SectionBackground,
-  ImageWrapper,
-  LandingContent,
+  SAboutContent,
+  SProfilePicWrapper,
+  SPageWrapper,
+  SSection,
+  SFullBleedWrapper,
+  SLandingContent,
   CenteredContent,
   RelativeWrapper,
   SCenterIcon,
@@ -24,9 +24,9 @@ export const PageWrapper = ({
   children?: React.ReactNode;
 }): JSX.Element => {
   return (
-    <SectionContainer id={id} {...restProps}>
+    <SPageWrapper id={id} {...restProps}>
       {children}
-    </SectionContainer>
+    </SPageWrapper>
   );
 };
 
@@ -41,9 +41,9 @@ interface SectionProps extends React.ComponentPropsWithoutRef<'div'> {
 export const Section = React.forwardRef<HTMLDivElement, SectionProps>(
   ({ id, color, ...restProps }, ref) => {
     return (
-      <SectionBackground ref={ref} id={id} color={color} {...restProps}>
+      <SSection ref={ref} id={id} color={color} {...restProps}>
         {restProps.children}
-      </SectionBackground>
+      </SSection>
     );
   }
 );
@@ -61,36 +61,35 @@ export const FullBleedWrapper = ({
   children?: React.ReactNode;
 }): JSX.Element => {
   return (
-    <ImageWrapper centered={centered} flexRow={flexRow} {...restProps}>
+    <SFullBleedWrapper centered={centered} flexRow={flexRow} {...restProps}>
       {children}
-    </ImageWrapper>
+    </SFullBleedWrapper>
   );
 };
 
-interface AboutCenteredProps extends React.ComponentPropsWithoutRef<'div'> {
+export const LandingContent = ({
+  children,
+  ...restProps
+}: Props): JSX.Element => {
+  return <SLandingContent {...restProps}>{children}</SLandingContent>;
+};
+
+interface AboutContentProps extends React.ComponentPropsWithoutRef<'div'> {
   children?: React.ReactNode;
   rowReverse?: boolean;
 }
 
-export const AboutCentered = React.forwardRef<
-  HTMLDivElement,
-  AboutCenteredProps
->(({ rowReverse = true, children, ...restProps }, ref) => {
-  return (
-    <AboutContent ref={ref} rowReverse={rowReverse} {...restProps}>
-      {children}
-    </AboutContent>
-  );
-});
+export const AboutContent = React.forwardRef<HTMLDivElement, AboutContentProps>(
+  ({ rowReverse = true, children, ...restProps }, ref) => {
+    return (
+      <SAboutContent ref={ref} rowReverse={rowReverse} {...restProps}>
+        {children}
+      </SAboutContent>
+    );
+  }
+);
 
-AboutCentered.displayName = 'AboutCentered';
-
-export const LandingCentered = ({
-  children,
-  ...restProps
-}: Props): JSX.Element => {
-  return <LandingContent {...restProps}>{children}</LandingContent>;
-};
+AboutContent.displayName = 'AboutContent';
 
 const containerVariants = {
   hidden: {
@@ -110,14 +109,14 @@ export const ProfilePicWrapper = ({
   ...restProps
 }: Props): JSX.Element => {
   return (
-    <ProfilePic
+    <SProfilePicWrapper
       variants={containerVariants}
       initial='hidden'
       animate='visible'
       {...restProps}
     >
       {children}
-    </ProfilePic>
+    </SProfilePicWrapper>
   );
 };
 

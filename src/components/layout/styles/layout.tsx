@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-export const SectionContainer = styled.div`
+export const SPageWrapper = styled.div`
   position: absolute;
   top: 0;
   bottom: 0;
@@ -11,9 +11,9 @@ export const SectionContainer = styled.div`
   height: -webkit-fill-available;
 `;
 
-type SectionBackgroundProps = { color: string; backgroundImage?: string };
+type SSectionProps = { color: string; backgroundImage?: string };
 
-export const SectionBackground = styled.section<SectionBackgroundProps>`
+export const SSection = styled.section<SSectionProps>`
   height: 100vh;
   height: -webkit-fill-available;
   display: flex;
@@ -23,9 +23,9 @@ export const SectionBackground = styled.section<SectionBackgroundProps>`
     props.backgroundImage ? props.backgroundImage : ''};
 `;
 
-type ImageWrapperProps = { centered: boolean; flexRow: boolean };
+type SFullBleedWrapperProps = { centered: boolean; flexRow: boolean };
 
-export const ImageWrapper = styled.div<ImageWrapperProps>`
+export const SFullBleedWrapper = styled.div<SFullBleedWrapperProps>`
   position: relative;
   height: 100vh;
   width: 100vw;
@@ -44,9 +44,9 @@ type CenteredProps = {
   rowReverse?: boolean;
 };
 
-export const LandingContent = styled.div<CenteredProps>`
+export const SLandingContent = styled.div<CenteredProps>`
   width: 100%;
-  height: 67vh; // 70vh prev
+  height: 67vh;
   max-height: 32rem;
   display: flex;
   flex-direction: column;
@@ -78,7 +78,7 @@ export const LandingContent = styled.div<CenteredProps>`
   }
 `;
 
-export const AboutContent = styled.div<CenteredProps>`
+export const SAboutContent = styled.div<CenteredProps>`
   width: 100%;
   height: 60%;
   display: flex;
@@ -115,7 +115,7 @@ export const AboutContent = styled.div<CenteredProps>`
   }
 `;
 
-export const ProfilePic = styled(motion.div)`
+export const SProfilePicWrapper = styled(motion.div)`
   width: 250px;
   height: 250px;
   top: 200px;
