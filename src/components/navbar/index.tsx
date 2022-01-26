@@ -14,6 +14,22 @@ export const Links = ({ children, ...restProps }: Props): JSX.Element => {
   return <LinksWrapper {...restProps}>{children}</LinksWrapper>;
 };
 
+export const PageTopLink = ({
+  children,
+  ...restProps
+}: {
+  children: React.ReactNode;
+}): JSX.Element => {
+  const topHandler = (e: React.MouseEvent<HTMLElement>) => {
+    window.scrollTo(0, 0);
+  };
+  return (
+    <NavLink onClick={topHandler} {...restProps}>
+      <Link href={'/'}>{children}</Link>
+    </NavLink>
+  );
+};
+
 export const NavbarLink = ({
   href,
   children,

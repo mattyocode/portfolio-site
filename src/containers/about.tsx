@@ -72,6 +72,10 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
     }
   };
 
+  const moreIcon = (
+    <SingleSmallIcon src='/icons/chevron-down.svg' label='more' />
+  );
+
   useEffect(() => {
     if (titleInView) {
       controls.start('visible');
@@ -81,15 +85,15 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
     }
   }, [controls, titleInView, titleEntry]);
 
-  useEffect(() => {
-    if (!isActive && width && width < 768 && contentRef.current) {
-      setTimeout(() => {
-        if (contentRef.current) {
-          contentRef.current.scrollTop = 0;
-        }
-      }, 3000);
-    }
-  }, [isActive, width]);
+  // useEffect(() => {
+  //   if (!isActive && width && width < 768 && contentRef.current) {
+  //     setTimeout(() => {
+  //       if (contentRef.current) {
+  //         contentRef.current.scrollTop = 0;
+  //       }
+  //     }, 3000);
+  //   }
+  // }, [isActive, width]);
 
   useEffect(() => {
     if (width && width >= 768) {
@@ -163,9 +167,7 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
                 <IconGrid icons={aboutIcons} />
               </AboutContent>
               <CenterIcon>
-                {width && width < 768 && showMoreIcon && (
-                  <SingleSmallIcon src='/icons/chevron-down.svg' label='more' />
-                )}
+                {width && width < 768 && showMoreIcon && moreIcon}
               </CenterIcon>
             </FullBleedWrapper>
           </motion.div>
