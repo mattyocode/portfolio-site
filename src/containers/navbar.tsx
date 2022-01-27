@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { Links, Navbar, ScrollLink } from '../components/navbar';
+import { Links, Navbar, NavbarLink, ScrollLink } from '../components/navbar';
 
 export default function NavbarContainer({
   activeSection,

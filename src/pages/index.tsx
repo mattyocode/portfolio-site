@@ -44,17 +44,15 @@ const Home: NextPage = () => {
   } = useInView({ threshold: 0.8 });
 
   useEffect(() => {
-    setTimeout(() => {
-      if (landingInView) {
-        setActiveSection('home');
-      } else if (aboutInView) {
-        setActiveSection('about');
-      } else if (projectsInView) {
-        setActiveSection('projects');
-      } else if (contactInView) {
-        setActiveSection('contact');
-      }
-    }, 1500);
+    if (landingInView) {
+      setActiveSection('home');
+    } else if (aboutInView) {
+      setActiveSection('about');
+    } else if (projectsInView) {
+      setActiveSection('projects');
+    } else if (contactInView) {
+      setActiveSection('contact');
+    }
   }, [landingInView, aboutInView, projectsInView, contactInView]);
 
   return (

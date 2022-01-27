@@ -33,14 +33,20 @@ export const PageTopLink = ({
 export const NavbarLink = ({
   href,
   children,
+  className,
+  scroll,
   ...restProps
 }: {
   href: string;
   children: React.ReactNode;
+  className?: string;
+  scroll?: boolean;
 }): JSX.Element => {
   return (
-    <NavLink {...restProps}>
-      <Link href={href}>{children}</Link>
+    <NavLink className={className} {...restProps}>
+      <Link href={href} scroll={scroll}>
+        {children}
+      </Link>
     </NavLink>
   );
 };
@@ -69,22 +75,22 @@ export const ScrollLink: React.FC<ScrollLinkProps> = ({
         const destination = document.querySelector(href as string);
         if (destination) {
           // document.body.style.scrollSnapType = 'none';
-          document.getElementById('pagewrapper')!.style.scrollSnapType = 'none';
+          // document.getElementById('pagewrapper')!.style.scrollSnapType = 'none';
           destination.scrollIntoView({
             behavior: 'smooth',
             block: 'center',
             inline: 'center',
           });
-          setTimeout(() => {
-            // document.body.style.scrollSnapType = 'y proximity';
-            document.getElementById('pagewrapper')!.style.scrollSnapType =
-              'y proximity';
-            // destination.scrollIntoView({
-            //   behavior: 'smooth',
-            //   block: 'center',
-            //   inline: 'center',
-            // });
-          }, 500);
+          // setTimeout(() => {
+          // document.body.style.scrollSnapType = 'y proximity';
+          // document.getElementById('pagewrapper')!.style.scrollSnapType =
+          //   'y proximity';
+          // destination.scrollIntoView({
+          //   behavior: 'smooth',
+          //   block: 'center',
+          //   inline: 'center',
+          // });
+          // }, 500);
         }
       }
     },
