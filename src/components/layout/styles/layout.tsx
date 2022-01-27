@@ -93,7 +93,7 @@ export const SAboutContent = styled.div<CenteredProps>`
     padding: 0 2rem;
     max-width: 880px;
     height: 36rem;
-    margin-bottom: 0;
+    margin: 0;
     overflow-y: auto;
   }
 
