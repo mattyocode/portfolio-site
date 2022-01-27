@@ -1,15 +1,11 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
-// import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { PageWrapper } from '../components/layout';
 import NavbarContainer from '../containers/navbar';
-// import AboutSection from '../containers/about';
 import HomeSection from '../containers/landing';
-// import ProjectsSection from '../containers/projects';
-// import ContactSection from '../containers/contact';
 
 import { projectData } from '../data/project-data';
 
@@ -59,7 +55,11 @@ const Home: NextPage = () => {
     <div>
       <Head>
         <title>Matt Oliver Developer Portfolio</title>
-        <meta name='description' content='' />
+        <meta name='description' content='Matt Oliver Developer Portfolio' />
+        <meta property='og:url' content='https://www.mattoliver.dev/' />
+        <meta property='og:type' content='website' />
+        <meta property='og:title' content='Matt Oliver Developer Portfolio' />
+        <meta property='og:image' content='/img/social-img.png' />
       </Head>
 
       <main>
