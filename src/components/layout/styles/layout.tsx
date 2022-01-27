@@ -86,7 +86,7 @@ export const SAboutContent = styled.div<CenteredProps>`
   justify-content: space-between;
   align-items: center;
   overflow-y: scroll;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
