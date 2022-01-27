@@ -10,9 +10,9 @@ export const GlobalStyles = createGlobalStyle`
     color: #eee;
   }
 
-  /* html {
+  html {
     scroll-behavior: smooth;
-  } */
+  }
 
   html, body {
     -webkit-font-smoothing: antialiased;
