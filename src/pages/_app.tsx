@@ -1,7 +1,6 @@
 import type { AppProps } from 'next/app';
 import * as smoothscroll from 'smoothscroll-polyfill';
 import { GlobalStyles } from '../styles/theme';
-import { FontStyles } from '../styles/fonts';
 
 function MyApp({ Component, pageProps }: AppProps) {
   if (typeof window !== 'undefined') {
@@ -10,7 +9,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <GlobalStyles />
-      <FontStyles />
       <Component {...pageProps} />
     </>
   );
