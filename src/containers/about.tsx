@@ -95,7 +95,7 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
         if (contentRef.current) {
           contentRef.current.scrollTop = 0;
         }
-      }, 3000);
+      }, 1000);
     }
   }, [isActive, width]);
 
