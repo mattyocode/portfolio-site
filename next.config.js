@@ -33,6 +33,18 @@ const nextConfig = {
       use: ['raw-loader', 'glslify-loader'],
     });
 
+    // config.module.rules.push({
+    //   test: /open-sans\/.+\.(woff|woff2)$/,
+    //   use: {
+    //     loader: 'file-loader',
+    //     options: {
+    //       outputPath: 'static/fonts/open-sans',
+    //       publicPath: '/_next/static/fonts/open-sans',
+    //       limit: 1,
+    //     },
+    //   },
+    // });
+
     // config.resolve.alias['three$'] = path.resolve('./src/utils/three.js');
     // config.resolve.alias['./node_modules/three/build/three.module.js'] =
     //   path.resolve('./src/utils/three.js');
