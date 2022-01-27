@@ -14,17 +14,39 @@ export const Links = ({ children, ...restProps }: Props): JSX.Element => {
   return <LinksWrapper {...restProps}>{children}</LinksWrapper>;
 };
 
+export const PageTopLink = ({
+  children,
+  ...restProps
+}: {
+  children: React.ReactNode;
+}): JSX.Element => {
+  const topHandler = (e: React.MouseEvent<HTMLElement>) => {
+    window.scrollTo(0, 0);
+  };
+  return (
+    <NavLink onClick={topHandler} {...restProps}>
+      <Link href={'/'}>{children}</Link>
+    </NavLink>
+  );
+};
+
 export const NavbarLink = ({
   href,
   children,
+  className,
+  scroll,
   ...restProps
 }: {
   href: string;
   children: React.ReactNode;
+  className?: string;
+  scroll?: boolean;
 }): JSX.Element => {
   return (
-    <NavLink {...restProps}>
-      <Link href={href}>{children}</Link>
+    <NavLink className={className} {...restProps}>
+      <Link href={href} scroll={scroll}>
+        {children}
+      </Link>
     </NavLink>
   );
 };
@@ -52,23 +74,23 @@ export const ScrollLink: React.FC<ScrollLinkProps> = ({
         e.preventDefault();
         const destination = document.querySelector(href as string);
         if (destination) {
-          document.body.style.scrollSnapType = 'none';
-          document.getElementById('pagewrapper')!.style.scrollSnapType = 'none';
+          // document.body.style.scrollSnapType = 'none';
+          // document.getElementById('pagewrapper')!.style.scrollSnapType = 'none';
           destination.scrollIntoView({
             behavior: 'smooth',
             block: 'center',
             inline: 'center',
           });
-          setTimeout(() => {
-            document.body.style.scrollSnapType = 'y mandatory';
-            document.getElementById('pagewrapper')!.style.scrollSnapType =
-              'y mandatory';
-            destination.scrollIntoView({
-              behavior: 'smooth',
-              block: 'center',
-              inline: 'center',
-            });
-          }, 500);
+          // setTimeout(() => {
+          // document.body.style.scrollSnapType = 'y proximity';
+          // document.getElementById('pagewrapper')!.style.scrollSnapType =
+          //   'y proximity';
+          // destination.scrollIntoView({
+          //   behavior: 'smooth',
+          //   block: 'center',
+          //   inline: 'center',
+          // });
+          // }, 500);
         }
       }
     },
@@ -81,7 +103,7 @@ export const ScrollLink: React.FC<ScrollLinkProps> = ({
         href={href}
         as={as}
         replace={replace}
-        scroll={scroll}
+        scroll={false}
         shallow={shallow}
         passHref={passHref}
         prefetch={prefetch}
