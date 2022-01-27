@@ -68,7 +68,7 @@ export const ScrollLink: React.FC<ScrollLinkProps> = ({
         e.preventDefault();
         const destination = document.querySelector(href as string);
         if (destination) {
-          document.body.style.scrollSnapType = 'none';
+          // document.body.style.scrollSnapType = 'none';
           document.getElementById('pagewrapper')!.style.scrollSnapType = 'none';
           destination.scrollIntoView({
             behavior: 'smooth',
@@ -76,10 +76,15 @@ export const ScrollLink: React.FC<ScrollLinkProps> = ({
             inline: 'center',
           });
           setTimeout(() => {
-            document.body.style.scrollSnapType = 'y proximity';
+            // document.body.style.scrollSnapType = 'y proximity';
             document.getElementById('pagewrapper')!.style.scrollSnapType =
               'y proximity';
-          }, 1500);
+            destination.scrollIntoView({
+              behavior: 'smooth',
+              block: 'center',
+              inline: 'center',
+            });
+          }, 500);
         }
       }
     },
