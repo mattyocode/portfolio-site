@@ -59,3 +59,7 @@ export const BodyCopy = styled.div`
     max-width: 35rem;
   }
 `;
+
+export const SJumboTitle = styled.h1`
+  font-size: 12rem;
+`;

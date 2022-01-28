@@ -67,10 +67,15 @@ export const FullBleedWrapper = ({
   );
 };
 
+type LandingContentProps = {
+  children?: React.ReactNode;
+  flexRow?: string;
+};
+
 export const LandingContent = ({
   children,
   ...restProps
-}: Props): JSX.Element => {
+}: LandingContentProps): JSX.Element => {
   return <SLandingContent {...restProps}>{children}</SLandingContent>;
 };
 

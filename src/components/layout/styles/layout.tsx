@@ -42,6 +42,7 @@ export const SFullBleedWrapper = styled.div<SFullBleedWrapperProps>`
 
 type CenteredProps = {
   rowReverse?: boolean;
+  flexRow?: string;
 };
 
 export const SLandingContent = styled.div<CenteredProps>`
@@ -57,7 +58,8 @@ export const SLandingContent = styled.div<CenteredProps>`
 
   @media screen and (min-width: 768px) {
     height: 70vh;
-    flex-direction: row-reverse;
+    flex-direction: ${(props) =>
+      props.flexRow ? props.flexRow : 'row-reverse'};
     padding: 0 2rem;
     max-width: 880px;
     height: 60vh;
