@@ -62,4 +62,5 @@ export const BodyCopy = styled.div`
 
 export const SJumboTitle = styled.h1`
   font-size: 12rem;
+  margin: 0 3rem;
 `;

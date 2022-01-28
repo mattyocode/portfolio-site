@@ -7,16 +7,17 @@ import { Canvas, extend, useThree } from '@react-three/fiber';
 import Lights from '../../components/lights';
 
 import { PageWrapper } from '../../components/blog/layout';
-import { LandingContent } from '../../components/layout';
-import { JumboTitle } from '../../components/heading';
+import { JumboTitle, LongCopy } from '../../components/heading';
+import {
+  BlogLandingContent,
+  BlogCanvasWrapper,
+} from '../../components/blog/layout';
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 const Model = dynamic(() => import('../../components/model/model2'), {
   ssr: false,
 });
-
-import { CanvasWrapper } from '../../components/canvas/styles/canvas';
 
 extend({ OrbitControls });
 
@@ -34,28 +35,29 @@ const CameraController = () => {
 };
 
 const Blog: NextPage = () => {
-  // const { scene } = useGLTF('*/public/gltf/Brackets.gltf');
   const group = useRef();
   return (
     <PageWrapper>
-      <LandingContent flexRow={'row'}>
-        <div>
-          <JumboTitle>Blog</JumboTitle>
-        </div>
-        <CanvasWrapper>
+      <BlogLandingContent>
+        <BlogCanvasWrapper>
           <Canvas camera={{ position: [0, 0, 5], fov: 30 }}>
             <Suspense fallback={null}>
               <group ref={group} dispose={null}>
                 <Lights />
-                <CameraController />
-                <mesh scale={0.75} position={[0, -1, 0]}>
-                  <Model />
-                </mesh>
+                {/* <CameraController /> */}
+                <Model />
               </group>
             </Suspense>
           </Canvas>
-        </CanvasWrapper>
-      </LandingContent>
+        </BlogCanvasWrapper>
+        <div style={{ width: '35rem' }}>
+          <JumboTitle>Blog</JumboTitle>
+        </div>
+      </BlogLandingContent>
+      <LongCopy style={{ textAlign: 'center', fontSize: '1.2rem' }}>
+        Writing about web development, the joy of code. <br />
+        Plus some thoughts on technology trends.
+      </LongCopy>
     </PageWrapper>
   );
 };
