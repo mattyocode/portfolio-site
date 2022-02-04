@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SBlogHomeWrapper = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   /* background-image: linear-gradient(
     to bottom,
     #4e6dca,

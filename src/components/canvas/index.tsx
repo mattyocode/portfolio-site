@@ -35,8 +35,12 @@ function CloudParticle({
   );
 }
 
-export default function CanvasContainer() {
-  const [color, setColor] = useState<number>(0);
+export default function CanvasContainer({
+  initialColorIdx = 0,
+}: {
+  initialColorIdx?: number;
+}) {
+  const [color, setColor] = useState<number>(initialColorIdx);
   const group = useRef();
 
   const colors = [

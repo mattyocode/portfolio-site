@@ -32,7 +32,7 @@ export const PageWrapper = ({
 
 interface SectionProps extends React.ComponentPropsWithoutRef<'div'> {
   id: string;
-  color: string;
+  color?: string;
   backgroundImage?: string;
   style?: React.CSSProperties;
   children?: React.ReactNode;

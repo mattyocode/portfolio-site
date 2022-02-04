@@ -11,7 +11,7 @@ export const SPageWrapper = styled.div`
   height: -webkit-fill-available;
 `;
 
-type SSectionProps = { color: string; backgroundImage?: string };
+type SSectionProps = { color?: string; backgroundImage?: string };
 
 export const SSection = styled.section<SSectionProps>`
   height: 100vh;
