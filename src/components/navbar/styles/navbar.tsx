@@ -22,6 +22,7 @@ export const Nav = styled.nav`
 export const LinksWrapper = styled.ul`
   display: flex;
   justify-content: space-around;
+  justify-content: flex-end;
   padding: 0.75rem 1rem;
   width: 100vw;
   max-width: 550px;
@@ -40,6 +41,7 @@ export const NavLink: StyledComponent<'li', any, {}, never> = styled.li`
   display: block;
   cursor: pointer;
   border-bottom: 2px transparent solid;
+  margin: 0 1rem;
 
   @media screen and (min-width: 350px) {
     font-weight: bold;

@@ -61,6 +61,21 @@ export const BodyCopy = styled.div`
 `;
 
 export const SJumboTitle = styled.h1`
-  font-size: 12rem;
-  margin: 0 3rem;
+  text-align: center;
+  font-size: 4rem;
+
+  @media screen and (min-width: 768px) {
+    font-size: 8rem;
+  }
+`;
+
+export const SSubHead = styled.div`
+  z-index: 80;
+  max-width: 14rem;
+  font-weight: 600;
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    max-width: 20rem;
+  }
 `;

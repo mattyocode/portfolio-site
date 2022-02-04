@@ -8,7 +8,6 @@ export default function NavbarContainer({
   activeSection: string;
 }): JSX.Element {
   const router = useRouter();
-
   return (
     <Navbar>
       <Links>

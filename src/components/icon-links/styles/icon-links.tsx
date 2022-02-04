@@ -11,7 +11,6 @@ export const Wrapper = styled.div<WrapperProps>`
   display: flex;
   width: 90vw;
   margin: ${(props) => (props.margin ? '1.5rem 0' : '0')};
-  /* margin: 1.5rem 0; */
   align-items: center;
   justify-content: ${(props) => (props.centered ? 'center' : 'flex-end')};
   padding: 0 1rem;

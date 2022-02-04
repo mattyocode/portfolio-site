@@ -11,7 +11,11 @@ export const SPageWrapper = styled.div`
   height: -webkit-fill-available;
 `;
 
-type SSectionProps = { color?: string; backgroundImage?: string };
+type SSectionProps = {
+  color?: string;
+  backgroundImage?: string;
+  cover?: boolean;
+};
 
 export const SSection = styled.section<SSectionProps>`
   height: 100vh;
@@ -21,6 +25,9 @@ export const SSection = styled.section<SSectionProps>`
   background: ${(props) => (props.color ? props.color : '#373F51')};
   background-image: ${(props) =>
     props.backgroundImage ? props.backgroundImage : ''};
+
+  background-size: ${(props) => (props.cover ? 'cover' : '')};
+  background-position: ${(props) => (props.backgroundImage ? 'bottom' : '')};
 `;
 
 type SFullBleedWrapperProps = { centered: boolean; flexRow: boolean };
@@ -54,6 +61,7 @@ export const SLandingContent = styled.div<CenteredProps>`
   justify-content: space-between;
   align-items: center;
   overflow-y: auto;
+  overflow-y: visible;
   margin-bottom: 5rem;
 
   @media screen and (min-width: 768px) {

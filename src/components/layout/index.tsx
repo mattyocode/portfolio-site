@@ -34,6 +34,7 @@ interface SectionProps extends React.ComponentPropsWithoutRef<'div'> {
   id: string;
   color?: string;
   backgroundImage?: string;
+  cover?: boolean;
   style?: React.CSSProperties;
   children?: React.ReactNode;
 }

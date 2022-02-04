@@ -1,21 +1,10 @@
-import { useRef, Suspense } from 'react';
-import { useEffect } from 'react';
 import Image from 'next/image';
 import type { NextPage } from 'next';
 import dynamic from 'next/dynamic';
 
-import { Canvas, extend, useThree } from '@react-three/fiber';
-import Lights from '../../components/lights';
-
-import { PageWrapper } from '../../components/blog/layout';
-import { JumboTitle, LongCopy } from '../../components/heading';
-import {
-  BlogLandingContent,
-  BlogCanvasWrapper,
-} from '../../components/blog/layout';
-
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-
+import { PageWrapper, BlogPostsWrapper } from '../../components/blog/layout';
+import { Links, Navbar, ScrollLink } from '../../components/navbar';
+import { LandingCopy, JumboTitle, SubHead } from '../../components/heading';
 import {
   FullBleedWrapper,
   Section,
@@ -23,36 +12,29 @@ import {
   ProfilePicWrapper,
 } from '../../components/layout';
 import ContactIcons from '../../components/icon-links';
-import { LandingCopy } from '../../components/heading';
 
 import { ContactLinks } from '../../data/contact-links';
-
-// const Model = dynamic(() => import('../../components/model/model2'), {
-//   ssr: false,
-// });
-
-// extend({ OrbitControls });
-
-// const CameraController = () => {
-//   const { camera, gl } = useThree();
-//   useEffect(() => {
-//     const controls = new OrbitControls(camera, gl.domElement);
-//     controls.minDistance = 3;
-//     controls.maxDistance = 20;
-//     return () => {
-//       controls.dispose();
-//     };
-//   }, [camera, gl]);
-//   return null;
-// };
 
 const CanvasContainer = dynamic(() => import('../../components/canvas'));
 
 const Blog: NextPage = () => {
-  const group = useRef();
   return (
     <PageWrapper>
-      <Section id='home' backgroundImage='url("/img/nightsky.jpg")'>
+      <Navbar>
+        <Links>
+          <ScrollLink href='#home' scroll={false}>
+            Contact
+          </ScrollLink>
+          <ScrollLink href='/' scroll={false}>
+            Portfolio
+          </ScrollLink>
+        </Links>
+      </Navbar>
+      <Section
+        id='home'
+        backgroundImage='url("/img/withtrees.jpg")'
+        cover={true}
+      >
         <FullBleedWrapper>
           <CanvasContainer initialColorIdx={5} />
           <LandingContent>
@@ -67,32 +49,19 @@ const Blog: NextPage = () => {
                 priority
               />
             </ProfilePicWrapper>
-            <LandingCopy>
+            <LandingCopy style={{ alignItems: 'center' }}>
               <JumboTitle>Blog</JumboTitle>
+              <SubHead>
+                Writing about tech, web development, and the joy of code.
+              </SubHead>
             </LandingCopy>
           </LandingContent>
-          <ContactIcons links={ContactLinks} />
+          <ContactIcons links={ContactLinks} margin={true} />
         </FullBleedWrapper>
       </Section>
-      {/* <BlogLandingContent>
-        <BlogCanvasWrapper>
-          <Canvas camera={{ position: [0, 0, 5], fov: 30 }}>
-            <Suspense fallback={null}>
-              <group ref={group} dispose={null}>
-                <Lights />
-                <Model />
-              </group>
-            </Suspense>
-          </Canvas>
-        </BlogCanvasWrapper>
-        <div style={{ width: '35rem' }}>
-          <JumboTitle>Blog</JumboTitle>
-        </div>
-      </BlogLandingContent>*/}
-      <LongCopy style={{ textAlign: 'center', fontSize: '1.2rem' }}>
-        Writing about web development and the joy of code. <br />
-        Occasional thoughts on technology trends.
-      </LongCopy>
+      <BlogPostsWrapper>
+        <h2>Latest Posts</h2>
+      </BlogPostsWrapper>
     </PageWrapper>
   );
 };

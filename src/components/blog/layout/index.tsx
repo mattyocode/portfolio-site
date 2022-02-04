@@ -1,6 +1,6 @@
 import {
   SBlogHomeWrapper,
-  SBlogLandingContent,
+  SBlogPostsWrapper,
   CanvasWrapper,
 } from './styles/layout';
 
@@ -22,11 +22,11 @@ export const BlogCanvasWrapper = ({
   return <CanvasWrapper {...restProps}>{children}</CanvasWrapper>;
 };
 
-export const BlogLandingContent = ({
+export const BlogPostsWrapper = ({
   children,
   ...restProps
 }: {
   children?: React.ReactNode;
 }): JSX.Element => {
-  return <SBlogLandingContent {...restProps}>{children}</SBlogLandingContent>;
+  return <SBlogPostsWrapper {...restProps}>{children}</SBlogPostsWrapper>;
 };
