@@ -17,7 +17,7 @@ export default function Model() {
   useFrame(() => (mesh.current ? (mesh.current.rotation.y += 0.01) : null));
 
   return (
-    <mesh ref={mesh} scale={1} position={[0, -1, 0]}>
+    <mesh ref={mesh} scale={0.75} position={[0, -1, 0]}>
       <primitive object={scene} dispose={null} />
     </mesh>
   );

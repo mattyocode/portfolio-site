@@ -21,7 +21,7 @@ export const SBlogHomeWrapper = styled.div`
 export const CanvasWrapper = styled.div`
   position: relative;
   height: 50vh;
-  width: 35rem;
+  width: 50rem;
 `;
 
 export const SBlogLandingContent = styled.div`
@@ -43,6 +43,7 @@ export const SBlogLandingContent = styled.div`
     /* height: 60vh; */
     /* overflow-y: hidden; */
     margin-bottom: 0;
+    padding: 3rem;
   }
 
   /* @media screen and (min-width: 1024px) {

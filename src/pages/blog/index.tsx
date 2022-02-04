@@ -55,8 +55,8 @@ const Blog: NextPage = () => {
         </div>
       </BlogLandingContent>
       <LongCopy style={{ textAlign: 'center', fontSize: '1.2rem' }}>
-        Writing about web development, the joy of code. <br />
-        Plus some thoughts on technology trends.
+        Writing about web development and the joy of code. <br />
+        Occasional thoughts on technology trends.
       </LongCopy>
     </PageWrapper>
   );
