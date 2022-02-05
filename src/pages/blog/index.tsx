@@ -10,9 +10,12 @@ import {
   Section,
   LandingContent,
   ProfilePicWrapper,
+  Centered,
 } from '../../components/layout';
+import BlogCard from '../../components/blog/card';
+import ContactForm from '../../components/form';
 import ContactIcons from '../../components/icon-links';
-
+import sendContactRequest from '../../helpers/sendContactRequest';
 import { ContactLinks } from '../../data/contact-links';
 
 const CanvasContainer = dynamic(() => import('../../components/canvas'));
@@ -42,14 +45,14 @@ const Blog: NextPage = () => {
               <Image
                 src='/img/profilepiccoral.svg'
                 alt='illustration of site author'
-                width='250'
-                height='250'
+                width='25'
+                height='25'
                 layout='responsive'
                 objectFit='contain'
                 priority
               />
             </ProfilePicWrapper>
-            <LandingCopy style={{ alignItems: 'center' }}>
+            <LandingCopy>
               <JumboTitle>Blog</JumboTitle>
               <SubHead>
                 Writing about tech, web development, and the joy of code.
@@ -60,8 +63,15 @@ const Blog: NextPage = () => {
         </FullBleedWrapper>
       </Section>
       <BlogPostsWrapper>
-        <h2>Latest Posts</h2>
+        <h2 style={{ margin: '2rem 0', textAlign: 'center' }}>Latest Posts</h2>
+        <BlogCard />
+        <BlogCard />
+        <BlogCard />
       </BlogPostsWrapper>
+      <Centered column={true}>
+        <ContactForm submitFn={sendContactRequest} />
+        <ContactIcons links={ContactLinks} centered={true} margin={false} />
+      </Centered>
     </PageWrapper>
   );
 };

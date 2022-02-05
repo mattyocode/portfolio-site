@@ -63,6 +63,7 @@ export const BodyCopy = styled.div`
 export const SJumboTitle = styled.h1`
   text-align: center;
   font-size: 4rem;
+  filter: drop-shadow(3px 3px 0 #6d7ec5);
 
   @media screen and (min-width: 768px) {
     font-size: 8rem;

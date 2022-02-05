@@ -7,7 +7,7 @@ type WrapperProps = {
 
 export const Wrapper = styled.div<WrapperProps>`
   position: ${(props) => (props.centered ? 'relative' : 'absolute')};
-  bottom: ${(props) => (props.centered ? '' : '5rem')};
+  bottom: ${(props) => (props.centered ? '' : '2rem')};
   display: flex;
   width: 90vw;
   margin: ${(props) => (props.margin ? '1.5rem 0' : '0')};

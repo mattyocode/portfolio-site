@@ -37,5 +37,5 @@ export const SBlogLandingContent = styled.div`
 
 export const SBlogPostsWrapper = styled.div`
   min-height: 20rem;
-  padding: 4rem 0;
+  padding: 1rem 0;
 `;

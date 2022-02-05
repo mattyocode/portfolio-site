@@ -12,6 +12,7 @@ export const GlobalStyles = createGlobalStyle`
 
   html {
     scroll-behavior: smooth;
+    background-color: #111;
   }
 
   html, body {
