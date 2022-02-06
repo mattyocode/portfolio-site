@@ -1,6 +1,6 @@
-import React, { useCallback } from 'react';
+import React, { MouseEvent } from 'react';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 
 import {
   HorizontalBackLink,
@@ -61,22 +61,18 @@ export const PageTop = ({
   borderColor?: string | undefined;
   children: React.ReactNode;
 }) => {
-  const handleClick = useCallback(
-    (e) => {
-      if ((href as string).startsWith('#')) {
-        e.preventDefault();
-        const destination = document.querySelector(href as string);
-        if (destination) {
-          destination.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center',
-            inline: 'center',
-          });
-        }
-      }
-    },
-    [href]
-  );
+  const handleClick = (e: MouseEvent) => {
+    e.preventDefault();
+    const destination = document.querySelector('#home');
+    if (destination) {
+      destination.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'center',
+      });
+    }
+  };
+
   return (
     <AnimatePresence>
       {show && (
@@ -89,7 +85,7 @@ export const PageTop = ({
             exit='exit'
             {...restProps}
           >
-            <VerticalBackLink onClick={handleClick} onKeyDown={handleClick}>
+            <VerticalBackLink onClick={handleClick}>
               <VerticalIcon src={src} />
             </VerticalBackLink>
             <BtnTextSmall>{children}</BtnTextSmall>
