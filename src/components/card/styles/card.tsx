@@ -6,14 +6,16 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  border: 3px #ff8a65 solid;
-  border-radius: 5px;
+  border: 1px #ff8a65 solid;
+  /* border-radius: 5px; */
   margin: auto;
   padding: 0.1rem;
   height: 100%;
   max-width: 90vw;
-  background: #373f51;
-  filter: drop-shadow(15px 15px 4px #333);
+  /* background: #373f51; */
+  background: #2d3443;
+  /* filter: drop-shadow(10px 10px 0px #333); */
+  filter: drop-shadow(5px 5px 0px #ff8a65);
   @media screen and (min-width: 410px) {
     max-width: 22rem;
   }

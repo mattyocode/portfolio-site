@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 
-export const CanvasWrapper = styled.div`
+type CanvasProps = {
+  opacity?: string;
+};
+
+export const CanvasWrapper = styled.div<CanvasProps>`
   position: absolute;
   height: 100vh;
   width: 100vw;
-  opacity: 0.8;
+  opacity: ${(props) => (props.opacity ? props.opacity : '0.8')};
 `;

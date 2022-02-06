@@ -28,7 +28,7 @@ const Blog: NextPage = ({ posts }) => {
     <PageWrapper>
       <Navbar>
         <Links>
-          <ScrollLink href='/blog' scroll={false}>
+          <ScrollLink href='/blog' scroll={true}>
             Blog Home
           </ScrollLink>
           <ScrollLink href='/' scroll={false}>
@@ -42,7 +42,7 @@ const Blog: NextPage = ({ posts }) => {
         cover={true}
       >
         <FullBleedWrapper>
-          <CanvasContainer initialColorIdx={5} />
+          <CanvasContainer initialColorIdx={5} opacity='0.4' />
           <LandingContent>
             <ProfilePicWrapper>
               <Image
@@ -70,12 +70,9 @@ const Blog: NextPage = ({ posts }) => {
         {posts.map((post, idx: number) => (
           <BlogCard postData={post} key={idx} />
         ))}
-
-        {/* <BlogCard />
-        <BlogCard /> */}
       </BlogPostsWrapper>
       <Centered column={true}>
-        <ContactForm submitFn={sendContactRequest} />
+        <ContactForm submitFn={sendContactRequest} dark={true} />
         <ContactIcons links={ContactLinks} centered={true} margin={false} />
       </Centered>
     </PageWrapper>

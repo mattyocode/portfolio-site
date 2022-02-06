@@ -1,19 +1,19 @@
 import styled from 'styled-components';
 
-type WrapperProps = {
+type DarkModeProps = {
   dark?: boolean;
 };
 
-export const Wrapper = styled.div<WrapperProps>`
+export const Wrapper = styled.div<DarkModeProps>`
   width: 100%;
   max-width: 440px;
   margin: 1rem;
-  background-color: ${(props) => (props.dark ? '#121D1F' : '#eee')};
-  filter: drop-shadow(5px 5px 0 #ff8a66);
-  filter: ${(props) =>
+  background-color: ${(props) => (props.dark ? '#121d1f' : '#eee')};
+  /* filter: ${(props) =>
     props.dark
       ? 'drop-shadow(5px 5px 0 #6D7EC5)'
-      : 'drop-shadow(5px 5px 0 #ff8a66)'};
+      : 'drop-shadow(5px 5px 0 #ff8a66)'}; */
+  filter: drop-shadow(5px 5px 0 #ff8a66);
 
   @media screen and (min-height: 660px) {
     max-height: 480px;
@@ -51,12 +51,13 @@ export const Label = styled.label`
   }
 `;
 
-export const Input = styled.input`
+export const Input = styled.input<DarkModeProps>`
   border: 0;
   outline: 0;
   background: transparent;
   border-bottom: 2px solid #ff8a66;
-  color: #111;
+  /* color: #111; */
+  color: ${(props) => (props.dark ? '#eee' : '#111')};
   font-size: 16px;
   height: 2.5rem;
   line-height: 50px;
@@ -68,7 +69,7 @@ export const Input = styled.input`
   }
 `;
 
-export const Message = styled.textarea`
+export const Message = styled.textarea<DarkModeProps>`
   border: 0;
   outline: 0;
   background: transparent;
@@ -76,7 +77,7 @@ export const Message = styled.textarea`
   margin: 0 0.5rem;
   border-bottom: 2px solid #ff8a66;
   min-height: 5rem;
-  color: #111;
+  color: ${(props) => (props.dark ? '#eee' : '#111')};
   font-size: 0.9rem;
   resize: none;
   font-family: 'Open Sans', sans-serif;

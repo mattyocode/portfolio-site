@@ -18,7 +18,6 @@ function CloudParticle({
     if (width && width < 768) {
       setItemPosition([4, 0, 0]);
     } else {
-      // setItemPosition([0, -1, 0]);
       setItemPosition([0, 0, 0]);
     }
   }, [width]);
@@ -38,8 +37,10 @@ function CloudParticle({
 
 export default function CanvasContainer({
   initialColorIdx = 0,
+  opacity = undefined,
 }: {
   initialColorIdx?: number;
+  opacity?: undefined | string;
 }) {
   const [color, setColor] = useState<number>(initialColorIdx);
   const group = useRef();
@@ -60,7 +61,7 @@ export default function CanvasContainer({
     setColor(colorIdx);
   };
   return (
-    <CanvasWrapper>
+    <CanvasWrapper opacity={opacity}>
       <Canvas camera={{ position: [-5, 2, 10], fov: 100 }}>
         <Suspense fallback={null}>
           <group ref={group} dispose={null}>

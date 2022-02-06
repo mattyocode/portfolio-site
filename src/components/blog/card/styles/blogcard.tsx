@@ -33,11 +33,11 @@ export const SWrapper = styled.div`
     height: 28vh;
     padding: 0.75rem;
   }
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1080px) {
     font-size: 0.9rem;
     height: 32vh;
-    max-width: 38rem;
-    max-height: 20rem;
+    max-width: 45rem;
+    height: 20rem;
   }
 `;
 
@@ -72,7 +72,7 @@ export const SDate = styled.h5`
   @media screen and (min-width: 768px) {
     font-size: 0.8rem;
   }
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1080) {
     font-size: 0.9rem;
   }
 `;
@@ -81,14 +81,14 @@ export const STitle = styled.h3`
   @media screen and (min-width: 768px) {
     font-size: 1.3rem;
   }
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1080) {
     font-size: 1.5rem;
   }
 `;
 
 export const SBodyCopy = styled.p`
   font-size: 0.8rem;
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1080) {
     font-size: 0.9rem;
   }
 `;
