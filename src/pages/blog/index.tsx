@@ -83,7 +83,7 @@ const Blog: NextPage<blogHomeProps> = ({ posts }) => {
         </FullBleedWrapper>
       </Section>
       <BlogPostsWrapper>
-        <h2 style={{ margin: '3rem 2rem 0rem 2rem', textAlign: 'center' }}>
+        <h2 style={{ margin: '5rem 2rem 0rem 2rem', textAlign: 'center' }}>
           Latest Posts
         </h2>
         {posts.map((post: blogSnippetProps, idx: number) => (
@@ -92,7 +92,7 @@ const Blog: NextPage<blogHomeProps> = ({ posts }) => {
       </BlogPostsWrapper>
       <Centered column={true}>
         <ContactForm submitFn={sendContactRequest} dark={true} />
-        <ContactIcons links={ContactLinks} centered={true} margin={true} />
+        <ContactIcons links={ContactLinks} centered={true} margin={false} />
       </Centered>
     </PageWrapper>
   );
