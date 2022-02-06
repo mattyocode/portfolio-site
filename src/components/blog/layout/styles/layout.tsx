@@ -39,3 +39,22 @@ export const SBlogPostsWrapper = styled.div`
   min-height: 20rem;
   padding: 1rem 0;
 `;
+
+export const SPostPageWrapper = styled.div`
+  padding: 4rem 1.5rem 3rem 1.5rem;
+  margin: 0 auto;
+  max-width: 90vw;
+
+  @media screen and (min-width: 768px) {
+    max-width: 700px;
+  }
+
+  & > h1 {
+    filter: none;
+  }
+
+  & > p {
+    font-size: 1rem;
+    margin: 2rem 0;
+  }
+`;

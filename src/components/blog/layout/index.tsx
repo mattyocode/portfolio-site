@@ -2,6 +2,7 @@ import {
   SBlogHomeWrapper,
   SBlogPostsWrapper,
   CanvasWrapper,
+  SPostPageWrapper,
 } from './styles/layout';
 
 export const PageWrapper = ({
@@ -29,4 +30,13 @@ export const BlogPostsWrapper = ({
   children?: React.ReactNode;
 }): JSX.Element => {
   return <SBlogPostsWrapper {...restProps}>{children}</SBlogPostsWrapper>;
+};
+
+export const PostPageWrapper = ({
+  children,
+  ...restProps
+}: {
+  children?: React.ReactNode;
+}): JSX.Element => {
+  return <SPostPageWrapper {...restProps}>{children}</SPostPageWrapper>;
 };

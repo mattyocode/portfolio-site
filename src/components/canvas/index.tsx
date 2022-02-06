@@ -16,9 +16,10 @@ function CloudParticle({
 
   useEffect(() => {
     if (width && width < 768) {
-      setItemPosition([4, -1, 0]);
+      setItemPosition([4, 0, 0]);
     } else {
-      setItemPosition([0, -1, 0]);
+      // setItemPosition([0, -1, 0]);
+      setItemPosition([0, 0, 0]);
     }
   }, [width]);
 

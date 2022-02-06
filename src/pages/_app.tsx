@@ -13,12 +13,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <GlobalStyles />
-      <AnimatePresence>
+      <AnimatePresence exitBeforeEnter>
         <motion.div
           key={router.route}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
           exit={{ opacity: 0 }}
         >
           <Component {...pageProps} />

@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import type { NextPage } from 'next';
 import dynamic from 'next/dynamic';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 
 import { PageWrapper, BlogPostsWrapper } from '../../components/blog/layout';
 import { Links, Navbar, ScrollLink } from '../../components/navbar';
@@ -20,13 +23,13 @@ import { ContactLinks } from '../../data/contact-links';
 
 const CanvasContainer = dynamic(() => import('../../components/canvas'));
 
-const Blog: NextPage = () => {
+const Blog: NextPage = ({ posts }) => {
   return (
     <PageWrapper>
       <Navbar>
         <Links>
-          <ScrollLink href='#home' scroll={false}>
-            Contact
+          <ScrollLink href='/blog' scroll={false}>
+            Blog Home
           </ScrollLink>
           <ScrollLink href='/' scroll={false}>
             Portfolio
@@ -64,9 +67,12 @@ const Blog: NextPage = () => {
       </Section>
       <BlogPostsWrapper>
         <h2 style={{ margin: '2rem 0', textAlign: 'center' }}>Latest Posts</h2>
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
+        {posts.map((post, idx: number) => (
+          <BlogCard postData={post} key={idx} />
+        ))}
+
+        {/* <BlogCard />
+        <BlogCard /> */}
       </BlogPostsWrapper>
       <Centered column={true}>
         <ContactForm submitFn={sendContactRequest} />
@@ -77,3 +83,26 @@ const Blog: NextPage = () => {
 };
 
 export default Blog;
+
+export const getStaticProps = async () => {
+  const files = fs.readdirSync(path.join('posts'));
+
+  const posts = files.map((filename) => {
+    const markdownWithMetaData = fs.readFileSync(
+      path.join('posts', filename),
+      'utf-8'
+    );
+    const { data: frontMatter } = matter(markdownWithMetaData);
+
+    return {
+      ...frontMatter,
+      slug: filename.split('.')[0],
+    };
+  });
+
+  return {
+    props: {
+      posts,
+    },
+  };
+};

@@ -1,11 +1,19 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+type WrapperProps = {
+  dark?: boolean;
+};
+
+export const Wrapper = styled.div<WrapperProps>`
   width: 100%;
   max-width: 440px;
   margin: 1rem;
-  background-color: #eee;
+  background-color: ${(props) => (props.dark ? '#121D1F' : '#eee')};
   filter: drop-shadow(5px 5px 0 #ff8a66);
+  filter: ${(props) =>
+    props.dark
+      ? 'drop-shadow(5px 5px 0 #6D7EC5)'
+      : 'drop-shadow(5px 5px 0 #ff8a66)'};
 
   @media screen and (min-height: 660px) {
     max-height: 480px;
@@ -82,7 +90,6 @@ export const FieldError = styled.p`
   display: inline;
   font-size: 0.8rem;
   font-weight: bold;
-  /* color: gray; */
   color: red;
   padding: auto 2px;
 

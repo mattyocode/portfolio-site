@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import {
   SWrapper,
   SImageWrapper,
@@ -14,39 +15,40 @@ import {
 type postDataProps = {
   postData: {
     title: string;
-    img: string;
+    thumbnailUrl: string;
     date: string;
-    desc: string;
+    description: string;
     tags: string[];
+    slug: string;
   };
 };
 
 export default function BlogCard({ postData }: postDataProps) {
+  console.log('post data in card', postData);
   return (
-    <SWrapper>
-      <SImageWrapper>
-        <Image
-          src='/img/nightsky.jpg'
-          layout='intrinsic'
-          height={250}
-          width={250}
-          objectFit='cover'
-          objectPosition='center'
-          alt='blog post image'
-        />
-      </SImageWrapper>
-      <SContentWrapper>
-        <SDate>5 February, 2022</SDate>
-        <STitle>Switching on the dark</STitle>
-        <SBodyCopy>
-          At the time of writing, the tech press is buzzing about Google Search
-          testing a dark mode...
-        </SBodyCopy>
-        <STags>
-          <STag>Industry</STag>
-          <STag>Culture</STag>
-        </STags>
-      </SContentWrapper>
-    </SWrapper>
+    <Link href={'/blog/' + postData.slug} scroll={false} passHref>
+      <SWrapper>
+        <SImageWrapper>
+          <Image
+            src={postData.thumbnailUrl}
+            layout='intrinsic'
+            height={250}
+            width={250}
+            objectFit='cover'
+            objectPosition='center'
+            alt='blog post image'
+          />
+        </SImageWrapper>
+        <SContentWrapper>
+          <SDate>{postData.date}</SDate>
+          <STitle>{postData.title}</STitle>
+          <SBodyCopy>{postData.description}</SBodyCopy>
+          <STags>
+            {postData.tags &&
+              postData.tags.map((tag, idx) => <STag key={idx}>{tag}</STag>)}
+          </STags>
+        </SContentWrapper>
+      </SWrapper>
+    </Link>
   );
 }
