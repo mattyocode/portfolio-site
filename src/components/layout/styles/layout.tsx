@@ -28,6 +28,8 @@ export const SSection = styled.section<SSectionProps>`
 
   background-size: ${(props) => (props.cover ? 'cover' : '')};
   background-position: ${(props) => (props.backgroundImage ? 'bottom' : '')};
+
+  min-height: 550px;
 `;
 
 type SFullBleedWrapperProps = { centered: boolean; flexRow: boolean };
@@ -40,6 +42,7 @@ export const SFullBleedWrapper = styled.div<SFullBleedWrapperProps>`
   justify-content: ${(props) => (props.centered ? 'center' : 'flex-end')};
   align-items: ${(props) => (props.centered ? 'center' : 'flex-end')};
   flex-direction: ${(props) => (props.flexRow ? 'row' : 'column')};
+  min-height: 550px;
 
   @media screen and (min-width: 768px) {
     justify-content: center;

@@ -23,7 +23,12 @@ import { ContactLinks } from '../../data/contact-links';
 
 const CanvasContainer = dynamic(() => import('../../components/canvas'));
 
+type PostObject = {
+  date: string;
+};
+
 const Blog: NextPage = ({ posts }) => {
+  console.log('Posts >>>', posts);
   return (
     <PageWrapper>
       <Navbar>
