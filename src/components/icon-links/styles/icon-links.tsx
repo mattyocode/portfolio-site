@@ -17,7 +17,7 @@ export const Wrapper = styled.div<WrapperProps>`
   cursor: pointer;
 
   @media screen and (min-height: 660px) {
-    margin: ${(props) => (props.margin ? '3rem 0' : '0')};
+    margin: ${(props) => (props.margin ? '4rem 0' : '0')};
   }
 
   @media screen and (min-width: 768px) {
