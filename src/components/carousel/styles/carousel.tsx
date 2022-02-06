@@ -7,7 +7,7 @@ export const StyledSlide = styled(Slide)`
   .centered {
     padding-top: 1rem;
     padding-bottom: 2rem;
-    max-height: 29rem;
+    max-height: 28rem;
 
     @media screen and (min-height: 600px) {
       max-height: 31rem;
@@ -32,7 +32,7 @@ export const StyledSlider = styled(Slider)`
   margin-top: 3rem;
   -ms-touch-action: pan-y;
   touch-action: pan-y;
-  
+
   @media screen and (min-height: 600px) {
     margin-top: 4rem;
     max-height: 30rem;
