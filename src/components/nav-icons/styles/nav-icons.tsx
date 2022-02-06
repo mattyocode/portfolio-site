@@ -9,6 +9,7 @@ export const HoriztonalBackBtnWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin: 4rem 0;
+  cursor: pointer;
 `;
 
 export const VerticalBackBtnWrapper = styled(motion.div)`

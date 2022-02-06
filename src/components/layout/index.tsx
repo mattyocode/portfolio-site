@@ -140,7 +140,7 @@ export const Centered = ({
   children: React.ReactNode;
 }): JSX.Element => {
   return (
-    <CenteredContent column={column} {...restProps}>
+    <CenteredContent column={column} style={style} {...restProps}>
       {children}
     </CenteredContent>
   );
