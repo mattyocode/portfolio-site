@@ -6,11 +6,11 @@ export const SBlogHomeWrapper = styled.div`
   background-image: radial-gradient(circle at 2px 2px, #666 1px, transparent 0);
   background-size: 50px 50px;
   background-color: #121d1f;
-  /* background-color: #1b1f28; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-bottom: 4rem;
 `;
 
 export const CanvasWrapper = styled.div`

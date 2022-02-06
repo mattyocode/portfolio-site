@@ -19,7 +19,7 @@ export const VerticalBackBtnWrapper = styled(motion.div)`
   justify-content: center;
   align-items: center;
   bottom: 3vh;
-  right: 2rem;
+  left: 2rem;
   z-index: 100;
   cursor: pointer;
 `;
