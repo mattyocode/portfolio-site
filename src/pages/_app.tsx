@@ -4,26 +4,31 @@ import * as smoothscroll from 'smoothscroll-polyfill';
 import { GlobalStyles } from '../styles/theme';
 import { AnimatePresence, motion } from 'framer-motion';
 
+const pageTransitionVariants = {
+  hidden: { opacity: 0 },
+  enter: { opacity: 1, duration: 1 },
+  exit: {
+    opacity: 0,
+    duration: 1,
+  },
+};
+
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  console.log(router);
+
   if (typeof window !== 'undefined') {
     smoothscroll.polyfill();
   }
   return (
     <>
       <GlobalStyles />
-      <AnimatePresence
-        exitBeforeEnter
-        initial={false}
-        // onExitComplete={() => window.scrollTo(0, 0)}
-      >
+      <AnimatePresence exitBeforeEnter initial={false}>
         <motion.div
           key={router.route}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.2 }}
-          exit={{ opacity: 0 }}
+          variants={pageTransitionVariants}
+          initial='hidden'
+          animate='enter'
+          exit='exit'
         >
           <Component {...pageProps} />
         </motion.div>

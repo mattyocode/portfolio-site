@@ -26,7 +26,7 @@ export const PageBack = ({
   children: React.ReactNode;
 }) => {
   return (
-    <Link href={href} scroll={true} passHref>
+    <Link href={href} scroll={false} passHref>
       <HoriztonalBackBtnWrapper {...restProps}>
         <HorizontalBackLink borderColor={borderColor}>
           <BtnIcon src={src} />
