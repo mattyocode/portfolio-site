@@ -42,6 +42,10 @@ export const BtnIcon = styled.img`
   max-width: 7rem;
 `;
 
+export const VerticalIcon = styled.img`
+  height: 14px;
+`;
+
 export const HorizontalBackLink = styled.div<ButtonProps>`
   background-color: #121d1f;
   display: flex;
@@ -71,8 +75,8 @@ export const VerticalBackLink = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
   background-color: #121d1f;
   cursor: pointer;

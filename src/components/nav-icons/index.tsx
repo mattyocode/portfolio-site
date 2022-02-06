@@ -8,6 +8,7 @@ import {
   VerticalBackBtnWrapper,
   VerticalBackLink,
   BtnIcon,
+  VerticalIcon,
   BtnText,
   BtnTextSmall,
 } from './styles/nav-icons';
@@ -89,7 +90,7 @@ export const PageTop = ({
             {...restProps}
           >
             <VerticalBackLink onClick={handleClick} onKeyDown={handleClick}>
-              <BtnIcon src={src} />
+              <VerticalIcon src={src} />
             </VerticalBackLink>
             <BtnTextSmall>{children}</BtnTextSmall>
           </VerticalBackBtnWrapper>
