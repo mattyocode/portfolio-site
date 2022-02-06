@@ -93,7 +93,7 @@ export const SLandingContent = styled.div<CenteredProps>`
 
 export const SAboutContent = styled.div<CenteredProps>`
   width: 100%;
-  height: 60%;
+  height: 55%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
