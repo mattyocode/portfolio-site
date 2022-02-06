@@ -30,9 +30,9 @@ export const BtnText = styled.p`
 `;
 
 export const BtnTextSmall = styled.p`
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   margin: 0.2rem;
-  max-width: 3rem;
+  max-width: 2.3rem;
   text-align: center;
 `;
 
