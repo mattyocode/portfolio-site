@@ -92,7 +92,7 @@ const Blog: NextPage<blogHomeProps> = ({ posts }) => {
       </BlogPostsWrapper>
       <Centered column={true}>
         <ContactForm submitFn={sendContactRequest} dark={true} />
-        <ContactIcons links={ContactLinks} centered={true} margin={false} />
+        <ContactIcons links={ContactLinks} centered={true} margin={true} />
       </Centered>
     </PageWrapper>
   );
