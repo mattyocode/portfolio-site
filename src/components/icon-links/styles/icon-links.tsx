@@ -14,6 +14,7 @@ export const Wrapper = styled.div<WrapperProps>`
   align-items: center;
   justify-content: ${(props) => (props.centered ? 'center' : 'flex-end')};
   padding: 0 1rem;
+  cursor: pointer;
 
   @media screen and (min-height: 660px) {
     margin: ${(props) => (props.margin ? '3rem 0' : '0')};
@@ -43,6 +44,7 @@ export const LargeIcon = styled.img`
   height: 2rem;
   margin: 5px;
   object-fit: contain;
+  cursor: pointer;
 
   @media screen and (min-width: 768px) {
     width: 3rem;

@@ -9,11 +9,8 @@ export const Wrapper = styled.div<DarkModeProps>`
   max-width: 440px;
   margin: 1rem;
   background-color: ${(props) => (props.dark ? '#121d1f' : '#eee')};
-  /* filter: ${(props) =>
-    props.dark
-      ? 'drop-shadow(5px 5px 0 #6D7EC5)'
-      : 'drop-shadow(5px 5px 0 #ff8a66)'}; */
   filter: drop-shadow(5px 5px 0 #ff8a66);
+  border: ${(props) => (props.dark ? '1px #ff8a66 solid' : '')};
 
   @media screen and (min-height: 660px) {
     max-height: 480px;

@@ -5,9 +5,15 @@ import path from 'path';
 import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-// import SyntaxHighlighter from 'react-syntax-highlighter';
+import { Centered } from '../../components/layout';
 import { Links, Navbar, ScrollLink } from '../../components/navbar';
 import { PageWrapper, PostPageWrapper } from '../../components/blog/layout';
+import { PageBack } from '../../components/nav-icons';
+
+import ContactForm from '../../components/form';
+import ContactIcons from '../../components/icon-links';
+import sendContactRequest from '../../helpers/sendContactRequest';
+import { ContactLinks } from '../../data/contact-links';
 
 type PostProps = {
   frontMatter: { title: string; date: string; thumbnailUrl: string };
@@ -46,6 +52,17 @@ export default function BlogPost({
       />
       <p>{date}</p>
       <MDXRemote {...mdxSource} />
+      <PageBack
+        src='/icons/back-button.svg'
+        href='/blog/'
+        borderColor='#6d7ec5'
+      >
+        Back to blog home
+      </PageBack>
+      <Centered column={true} style={{ width: '100%', padding: '0' }}>
+        <ContactForm submitFn={sendContactRequest} dark={true} />
+        <ContactIcons links={ContactLinks} centered={true} margin={true} />
+      </Centered>
     </PostPageWrapper>
   );
 }

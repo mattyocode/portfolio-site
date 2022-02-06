@@ -7,20 +7,20 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   border: 1px #ff8a65 solid;
-  /* border-radius: 5px; */
   margin: auto;
   padding: 0.1rem;
   height: 100%;
   max-width: 90vw;
-  /* background: #373f51; */
   background: #2d3443;
-  /* filter: drop-shadow(10px 10px 0px #333); */
   filter: drop-shadow(5px 5px 0px #ff8a65);
+
   @media screen and (min-width: 410px) {
     max-width: 22rem;
+    padding: 0.5rem;
   }
   @media screen and (min-width: 850px) {
     max-width: 26rem;
+    padding: 0.75rem;
   }
   @media screen and (min-width: 1000px) {
     max-width: 28rem;

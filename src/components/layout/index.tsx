@@ -1,4 +1,5 @@
 import React from 'react';
+import { string } from 'yup';
 import {
   SAboutContent,
   SProfilePicWrapper,
@@ -128,10 +129,14 @@ export const ProfilePicWrapper = ({
 
 export const Centered = ({
   column = false,
+  style,
   children,
   ...restProps
 }: {
   column?: boolean;
+  style?: {
+    [key: string]: string;
+  };
   children: React.ReactNode;
 }): JSX.Element => {
   return (

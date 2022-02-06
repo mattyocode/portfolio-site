@@ -12,6 +12,7 @@ export const SWrapper = styled.div`
   max-width: 34rem;
   max-height: 18rem;
   background-color: #121d1f;
+  border: 1px #6d7ec5 solid;
   filter: drop-shadow(3px 3px 0 #6d7ec5);
   cursor: pointer;
   transition: 0.3s;
@@ -33,7 +34,7 @@ export const SWrapper = styled.div`
     height: 28vh;
     padding: 0.75rem;
   }
-  @media screen and (min-width: 1080px) {
+  @media screen and (min-width: 1024px) {
     font-size: 0.9rem;
     height: 32vh;
     max-width: 45rem;
@@ -72,7 +73,7 @@ export const SDate = styled.h5`
   @media screen and (min-width: 768px) {
     font-size: 0.8rem;
   }
-  @media screen and (min-width: 1080) {
+  @media screen and (min-width: 1024) {
     font-size: 0.9rem;
   }
 `;
@@ -81,14 +82,14 @@ export const STitle = styled.h3`
   @media screen and (min-width: 768px) {
     font-size: 1.3rem;
   }
-  @media screen and (min-width: 1080) {
+  @media screen and (min-width: 1024) {
     font-size: 1.5rem;
   }
 `;
 
 export const SBodyCopy = styled.p`
   font-size: 0.8rem;
-  @media screen and (min-width: 1080) {
+  @media screen and (min-width: 1024) {
     font-size: 0.9rem;
   }
 `;

@@ -23,12 +23,24 @@ import { ContactLinks } from '../../data/contact-links';
 
 const CanvasContainer = dynamic(() => import('../../components/canvas'));
 
-type PostObject = {
+type blogSnippetProps = {
+  title: string;
+  thumbnailUrl: string;
   date: string;
+  description: string;
+  tags: string[];
+  slug: string;
 };
 
-const Blog: NextPage = ({ posts }) => {
-  console.log('Posts >>>', posts);
+type blogHomeProps = {
+  posts: blogSnippetProps[];
+};
+
+const Blog: NextPage<blogHomeProps> = ({ posts }) => {
+  posts.sort((a, b) => {
+    return new Date(b.date).getDate() - new Date(a.date).getDate();
+  });
+
   return (
     <PageWrapper>
       <Navbar>
@@ -72,7 +84,7 @@ const Blog: NextPage = ({ posts }) => {
       </Section>
       <BlogPostsWrapper>
         <h2 style={{ margin: '2rem 0', textAlign: 'center' }}>Latest Posts</h2>
-        {posts.map((post, idx: number) => (
+        {posts.map((post: blogSnippetProps, idx: number) => (
           <BlogCard postData={post} key={idx} />
         ))}
       </BlogPostsWrapper>
