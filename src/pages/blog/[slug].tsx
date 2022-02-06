@@ -27,43 +27,45 @@ export default function BlogPost({
   const router = useRouter();
   console.log('router >', router.query.slug);
   return (
-    <PostPageWrapper>
-      <Navbar>
-        <Links>
-          <ScrollLink href='/blog' scroll={false}>
-            Blog Home
-          </ScrollLink>
-          <ScrollLink href='/' scroll={false}>
-            Portfolio
-          </ScrollLink>
-        </Links>
-      </Navbar>
-      <h1>
-        <span className='purple'>{title}</span>
-      </h1>
-      <Image
-        src={thumbnailUrl}
-        alt='blog image'
-        width='25'
-        height='20'
-        layout='responsive'
-        objectFit='contain'
-        priority
-      />
-      <p>{date}</p>
-      <MDXRemote {...mdxSource} />
-      <PageBack
-        src='/icons/back-button.svg'
-        href='/blog/'
-        borderColor='#6d7ec5'
-      >
-        Back to blog home
-      </PageBack>
-      <Centered column={true} style={{ width: '100%', padding: '0' }}>
+    <>
+      <PostPageWrapper>
+        <Navbar>
+          <Links>
+            <ScrollLink href='/blog' scroll={false}>
+              Blog Home
+            </ScrollLink>
+            <ScrollLink href='/' scroll={false}>
+              Portfolio
+            </ScrollLink>
+          </Links>
+        </Navbar>
+        <h1>
+          <span className='purple'>{title}</span>
+        </h1>
+        <Image
+          src={thumbnailUrl}
+          alt='blog image'
+          width='25'
+          height='20'
+          layout='responsive'
+          objectFit='contain'
+          priority
+        />
+        <p>{date}</p>
+        <MDXRemote {...mdxSource} />
+        <PageBack
+          src='/icons/back-button.svg'
+          href='/blog/'
+          borderColor='#6d7ec5'
+        >
+          Back to blog home
+        </PageBack>
+      </PostPageWrapper>
+      <Centered column={true} style={{ marginTop: '0' }}>
         <ContactForm submitFn={sendContactRequest} dark={true} />
         <ContactIcons links={ContactLinks} centered={true} margin={true} />
       </Centered>
-    </PostPageWrapper>
+    </>
   );
 }
 

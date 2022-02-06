@@ -29,7 +29,7 @@ export const SSection = styled.section<SSectionProps>`
   background-size: ${(props) => (props.cover ? 'cover' : '')};
   background-position: ${(props) => (props.backgroundImage ? 'bottom' : '')};
 
-  min-height: 550px;
+  min-height: 600px;
 `;
 
 type SFullBleedWrapperProps = { centered: boolean; flexRow: boolean };

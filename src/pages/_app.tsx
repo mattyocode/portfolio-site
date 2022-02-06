@@ -5,8 +5,8 @@ import { GlobalStyles } from '../styles/theme';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const pageTransitionVariants = {
-  hidden: { opacity: 0 },
-  enter: { opacity: 1, duration: 1 },
+  initial: { opacity: 0 },
+  animate: { opacity: 1, duration: 1 },
   exit: {
     opacity: 0,
     duration: 1,
@@ -26,8 +26,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         <motion.div
           key={router.route}
           variants={pageTransitionVariants}
-          initial='hidden'
-          animate='enter'
+          initial='initial'
+          animate='animate'
           exit='exit'
         >
           <Component {...pageProps} />
