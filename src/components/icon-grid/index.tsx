@@ -33,9 +33,11 @@ export default function IconGrid({
 export const SingleSmallIcon = ({
   src,
   label,
+  clickHandler,
 }: {
   src: string;
   label: string;
+  clickHandler: (e: React.MouseEvent) => void;
 }) => {
-  return <SmallIcon src={src} alt={label} />;
+  return <SmallIcon src={src} alt={label} onClick={clickHandler} />;
 };

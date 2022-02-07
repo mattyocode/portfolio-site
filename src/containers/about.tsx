@@ -72,6 +72,16 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
     }
   };
 
+  const scrollDown = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (contentRef.current) {
+      contentRef.current.scrollBy({
+        top: 100,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   let moreIcon;
 
   useEffect(() => {
@@ -170,7 +180,11 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
               </AboutContent>
               <CenterIcon>
                 {showMoreIcon && (
-                  <SingleSmallIcon src='/icons/chevron-down.svg' label='more' />
+                  <SingleSmallIcon
+                    src='/icons/chevron-down.svg'
+                    label='more'
+                    clickHandler={scrollDown}
+                  />
                 )}
               </CenterIcon>
             </FullBleedWrapper>
