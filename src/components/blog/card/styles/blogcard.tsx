@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const SWrapper = styled.div`
   margin: 3rem 0;
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   align-items: center;
   width: 90vw;
   height: 25vh;
@@ -49,11 +49,15 @@ export const SImageWrapper = styled.div`
     display: block;
     position: relative;
     padding: 0.5rem;
+    flex: 1;
   }
 `;
 
 export const SContentWrapper = styled.div`
   margin: 0.5rem 0.75rem;
+  @media screen and (min-width: 425px) {
+    flex: 2;
+  }
 
   & > * {
     margin: 0.25rem;

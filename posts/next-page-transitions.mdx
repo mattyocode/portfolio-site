@@ -63,7 +63,7 @@ Now we pass a reference to the variants object and the keys for the three steps 
 
 Finally, we wrap the Motion component with `AnimatePresence` which allows animations to animate out as they’re removed from the React tree.
 
-We can `initial={false}` to `AnimatePresence` to prevent the initial animation occurring the first time the page loads , and we can set `exitBeforeEnter` to `true` so that the component that's leaving the DOM is animated out before a new component is rendered (and animated in).
+We can add `initial={false}` to `AnimatePresence` to prevent the initial animation occurring the first time the page loads , and we can set `exitBeforeEnter` to `true` so that the component that's leaving the DOM is animated out before a new component is rendered (and animated in).
 
 The \_app file now looks like this:
 

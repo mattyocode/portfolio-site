@@ -6,7 +6,7 @@ import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vsDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { Centered } from '../../components/layout';
 import { Links, Navbar, ScrollLink } from '../../components/navbar';
 import { PostPageWrapper } from '../../components/blog/layout';
@@ -24,7 +24,7 @@ type PostProps = {
 };
 
 export const SyntaxHighlighterDark = ({
-  style = vsDark,
+  style = nord,
   language = 'javascript',
   children,
   ...restProps
@@ -40,7 +40,7 @@ export const SyntaxHighlighterDark = ({
   );
 };
 
-const components = { SyntaxHighlighterDark };
+const components = { code: SyntaxHighlighterDark };
 
 export default function BlogPost({
   frontMatter: { title, date, thumbnailUrl },
