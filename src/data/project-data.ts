@@ -43,12 +43,12 @@ export const projectData = [
     githubRepo: 'https://github.com/mattyocode/excel-ngrams',
   },
   {
-    title: 'OH, THIS SITE?',
-    linkToSite: null,
-    img: '/img/portfolio.png',
-    video: undefined,
+    title: 'BLOG & PORTFOLIO',
+    linkToSite: '/blog/',
+    img: '/img/blog.jpg',
+    video: '/video/blog.mp4',
     description:
-      'My portfolio site is made with Next JS, Typescript and Styled Components. The landing section cloud object is rendered with Three JS (via React Three Fiber), giving the page some visual dynamism and a (clickable) touch of randomness in cloud formation.',
+      'Personal blog and portfolio site made with Next JS, Typescript and Styled Components. Landing section cloud object is rendered with Three JS, giving the page some visual dynamism and a (clickable) touch of randomness in cloud formation.',
     icons: [
       { src: 'white/next-js-white', label: 'Next JS' },
       { src: 'white/typescript-white', label: 'Typescript' },
