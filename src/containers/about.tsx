@@ -162,8 +162,8 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
                   </p>
 
                   <p>
-                    Now my goal is to bring that understanding of users to the
-                    granular detail of the codebase.
+                    Now my goal is to bring an understanding of product users to
+                    the granular detail of the codebase.
                   </p>
                 </LongCopy>
                 <IconGrid icons={aboutIcons} />

@@ -79,6 +79,7 @@ export const SmallIcon = styled.img`
   width: 20px;
   height: 20px;
   object-fit: contain;
+  opacity: 0.3;
 `;
 
 export const IconText = styled.p`
