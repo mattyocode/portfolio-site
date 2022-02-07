@@ -65,25 +65,11 @@ const nextConfig = withTM({
   },
 });
 
-const withMDX = require('@next/mdx')({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [require('remark-prism')],
-  },
-});
-
-module.exports = withMDX({
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
-});
-
 // manage i18n
 if (process.env.EXPORT !== 'true') {
   nextConfig.i18n = {
     locales: ['en-UK'],
     defaultLocale: 'en-UK',
-    //     react: {
-    //       useSuspense: false,
-    //       wait: true,
   };
 }
 

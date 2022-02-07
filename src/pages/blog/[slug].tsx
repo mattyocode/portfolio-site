@@ -11,7 +11,6 @@ import { Centered } from '../../components/layout';
 import { Links, Navbar, ScrollLink } from '../../components/navbar';
 import { PostPageWrapper } from '../../components/blog/layout';
 import { PageBack } from '../../components/nav-icons';
-import prism from 'remark-prism';
 
 import ContactForm from '../../components/form';
 import ContactIcons from '../../components/icon-links';
@@ -111,8 +110,6 @@ export const getStaticProps = async ({
 }: {
   params: { slug: string };
 }) => {
-  // const unified = require('unified');
-
   const markdownWithMetaData = fs.readFileSync(
     path.join('posts', slug + '.mdx'),
     'utf-8'
@@ -121,10 +118,6 @@ export const getStaticProps = async ({
   const { data: frontMatter, content } = matter(markdownWithMetaData);
   const mdxSource = await serialize(content, {
     scope: frontMatter,
-    mdxOptions: {
-      rehypePlugins: [],
-      remarkPlugins: [],
-    },
   });
 
   return {

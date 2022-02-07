@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const SWrapper = styled.div`
   margin: 3rem 0;
   display: flex;
-  /* justify-content: space-around; */
   align-items: center;
   width: 90vw;
   height: 25vh;
