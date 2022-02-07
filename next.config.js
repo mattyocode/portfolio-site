@@ -11,6 +11,7 @@ const withTM = require('next-transpile-modules')([
   'drei',
   '@react-three/fiber',
   'postprocessing',
+  'react-syntax-highlighter',
 ]);
 
 module.exports = withTM({
@@ -62,6 +63,17 @@ const nextConfig = withTM({
 
     return config;
   },
+});
+
+const withMDX = require('@next/mdx')({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [require('remark-prism')],
+  },
+});
+
+module.exports = withMDX({
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
 });
 
 // manage i18n

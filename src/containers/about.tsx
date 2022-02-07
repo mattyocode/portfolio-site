@@ -139,33 +139,31 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
               <AboutContent ref={contentRef} onScroll={handleScroll}>
                 <LongCopy data-testid='about-copy'>
                   <p>
-                    For almost seven years, I&apos;ve worked as a consultant
-                    using cultural analytics to help global brands create comms,
-                    experiences, and innovations that resonate with their users.
-                    I specialised in technology, working with clients including
-                    Microsoft, Twitch, Dashlane, Candy Crush, and a number of
-                    FAANG companies.
+                    I use JavaScript and Python to create full-stack web apps
+                    that solve problems and are fun to use. I&apos;m currently
+                    delving into Next.js and making my way through “Uncle
+                    Bob”&apos;s <i>Clean Code</i>.
                   </p>
 
                   <p>
-                    I wanted to dive deeper into tech, so began learning Python,
-                    eventually applying it to day-to-day research, such as
-                    scraping web data, calling APIs, and analysing things like
-                    sentiment and keyword frequencies. Very quickly, I was
-                    hooked and my focus shifted to becoming the best developer I
-                    can be.
+                    I have professional experience of gathering, cleaning and
+                    structuring data with Python, Node and, PostgreSQL, and
+                    using libraries such as Pandas, Matplotlib, and SpaCy to
+                    analyse natural language for trends insights.
                   </p>
 
                   <p>
-                    Having enjoyed using HTML and CSS in various roles since
-                    taking a Creative Media M.A., I then threw myself into
-                    front-end development, learning to create intuitive,
-                    pleasing user experiences.
+                    Prior to moving into development, I worked as a consultant
+                    at a cultural insights agency helping global brands create
+                    comms, experiences, and innovations that resonate with their
+                    users. As a life-long tech enthusiast, I had the pleasure of
+                    working clients including Microsoft, Twitch, Dashlane, and a
+                    number of FAANG companies.
                   </p>
 
                   <p>
-                    I&apos;m now looking for a junior developer position where I
-                    can continue to learn and grow as part of a team.
+                    Now my goal is to bring that understanding of users to the
+                    granular detail of the codebase.
                   </p>
                 </LongCopy>
                 <IconGrid icons={aboutIcons} />

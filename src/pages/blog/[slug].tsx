@@ -5,10 +5,13 @@ import path from 'path';
 import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vsDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { Centered } from '../../components/layout';
 import { Links, Navbar, ScrollLink } from '../../components/navbar';
-import { PageWrapper, PostPageWrapper } from '../../components/blog/layout';
+import { PostPageWrapper } from '../../components/blog/layout';
 import { PageBack } from '../../components/nav-icons';
+import prism from 'remark-prism';
 
 import ContactForm from '../../components/form';
 import ContactIcons from '../../components/icon-links';
@@ -19,6 +22,25 @@ type PostProps = {
   frontMatter: { title: string; date: string; thumbnailUrl: string };
   mdxSource: MDXRemoteSerializeResult;
 };
+
+export const SyntaxHighlighterDark = ({
+  style = vsDark,
+  language = 'javascript',
+  children,
+  ...restProps
+}: {
+  style: any;
+  language: string;
+  children: React.ReactNode;
+}): JSX.Element => {
+  return (
+    <SyntaxHighlighter style={style} language={language} {...restProps}>
+      {children}
+    </SyntaxHighlighter>
+  );
+};
+
+const components = { SyntaxHighlighterDark };
 
 export default function BlogPost({
   frontMatter: { title, date, thumbnailUrl },
@@ -52,7 +74,7 @@ export default function BlogPost({
           priority
         />
         <p>{date}</p>
-        <MDXRemote {...mdxSource} />
+        <MDXRemote {...mdxSource} components={components} />
         <PageBack
           src='/icons/back-button.svg'
           href='/blog/'
@@ -89,13 +111,21 @@ export const getStaticProps = async ({
 }: {
   params: { slug: string };
 }) => {
+  // const unified = require('unified');
+
   const markdownWithMetaData = fs.readFileSync(
     path.join('posts', slug + '.mdx'),
     'utf-8'
   );
 
   const { data: frontMatter, content } = matter(markdownWithMetaData);
-  const mdxSource = await serialize(content);
+  const mdxSource = await serialize(content, {
+    scope: frontMatter,
+    mdxOptions: {
+      rehypePlugins: [],
+      remarkPlugins: [],
+    },
+  });
 
   return {
     props: {

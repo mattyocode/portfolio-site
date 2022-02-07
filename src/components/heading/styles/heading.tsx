@@ -12,10 +12,6 @@ export const Title = styled.h1<TitleProps>`
   top: ${(props) => (props.raised ? '0rem' : '2.5rem')};
   text-align: left;
 
-  /* @media screen and (max-height: 580px) {
-    display: none;
-  } */
-
   @media screen and (min-height: 660px) {
     height: 2rem;
     left: 2rem;

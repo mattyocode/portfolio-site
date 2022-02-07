@@ -18,6 +18,8 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
+    "@mdx-js/loader": "^2.0.0",
+    "@next/mdx": "^12.0.10",
     "@react-spring/three": "^9.3.1",
     "@react-three/drei": "^8.0.0",
     "@react-three/fiber": "^7.0.21",
@@ -51,6 +53,8 @@
     "@types/jest": "^27.4.0",
     "@types/node": "^16.11.12",
     "@types/react": "17.0.37",
+    "@types/react-syntax-highlighter": "^13.5.2",
+    "@types/remark-prism": "^1.3.0",
     "@types/smoothscroll-polyfill": "^0.3.1",
     "@types/styled-components": "^5.1.17",
     "babel-plugin-glsl": "^1.0.0",
@@ -68,6 +72,7 @@
     "next-offline": "^5.0.5",
     "next-transpile-modules": "^9.0.0",
     "prettier": "^2.5.1",
+    "remark-prism": "^1.3.6",
     "ts-jest": "^27.1.2",
     "ts-node": "^10.4.0",
     "typescript": "4.5.2",

@@ -44,7 +44,7 @@ export const SBlogPostsWrapper = styled.div`
 export const SPostPageWrapper = styled.div`
   padding: 4rem 1.5rem 3rem 1.5rem;
   margin: 0 auto;
-  max-width: 90vw;
+  max-width: 95vw;
 
   @media screen and (min-width: 768px) {
     max-width: 700px;
