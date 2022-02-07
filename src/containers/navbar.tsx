@@ -1,5 +1,4 @@
 import React from 'react';
-import { useRouter } from 'next/router';
 import { Links, Navbar, NavbarLink, ScrollLink } from '../components/navbar';
 
 export default function NavbarContainer({
@@ -7,13 +6,9 @@ export default function NavbarContainer({
 }: {
   activeSection: string;
 }): JSX.Element {
-  const router = useRouter();
   return (
     <Navbar>
       <Links>
-        {/* <ScrollLink href='#home' scroll={false}>
-          Home
-        </ScrollLink> */}
         <ScrollLink
           href='#about'
           className={activeSection === 'about' ? 'active' : ''}

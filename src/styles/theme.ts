@@ -1,6 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
+  :root {
+    --lightaccent: #FF8A66;
+    --darkaccent: #1C3057;
+  }
+
   *,
   ::after,
   ::before {

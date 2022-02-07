@@ -8,7 +8,7 @@ import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { Centered } from '../../components/layout';
-import { Links, Navbar, ScrollLink } from '../../components/navbar';
+import BlogNavbarContainer from '../../containers/blog-navbar';
 import { PostPageWrapper } from '../../components/blog/layout';
 import { PageBack } from '../../components/nav-icons';
 
@@ -50,16 +50,7 @@ export default function BlogPost({
   return (
     <>
       <PostPageWrapper>
-        <Navbar>
-          <Links>
-            <ScrollLink href='/blog' scroll={false}>
-              Blog Home
-            </ScrollLink>
-            <ScrollLink href='/' scroll={false}>
-              Portfolio
-            </ScrollLink>
-          </Links>
-        </Navbar>
+        <BlogNavbarContainer activeSection='bloghome' />
         <h1>
           <span className='purple'>{title}</span>
         </h1>

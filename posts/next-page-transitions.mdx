@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }) {
 Import the motion and AnimatePresence components from Framer Motion at the top of \_app.
 
 ```js
-  import {(AnimatePresence, motion)} from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 ```
 
 Let’s set up what’s going to happen when we move to another page. For Framer Motion, we can create a ‘variants’ object that allows us to declare the behaviour of an animation. The keys of the key-value pairs are then passed as props to our Motion component, essentially a div element with extra props available.
@@ -68,32 +68,34 @@ We can add `initial={false}` to `AnimatePresence` to prevent the initial animati
 The \_app file now looks like this:
 
 ```js
-  import { AnimatePresence, motion } from 'framer-motion';
-  const pageTransitionVariants = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1, duration: 1 },
-    exit: {
-      opacity: 0,
-      duration: 1,
-    },
-  };
+import { AnimatePresence, motion } from 'framer-motion';
 
-  function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter();
+const pageTransitionVariants = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1, duration: 1 },
+  exit: {
+    opacity: 0,
+    duration: 1,
+  },
+};
 
-  return (
-  <AnimatePresence exitBeforeEnter initial={false}>
-    <motion.div
-      key={router.route}
-      variants={pageTransitionVariants}
-      initial='hidden'
-      animate='enter'
-      exit='exit'
-    >
-      <Component {...pageProps} />
-    </motion.div>
-  </AnimatePresence>
-  );
+function MyApp({ Component, pageProps }: AppProps) {
+
+const router = useRouter();
+
+return (
+<AnimatePresence exitBeforeEnter initial={false}>
+  <motion.div
+    key={router.route}
+    variants={pageTransitionVariants}
+    initial='hidden'
+    animate='enter'
+    exit='exit'
+  >
+    <Component {...pageProps} />
+  </motion.div>
+</AnimatePresence>
+);
 ```
 
 Routing in Next.js is beyond the scope of this tutorial, but with the above in place, a fade-in/fade-out animation occurs each time we navigate between pages.

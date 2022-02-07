@@ -6,7 +6,6 @@ import path from 'path';
 import matter from 'gray-matter';
 
 import { PageWrapper, BlogPostsWrapper } from '../../components/blog/layout';
-import { Links, Navbar, ScrollLink } from '../../components/navbar';
 import { LandingCopy, JumboTitle, SubHead } from '../../components/heading';
 import {
   FullBleedWrapper,
@@ -15,6 +14,7 @@ import {
   ProfilePicWrapper,
   Centered,
 } from '../../components/layout';
+import BlogNavbarContainer from '../../containers/blog-navbar';
 import BlogCard from '../../components/blog/card';
 import ContactForm from '../../components/form';
 import ContactIcons from '../../components/icon-links';
@@ -43,16 +43,7 @@ const Blog: NextPage<blogHomeProps> = ({ posts }) => {
 
   return (
     <PageWrapper>
-      <Navbar>
-        <Links>
-          <ScrollLink href='/blog' scroll={true}>
-            Blog Home
-          </ScrollLink>
-          <ScrollLink href='/' scroll={false}>
-            Portfolio
-          </ScrollLink>
-        </Links>
-      </Navbar>
+      <BlogNavbarContainer activeSection='bloghome' />
       <Section
         id='home'
         backgroundImage='url("/img/withtrees.jpg")'

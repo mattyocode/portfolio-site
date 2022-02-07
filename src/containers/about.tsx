@@ -150,8 +150,8 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
                 <LongCopy data-testid='about-copy'>
                   <p>
                     I use JavaScript and Python to create full-stack web apps
-                    that solve problems and are fun to use. I&apos;m currently
-                    delving into Next.js and making my way through “Uncle
+                    that solve problems and are fun to use. Currently, I&apos;m
+                    exploring Next.js and making my way through “Uncle
                     Bob”&apos;s <i>Clean Code</i>.
                   </p>
 
@@ -163,12 +163,12 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
                   </p>
 
                   <p>
-                    Prior to moving into development, I worked as a consultant
-                    at a cultural insights agency helping global brands create
-                    comms, experiences, and innovations that resonate with their
-                    users. As a life-long tech enthusiast, I had the pleasure of
-                    working clients including Microsoft, Twitch, Dashlane, and a
-                    number of FAANG companies.
+                    Before moving into development, I was a consultant at a
+                    cultural insights agency, where we helped global brands
+                    respond creatively to changing trends. I&apos;ve always
+                    loved technology so that was my focus, and I&apos;ve had the
+                    pleasure of working with clients such as Microsoft, Twitch,
+                    and Dashlane.
                   </p>
 
                   <p>

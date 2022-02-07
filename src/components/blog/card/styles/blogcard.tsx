@@ -104,9 +104,10 @@ export const STags = styled.div`
 `;
 
 export const STag = styled.p`
+  // color:
   font-size: 0.6rem;
   margin: 0.5rem 0.3rem;
-  padding: 0.2rem 0.4rem;
+  padding: 0.2rem 0.5rem 0.3rem 0.5rem;
   border: 1px solid #eee;
   border-radius: 8px;
   @media screen and (min-width: 768px) {
