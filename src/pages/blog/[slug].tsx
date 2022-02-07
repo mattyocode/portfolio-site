@@ -46,11 +46,10 @@ export default function BlogPost({
   mdxSource,
 }: PostProps) {
   const router = useRouter();
-  console.log('router >', router.query.slug);
   return (
     <>
       <PostPageWrapper>
-        <BlogNavbarContainer activeSection='bloghome' />
+        <BlogNavbarContainer />
         <h1>
           <span className='purple'>{title}</span>
         </h1>
@@ -69,6 +68,7 @@ export default function BlogPost({
           src='/icons/back-button.svg'
           href='/blog/'
           borderColor='#6d7ec5'
+          scroll={false}
         >
           Back to blog home
         </PageBack>

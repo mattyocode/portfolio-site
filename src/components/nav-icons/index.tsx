@@ -17,16 +17,18 @@ export const PageBack = ({
   src,
   href,
   borderColor = undefined,
+  scroll = true,
   children,
   ...restProps
 }: {
   src: string;
   href: string;
   borderColor?: string | undefined;
+  scroll?: boolean;
   children: React.ReactNode;
 }) => {
   return (
-    <Link href={href} passHref>
+    <Link href={href} scroll={scroll} passHref>
       <HoriztonalBackBtnWrapper {...restProps}>
         <HorizontalBackLink borderColor={borderColor}>
           <BtnIcon src={src} />

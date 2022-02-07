@@ -74,7 +74,10 @@ const Blog: NextPage<blogHomeProps> = ({ posts }) => {
         </FullBleedWrapper>
       </Section>
       <BlogPostsWrapper>
-        <h2 style={{ margin: '5rem 2rem 0rem 2rem', textAlign: 'center' }}>
+        <h2
+          id='#posts'
+          style={{ margin: '5rem 2rem 0rem 2rem', textAlign: 'center' }}
+        >
           Latest Posts
         </h2>
         {posts.map((post: blogSnippetProps, idx: number) => (
