@@ -76,7 +76,7 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
     e.preventDefault();
     if (contentRef.current) {
       contentRef.current.scrollBy({
-        top: 100,
+        top: 200,
         behavior: 'smooth',
       });
     }
