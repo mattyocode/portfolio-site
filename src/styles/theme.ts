@@ -1,6 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
+  :root {
+    --lightaccent: #FF8A66;
+    --darkaccent: #1C3057;
+  }
+
   *,
   ::after,
   ::before {
@@ -12,6 +17,7 @@ export const GlobalStyles = createGlobalStyle`
 
   html {
     scroll-behavior: smooth;
+    background-color: #121D1F;
   }
 
   html, body {
@@ -63,6 +69,11 @@ export const GlobalStyles = createGlobalStyle`
   h2 > span.coral {
     filter: none;
     filter: drop-shadow(2px 2px 0 #FF8A66)
+  }
+
+  span.purple {
+    filter: none;
+    filter: drop-shadow(2px 2px 0 #6D7EC5)
   }
 
   h2 > span.black {

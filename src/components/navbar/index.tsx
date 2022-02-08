@@ -33,9 +33,9 @@ export const PageTopLink = ({
 export const NavbarLink = ({
   href,
   children,
-  className,
   scroll,
-  ...restProps
+  className,
+  ...anchorProps
 }: {
   href: string;
   children: React.ReactNode;
@@ -43,9 +43,11 @@ export const NavbarLink = ({
   scroll?: boolean;
 }): JSX.Element => {
   return (
-    <NavLink className={className} {...restProps}>
+    <NavLink>
       <Link href={href} scroll={scroll}>
-        {children}
+        <a {...anchorProps} className={className}>
+          {children}
+        </a>
       </Link>
     </NavLink>
   );
@@ -74,23 +76,11 @@ export const ScrollLink: React.FC<ScrollLinkProps> = ({
         e.preventDefault();
         const destination = document.querySelector(href as string);
         if (destination) {
-          // document.body.style.scrollSnapType = 'none';
-          // document.getElementById('pagewrapper')!.style.scrollSnapType = 'none';
           destination.scrollIntoView({
             behavior: 'smooth',
             block: 'center',
             inline: 'center',
           });
-          // setTimeout(() => {
-          // document.body.style.scrollSnapType = 'y proximity';
-          // document.getElementById('pagewrapper')!.style.scrollSnapType =
-          //   'y proximity';
-          // destination.scrollIntoView({
-          //   behavior: 'smooth',
-          //   block: 'center',
-          //   inline: 'center',
-          // });
-          // }, 500);
         }
       }
     },
@@ -110,8 +100,6 @@ export const ScrollLink: React.FC<ScrollLinkProps> = ({
         locale={locale}
       >
         <a
-          // tabIndex={0}
-          // target={target}
           role='link'
           onClick={handleClick}
           onKeyDown={handleClick}

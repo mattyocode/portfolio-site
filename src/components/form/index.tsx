@@ -18,12 +18,14 @@ import {
 
 export default function ContactForm({
   submitFn,
+  dark = false,
 }: {
   submitFn: (arg: {
     name: string;
     email: string;
     message: string;
   }) => Promise<{ detail: string } | { error: string }>;
+  dark?: boolean;
 }): JSX.Element {
   const [activeField, setActiveField] = useState<string | null>(null);
 
@@ -72,9 +74,9 @@ export default function ContactForm({
     status === 'succeeded';
 
   return (
-    <Wrapper>
+    <Wrapper dark={dark}>
       <Base onSubmit={formik.handleSubmit} data-testid='contact-form'>
-        <Title>Get in touch</Title>
+        <Title>Get in touch 👋</Title>
         <Fields>
           <Label htmlFor='name'>
             Name:
@@ -92,6 +94,7 @@ export default function ContactForm({
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             onFocus={handleFocus}
+            dark={dark}
           />
           <Label htmlFor='email'>
             Email:
@@ -108,6 +111,7 @@ export default function ContactForm({
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             onFocus={handleFocus}
+            dark={dark}
           />
 
           <Label htmlFor='message'>
@@ -123,6 +127,7 @@ export default function ContactForm({
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             onFocus={handleFocus}
+            dark={dark}
           ></Message>
           <CenterButton>
             <SubmitButton

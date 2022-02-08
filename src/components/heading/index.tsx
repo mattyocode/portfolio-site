@@ -1,5 +1,11 @@
 import React from 'react';
-import { Title, Landing, BodyCopy } from './styles/heading';
+import {
+  Title,
+  Landing,
+  BodyCopy,
+  SJumboTitle,
+  SSubHead,
+} from './styles/heading';
 
 type PageTitleProps = {
   raised?: boolean;
@@ -55,4 +61,22 @@ export const LongCopy = ({
   children: React.ReactNode;
 }): JSX.Element => {
   return <BodyCopy {...restProps}>{children}</BodyCopy>;
+};
+
+export const SubHead = ({
+  children,
+  ...restProps
+}: {
+  children: React.ReactNode;
+}): JSX.Element => {
+  return <SSubHead {...restProps}>{children}</SSubHead>;
+};
+
+export const JumboTitle = ({
+  children,
+  ...restProps
+}: {
+  children: React.ReactNode;
+}): JSX.Element => {
+  return <SJumboTitle {...restProps}>{children}</SJumboTitle>;
 };

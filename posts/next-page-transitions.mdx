@@ -1,0 +1,107 @@
+---
+title: Super simple page transitions with NextJS and Framer Motion
+date: 'February 6, 2022'
+description: Wrap the _app
+thumbnailUrl: '/img/blog-page-transitions-next.jpg'
+tags: ['Next', 'Framer Motion']
+---
+
+<h2>Wrap the _app</h2>
+
+Framer Motion is a straightforward but powerful animation library for React (which also works great with Next.js). In this short tutorial, we’ll set up Framer Motion to animate in and out our pages when we change routes.
+
+Animating between pages can help website UX feel more fluid and ‘app-like’ - orchestrating how elements appear and disappear from the DOM rather than having them abruptly snap into and out of the browser window.
+
+The TL;DR is – wrap the custom \_app component with `AnimatePresence`, passing the route from useRouter as the key.
+
+In a little more detail...
+
+First we need to create a custom app component in our Next.js pages folder that overrides the default App (if we don’t already have one). It should be named `_app.js` or `_app.tsx` depending on whether you're using JavaScript or TypeScript, and should contain a Component prop. That Component prop is the active page – this means whenever we change routes, the Component prop becomes that new page and any props available to that Component will be available to our page.
+
+```js
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />;
+}
+```
+
+Import the motion and AnimatePresence components from Framer Motion at the top of \_app.
+
+```js
+import { AnimatePresence, motion } from 'framer-motion';
+```
+
+Let’s set up what’s going to happen when we move to another page. For Framer Motion, we can create a ‘variants’ object that allows us to declare the behaviour of an animation. The keys of the key-value pairs are then passed as props to our Motion component, essentially a div element with extra props available.
+
+```js
+const pageTransitionVariants = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1, duration: 1 },
+  exit: {
+    opacity: 0,
+    duration: 1,
+  },
+};
+```
+
+Initial defines our starting state - the opacity of the element is 0. Animate defines the state once the element has been animated to the DOM - the opacity here is set to 1 (visible), and we’ve specified a duration of 1 second. Exit then describes how the element will leave the DOM – its opacity will be returned to 0, and the process will take 1 second.
+
+This all amounts to a fade in-fade out effect as we navigate between routes.
+
+Now we pass a reference to the variants object and the keys for the three steps in the animation:
+
+```js
+<motion.div
+  key={router.route}
+  variants={pageTransitionVariants}
+  initial='hidden'
+  animate='enter'
+  exit='exit'
+>
+  <Component {...pageProps} />
+</motion.div>
+```
+
+Finally, we wrap the Motion component with `AnimatePresence` which allows animations to animate out as they’re removed from the React tree.
+
+We can add `initial={false}` to `AnimatePresence` to prevent the initial animation occurring the first time the page loads , and we can set `exitBeforeEnter` to `true` so that the component that's leaving the DOM is animated out before a new component is rendered (and animated in).
+
+The \_app file now looks like this:
+
+```js
+import { AnimatePresence, motion } from 'framer-motion';
+
+const pageTransitionVariants = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1, duration: 1 },
+  exit: {
+    opacity: 0,
+    duration: 1,
+  },
+};
+
+function MyApp({ Component, pageProps }: AppProps) {
+
+const router = useRouter();
+
+return (
+<AnimatePresence exitBeforeEnter initial={false}>
+  <motion.div
+    key={router.route}
+    variants={pageTransitionVariants}
+    initial='hidden'
+    animate='enter'
+    exit='exit'
+  >
+    <Component {...pageProps} />
+  </motion.div>
+</AnimatePresence>
+);
+```
+
+Routing in Next.js is beyond the scope of this tutorial, but with the above in place, a fade-in/fade-out animation occurs each time we navigate between pages.
+
+See Framer Motion docs for the wide range of style attributes that can be used in animation: [https://www.framer.com/docs/animation/](https://www.framer.com/docs/animation/).
+
+And see Next.js documentation for more about custom App components: https://nextjs.org/docs/advanced-features/custom-app.
+
+Happy animating!

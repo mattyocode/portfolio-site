@@ -3,10 +3,31 @@ const plugins = require('next-compose-plugins');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
-const path = require('path');
+
 const withOffline = require('next-offline');
 
-const nextConfig = {
+const withTM = require('next-transpile-modules')([
+  'three',
+  'drei',
+  '@react-three/fiber',
+  'postprocessing',
+  'react-syntax-highlighter',
+]);
+
+module.exports = withTM({
+  webpack(config, options) {
+    config.module.rules.push({
+      test: /\.(glb|gltf)$/,
+      use: {
+        loader: 'file-loader',
+      },
+    });
+
+    return config;
+  },
+});
+
+const nextConfig = withTM({
   webpack(config, { webpack, dev, isServer }) {
     // audio support
     config.module.rules.push({
@@ -28,36 +49,27 @@ const nextConfig = {
     });
 
     config.module.rules.push({
+      test: /\.(glb|gltf)$/,
+      use: {
+        loader: 'file-loader',
+      },
+    });
+
+    config.module.rules.push({
       test: /\.(glsl|vs|fs|vert|frag)$/,
       exclude: /node_modules/,
       use: ['raw-loader', 'glslify-loader'],
     });
 
-    // config.module.rules.push({
-    //   test: /open-sans\/.+\.(woff|woff2)$/,
-    //   use: {
-    //     loader: 'file-loader',
-    //     options: {
-    //       outputPath: 'static/fonts/open-sans',
-    //       publicPath: '/_next/static/fonts/open-sans',
-    //       limit: 1,
-    //     },
-    //   },
-    // });
-
-    // config.resolve.alias['three$'] = path.resolve('./src/utils/three.js');
-    // config.resolve.alias['./node_modules/three/build/three.module.js'] =
-    //   path.resolve('./src/utils/three.js');
-
     return config;
   },
-};
+});
 
 // manage i18n
 if (process.env.EXPORT !== 'true') {
   nextConfig.i18n = {
-    locales: ['en-US'],
-    defaultLocale: 'en-US',
+    locales: ['en-UK'],
+    defaultLocale: 'en-UK',
   };
 }
 
@@ -111,15 +123,3 @@ module.exports = withBundleAnalyzer({
     return config;
   },
 });
-
-// module.exports = {
-//   reactStrictMode: true,
-//   i18n: {
-//     locales: ['en-UK'],
-//     defaultLocale: 'en-UK',
-//     react: {
-//       useSuspense: false,
-//       wait: true,
-//     },
-//   },
-// };

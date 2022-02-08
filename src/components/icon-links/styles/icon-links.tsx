@@ -7,17 +7,17 @@ type WrapperProps = {
 
 export const Wrapper = styled.div<WrapperProps>`
   position: ${(props) => (props.centered ? 'relative' : 'absolute')};
-  bottom: ${(props) => (props.centered ? '' : '5rem')};
+  bottom: ${(props) => (props.centered ? '' : '2rem')};
   display: flex;
   width: 90vw;
   margin: ${(props) => (props.margin ? '1.5rem 0' : '0')};
-  /* margin: 1.5rem 0; */
   align-items: center;
   justify-content: ${(props) => (props.centered ? 'center' : 'flex-end')};
   padding: 0 1rem;
+  cursor: pointer;
 
   @media screen and (min-height: 660px) {
-    margin: ${(props) => (props.margin ? '3rem 0' : '0')};
+    margin: ${(props) => (props.margin ? '4rem 0' : '0')};
   }
 
   @media screen and (min-width: 768px) {
@@ -44,6 +44,7 @@ export const LargeIcon = styled.img`
   height: 2rem;
   margin: 5px;
   object-fit: contain;
+  cursor: pointer;
 
   @media screen and (min-width: 768px) {
     width: 3rem;

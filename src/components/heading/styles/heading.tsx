@@ -12,10 +12,6 @@ export const Title = styled.h1<TitleProps>`
   top: ${(props) => (props.raised ? '0rem' : '2.5rem')};
   text-align: left;
 
-  @media screen and (max-height: 568px) {
-    display: none;
-  }
-
   @media screen and (min-height: 660px) {
     height: 2rem;
     left: 2rem;
@@ -57,5 +53,26 @@ export const BodyCopy = styled.div`
   @media screen and (min-width: 768px) {
     padding: 2rem 0.75rem;
     max-width: 35rem;
+  }
+`;
+
+export const SJumboTitle = styled.h1`
+  text-align: center;
+  font-size: 4rem;
+  filter: drop-shadow(3px 3px 0 #6d7ec5);
+
+  @media screen and (min-width: 768px) {
+    font-size: 8rem;
+  }
+`;
+
+export const SSubHead = styled.div`
+  z-index: 80;
+  max-width: 14rem;
+  font-weight: 600;
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    max-width: 20rem;
   }
 `;

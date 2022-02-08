@@ -11,7 +11,11 @@ export const SPageWrapper = styled.div`
   height: -webkit-fill-available;
 `;
 
-type SSectionProps = { color: string; backgroundImage?: string };
+type SSectionProps = {
+  color?: string;
+  backgroundImage?: string;
+  cover?: boolean;
+};
 
 export const SSection = styled.section<SSectionProps>`
   height: 100vh;
@@ -21,6 +25,11 @@ export const SSection = styled.section<SSectionProps>`
   background: ${(props) => (props.color ? props.color : '#373F51')};
   background-image: ${(props) =>
     props.backgroundImage ? props.backgroundImage : ''};
+
+  background-size: ${(props) => (props.cover ? 'cover' : '')};
+  background-position: ${(props) => (props.backgroundImage ? 'bottom' : '')};
+
+  min-height: 600px;
 `;
 
 type SFullBleedWrapperProps = { centered: boolean; flexRow: boolean };
@@ -33,6 +42,7 @@ export const SFullBleedWrapper = styled.div<SFullBleedWrapperProps>`
   justify-content: ${(props) => (props.centered ? 'center' : 'flex-end')};
   align-items: ${(props) => (props.centered ? 'center' : 'flex-end')};
   flex-direction: ${(props) => (props.flexRow ? 'row' : 'column')};
+  min-height: 550px;
 
   @media screen and (min-width: 768px) {
     justify-content: center;
@@ -42,6 +52,7 @@ export const SFullBleedWrapper = styled.div<SFullBleedWrapperProps>`
 
 type CenteredProps = {
   rowReverse?: boolean;
+  flexRow?: string;
 };
 
 export const SLandingContent = styled.div<CenteredProps>`
@@ -53,11 +64,13 @@ export const SLandingContent = styled.div<CenteredProps>`
   justify-content: space-between;
   align-items: center;
   overflow-y: auto;
+  overflow-y: visible;
   margin-bottom: 5rem;
 
   @media screen and (min-width: 768px) {
     height: 70vh;
-    flex-direction: row-reverse;
+    flex-direction: ${(props) =>
+      props.flexRow ? props.flexRow : 'row-reverse'};
     padding: 0 2rem;
     max-width: 880px;
     height: 60vh;
@@ -80,7 +93,7 @@ export const SLandingContent = styled.div<CenteredProps>`
 
 export const SAboutContent = styled.div<CenteredProps>`
   width: 100%;
-  height: 60%;
+  height: 55%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

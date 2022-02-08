@@ -1,4 +1,5 @@
 import React from 'react';
+import { string } from 'yup';
 import {
   SAboutContent,
   SProfilePicWrapper,
@@ -32,8 +33,9 @@ export const PageWrapper = ({
 
 interface SectionProps extends React.ComponentPropsWithoutRef<'div'> {
   id: string;
-  color: string;
+  color?: string;
   backgroundImage?: string;
+  cover?: boolean;
   style?: React.CSSProperties;
   children?: React.ReactNode;
 }
@@ -67,10 +69,15 @@ export const FullBleedWrapper = ({
   );
 };
 
+type LandingContentProps = {
+  children?: React.ReactNode;
+  flexRow?: string;
+};
+
 export const LandingContent = ({
   children,
   ...restProps
-}: Props): JSX.Element => {
+}: LandingContentProps): JSX.Element => {
   return <SLandingContent {...restProps}>{children}</SLandingContent>;
 };
 
@@ -122,14 +129,18 @@ export const ProfilePicWrapper = ({
 
 export const Centered = ({
   column = false,
+  style,
   children,
   ...restProps
 }: {
   column?: boolean;
+  style?: {
+    [key: string]: string;
+  };
   children: React.ReactNode;
 }): JSX.Element => {
   return (
-    <CenteredContent column={column} {...restProps}>
+    <CenteredContent column={column} style={style} {...restProps}>
       {children}
     </CenteredContent>
   );
