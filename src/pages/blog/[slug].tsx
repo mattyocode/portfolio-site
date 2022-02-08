@@ -13,7 +13,7 @@ import { PostPageWrapper } from '../../components/blog/layout';
 import { PageBack } from '../../components/nav-icons';
 
 import ContactForm from '../../components/form';
-import ContactIcons from '../../components/icon-links';
+import ContactIcons from '../../components/contact-icons';
 import sendContactRequest from '../../helpers/sendContactRequest';
 import { ContactLinks } from '../../data/contact-links';
 
