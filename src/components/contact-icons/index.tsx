@@ -1,5 +1,5 @@
 import React from 'react';
-import { LinkIcon, LargeIcon, Wrapper } from './styles/icon-links';
+import { LinkIcon, LargeIcon, Wrapper } from './styles/contact-icons';
 
 export const LargeIconButton = ({
   destination,

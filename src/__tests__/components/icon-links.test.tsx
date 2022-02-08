@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import ContactIcons from '../../components/icon-links';
+import ContactIcons from '../../components/contact-icons';
 
 const testContactLinks = [
   {

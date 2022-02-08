@@ -17,7 +17,7 @@ import {
 import BlogNavbarContainer from '../../containers/blog-navbar';
 import BlogCard from '../../components/blog/card';
 import ContactForm from '../../components/form';
-import ContactIcons from '../../components/icon-links';
+import ContactIcons from '../../components/contact-icons';
 import sendContactRequest from '../../helpers/sendContactRequest';
 import { ContactLinks } from '../../data/contact-links';
 
@@ -54,7 +54,7 @@ const Blog: NextPage<blogHomeProps> = ({ posts }) => {
           <LandingContent>
             <ProfilePicWrapper>
               <Image
-                src='/img/profilepiccoral.svg'
+                src='/img/profilepicpurple.svg'
                 alt='illustration of site author'
                 width='25'
                 height='25'

@@ -2,7 +2,7 @@ import React from 'react';
 import { Section, Centered, Relative } from '../components/layout';
 import { PageTitle } from '../components/heading';
 import ContactForm from '../components/form';
-import ContactIcons from '../components/icon-links';
+import ContactIcons from '../components/contact-icons';
 import sendContactRequest from '../helpers/sendContactRequest';
 import { SectionNavRef } from '../types';
 import { ContactLinks } from '../data/contact-links';

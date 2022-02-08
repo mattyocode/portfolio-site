@@ -2,7 +2,7 @@ export const projectData = [
   {
     title: 'MOVIECHOOSER',
     linkToSite: 'https://moviechooser.co.uk',
-    img: '/img/mc-image.png',
+    img: '/img/project/mc-image.png',
     video: '/video/moviechooser.mp4',
     description:
       'A React app with Redux that allows users to specify genre, runtime, and release decade, and receive matching movies with links to streaming services and social media share buttons. Users can login (authenticating via JWT) and add movies to a list.',
@@ -17,7 +17,7 @@ export const projectData = [
   {
     title: 'MOVIECHOOSER API',
     linkToSite: null,
-    img: '/img/moviechooser-api.png',
+    img: '/img/project/moviechooser-api.png',
     video: undefined,
     description:
       'API built with Django REST Framework with endpoints for movie data, authentication, and CRUD functionality for movie lists. App is Dockerised, served by Gunicorn, uses Nginx as a reverse proxy, and is hosted on an AWS instance. CI/CD pipeline uses Github Actions.',
@@ -32,7 +32,7 @@ export const projectData = [
   {
     title: 'NGRAM GENERATOR',
     linkToSite: 'https://pypi.org/project/excel-ngrams/',
-    img: '/img/ngrams-img.png',
+    img: '/img/project/ngrams-img.png',
     video: '/video/ngrams-generator.mp4',
     description:
       'Language analysis command-line app available on PyPI that takes in text data and outputs the most common phrases it contains. Data is returned as CSV, up to a chosen ngram length. Word tokenization uses Spacy, ngrams are generated with NLTK.',
@@ -45,7 +45,7 @@ export const projectData = [
   {
     title: 'BLOG & PORTFOLIO',
     linkToSite: '/blog/',
-    img: '/img/blog.jpg',
+    img: '/img/project/blog.jpg',
     video: '/video/blog.mp4',
     description:
       'Personal blog and portfolio site made with Next JS, Typescript and Styled Components. Landing section cloud object is rendered with Three JS, giving the page some visual dynamism and a (clickable) touch of randomness in cloud formation.',

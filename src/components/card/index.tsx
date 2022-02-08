@@ -14,7 +14,7 @@ import {
   Icons,
   LinkIcons,
 } from './styles/card';
-import { LinkIcon } from '../icon-links/styles/icon-links';
+import { LinkIcon } from '../contact-icons/styles/contact-icons';
 import { ProjectDataObject } from '../../types';
 
 export default function ProjectCard({
