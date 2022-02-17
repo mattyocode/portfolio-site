@@ -24,7 +24,6 @@ type postDataProps = {
 };
 
 export default function BlogCard({ postData }: postDataProps) {
-  console.log('post data in card', postData);
   return (
     <Link href={'/blog/' + postData.slug} scroll={true} passHref>
       <SWrapper>
