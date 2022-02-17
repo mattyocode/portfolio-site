@@ -6,9 +6,9 @@ export const SPageWrapper = styled.div`
   top: 0;
   bottom: 0;
   scroll-snap-type: y proximity;
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 100vh;
-  width: 100vw;
+  /* width: 100vw; */
   height: -webkit-fill-available;
 `;
 
@@ -20,7 +20,7 @@ type SSectionProps = {
 
 export const SSection = styled.section<SSectionProps>`
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   height: -webkit-fill-available;
   display: flex;
   scroll-snap-align: start;

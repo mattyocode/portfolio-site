@@ -18,6 +18,8 @@ export const GlobalStyles = createGlobalStyle`
   html {
     scroll-behavior: smooth;
     background-color: #121D1F;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   html, body {
@@ -27,9 +29,9 @@ export const GlobalStyles = createGlobalStyle`
     font-style: normal;
   }
 
-  body {
-    width: 100vw;
-  }
+  /* body {
+    width: 100%;
+  } */
 
   h1 {
     font-family: "Source Sans Pro", sans-serif;
