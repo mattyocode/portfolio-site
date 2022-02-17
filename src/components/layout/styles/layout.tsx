@@ -8,6 +8,7 @@ export const SPageWrapper = styled.div`
   scroll-snap-type: y proximity;
   overflow-y: scroll;
   height: 100vh;
+  width: 100vw;
   height: -webkit-fill-available;
 `;
 
@@ -19,6 +20,7 @@ type SSectionProps = {
 
 export const SSection = styled.section<SSectionProps>`
   height: 100vh;
+  width: 100%;
   height: -webkit-fill-available;
   display: flex;
   scroll-snap-align: start;
@@ -37,7 +39,7 @@ type SFullBleedWrapperProps = { centered: boolean; flexRow: boolean };
 export const SFullBleedWrapper = styled.div<SFullBleedWrapperProps>`
   position: relative;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: ${(props) => (props.centered ? 'center' : 'flex-end')};
   align-items: ${(props) => (props.centered ? 'center' : 'flex-end')};

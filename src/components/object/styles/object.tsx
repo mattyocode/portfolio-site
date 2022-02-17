@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   position: relative;
   overflow: hidden;
+  width: 100%;
   transform: translateZ(0); // Safari overflow bugfix
 `;
 
