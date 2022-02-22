@@ -157,7 +157,7 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
 
                   <p>
                     I have professional experience of gathering, cleaning and
-                    structuring data with Python, Node and SQL, and using
+                    structuring data with Python, Node, and SQL, and using
                     libraries such as Pandas, Matplotlib, and SpaCy to analyse
                     natural language for trends insights.
                   </p>
