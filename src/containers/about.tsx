@@ -157,9 +157,9 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
 
                   <p>
                     I have professional experience of gathering, cleaning and
-                    structuring data with Python, Node and, PostgreSQL, and
-                    using libraries such as Pandas, Matplotlib, and SpaCy to
-                    analyse natural language for trends insights.
+                    structuring data with Python, Node and SQL, and using
+                    libraries such as Pandas, Matplotlib, and SpaCy to analyse
+                    natural language for trends insights.
                   </p>
 
                   <p>
@@ -167,8 +167,8 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
                     cultural insights agency, where we helped global brands
                     respond creatively to changing trends. I&apos;ve always
                     loved technology so that was my focus, and I&apos;ve had the
-                    pleasure of working with clients such as Microsoft, Twitch,
-                    and Dashlane.
+                    pleasure of working with clients including Microsoft,
+                    Twitch, and Dashlane.
                   </p>
 
                   <p>
