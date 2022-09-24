@@ -95,21 +95,23 @@ export const SLandingContent = styled.div<CenteredProps>`
 
 export const SAboutContent = styled.div<CenteredProps>`
   width: 100%;
-  height: 55%;
+  height: 70%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   overflow-y: scroll;
-  margin: 1rem 0;
+  margin: 0;
+  font-size: 0.8rem;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
     padding: 0 2rem;
     max-width: 880px;
     height: 36rem;
-    margin: 0;
+    margin-left: 5rem;
     overflow-y: auto;
+    font-size: 1.25rem;
   }
 
   @media screen and (min-width: 768px) and (min-height: 780px) {
