@@ -5,9 +5,9 @@ import { useInView } from 'react-intersection-observer';
 import useWindowDimensions from '../helpers/useWindowDimensions';
 import {
   AboutContent,
-  CenterIcon,
   Section,
   FullBleedWrapper,
+  AboutGraphic
 } from '../components/layout';
 import { LongCopy, PageTitle } from '../components/heading';
 import { ObjectContainer, ObjectWrapper } from '../components/object';
@@ -50,7 +50,6 @@ type Props = {
 };
 
 export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
-  const [showMoreIcon, setShowMoreIcon] = useState<boolean>(true);
   const [wideScreen, setWideScreen] = useState<boolean>(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
@@ -61,16 +60,6 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
   } = useInView({ threshold: 0.5 });
   const { width } = useWindowDimensions();
 
-  const handleScroll = (e: React.UIEvent<HTMLElement>) => {
-    const atBottom =
-      e.currentTarget.scrollHeight - e.currentTarget.scrollTop ===
-      e.currentTarget.clientHeight;
-    if (atBottom) {
-      setShowMoreIcon(!atBottom);
-    } else {
-      setShowMoreIcon(true);
-    }
-  };
 
   const scrollDown = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -82,13 +71,6 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
     }
   };
 
-  let moreIcon;
-
-  useEffect(() => {
-    if (width && width >= 768) {
-      setShowMoreIcon(false);
-    }
-  }, [width]);
 
   useEffect(() => {
     if (titleInView) {
@@ -146,23 +128,22 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
                 objectFit='cover'
                 priority
               />
-              <AboutContent ref={contentRef} onScroll={handleScroll}>
+              <AboutContent ref={contentRef}>
                 <LongCopy data-testid='about-copy'>
                   <p>
                   By day, I use Python and Javascript to help build, maintain, 
                   and deploy performant web applications that provide intuitive 
                   and time-saving features for 10,000s business users. In my downtime, 
-                  I like to build things with Next.js, experiment with my homelab setup, 
+                  I like to build things with Next.js, experiment with my homelab, 
                   and generally explore the world of code, the web, and technology.
                   </p>
 
                   <p>
-                  Before moving into development, I was a consultant at a cultural insights 
-                  agency, where we provided guidance on innovation, UX, and communications, 
-                  helping global brands anticipate the changing needs of consumers. 
-                  I&apos;ve always loved technology so I focused on clients in that area, 
-                  and I&apos;ve had the pleasure of working with clients such as Microsoft, 
-                  Twitch, and Dashlane.
+                  Before moving into development, I was a consultant at an insights 
+                  agency, where I provided guidance on innovation, UX, and communications, 
+                  helping global brands anticipate the changing needs of their consumers. 
+                  During that time, I worked primarily with technology clients, such as 
+                  Microsoft, Twitch, and Dashlane.
                   </p>
 
                   <p>
@@ -170,17 +151,8 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
                   researching users to the granular detail of the product.
                   </p>
                 </LongCopy>
-                {/* <IconGrid icons={aboutIcons} /> */}
+                {wideScreen  && <AboutGraphic src="/img/browser-code-gn.svg" alt="Browser with code brackets"/>}
               </AboutContent>
-              {/* <CenterIcon>
-                {showMoreIcon && (
-                  <SingleSmallIcon
-                    src='/icons/chevron-down.svg'
-                    label='more'
-                    clickHandler={scrollDown}
-                  />
-                )}
-              </CenterIcon> */}
             </FullBleedWrapper>
           </motion.div>
         </ObjectContainer>
