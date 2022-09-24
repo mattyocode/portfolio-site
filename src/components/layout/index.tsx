@@ -1,5 +1,4 @@
 import React from 'react';
-import { string } from 'yup';
 import {
   SAboutContent,
   SProfilePicWrapper,
@@ -10,6 +9,8 @@ import {
   CenteredContent,
   RelativeWrapper,
   SCenterIcon,
+  Container,
+  LargeIcon
 } from './styles/layout';
 
 type Props = {
@@ -153,3 +154,17 @@ export const Relative = ({ children, ...restProps }: Props): JSX.Element => {
 export const CenterIcon = ({ children, ...restProps }: Props): JSX.Element => {
   return <SCenterIcon {...restProps}>{children}</SCenterIcon>;
 };
+
+export const AboutGraphic = ({
+  src,
+  alt,
+}: {
+  src: string;
+  alt: string;
+}): JSX.Element => {
+  return (
+    <Container data-testid='skills-icons'>
+      <LargeIcon src={src} alt={alt} />
+    </Container>
+  );
+}
