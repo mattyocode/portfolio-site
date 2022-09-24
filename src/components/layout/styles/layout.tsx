@@ -8,7 +8,6 @@ export const SPageWrapper = styled.div`
   scroll-snap-type: y proximity;
   overflow-y: auto;
   height: 100vh;
-  /* width: 100vw; */
   height: -webkit-fill-available;
 `;
 
@@ -177,4 +176,33 @@ export const SCenterIcon = styled.div`
   align-items: center;
   margin-bottom: 6rem;
   min-height: 20px;
+`;
+
+
+export const Container = styled.div`
+  display: flex;
+  align-items: center;
+  z-index: 99;
+  padding: 0 3rem;
+  min-height: 18rem;
+  overflow: auto;
+
+  @media screen and (min-width: 440px) {
+    background: transparent;
+  }
+
+  @media screen and (min-height: 660px) {
+    overflow: visible;
+  }
+`;
+
+export const LargeIcon = styled.img`
+  width: 0px;
+  height: 0px;
+
+  @media screen and (min-width: 1024px) {
+    display: block;
+    width: 350px;
+    height: 350px;
+  }
 `;
