@@ -41,7 +41,7 @@ export default function LandingSection({ navRef }: SectionNavRef): JSX.Element {
               <span className='coral'>Hi, I&apos;m Matt</span>
             </h2>
             <h2>
-              <span className='black'>Brand Strategist turned</span>
+              <span className='black'>User Researcher turned</span>
             </h2>
             <h2>
               <span className='coral'>Full Stack Developer</span>
