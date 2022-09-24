@@ -1,5 +1,19 @@
 export const projectData = [
   {
+    title: 'PixSorter',
+    linkToSite: 'https://www.pixsorter.com/',
+    img: '/img/project/pixsorter-image.png',
+    video: '/video/pixsorter.mp4',
+    description:
+      'A Next.js app using TypeScript that applies classic sorting algorithms to images, rendering progress along the way. Images can be uploaded by the user, or requested from Unsplash via their API. Sorting can be done via combined RGB values or individually.',
+    icons: [
+      { src: 'white/next-js-white', label: 'Next JS' },
+      { src: 'white/typescript-white', label: 'Typescript' },
+      { src: 'white/sass', label: 'Sass' }
+    ],
+    githubRepo: 'https://github.com/mattyocode/pixsorter',
+  },
+  {
     title: 'MOVIECHOOSER',
     linkToSite: 'https://moviechooser.co.uk',
     img: '/img/project/mc-image.png',
@@ -9,8 +23,7 @@ export const projectData = [
     icons: [
       { src: 'white/react-white', label: 'React' },
       { src: 'white/styled-components-white', label: 'Styled Components' },
-      { src: 'white/jest-white', label: 'Jest' },
-      { src: 'white/testing-library-white', label: 'Testing Library' },
+      { src: 'white/jest-white', label: 'Jest' }
     ],
     githubRepo: 'https://github.com/mattyocode/react-moviechooser',
   },
@@ -23,7 +36,6 @@ export const projectData = [
       'API built with Django REST Framework with endpoints for movie data, authentication, and CRUD functionality for movie lists. App is Dockerised, served by Gunicorn, uses Nginx as a reverse proxy, and is hosted on an AWS instance. CI/CD pipeline uses Github Actions.',
     icons: [
       { src: 'white/django-white', label: 'Django REST Framework' },
-      { src: 'white/pytest-white', label: 'Pytest' },
       { src: 'white/docker-white', label: 'Docker' },
       { src: 'white/postgresql-white', label: 'PostgreSQL' },
     ],
@@ -52,8 +64,6 @@ export const projectData = [
     icons: [
       { src: 'white/next-js-white', label: 'Next JS' },
       { src: 'white/typescript-white', label: 'Typescript' },
-      { src: 'white/styled-components-white', label: 'Styled Components' },
-      { src: 'white/jest-white', label: 'Jest' },
       { src: 'white/three-js-white', label: 'Three JS' },
     ],
     githubRepo: 'https://github.com/mattyocode/portfolio-site',
