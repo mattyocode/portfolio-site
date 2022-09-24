@@ -149,36 +149,30 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
               <AboutContent ref={contentRef} onScroll={handleScroll}>
                 <LongCopy data-testid='about-copy'>
                   <p>
-                    I use JavaScript and Python to create full-stack web apps
-                    that solve problems and are fun to use. Currently, I&apos;m
-                    exploring Next.js and making my way through “Uncle
-                    Bob”&apos;s <i>Clean Code</i>.
+                  By day, I use Python and Javascript to help build, maintain, 
+                  and deploy performant web applications that provide intuitive 
+                  and time-saving features for 10,000s business users. In my downtime, 
+                  I like to build things with Next.js, experiment with my homelab setup, 
+                  and generally explore the world of code, the web, and technology.
                   </p>
 
                   <p>
-                    I have professional experience of gathering, cleaning and
-                    structuring data with Python, Node, and SQL, and using
-                    libraries such as Pandas, Matplotlib, and SpaCy to analyse
-                    natural language for trends insights.
+                  Before moving into development, I was a consultant at a cultural insights 
+                  agency, where we provided guidance on innovation, UX, and communications, 
+                  helping global brands anticipate the changing needs of consumers. 
+                  I&apos;ve always loved technology so I focused on clients in that area, 
+                  and I&apos;ve had the pleasure of working with clients such as Microsoft, 
+                  Twitch, and Dashlane.
                   </p>
 
                   <p>
-                    Before moving into development, I was a consultant at a
-                    cultural insights agency, where we helped global brands
-                    respond creatively to changing trends. I&apos;ve always
-                    loved technology so that was my focus, and I&apos;ve had the
-                    pleasure of working with clients including Microsoft,
-                    Twitch, and Dashlane.
-                  </p>
-
-                  <p>
-                    Now my goal is to bring an understanding of product users to
-                    the granular detail of the codebase.
+                  My goal is to combine these areas of expertise and bring years of 
+                  researching users to the granular detail of the product.
                   </p>
                 </LongCopy>
-                <IconGrid icons={aboutIcons} />
+                {/* <IconGrid icons={aboutIcons} /> */}
               </AboutContent>
-              <CenterIcon>
+              {/* <CenterIcon>
                 {showMoreIcon && (
                   <SingleSmallIcon
                     src='/icons/chevron-down.svg'
@@ -186,7 +180,7 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
                     clickHandler={scrollDown}
                   />
                 )}
-              </CenterIcon>
+              </CenterIcon> */}
             </FullBleedWrapper>
           </motion.div>
         </ObjectContainer>
