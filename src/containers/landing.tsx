@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-// import CanvasContainer from '../components/canvas';
 import {
   FullBleedWrapper,
   Section,
@@ -41,7 +40,7 @@ export default function LandingSection({ navRef }: SectionNavRef): JSX.Element {
               <span className='coral'>Hi, I&apos;m Matt</span>
             </h2>
             <h2>
-              <span className='black'>User Researcher turned</span>
+              <span className='black'>A User-Centered</span>
             </h2>
             <h2>
               <span className='coral'>Full Stack Developer</span>
