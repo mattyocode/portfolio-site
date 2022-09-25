@@ -11,8 +11,6 @@ import {
 } from '../components/layout';
 import { LongCopy, PageTitle } from '../components/heading';
 import { ObjectContainer, ObjectWrapper } from '../components/object';
-import IconGrid, { SingleSmallIcon } from '../components/icon-grid';
-import { aboutIcons } from '../data/about-icons';
 
 const titleVariants = {
   hidden: {
@@ -133,9 +131,9 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
                   <p>
                   By day, I use Python and Javascript to help build, maintain, 
                   and deploy performant web applications that provide intuitive 
-                  and time-saving features for 10,000s business users. In my downtime, 
-                  I like to build things with Next.js, experiment with my homelab, 
-                  and generally explore the world of code, the web, and technology.
+                  and time-saving features for 10,000s business users. Outside of work, 
+                  I like to build things with Next.js, experiment with my homelab setup, 
+                  and generally explore the world of code, the web, and technology trends.
                   </p>
 
                   <p>
@@ -147,7 +145,7 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
                   </p>
 
                   <p>
-                  My goal is to combine these areas of expertise and bring years of 
+                  My goal is to combine these areas of expertise and bring experience of 
                   researching users to the granular detail of the product.
                   </p>
                 </LongCopy>
