@@ -129,11 +129,12 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
               <AboutContent ref={contentRef}>
                 <LongCopy data-testid='about-copy'>
                   <p>
-                  By day, I use Python and Javascript to help build, maintain, 
-                  and deploy performant web applications that provide intuitive 
-                  and time-saving features for 10,000s business users. Outside of work, 
-                  I like to build things with Next.js, experiment with my homelab setup, 
-                  and generally explore the world of code, the web, and technology trends.
+                  By day, I use Python and Javascript to build, deploy, 
+                  and maintain performant web applications that provide intuitive 
+                  and time-saving features for 10,000s daily business users. 
+                  Outside of work, I like to build things with Next.js, experiment with my 
+                  homelab setup, and generally explore the world of code, the web, 
+                  and technology trends.
                   </p>
 
                   <p>
