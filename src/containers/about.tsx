@@ -5,14 +5,12 @@ import { useInView } from 'react-intersection-observer';
 import useWindowDimensions from '../helpers/useWindowDimensions';
 import {
   AboutContent,
-  CenterIcon,
   Section,
   FullBleedWrapper,
+  AboutGraphic
 } from '../components/layout';
 import { LongCopy, PageTitle } from '../components/heading';
 import { ObjectContainer, ObjectWrapper } from '../components/object';
-import IconGrid, { SingleSmallIcon } from '../components/icon-grid';
-import { aboutIcons } from '../data/about-icons';
 
 const titleVariants = {
   hidden: {
@@ -50,7 +48,6 @@ type Props = {
 };
 
 export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
-  const [showMoreIcon, setShowMoreIcon] = useState<boolean>(true);
   const [wideScreen, setWideScreen] = useState<boolean>(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
@@ -61,16 +58,6 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
   } = useInView({ threshold: 0.5 });
   const { width } = useWindowDimensions();
 
-  const handleScroll = (e: React.UIEvent<HTMLElement>) => {
-    const atBottom =
-      e.currentTarget.scrollHeight - e.currentTarget.scrollTop ===
-      e.currentTarget.clientHeight;
-    if (atBottom) {
-      setShowMoreIcon(!atBottom);
-    } else {
-      setShowMoreIcon(true);
-    }
-  };
 
   const scrollDown = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -82,13 +69,6 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
     }
   };
 
-  let moreIcon;
-
-  useEffect(() => {
-    if (width && width >= 768) {
-      setShowMoreIcon(false);
-    }
-  }, [width]);
 
   useEffect(() => {
     if (titleInView) {
@@ -146,47 +126,32 @@ export default function AboutSection({ navRef, isActive }: Props): JSX.Element {
                 objectFit='cover'
                 priority
               />
-              <AboutContent ref={contentRef} onScroll={handleScroll}>
+              <AboutContent ref={contentRef}>
                 <LongCopy data-testid='about-copy'>
                   <p>
-                    I use JavaScript and Python to create full-stack web apps
-                    that solve problems and are fun to use. Currently, I&apos;m
-                    exploring Next.js and making my way through “Uncle
-                    Bob”&apos;s <i>Clean Code</i>.
+                  By day, I use Python and Javascript to build, deploy, 
+                  and maintain performant web applications that provide intuitive 
+                  and time-saving features for 10,000s daily business users. 
+                  Outside of work, I like to build things with Next.js, experiment with my 
+                  homelab setup, and generally explore the world of code, the web, 
+                  and technology trends.
                   </p>
 
                   <p>
-                    I have professional experience of gathering, cleaning and
-                    structuring data with Python, Node, and SQL, and using
-                    libraries such as Pandas, Matplotlib, and SpaCy to analyse
-                    natural language for trends insights.
+                  Before moving into development, I was a consultant at an insights 
+                  agency, where I provided guidance on innovation, UX, and communications, 
+                  helping global brands anticipate the changing needs of their consumers. 
+                  During that time, I worked primarily with technology clients, such as 
+                  Microsoft, Twitch, and Dashlane.
                   </p>
 
                   <p>
-                    Before moving into development, I was a consultant at a
-                    cultural insights agency, where we helped global brands
-                    respond creatively to changing trends. I&apos;ve always
-                    loved technology so that was my focus, and I&apos;ve had the
-                    pleasure of working with clients including Microsoft,
-                    Twitch, and Dashlane.
-                  </p>
-
-                  <p>
-                    Now my goal is to bring an understanding of product users to
-                    the granular detail of the codebase.
+                  My goal is to combine these areas of expertise and bring experience of 
+                  researching users to the granular detail of the product.
                   </p>
                 </LongCopy>
-                <IconGrid icons={aboutIcons} />
+                {wideScreen  && <AboutGraphic src="/img/browser-code-gn.svg" alt="Browser with code brackets"/>}
               </AboutContent>
-              <CenterIcon>
-                {showMoreIcon && (
-                  <SingleSmallIcon
-                    src='/icons/chevron-down.svg'
-                    label='more'
-                    clickHandler={scrollDown}
-                  />
-                )}
-              </CenterIcon>
             </FullBleedWrapper>
           </motion.div>
         </ObjectContainer>
